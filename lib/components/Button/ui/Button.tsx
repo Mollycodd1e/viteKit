@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import * as s from './Button.scss'
+import * as s from './Button.module.scss'
 import { ComponentProps } from './Button.types'
 
 const cx = classNames.bind(s)

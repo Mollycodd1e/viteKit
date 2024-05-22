@@ -14,6 +14,8 @@ export default defineConfig({
 			entry: resolve(__dirname, 'lib/main.ts'),
 			formats: ['es'],
 		},
+		cssMinify: true,
+		minify: true,
 		rollupOptions: {
 			external: ['react', 'react/jsx-runtime'],
 			input: Object.fromEntries(
