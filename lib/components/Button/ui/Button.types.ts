@@ -31,6 +31,6 @@ export type ComponentProps = ButtonProps &
 		})
 		| (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 				as: 'link'
-		})
+		} & Required<Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>>)
 	)
 

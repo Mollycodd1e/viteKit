@@ -4,17 +4,23 @@ import { glob } from 'glob'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
+// import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 export default defineConfig({
-	plugins: [react(), libInjectCss(), dts({ include: ['lib'] })],
+	plugins: [
+		react(),
+		//libInjectCss(),
+		dts({ include: ['lib'] }),
+	],
+	ssr: {
+		noExternal: true,
+	},
 	build: {
 		copyPublicDir: false,
 		lib: {
 			entry: resolve(__dirname, 'lib/main.ts'),
 			formats: ['es'],
 		},
-		cssMinify: true,
 		minify: true,
 		rollupOptions: {
 			external: ['react', 'react/jsx-runtime'],
@@ -33,10 +39,9 @@ export default defineConfig({
 					])
 			),
 			output: {
-				assetFileNames: 'assets/[name][extname]',
+				// assetFileNames: 'assets/[name].module[extname]',
 				entryFileNames: '[name].js',
 			},
 		},
 	},
 })
-

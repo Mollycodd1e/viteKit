@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import * as s from './Button.module.scss'
+import s from './Button.module.scss'
 import { ComponentProps } from './Button.types'
 
 const cx = classNames.bind(s)
@@ -21,12 +21,13 @@ const Button = ({
 
 		return (
 			<a
+				// className={classNames(s.btnCommon)}
 				className={cx(
-					'btnCommon',
-					`${size}-size`,
-					`${variant}`,
-					{ btnCommonInline: pre || post },
-					`${width}-width`,
+					s.btnCommon,
+					s[`${size}-size`],
+					s[`${variant}`],
+					{ [s.btnCommonInline]: pre || post },
+					s[`${width}-width`],
 					`${additionalClass ?? ''}`
 				)}
 				{...rest}>
@@ -42,11 +43,11 @@ const Button = ({
 	return (
 		<button
 			className={cx(
-				'btnCommon',
-				`${size}-size`,
-				`${variant}`,
-				{ btnCommonInline: pre || post },
-				`${width}-width`,
+				s.btnCommon,
+				s[`${size}-size`],
+				s[`${variant}`],
+				{ [s.btnCommonInline]: pre || post },
+				s[`${width}-width`],
 				`${additionalClass ?? ''}`
 			)}
 			{...rest}>
