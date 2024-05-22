@@ -29,6 +29,7 @@
 		"eslint-plugin-react": "^7.34.1",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-react-refresh": "^0.4.6",
+		"glob": "^10.3.16",
 		"jsdom": "^24.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -40,10 +41,13 @@
 		"vite-plugin-lib-inject-css": "^2.1.1",
 		"vitest": "^1.6.0"
 	},
-	"main": "dist/stone-kit.js",
+	"main": "dist/main.js",
 	"types": "dist/main.d.ts",
 	"files": [
 		"dist"
+	],
+	"sideEffects": [
+		"**/*.css"
 	],
 	"description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
 	"directories": {
@@ -63,3 +67,4 @@
 	},
 	"homepage": "https://github.com/Mollycodd1e/viteKit#readme"
 }
+
