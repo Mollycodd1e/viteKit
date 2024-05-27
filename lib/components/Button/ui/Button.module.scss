@@ -24,7 +24,7 @@
 }
 
 
-.l-size {
+.large-size {
 	font-size: 16px;
 	line-height: 24px;
 	min-height: 48px;
@@ -32,7 +32,7 @@
 	gap: 8px;
 }
 
-.m-size {
+.medium-size {
 	font-size: 14px;
 	line-height: 20px;
 	min-height: 40px;
@@ -40,7 +40,7 @@
 	gap: 8px;
 }
 
-.s-size {
+.small-size {
 	font-size: 12px;
 	line-height: 16px;
 	min-height: 32px;
@@ -48,7 +48,7 @@
 	gap: 8px;
 }
 
-.xs-size {
+.tiny-size {
 	font-size: 10px;
 	line-height: 12px;
 	min-height: 24px;
@@ -62,8 +62,7 @@
 	border: 1px solid #015ff9;
 	color: #ffffff;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		background: #024ac0;
 		border: 1px solid #024ac0;
 	}
@@ -79,8 +78,7 @@
 	border: 1px solid #60663e;
 	color: #ffffff;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		background: #494f29;
 		border: 1px solid #494f29;
 	}
@@ -96,8 +94,7 @@
 	border: 1px solid #141416;
 	color: #ffffff;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		background: #23262f;
 		border: 1px solid #353945;
 	}
@@ -113,8 +110,7 @@
 	border: 1px solid #f4f5f6;
 	color: #777e90;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		background: #f4f5f6;
 		border: 1px solid #b1b5c3;
 	}
@@ -130,8 +126,7 @@
 	border: 1px solid #e6e8ec;
 	color: #141416;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		border: 1px solid #b1b5c3;
 	}
 
@@ -145,8 +140,7 @@
 	border: 1px solid #ffffff;
 	color: #141416;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		background: #fcfcfd;
 		border: 1px solid #f4f5f6;
 	}
@@ -155,4 +149,18 @@
 		background: #f4f5f6;
 		border: 1px solid #f4f5f6;
 	}
+}
+
+@keyframes LoaderSpin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.loader {
+	animation: LoaderSpin 1.4s infinite linear;
 }
