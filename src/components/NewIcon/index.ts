@@ -1,3 +1,3 @@
-import {Icon} from './ui/NewIcon'
+import {NewIcon} from './ui/NewIcon'
 
-export default Icon
+export default NewIcon

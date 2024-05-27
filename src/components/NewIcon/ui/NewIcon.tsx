@@ -6,7 +6,7 @@ type IconTypes = { [name: string]: ReactSVGComponent }
 
 const iconTypes: IconTypes = { loader: () => <Loader /> }
 
-export const Icon = ({ name, size = '24', color, addClass }: IconComponentProps) => {
+export const NewIcon = ({ name, size = '24', color, addClass }: IconComponentProps) => {
 	const IconComponent = iconTypes[name]
 
 	return (

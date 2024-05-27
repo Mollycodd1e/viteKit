@@ -1,6 +1,6 @@
 import Button from './components/Button'
 import MobileButton from './components/mobileButton/ui/MobileButton'
-import Icon from './components/NewIcon'
+import NewIcon from './components/NewIcon'
 import Tag from './components/Tag'
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
 				size='medium'>
 				79 м²
 			</Tag>
-			<Icon
+			<NewIcon
 				name='loader'
 				size='24'
 				color='red'
