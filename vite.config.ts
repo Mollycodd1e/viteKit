@@ -4,12 +4,15 @@ import { glob } from 'glob'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
-// import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
 	plugins: [
 		react(),
-		//libInjectCss(),
+		svgr({
+			svgrOptions: { exportType: 'default', ref: true, svgo: false, titleProp: true },
+			include: '**/*.svg',
+		}),
 		dts({ include: ['lib'] }),
 	],
 	ssr: {
@@ -39,7 +42,6 @@ export default defineConfig({
 					])
 			),
 			output: {
-				// assetFileNames: 'assets/[name].module[extname]',
 				entryFileNames: '[name].js',
 			},
 		},

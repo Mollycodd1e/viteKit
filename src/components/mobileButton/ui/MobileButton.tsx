@@ -1,20 +1,18 @@
 import React from 'react'
 import classNames from 'classnames'
-import s from './Button.module.scss'
-import { ComponentProps } from './Button.types'
-import Icon from '../../NewIcon'
+import s from './MobileButton.module.scss'
+import { ComponentProps } from './MobileButton.types'
 
 const cx = classNames.bind(s)
 
-const Button = ({
-	size = 'large',
+const MobileButton = ({
+	size = 'small',
 	pre = false,
 	children = '',
 	post = false,
-	variant = 'blue',
+	variant = 'whiteFilled',
 	width = 'auto',
 	additionalClass,
-	isLoading = false,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
 	if (props.as === 'link') {
@@ -32,19 +30,9 @@ const Button = ({
 					`${additionalClass ?? ''}`
 				)}
 				{...rest}>
-				{isLoading && (
-					<Icon
-						name='loader'
-						color='#fff'
-					/>
-				)}
-				{!isLoading && (
-					<>
-						{pre && <span>{pre}</span>}
-						{children}
-						{post && <span>{post}</span>}
-					</>
-				)}
+				{pre && <span>{pre}</span>}
+				{children}
+				{post && <span>{post}</span>}
 			</a>
 		)
 	}
@@ -62,23 +50,11 @@ const Button = ({
 				`${additionalClass ?? ''}`
 			)}
 			{...rest}>
-			{isLoading && (
-				<Icon
-					name='loader'
-					size={'24'}
-					color='#fff'
-					addClass={s.loader}
-				/>
-			)}
-			{!isLoading && (
-				<>
-					{pre && <span>{pre}</span>}
-					{children}
-					{post && <span>{post}</span>}
-				</>
-			)}
+			{pre && <span>{pre}</span>}
+			{children}
+			{post && <span>{post}</span>}
 		</button>
 	)
 }
 
-export default Button
+export default MobileButton

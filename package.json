@@ -1,7 +1,8 @@
 {
 	"name": "stone-kit",
+	"description": "uikit for redesign",
 	"private": false,
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"author": "Mollycodd1e",
 	"license": "ISC",
 	"type": "module",
@@ -34,7 +35,8 @@
 		"typescript": "^5.2.2",
 		"vite": "^5.2.0",
 		"vite-plugin-dts": "^3.9.1",
-		"vite-plugin-lib-inject-css": "^2.1.1"
+		"vite-plugin-lib-inject-css": "^2.1.1",
+		"vite-plugin-svgr": "^4.2.0"
 	},
 	"main": "dist/main.js",
 	"types": "dist/main.d.ts",
@@ -44,7 +46,6 @@
 	"sideEffects": [
 		"**/*.css"
 	],
-	"description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
 	"directories": {
 		"lib": "lib"
 	},

@@ -1,0 +1,51 @@
+.tagCommon {
+	font-family: inherit;
+	font-weight: 500;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	text-align: center;
+	border: 1px solid transparent;
+	border-radius: 48px;
+
+	&:disabled {
+		opacity: 0.2;
+	}
+}
+
+.auto-width {
+	width: auto;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.medium-size {
+	font-size: 14px;
+	line-height: 20px;
+	min-height: 40px;
+	padding: 9px 15px;
+	gap: 8px;
+}
+
+.tiny-size {
+	font-size: 10px;
+	line-height: 12px;
+	min-height: 24px;
+	padding: 5px;
+	gap: 4px;
+}
+
+.red {
+	background: #ec5353;
+	border: 1px solid #ec5353;
+	color: #ffffff;
+}
+
+.gray {
+	background: #f4f5f6;
+	border: 1px solid #f4f5f6;
+	color: #353945;
+}

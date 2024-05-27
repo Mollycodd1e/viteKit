@@ -2,32 +2,26 @@ import { ReactNode } from 'react'
 
 type btnWidth = 'auto' | 'full'
 
-export const BUTTON_VARIANTS = {
-	blue: 'blue',
-	gray: 'gray',
-	whiteStroke: 'whiteStroke',
-	sokolniki: 'sokolniki',
-	black: 'black',
+export const MOBILE_BUTTON_VARIANTS = {
 	whiteFilled: 'whiteFilled',
 }
 
-export type btnVariant = keyof typeof BUTTON_VARIANTS
+export type mobileBtnVariant = keyof typeof MOBILE_BUTTON_VARIANTS
 
-type btnSizes = 'large' | 'medium' | 'small' | 'tiny'
+type btnSizes = 'small'
 
-interface ButtonProps {
+interface MobileButtonProps {
 	size?: btnSizes
 	pre?: ReactNode
 	post?: ReactNode
 	children?: string
-	variant?: btnVariant
+	variant?: mobileBtnVariant
 	width?: btnWidth
 	additionalClass?: string
-	isLoading?: boolean
 	as?: 'button' | 'link'
 }
 
-export type ComponentProps = ButtonProps &
+export type ComponentProps = MobileButtonProps &
 	(
 		| (React.ButtonHTMLAttributes<HTMLButtonElement> & {
 				as?: 'button'
