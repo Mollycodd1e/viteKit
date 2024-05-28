@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import s from './Button.module.scss'
 import { ComponentProps } from './Button.types'
-import Icon from '../../NewIcon'
+import NewIcon from '../../NewIcon'
 
 const cx = classNames.bind(s)
 
@@ -33,7 +33,7 @@ const Button = ({
 				)}
 				{...rest}>
 				{isLoading && (
-					<Icon
+					<NewIcon
 						name='loader'
 						color='#fff'
 					/>
@@ -63,7 +63,7 @@ const Button = ({
 			)}
 			{...rest}>
 			{isLoading && (
-				<Icon
+				<NewIcon
 					name='loader'
 					size={'24'}
 					color='#fff'
