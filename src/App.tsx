@@ -35,10 +35,18 @@ function App() {
 				79 м²
 			</Tag>
 			<NewIcon
-				name='loader'
+				name='squareMeter'
 				size='24'
-				color='red'
+				color='black'
 			/>
+			<NewIcon
+				name='user'
+				size='24'
+				color='black'
+			/>
+			<Button>
+				<NewIcon name='filter' />
+			</Button>
 		</>
 	)
 }

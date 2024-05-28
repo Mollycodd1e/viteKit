@@ -19,7 +19,7 @@ interface ButtonProps {
 	size?: btnSizes
 	pre?: ReactNode
 	post?: ReactNode
-	children?: string
+	children?: string | ReactNode
 	variant?: btnVariant
 	width?: btnWidth
 	additionalClass?: string
