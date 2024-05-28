@@ -1,7 +1,7 @@
-import Button from './components/Button'
-import MobileButton from './components/mobileButton/ui/MobileButton'
-import NewIcon from './components/NewIcon'
-import Tag from './components/Tag'
+import { Button } from './components/Button'
+import { MobileButton } from './components/MobileButton/ui/MobileButton'
+import { NewIcon } from './components/NewIcon'
+import { Tag } from './components/Tag'
 
 function App() {
 	return (

@@ -5,7 +5,7 @@ import { ComponentProps } from './Tag.types'
 
 const cx = classNames.bind(s)
 
-const Tag = ({
+export const Tag = ({
 	size = 'medium',
 	children = '',
 	variant = 'gray',
@@ -27,5 +27,3 @@ const Tag = ({
 		</div>
 	)
 }
-
-export default Tag

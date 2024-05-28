@@ -2,11 +2,11 @@ import React from 'react'
 import classNames from 'classnames'
 import s from './Button.module.scss'
 import { ComponentProps } from './Button.types'
-import NewIcon from '../../NewIcon'
+import { NewIcon } from '../../NewIcon'
 
 const cx = classNames.bind(s)
 
-const Button = ({
+export const Button = ({
 	size = 'large',
 	pre = false,
 	children = '',
@@ -80,5 +80,3 @@ const Button = ({
 		</button>
 	)
 }
-
-export default Button

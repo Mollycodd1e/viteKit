@@ -1,3 +1,2 @@
-import Tag from './ui/Tag'
+export { Tag } from './ui/Tag'
 
-export default Tag

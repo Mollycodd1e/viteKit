@@ -1,3 +1,2 @@
-import mobileButton from './ui/MobileButton'
+export { MobileButton } from './ui/MobileButton'
 
-export default mobileButton

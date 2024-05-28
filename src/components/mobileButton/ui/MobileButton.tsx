@@ -5,7 +5,7 @@ import { ComponentProps } from './MobileButton.types'
 
 const cx = classNames.bind(s)
 
-const MobileButton = ({
+export const MobileButton = ({
 	size = 'small',
 	pre = false,
 	children = '',
@@ -56,5 +56,3 @@ const MobileButton = ({
 		</button>
 	)
 }
-
-export default MobileButton
