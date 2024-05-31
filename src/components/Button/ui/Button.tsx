@@ -7,7 +7,7 @@ import { NewIcon } from '../../NewIcon'
 const cx = classNames.bind(s)
 
 export const Button = ({
-	size,
+	size = 'medium',
 	size_m,
 	size_l,
 	pre = false,

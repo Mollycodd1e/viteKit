@@ -1,3 +1,35 @@
+@mixin button-tiny {
+	font-size: 10px;
+	line-height: 12px;
+	min-height: 24px;
+	padding: 5px 11px;
+	gap: 4px;
+}
+
+@mixin button-small {
+	font-size: 12px;
+	line-height: 16px;
+	min-height: 32px;
+	padding: 7px 11px;
+	gap: 8px;
+}
+
+@mixin button-medium {
+	font-size: 14px;
+	line-height: 20px;
+	min-height: 40px;
+	padding: 9px 15px;
+	gap: 8px;
+}
+
+@mixin button-large {
+	font-size: 16px;
+	line-height: 24px;
+	min-height: 48px;
+	padding: 11px 23px;
+	gap: 8px;
+}
+
 .btnCommon {
 	font-family: inherit;
 	font-weight: 500;
@@ -24,35 +56,19 @@
 }
 
 .tiny-size {
-	font-size: 10px;
-	line-height: 12px;
-	min-height: 24px;
-	padding: 5px 11px;
-	gap: 4px;
+	@include button-tiny;
 }
 
 .small-size {
-	font-size: 12px;
-	line-height: 16px;
-	min-height: 32px;
-	padding: 7px 11px;
-	gap: 8px;
+	@include button-small;
 }
 
 .medium-size {
-	font-size: 14px;
-	line-height: 20px;
-	min-height: 40px;
-	padding: 9px 15px;
-	gap: 8px;
+	@include button-medium;
 }
 
 .large-size {
-	font-size: 16px;
-	line-height: 24px;
-	min-height: 48px;
-	padding: 11px 23px;
-	gap: 8px;
+	@include button-large;
 }
 
 .blue {
@@ -165,68 +181,36 @@
 
 @media(min-width: 1024px) {
 	.tiny-size_m {
-		font-size: 10px;
-		line-height: 12px;
-		min-height: 24px;
-		padding: 5px 11px;
-		gap: 4px;
+		@include button-tiny;
 	}
 
 	.small-size_m {
-		font-size: 12px;
-		line-height: 16px;
-		min-height: 32px;
-		padding: 7px 11px;
-		gap: 8px;
+		@include button-small;
 	}
 
 	.medium-size_m {
-		font-size: 14px;
-		line-height: 20px;
-		min-height: 40px;
-		padding: 9px 15px;
-		gap: 8px;
+		@include button-medium;
 	}
 
 	.large-size_m {
-		font-size: 16px;
-		line-height: 24px;
-		min-height: 48px;
-		padding: 11px 23px;
-		gap: 8px;
+		@include button-large;
 	}
 }
 
 @media(min-width: 1440px) {
 	.tiny-size_l {
-		font-size: 10px;
-		line-height: 12px;
-		min-height: 24px;
-		padding: 5px 11px;
-		gap: 4px;
+		@include button-tiny;
 	}
 
 	.small-size_l {
-		font-size: 12px;
-		line-height: 16px;
-		min-height: 32px;
-		padding: 7px 11px;
-		gap: 8px;
+		@include button-small;
 	}
 
 	.medium-size_l {
-		font-size: 14px;
-		line-height: 20px;
-		min-height: 40px;
-		padding: 9px 15px;
-		gap: 8px;
+		@include button-medium;
 	}
 
 	.large-size_l {
-		font-size: 16px;
-		line-height: 24px;
-		min-height: 48px;
-		padding: 11px 23px;
-		gap: 8px;
+		@include button-large;
 	}
 }
