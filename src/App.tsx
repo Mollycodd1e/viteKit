@@ -1,19 +1,21 @@
 import { Button } from './components/Button'
-import { MobileButton } from './components/MobileButton/ui/MobileButton'
-import { NewIcon } from './components/NewIcon'
-import { Tag } from './components/Tag'
+// import { MobileButton } from './components/MobileButton/ui/MobileButton'
+// import { NewIcon } from './components/NewIcon'
+// import { Tag } from './components/Tag'
 
 function App() {
 	return (
 		<>
 			<Button
-				size='large'
+				size='small'
+				size_m='medium'
+				size_l='large'
 				width='auto'
 				pre={<span>L</span>}
 				variant='blue'>
 				Приветики
 			</Button>
-			<Button
+			{/* <Button
 				size='large'
 				width='full'
 				variant='blue'>
@@ -46,7 +48,7 @@ function App() {
 			/>
 			<Button>
 				<NewIcon name='filter' />
-			</Button>
+			</Button> */}
 		</>
 	)
 }
