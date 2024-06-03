@@ -1,0 +1,75 @@
+.destination {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	border-radius: 110px;
+
+	& input {
+		margin: 0;
+		display: none;
+	}
+}
+
+.auto-width {
+	width: max-content;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.medium-size {
+	padding: 9px 23px;
+
+	& .destinationName {
+		font-size: 14px;
+		line-height: 20px;
+		font-weight: 500;
+	}
+
+	.routeText {
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: 500;
+	}
+}
+
+.large-size {
+	padding: 11px 31px;
+
+	& .destinationName {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 500;
+	}
+
+	.routeText {
+		font-size: 14px;
+		line-height: 20px;
+		font-weight: 500;
+	}
+}
+
+.whiteStroke {
+	border: 1px solid #f4f5f6;
+
+	&:hover {
+		border: 1px solid #b1b5c3;
+	}
+
+	&:active {
+		background-color: #e6e8ec;
+	}
+
+	.routeText {
+		color: #777e90;
+	}
+}
+
+.routeWrapper {
+	display: flex;
+	gap: 4px;
+	justify-content: space-between;
+	align-items: center;
+}
