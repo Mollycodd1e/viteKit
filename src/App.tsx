@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button } from './components/Button'
-import { DestinationTab } from './components/DestinationTag'
+import { DestinationTab } from './components/DestinationTab'
 import { NewIcon } from './components/NewIcon'
 import { RoundButton } from './components/RoundButton'
 
