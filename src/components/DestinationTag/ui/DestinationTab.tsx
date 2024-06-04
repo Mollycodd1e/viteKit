@@ -2,7 +2,6 @@ import React from 'react'
 import classNames from 'classnames'
 import s from './DestinationTab.module.scss'
 import { ComponentProps } from './DestinationTab.types'
-import { NewIcon } from '../../NewIcon'
 
 const cx = classNames.bind(s)
 
@@ -10,13 +9,16 @@ export const DestinationTab = ({
 	size = 'medium',
 	size_m,
 	size_l,
-	destinationName = '',
+	destination = { destName: '', color: '' },
 	variant = 'whiteStroke',
 	width = 'auto',
-	routes = [{ type: <NewIcon name='car' />, text: '100 минут в пути' }],
+	routes = [],
+	checked,
+	onChange,
 	additionalClass,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
+
 	return (
 		<label
 			className={cx(
@@ -29,16 +31,24 @@ export const DestinationTab = ({
 				`${additionalClass ?? ''}`
 			)}
 			{...props}
-			htmlFor={destinationName}>
+			htmlFor={destination.destName}>
 			<input
-				type='radio'
-				name='destination'
-				value={destinationName}
+				id={destination.destName}
+				checked={checked}
+				onChange={onChange}
+				type='checkbox'
+				name={destination.destName}
+				value={destination.destName}
 			/>
-			<div className={s.destinationName}>{destinationName}</div>
+			<div className={s.destination}>
+				{destination?.color && <span style={{ background: destination?.color ?? '' }}></span>}
+				{destination.destName}
+			</div>
 			{routes.map((r, i) => {
 				return (
-					<div key={i} className={s.routeWrapper}>
+					<div
+						key={i}
+						className={s.routeWrapper}>
 						{r.type}
 						<div className={s.routeText}>{r.text}</div>
 					</div>

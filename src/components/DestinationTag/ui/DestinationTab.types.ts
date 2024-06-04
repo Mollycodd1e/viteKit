@@ -14,11 +14,16 @@ interface IDestinationProps {
 	size?: destinationSizes
 	size_m?: destinationSizes
 	size_l?: destinationSizes
-	destinationName?: string
+	checked?: boolean
+	destination?: {
+		destName?: string
+		color?: string
+	}
 	routes?: {
-		type: ReactNode
-		text: string
+		type?: ReactNode
+		text?: string
 	}[]
+	onChange?: () => void
 	children?: string | ReactNode
 	variant?: destinationSizesVariant
 	width?: destinationSizesWidth
