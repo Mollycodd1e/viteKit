@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
-import s from './Button.module.scss'
 import { ComponentProps } from './Button.types'
 import { NewIcon } from '../../NewIcon'
+import s from './Button.module.scss'
 
 const cx = classNames.bind(s)
 
@@ -19,27 +19,25 @@ export const Button = ({
 	isLoading = false,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
-	if (props.as === 'link') {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		const { as, ...rest } = props
-
+	const btnClassName = cx(
+		s.btnCommon,
+		s[`${size}-size`],
+		s[`${size_m}-size_m`],
+		s[`${size_l}-size_l`],
+		s[`${variant}`],
+		{ [s.btnCommonInline]: pre || post },
+		s[`${width}-width`],
+		additionalClass
+	)
+	const btnBody = () => {
 		return (
-			<a
-				className={cx(
-					s.btnCommon,
-					s[`${size}-size`],
-					s[`${size_m}-size_m`],
-					s[`${size_l}-size_l`],
-					s[`${variant}`],
-					{ [s.btnCommonInline]: pre || post },
-					s[`${width}-width`],
-					`${additionalClass ?? ''}`
-				)}
-				{...rest}>
+			<>
 				{isLoading && (
 					<NewIcon
 						name='loader'
+						size={'24'}
 						color='#fff'
+						addClass={s.loader}
 					/>
 				)}
 				{!isLoading && (
@@ -49,40 +47,25 @@ export const Button = ({
 						{post && <span>{post}</span>}
 					</>
 				)}
+			</>
+		)
+	}
+
+	if (props.as === 'link') {
+		return (
+			<a
+				className={btnClassName}
+				{...props}>
+				{btnBody()}
 			</a>
 		)
 	}
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const { as, ...rest } = props
 
 	return (
 		<button
-			className={cx(
-				s.btnCommon,
-				s[`${size}-size`],
-				s[`${size_m}-size_m`],
-				s[`${size_l}-size_l`],
-				s[`${variant}`],
-				{ [s.btnCommonInline]: pre || post },
-				s[`${width}-width`],
-				`${additionalClass ?? ''}`
-			)}
-			{...rest}>
-			{isLoading && (
-				<NewIcon
-					name='loader'
-					size={'24'}
-					color='#fff'
-					addClass={s.loader}
-				/>
-			)}
-			{!isLoading && (
-				<>
-					{pre && <span>{pre}</span>}
-					{children}
-					{post && <span>{post}</span>}
-				</>
-			)}
+			className={btnClassName}
+			{...props}>
+			{btnBody()}
 		</button>
 	)
 }

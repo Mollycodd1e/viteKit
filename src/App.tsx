@@ -36,27 +36,6 @@ function App() {
 
 	return (
 		<>
-			<Button
-				size='small'
-				size_m='medium'
-				size_l='large'
-				width='auto'
-				pre={<span>L</span>}
-				variant='sokolniki'
-				post={<span>R</span>}>
-				Приветики
-			</Button>
-			<div> sdf</div>
-			<div> sdf</div>
-			<RoundButton
-				size='small'
-				size_m='medium'
-				size_l='large'
-				iconName='case'
-				color='red'
-			/>
-			<div> sdf</div>
-			<div> sdf</div>
 			{destinatinList.map((item, i) => (
 				<DestinationTab
 					key={i}
@@ -71,6 +50,94 @@ function App() {
 					size_l='medium'
 				/>
 			))}
+			<Button
+				as='button'
+				variant='black'
+				size='small'>
+				<NewIcon
+					name='phoneFilled'
+					size='16'
+				/>
+			</Button>
+			<Button
+				as='button'
+				variant='gray'
+				size='small'>
+				<NewIcon
+					name='user'
+					size='16'
+					color='#141416'
+				/>
+			</Button>
+			<Button
+				as='button'
+				variant='gray'
+				size='small'>
+				<NewIcon
+					name='burger'
+					size='16'
+					color='#141416'
+				/>
+			</Button>
+			<Button
+				as='button'
+				variant='black'
+				size='large'
+				width='full'>
+				Оставить сообщение
+			</Button>
+			<Button
+				as='link'
+				variant='gray'
+				size='medium'
+				href='https://google.com'>
+				Подробнее
+			</Button>
+			<RoundButton iconName='plus' />
+			<RoundButton
+				iconName='arrowLong'
+				deg='90'
+			/>
+			<RoundButton
+				iconName='arrowLong'
+				deg='-90'
+			/>
+			<Button
+				as='link'
+				href='https://google.com'
+				variant='shade'
+				size='large'
+				post={
+					<NewIcon
+						name='whatsapp'
+						size='24'
+					/>
+				}>
+				Смотреть вакансии
+			</Button>
+			<Button
+				as='button'
+				variant='blue'
+				size='large'>
+				Оставить обращение
+			</Button>
+			<Button
+				as='button'
+				variant='black'
+				size='large'
+				post={<NewIcon name='user' />}>
+				Войти в кабинет
+			</Button>
+			<Button
+				as='button'
+				variant='gray'
+				size='small'>
+				<NewIcon
+					name='close'
+					size='16'
+					color='black'
+				/>
+			</Button>
 		</>
 	)
 }

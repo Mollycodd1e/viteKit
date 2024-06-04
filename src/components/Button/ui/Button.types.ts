@@ -9,6 +9,7 @@ export const BUTTON_VARIANTS = {
 	sokolniki: 'sokolniki',
 	black: 'black',
 	whiteFilled: 'whiteFilled',
+	shade: 'shade',
 }
 
 export type btnVariant = keyof typeof BUTTON_VARIANTS
@@ -26,16 +27,15 @@ interface ButtonProps {
 	width?: btnWidth
 	additionalClass?: string
 	isLoading?: boolean
-	as?: 'button' | 'link'
+	as: 'button' | 'link'
 }
 
 export type ComponentProps = ButtonProps &
 	(
-		| (React.ButtonHTMLAttributes<HTMLButtonElement> & {
-				as?: 'button'
-		})
+		| ((React.ButtonHTMLAttributes<HTMLButtonElement> & {
+				as: 'button'
+		}))
 		| (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 				as: 'link'
 		} & Required<Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>>)
 	)
-

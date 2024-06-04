@@ -166,6 +166,12 @@
 	}
 }
 
+.shade {
+	background: #23262F;
+	border: 1px solid #23262F;
+	color: #ffffff;
+}
+
 @keyframes LoaderSpin {
 	0% {
 		transform: rotate(0deg);
