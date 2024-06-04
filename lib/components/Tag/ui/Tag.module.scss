@@ -1,3 +1,19 @@
+@mixin tag-tiny {
+	font-size: 10px;
+	line-height: 12px;
+	min-height: 24px;
+	padding: 5px;
+	gap: 4px;
+}
+
+@mixin tag-medium {
+	font-size: 14px;
+	line-height: 20px;
+	min-height: 40px;
+	padding: 9px 15px;
+	gap: 8px;
+}
+
 .tagCommon {
 	font-family: inherit;
 	font-weight: 500;
@@ -15,7 +31,7 @@
 }
 
 .auto-width {
-	width: auto;
+	width: max-content;
 }
 
 .full-width {
@@ -23,19 +39,11 @@
 }
 
 .medium-size {
-	font-size: 14px;
-	line-height: 20px;
-	min-height: 40px;
-	padding: 9px 15px;
-	gap: 8px;
+	@include tag-medium;
 }
 
 .tiny-size {
-	font-size: 10px;
-	line-height: 12px;
-	min-height: 24px;
-	padding: 5px;
-	gap: 4px;
+	@include tag-tiny;
 }
 
 .red {
@@ -48,4 +56,54 @@
 	background: #f4f5f6;
 	border: 1px solid #f4f5f6;
 	color: #353945;
+}
+
+.shade {
+	background: #141416cc;
+	border: none;
+	color: #ffffff;
+}
+
+.medium-size.shade {
+	padding: 10px 16px;
+}
+
+.tiny-size.shade {
+	padding: 6px;
+}
+
+@media(min-width: 1024px) {
+	.tiny-size_m {
+		@include tag-tiny;
+	}
+
+	.medium-size_m {
+		@include tag-medium;
+	}
+
+	.medium-size.shade {
+		padding: 10px 16px;
+	}
+
+	.tiny-size.shade {
+		padding: 6px;
+	}
+}
+
+@media(min-width: 1440px) {
+	.tiny-size_l {
+		@include tag-tiny;
+	}
+
+	.medium-size_l {
+		@include tag-medium;
+	}
+
+	.medium-size.shade {
+		padding: 10px 16px;
+	}
+
+	.tiny-size.shade {
+		padding: 6px;
+	}
 }

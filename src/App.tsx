@@ -3,6 +3,7 @@ import { Button } from './components/Button'
 import { DestinationTab } from './components/DestinationTab'
 import { NewIcon } from './components/NewIcon'
 import { RoundButton } from './components/RoundButton'
+import { Tag } from './components/Tag'
 
 function App() {
 	const destinatinList = [
@@ -138,6 +139,14 @@ function App() {
 					color='black'
 				/>
 			</Button>
+			<Tag
+				variant='shade'
+				size='medium'
+				size_m='tiny'
+				size_l='medium'>
+				2004
+			</Tag>
+			<Tag variant='shade'>STONE Towers</Tag>
 		</>
 	)
 }

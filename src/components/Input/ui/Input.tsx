@@ -1,12 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
-import { ComponentProps } from './Button.types'
+import { ComponentProps } from './Input.types'
 import { NewIcon } from '../../NewIcon'
 import s from './Button.module.scss'
 
 const cx = classNames.bind(s)
 
-export const Button = ({
+export const Input = ({
 	size = 'medium',
 	size_m,
 	size_l,
