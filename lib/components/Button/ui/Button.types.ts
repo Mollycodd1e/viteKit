@@ -17,6 +17,8 @@ type btnSizes = 'large' | 'medium' | 'small' | 'tiny'
 
 interface ButtonProps {
 	size?: btnSizes
+	size_m?: btnSizes
+	size_l?: btnSizes
 	pre?: ReactNode
 	post?: ReactNode
 	children?: string | ReactNode

@@ -1,3 +1,5 @@
 export { Button } from './components/Button'
 export { MobileButton } from './components/MobileButton'
 export { NewIcon } from './components/NewIcon'
+export { DestinationTab } from './components/DestinationTab'
+export { RoundButton } from './components/RoundButton'

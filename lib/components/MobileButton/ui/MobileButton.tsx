@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import s from './MobileButton.module.scss'
-import { ComponentProps } from './MobileButton.types.ts'
+import { ComponentProps } from './MobileButton.types'
 
 const cx = classNames.bind(s)
 
@@ -56,5 +56,3 @@ export const MobileButton = ({
 		</button>
 	)
 }
-
-export default MobileButton

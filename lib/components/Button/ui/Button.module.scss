@@ -1,3 +1,35 @@
+@mixin button-tiny {
+	font-size: 10px;
+	line-height: 12px;
+	min-height: 24px;
+	padding: 5px 11px;
+	gap: 4px;
+}
+
+@mixin button-small {
+	font-size: 12px;
+	line-height: 16px;
+	min-height: 32px;
+	padding: 7px 11px;
+	gap: 8px;
+}
+
+@mixin button-medium {
+	font-size: 14px;
+	line-height: 20px;
+	min-height: 40px;
+	padding: 9px 15px;
+	gap: 8px;
+}
+
+@mixin button-large {
+	font-size: 16px;
+	line-height: 24px;
+	min-height: 48px;
+	padding: 11px 23px;
+	gap: 8px;
+}
+
 .btnCommon {
 	font-family: inherit;
 	font-weight: 500;
@@ -8,6 +40,7 @@
 	text-align: center;
 	border: 1px solid transparent;
 	border-radius: 48px;
+	text-decoration: none;
 	cursor: pointer;
 
 	&:disabled {
@@ -16,46 +49,28 @@
 }
 
 .auto-width {
-	width: auto;
+	width: max-content;
 }
 
 .full-width {
 	width: 100%;
 }
 
-
-.large-size {
-	font-size: 16px;
-	line-height: 24px;
-	min-height: 48px;
-	padding: 11px 23px;
-	gap: 8px;
-}
-
-.medium-size {
-	font-size: 14px;
-	line-height: 20px;
-	min-height: 40px;
-	padding: 9px 15px;
-	gap: 8px;
+.tiny-size {
+	@include button-tiny;
 }
 
 .small-size {
-	font-size: 12px;
-	line-height: 16px;
-	min-height: 32px;
-	padding: 7px 11px;
-	gap: 8px;
+	@include button-small;
 }
 
-.tiny-size {
-	font-size: 10px;
-	line-height: 12px;
-	min-height: 24px;
-	padding: 5px 11px;
-	gap: 4px;
+.medium-size {
+	@include button-medium;
 }
 
+.large-size {
+	@include button-large;
+}
 
 .blue {
 	background: #015ff9;
@@ -163,4 +178,40 @@
 
 .loader {
 	animation: LoaderSpin 1.4s infinite linear;
+}
+
+@media(min-width: 1024px) {
+	.tiny-size_m {
+		@include button-tiny;
+	}
+
+	.small-size_m {
+		@include button-small;
+	}
+
+	.medium-size_m {
+		@include button-medium;
+	}
+
+	.large-size_m {
+		@include button-large;
+	}
+}
+
+@media(min-width: 1440px) {
+	.tiny-size_l {
+		@include button-tiny;
+	}
+
+	.small-size_l {
+		@include button-small;
+	}
+
+	.medium-size_l {
+		@include button-medium;
+	}
+
+	.large-size_l {
+		@include button-large;
+	}
 }

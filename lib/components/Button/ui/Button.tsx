@@ -7,7 +7,9 @@ import { NewIcon } from '../../NewIcon'
 const cx = classNames.bind(s)
 
 export const Button = ({
-	size = 'large',
+	size = 'medium',
+	size_m,
+	size_l,
 	pre = false,
 	children = '',
 	post = false,
@@ -26,6 +28,8 @@ export const Button = ({
 				className={cx(
 					s.btnCommon,
 					s[`${size}-size`],
+					s[`${size_m}-size_m`],
+					s[`${size_l}-size_l`],
 					s[`${variant}`],
 					{ [s.btnCommonInline]: pre || post },
 					s[`${width}-width`],
@@ -56,6 +60,8 @@ export const Button = ({
 			className={cx(
 				s.btnCommon,
 				s[`${size}-size`],
+				s[`${size_m}-size_m`],
+				s[`${size_l}-size_l`],
 				s[`${variant}`],
 				{ [s.btnCommonInline]: pre || post },
 				s[`${width}-width`],

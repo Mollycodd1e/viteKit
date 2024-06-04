@@ -1,1 +1,2 @@
-export {MobileButton} from './ui/MobileButton.tsx'
+export { MobileButton } from './ui/MobileButton'
+
