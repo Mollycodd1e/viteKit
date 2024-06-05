@@ -1,41 +1,27 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
-type btnWidth = 'auto' | 'full'
+type inputWidth = 'auto' | 'full'
 
-export const BUTTON_VARIANTS = {
-	blue: 'blue',
-	gray: 'gray',
-	whiteStroke: 'whiteStroke',
-	sokolniki: 'sokolniki',
-	black: 'black',
-	whiteFilled: 'whiteFilled',
-	shade: 'shade',
+export const INPUT_VARIANTS = {
+	light: 'light',
+	dark: 'dark',
 }
 
-export type btnVariant = keyof typeof BUTTON_VARIANTS
+export type inputVariant = keyof typeof INPUT_VARIANTS
 
-type btnSizes = 'large' | 'medium' | 'small' | 'tiny'
+type inputSizes = 'large' | 'medium' | 'small' | 'tiny'
 
-interface ButtonProps {
-	size?: btnSizes
-	size_m?: btnSizes
-	size_l?: btnSizes
+interface InputProps {
+	size_s?: inputSizes
+	size_m?: inputSizes
+	size_l?: inputSizes
 	pre?: ReactNode
+	error?: boolean
 	post?: ReactNode
-	children?: string | ReactNode
-	variant?: btnVariant
-	width?: btnWidth
+	children?: ReactNode
+	variant?: inputVariant
+	width?: inputWidth
 	additionalClass?: string
-	isLoading?: boolean
-	as: 'button' | 'link'
 }
 
-export type ComponentProps = ButtonProps &
-	(
-		| ((React.ButtonHTMLAttributes<HTMLButtonElement> & {
-				as: 'button'
-		}))
-		| (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-				as: 'link'
-		} & Required<Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>>)
-	)
+export type ComponentProps = InputProps & React.InputHTMLAttributes<HTMLInputElement>

@@ -1,51 +1,14 @@
-@mixin button-tiny {
-	font-size: 10px;
-	line-height: 12px;
-	min-height: 24px;
-	padding: 5px 11px;
-	gap: 4px;
-}
-
-@mixin button-small {
-	font-size: 12px;
-	line-height: 16px;
-	min-height: 32px;
-	padding: 7px 11px;
-	gap: 8px;
-}
-
-@mixin button-medium {
-	font-size: 14px;
-	line-height: 20px;
-	min-height: 40px;
-	padding: 9px 15px;
-	gap: 8px;
-}
-
-@mixin button-large {
-	font-size: 16px;
-	line-height: 24px;
-	min-height: 48px;
-	padding: 11px 23px;
-	gap: 8px;
-}
-
-.btnCommon {
-	font-family: inherit;
-	font-weight: 500;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
-	text-align: center;
-	border: 1px solid transparent;
-	border-radius: 48px;
-	text-decoration: none;
-	cursor: pointer;
-
-	&:disabled {
-		opacity: 0.2;
-	}
+@mixin visuallyHiddenMix {
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 .auto-width {
@@ -56,168 +19,122 @@
 	width: 100%;
 }
 
-.tiny-size {
-	@include button-tiny;
+.inputWrapper {
+	display: flex;
+	gap: 4px;
+	border-radius: 48px;
+	padding: 11px 23px;
+	border: 1px solid #b1b5c3;
+
+	& input {
+		border: none;
+		background: transparent;
+
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
-.small-size {
-	@include button-small;
+.inputWrapperPost {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	padding: 11px 12px 11px 23px;
+
+	& input[type=number]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
 }
 
-.medium-size {
-	@include button-medium;
-}
+.light {
+	background: #ffffff;
+	border: 1px solid #b1b5c3;
 
-.large-size {
-	@include button-large;
-}
+	& input {
+		color: #141416;
 
-.blue {
-	background: #015ff9;
-	border: 1px solid #015ff9;
-	color: #ffffff;
+		&::placeholder {
+			color: #b1b5c3;
+		}
+	}
+
+	& span {
+		color: #b1b5c3;
+	}
 
 	&:hover {
-		background: #024ac0;
-		border: 1px solid #024ac0;
-	}
-
-	&:active {
-		background: #0645aa;
-		border: 1px solid #0645aa;
-	}
-}
-
-.sokolniki {
-	background: #60663e;
-	border: 1px solid #60663e;
-	color: #ffffff;
-
-	&:hover {
-		background: #494f29;
-		border: 1px solid #494f29;
-	}
-
-	&:active {
-		background: #303519;
-		border: 1px solid #303519;
-	}
-}
-
-.black {
-	background: #141416;
-	border: 1px solid #141416;
-	color: #ffffff;
-
-	&:hover {
-		background: #23262f;
-		border: 1px solid #353945;
-	}
-
-	&:active {
-		background: #353945;
 		border: 1px solid #777e90;
 	}
-}
 
-.gray {
-	background: #f4f5f6;
-	border: 1px solid #f4f5f6;
-	color: #777e90;
-
-	&:hover {
-		background: #f4f5f6;
-		border: 1px solid #b1b5c3;
-	}
-
-	&:active {
-		background: #e6e8ec;
-		border: 1px solid #b1b5c3;
-	}
-}
-
-.whiteStroke {
-	background: #ffffff;
-	border: 1px solid #e6e8ec;
-	color: #141416;
-
-	&:hover {
-		border: 1px solid #b1b5c3;
-	}
-
-	&:active {
+	&:has(input:focus) {
 		border: 1px solid #141416;
 	}
+
+	&:has(input:disabled) {
+		background: #f4f5f6;
+		border: 1px solid #e6e8ec;
+
+		& input {
+			color: #b1b5c3;
+
+			&::placeholder {
+				color: #b1b5c3;
+			}
+		}
+
+		& span {
+			color: #b1b5c3;
+		}
+	}
 }
 
-.whiteFilled {
-	background: #ffffff;
-	border: 1px solid #ffffff;
-	color: #141416;
+.dark {
+	background: #23262f;
+	border: 1px solid #353945;
+
+	& input {
+		color: #ffffff;
+
+		&::placeholder {
+			color: #777e90;
+		}
+	}
+
+	& span {
+		color: #777e90;
+	}
 
 	&:hover {
-		background: #fcfcfd;
-		border: 1px solid #f4f5f6;
+		border: 1px solid #777e90;
 	}
 
-	&:active {
-		background: #f4f5f6;
-		border: 1px solid #f4f5f6;
-	}
-}
-
-.shade {
-	background: #23262F;
-	border: 1px solid #23262F;
-	color: #ffffff;
-}
-
-@keyframes LoaderSpin {
-	0% {
-		transform: rotate(0deg);
+	&:has(input:focus) {
+		border: 1px solid #ffffff;
 	}
 
-	100% {
-		transform: rotate(360deg);
-	}
-}
+	&:has(input:disabled) {
+		background: #141416;
+		border: 1px solid #353945;
 
-.loader {
-	animation: LoaderSpin 1.4s infinite linear;
-}
+		& input {
+			color: #353945;
 
-@media(min-width: 1024px) {
-	.tiny-size_m {
-		@include button-tiny;
-	}
+			&::placeholder {
+				color: #353945;
+			}
+		}
 
-	.small-size_m {
-		@include button-small;
-	}
-
-	.medium-size_m {
-		@include button-medium;
+		& span {
+			color: #353945;
+		}
 	}
 
-	.large-size_m {
-		@include button-large;
+	&:has(input:invalid) {
+		border: 1px solid #ec5353;
 	}
 }
 
-@media(min-width: 1440px) {
-	.tiny-size_l {
-		@include button-tiny;
-	}
-
-	.small-size_l {
-		@include button-small;
-	}
-
-	.medium-size_l {
-		@include button-medium;
-	}
-
-	.large-size_l {
-		@include button-large;
-	}
+.inputWrapperError {
+	border: 1px solid #ec5353;
 }

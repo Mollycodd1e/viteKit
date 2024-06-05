@@ -1,71 +1,39 @@
 import React from 'react'
 import classNames from 'classnames'
 import { ComponentProps } from './Input.types'
-import { NewIcon } from '../../NewIcon'
-import s from './Button.module.scss'
+import s from './Input.module.scss'
 
 const cx = classNames.bind(s)
 
 export const Input = ({
-	size = 'medium',
+	size_s = 'large',
 	size_m,
 	size_l,
 	pre = false,
-	children = '',
 	post = false,
-	variant = 'blue',
+	variant = 'light',
 	width = 'auto',
+	error,
 	additionalClass,
-	isLoading = false,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
-	const btnClassName = cx(
-		s.btnCommon,
-		s[`${size}-size`],
-		s[`${size_m}-size_m`],
-		s[`${size_l}-size_l`],
-		s[`${variant}`],
-		{ [s.btnCommonInline]: pre || post },
-		s[`${width}-width`],
-		additionalClass
-	)
-	const btnBody = () => {
-		return (
-			<>
-				{isLoading && (
-					<NewIcon
-						name='loader'
-						size={'24'}
-						color='#fff'
-						addClass={s.loader}
-					/>
-				)}
-				{!isLoading && (
-					<>
-						{pre && <span>{pre}</span>}
-						{children}
-						{post && <span>{post}</span>}
-					</>
-				)}
-			</>
-		)
-	}
-
-	if (props.as === 'link') {
-		return (
-			<a
-				className={btnClassName}
-				{...props}>
-				{btnBody()}
-			</a>
-		)
-	}
-
 	return (
-		<button
-			className={btnClassName}
-			{...props}>
-			{btnBody()}
-		</button>
+		<div
+			className={cx(
+				s.inputWrapper,
+				s[`${size_s}-size`],
+				s[`${size_m}-size_m`],
+				s[`${size_l}-size_l`],
+				s[`${variant}`],
+				{ [s.inputWrapperPost]: post },
+				s[`${width}-width`],
+				{[s.inputWrapperError]: error},
+				additionalClass
+			)}>
+			{pre && <span>{pre}</span>}
+			<label></label>
+			<input {...props}></input>
+			{post && <span>{post}</span>}
+		</div>
 	)
 }

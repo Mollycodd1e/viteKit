@@ -4,6 +4,8 @@ import { DestinationTab } from './components/DestinationTab'
 import { NewIcon } from './components/NewIcon'
 import { RoundButton } from './components/RoundButton'
 import { Tag } from './components/Tag'
+import { Input } from './components/Input'
+import { Switcher } from './components/Switcher'
 
 function App() {
 	const destinatinList = [
@@ -34,7 +36,7 @@ function App() {
 	]
 
 	const [checkedRoute, setCheckedRoute] = useState<number>(0)
-
+	const [isActive, setIsActive] = useState<boolean>(false)
 	return (
 		<>
 			{destinatinList.map((item, i) => (
@@ -147,6 +149,31 @@ function App() {
 				2004
 			</Tag>
 			<Tag variant='shade'>STONE Towers</Tag>
+			<div style={{ padding: '20px', backgroundColor: '#141416' }}>
+				<Input
+					size_s={'small'}
+					variant='dark'
+					pre={'От'}
+					post={'м²'}
+					type='number'
+					placeholder='шушпинчик'
+				/>
+			</div>
+			<div style={{ padding: '20px', backgroundColor: 'gray' }}>
+				<Input
+					size_s={'small'}
+					variant='light'
+					pre={'От'}
+					post={'м²'}
+					type='number'
+					placeholder='шушпинчик'
+				/>
+			</div>
+			<div style={{ padding: '20px', backgroundColor: 'orange' }}>
+				<Switcher
+					isActive={isActive}
+					onClick={() => setIsActive((prev) => !prev)}>Приветики</Switcher>
+			</div>
 		</>
 	)
 }
