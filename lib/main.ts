@@ -4,3 +4,5 @@ export { NewIcon } from './components/NewIcon'
 export { DestinationTab } from './components/DestinationTab'
 export { RoundButton } from './components/RoundButton'
 export { Tag } from './components/Tag'
+export { Switcher } from './components/Switcher'
+

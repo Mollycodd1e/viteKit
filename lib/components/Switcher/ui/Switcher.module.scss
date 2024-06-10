@@ -1,0 +1,77 @@
+@keyframes swiperForward {
+	0% {
+		background: #b1b5c3;
+		border: 1px solid #b1b5c3;
+	}
+
+	50% {
+		background: #777e90;
+		border: 1px solid #777e90;
+	}
+
+	100% {
+		background: #015ff9;
+		border: 1px solid #015ff9;
+	}
+}
+
+@keyframes swiperBackward {
+	0% {
+		background: #015ff9;
+		border: 1px solid #015ff9;
+	}
+
+	50% {
+		background: #024AC0;
+		border: 1px solid #024AC0;
+	}
+
+	100% {
+		background: #b1b5c3;
+		border: 1px solid #b1b5c3;
+	}
+}
+
+.switcherWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.swiper {
+	position: relative;
+	width: 36px;
+	height: 20px;
+	padding: 1px;
+	border-radius: 50px;
+	border: 1px solid #b1b5c3;
+	background: #b1b5c3;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.swiperActive {
+	animation: swiperForward 0.3s ease;
+	animation-fill-mode: forwards;
+}
+
+.swiperInactive {
+	animation: swiperBackward 0.3s ease;
+	animation-fill-mode: forwards;
+}
+
+.swiperPoint {
+	position: relative;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #ffffff;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 4px 0 #1414163d;
+}
+
+.swiperPointActive {
+	left: 16px;
+}
