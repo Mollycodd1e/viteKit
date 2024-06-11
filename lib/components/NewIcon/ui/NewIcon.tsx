@@ -40,7 +40,7 @@ import Sport from './../assets/Sport.svg'
 import { ReactSVGComponent } from './NewIcon.types'
 
 type IconComponentProps = {
-	name: string
+	name: keyof typeof iconTypes
 	size?: string
 	color?: string
 	addClass?: string

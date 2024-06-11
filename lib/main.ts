@@ -5,4 +5,7 @@ export { DestinationTab } from './components/DestinationTab'
 export { RoundButton } from './components/RoundButton'
 export { Tag } from './components/Tag'
 export { Switcher } from './components/Switcher'
+export { Text } from './components/Text'
+export { Flex } from './components/Flex'
+export { Input } from './components/Input'
 

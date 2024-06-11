@@ -6,6 +6,7 @@ import { RoundButton } from './components/RoundButton'
 import { Tag } from './components/Tag'
 import { Input } from './components/Input'
 import { Switcher } from './components/Switcher'
+import { Flex } from './components/Flex'
 
 function App() {
 	const destinatinList = [
@@ -172,8 +173,18 @@ function App() {
 			<div style={{ padding: '20px', backgroundColor: 'orange' }}>
 				<Switcher
 					isActive={isActive}
-					onClick={() => setIsActive((prev) => !prev)}>Приветики</Switcher>
+					onClick={() => setIsActive((prev) => !prev)}>
+					Приветики
+				</Switcher>
 			</div>
+
+			<Flex jc='between' gap='1'>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+			</Flex>
 		</>
 	)
 }

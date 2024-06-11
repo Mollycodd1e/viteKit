@@ -22,7 +22,7 @@ export default defineConfig({
 		copyPublicDir: false,
 		lib: {
 			entry: resolve(__dirname, 'lib/main.ts'),
-			formats: ['cjs'],
+			formats: ['es'],
 		},
 		minify: true,
 		rollupOptions: {
