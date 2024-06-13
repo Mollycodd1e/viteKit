@@ -28,4 +28,5 @@ export interface IFlexProps extends React.HTMLAttributes<HTMLDivElement> {
 	gap?: IFlex
 	fd?: IFlexDirection
 	w?: IFlexWrap
+	additionalClass?: string
 }

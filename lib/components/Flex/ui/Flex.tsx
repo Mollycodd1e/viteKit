@@ -12,10 +12,20 @@ export const Flex = ({
 	gap,
 	fd = 'row',
 	w = 'nowrap',
+	additionalClass = '',
 }: IFlexProps) => {
 	return (
 		<div
-			className={cx(s.root, className, s[`w-${w}`], s[`jc-${jc}`], s[`ai-${ai}`], s[`gap-${gap}`], s[`fd-${fd}`])}>
+			className={cx(
+				s.root,
+				className,
+				s[`w-${w}`],
+				s[`jc-${jc}`],
+				s[`ai-${ai}`],
+				s[`gap-${gap}`],
+				s[`fd-${fd}`],
+				additionalClass
+			)}>
 			{children}
 		</div>
 	)

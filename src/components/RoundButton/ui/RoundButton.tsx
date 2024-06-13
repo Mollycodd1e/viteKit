@@ -13,7 +13,7 @@ export const RoundButton = ({
 	children = '',
 	iconName = '',
 	variant = 'whiteStroke',
-	additionalClass,
+	additionalClass = '',
 	deg,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
@@ -50,7 +50,7 @@ export const RoundButton = ({
 				s[`${size_m}-size_m`],
 				s[`${size_l}-size_l`],
 				s[`${variant}`],
-				`${additionalClass ?? ''}`
+				additionalClass
 			)}
 			{...props}>
 			<>

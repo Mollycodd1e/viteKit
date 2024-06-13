@@ -15,7 +15,7 @@ export const DestinationTab = ({
 	routes = [],
 	checked,
 	onChange,
-	additionalClass,
+	additionalClass = '',
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
 
@@ -28,7 +28,7 @@ export const DestinationTab = ({
 				s[`${size_l}-size_l`],
 				s[`${variant}`],
 				s[`${width}-width`],
-				`${additionalClass ?? ''}`
+				additionalClass
 			)}
 			{...props}
 			htmlFor={destination.destName}>

@@ -12,7 +12,7 @@ export const Tag = ({
 	children = '',
 	variant = 'gray',
 	width = 'auto',
-	additionalClass,
+	additionalClass = '',
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
 	return (
@@ -24,7 +24,7 @@ export const Tag = ({
 				s[`${size_l}-size_l`],
 				s[`${variant}`],
 				s[`${width}-width`],
-				`${additionalClass ?? ''}`
+				additionalClass
 			)}
 			{...props}>
 			{children}

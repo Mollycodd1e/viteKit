@@ -4,11 +4,11 @@ import { ITextProps } from './Text.types'
 
 const cx = classNames.bind(s)
 
-export const Text = ({ children, className, html, ...rest }: ITextProps) => {
+export const Text = ({ children, className, additionalClass = '', html, ...rest }: ITextProps) => {
 	if (!html) {
 		return (
 			<div
-				className={cx(s.root, className)}
+				className={cx(s.root, className, additionalClass)}
 				{...rest}>
 				{children}
 			</div>
@@ -17,7 +17,7 @@ export const Text = ({ children, className, html, ...rest }: ITextProps) => {
 
 	return (
 		<div
-			className={cx(s.root, className)}
+			className={cx(s.root, className, additionalClass)}
 			{...rest}
 			dangerouslySetInnerHTML={{ __html: html }}
 		/>

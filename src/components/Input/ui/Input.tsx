@@ -14,7 +14,7 @@ export const Input = ({
 	variant = 'light',
 	width = 'auto',
 	error,
-	additionalClass,
+	additionalClass = '',
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
 	return (

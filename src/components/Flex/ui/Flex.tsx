@@ -12,6 +12,7 @@ export const Flex = ({
 	gap,
 	fd = 'row',
 	w = 'nowrap',
+	additionalClass = '',
 }: IFlexProps) => {
 	return (
 		<div
@@ -22,7 +23,8 @@ export const Flex = ({
 				s[`jc-${jc}`],
 				s[`ai-${ai}`],
 				s[`gap-${gap}`],
-				s[`fd-${fd}`]
+				s[`fd-${fd}`],
+				additionalClass
 			)}>
 			{children}
 		</div>

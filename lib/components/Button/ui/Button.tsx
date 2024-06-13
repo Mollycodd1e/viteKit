@@ -15,7 +15,7 @@ export const Button = ({
 	post = false,
 	variant = 'blue',
 	width = 'auto',
-	additionalClass,
+	additionalClass = '',
 	isLoading = false,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
@@ -37,7 +37,7 @@ export const Button = ({
 						name='loader'
 						size={'24'}
 						color='#fff'
-						addClass={s.loader}
+						additionalClass={s.loader}
 					/>
 				)}
 				{!isLoading && (

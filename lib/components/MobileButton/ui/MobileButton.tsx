@@ -12,7 +12,7 @@ export const MobileButton = ({
 	post = false,
 	variant = 'whiteFilled',
 	width = 'auto',
-	additionalClass,
+	additionalClass = '',
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
 	if (props.as === 'link') {
@@ -27,7 +27,7 @@ export const MobileButton = ({
 					s[`${variant}`],
 					{ [s.btnCommonInline]: pre || post },
 					s[`${width}-width`],
-					`${additionalClass ?? ''}`
+					additionalClass
 				)}
 				{...rest}>
 				{pre && <span>{pre}</span>}
@@ -47,7 +47,7 @@ export const MobileButton = ({
 				s[`${variant}`],
 				{ [s.btnCommonInline]: pre || post },
 				s[`${width}-width`],
-				`${additionalClass ?? ''}`
+				additionalClass
 			)}
 			{...rest}>
 			{pre && <span>{pre}</span>}

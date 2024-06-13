@@ -43,7 +43,7 @@ type IconComponentProps = {
 	name: keyof typeof iconTypes
 	size?: string
 	color?: string
-	addClass?: string
+	additionalClass?: string
 	deg?: string
 }
 
@@ -91,7 +91,7 @@ const iconTypes: IconTypes = {
 	sport: () => <Sport />,
 }
 
-export const NewIcon = ({ name, size = '24', color, addClass, deg }: IconComponentProps) => {
+export const NewIcon = ({ name, size = '24', color, additionalClass, deg }: IconComponentProps) => {
 	const IconComponent = iconTypes[name]
 
 	return (
@@ -102,7 +102,7 @@ export const NewIcon = ({ name, size = '24', color, addClass, deg }: IconCompone
 				height: size + 'px',
 				transform: `rotate(${deg}deg)`,
 			}}
-			className={addClass ?? ''}>
+			className={additionalClass ?? ''}>
 			<IconComponent />
 		</div>
 	)
