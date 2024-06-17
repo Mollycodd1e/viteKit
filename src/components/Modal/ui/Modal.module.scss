@@ -1,0 +1,24 @@
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 56px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 102;
+	background: #ffffff;
+}
+
+.modalBody {
+	width: 100%;
+}
+
+.modalContentWrapper {
+	width: 100%;
+}
+
+.modalContent {
+	width: 100%;
+}

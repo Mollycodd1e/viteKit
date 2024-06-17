@@ -27,6 +27,10 @@
 	&:disabled {
 		opacity: 0.2;
 	}
+
+	&:focus {
+		outline: 0;
+	}
 }
 
 .small-size {

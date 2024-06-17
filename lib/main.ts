@@ -8,4 +8,5 @@ export { Switcher } from './components/Switcher'
 export { Text } from './components/Text'
 export { Flex } from './components/Flex'
 export { Input } from './components/Input'
+export { Modal } from './components/Modal'
 
