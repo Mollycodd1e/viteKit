@@ -7,6 +7,8 @@ import { Tag } from './components/Tag'
 import { Input } from './components/Input'
 import { Switcher } from './components/Switcher'
 import { Flex } from './components/Flex'
+import { Modal } from './components/Modal'
+import s from './app.module.scss'
 
 function App() {
 	const destinatinList = [
@@ -38,8 +40,85 @@ function App() {
 
 	const [checkedRoute, setCheckedRoute] = useState<number>(0)
 	const [isActive, setIsActive] = useState<boolean>(false)
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+
+	const menuList = [
+		{
+			title: 'О компании',
+			link: '#about',
+		},
+		{
+			title: 'Услуги',
+			link: '#services',
+		},
+		{
+			title: 'Новости',
+			link: '#news',
+		},
+		{
+			title: 'Вакансии',
+			link: '#vacancy',
+		},
+		{
+			title: 'Контакты',
+			link: '#contacts',
+		},
+		{
+			title: 'О компании',
+			link: '#about',
+		},
+		{
+			title: 'Услуги',
+			link: '#services',
+		},
+		{
+			title: 'Новости',
+			link: '#news',
+		},
+		{
+			title: 'Вакансии',
+			link: '#vacancy',
+		},
+		{
+			title: 'Контакты',
+			link: '#contacts',
+		},
+		{
+			title: 'О компании',
+			link: '#about',
+		},
+		{
+			title: 'Услуги',
+			link: '#services',
+		},
+		{
+			title: 'Новости',
+			link: '#news',
+		},
+		{
+			title: 'Вакансии',
+			link: '#vacancy',
+		},
+		{
+			title: 'Контакты',
+			link: '#contacts',
+		},
+	]
 	return (
 		<>
+			<div
+				style={{
+					width: '100%',
+					height: '56px',
+					background: 'white',
+					position: 'fixed',
+					display: 'flex',
+					justifyContent: 'space-between',
+					alignItems: 'center',
+				}}>
+				Меню
+				<div onClick={() => setIsModalOpen((prev) => !prev)}>нажми</div>
+			</div>
 			{destinatinList.map((item, i) => (
 				<DestinationTab
 					key={i}
@@ -178,13 +257,44 @@ function App() {
 				</Switcher>
 			</div>
 
-			<Flex jc='between' gap='1'>
+			<Flex
+				jc='between'
+				gap='1'>
 				<div>1</div>
 				<div>2</div>
 				<div>3</div>
 				<div>4</div>
 				<div>5</div>
 			</Flex>
+			<Modal
+				isOpen={isModalOpen}
+				emitIsOpen={() => setIsModalOpen}
+				additionalClass={s.modal}>
+				<Flex additionalClass={s.modalContent}>
+					<Flex additionalClass={s.menuList}>
+						{menuList.map((m, i) => {
+							return (
+								<a
+									key={i}
+									href={m.link}
+									className={s.menuItem}
+									onClick={() => setIsModalOpen(false)}>
+									{m.title}
+								</a>
+							)
+						})}
+					</Flex>
+					<Button
+						as='link'
+						href='https://stone.ru'
+						variant='black'
+						size='large'
+						width='full'
+						post={<NewIcon name='user' />}>
+						Войти в кабинет
+					</Button>
+				</Flex>
+			</Modal>
 		</>
 	)
 }

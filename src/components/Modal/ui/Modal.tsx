@@ -11,12 +11,8 @@ interface IModalProps {
 export const Modal: FC<IModalProps> = ({
 	isOpen = false,
 	additionalClass,
-	emitIsOpen,
 	children,
 }) => {
-	const closeModal = () => {
-		emitIsOpen(false)
-	}
 
 	useEffect(() => {
 		const enable = () => {
@@ -36,16 +32,7 @@ export const Modal: FC<IModalProps> = ({
 	if (isOpen) {
 		return (
 			<div className={`${s.root} ${additionalClass}`}>
-				<div
-					onClick={closeModal}
-					className={s.modalOverlay}
-				/>
-
-				<div className={s.modalBody}>
-					<div className={s.modalContentWrapper}>
-						<div className={s.modalContent}>{children}</div>
-					</div>
-				</div>
+				<div className={s.modalContent}>{children}</div>
 			</div>
 		)
 	}
