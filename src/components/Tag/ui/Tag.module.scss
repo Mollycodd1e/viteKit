@@ -14,6 +14,14 @@
 	gap: 8px;
 }
 
+@mixin tag-large {
+	font-size: 16px;
+	line-height: 24px;
+	min-height: 48px;
+	padding: 12px 32px;
+	gap: 8px;
+}
+
 .tagCommon {
 	font-family: inherit;
 	font-weight: 400;
@@ -45,6 +53,9 @@
 .tiny-size {
 	@include tag-tiny;
 }
+.large-size {
+	@include tag-large;
+}
 
 .red {
 	background: #ec5353;
@@ -69,7 +80,7 @@
 }
 
 .tiny-size.shade {
-	padding: 6px;
+	padding: 10px 16px;
 }
 
 @media(min-width: 1024px) {
@@ -81,12 +92,21 @@
 		@include tag-medium;
 	}
 
+	.large-size_m {
+		@include tag-large;
+	}
+
 	.medium-size.shade {
 		padding: 10px 16px;
 	}
 
 	.tiny-size.shade {
 		padding: 6px;
+	}
+
+	.large-size.shade {
+		padding: 6px;
+
 	}
 }
 
@@ -99,6 +119,13 @@
 		@include tag-medium;
 	}
 
+	.large-size_l {
+		@include tag-large;
+	}
+
+	.large-size.shade {
+		padding: 12px 32px;
+	}
 	.medium-size.shade {
 		padding: 10px 16px;
 	}

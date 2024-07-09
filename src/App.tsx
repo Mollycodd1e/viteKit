@@ -229,6 +229,7 @@ function App() {
 				2004
 			</Tag>
 			<Tag variant='shade'>STONE Towers</Tag>
+			<Tag size={'large'} variant='shade'>STONE Towers</Tag>
 			<div style={{ padding: '20px', backgroundColor: '#141416' }}>
 				<Input
 					size_s={'small'}

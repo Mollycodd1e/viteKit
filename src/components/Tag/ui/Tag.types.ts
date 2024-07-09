@@ -10,7 +10,7 @@ export const TAG_VARIANTS = {
 
 export type tagVariant = keyof typeof TAG_VARIANTS
 
-type tagSizes = 'medium' | 'tiny'
+type tagSizes = 'medium' | 'tiny' | 'large'
 
 interface TagProps {
 	size?: tagSizes
