@@ -5,4 +5,9 @@ export interface ITextProps
 	className?: string
 	additionalClass?: string
 	html?: string
+
+	html_l?: string
+	html_m?: string
+	html_s?: string
+
 }
