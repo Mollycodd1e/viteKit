@@ -299,6 +299,11 @@ function App() {
                 </Flex>
             </Modal>
 
+
+            {/*<Modal isOpen={isModalOpen} createPortalObj={{domNode: document.body}}*/}
+            {/*       emitIsOpen={() => setIsModalOpen((prev) => !prev)} isClickOutside={true}>*/}
+            {/*    <div style={{background: "beige", width: '300px', height: '300px'}} onClick={(e) => e.stopPropagation()}>12323232</div>*/}
+            {/*</Modal>*/}
         </>
     )
 }

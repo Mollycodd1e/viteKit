@@ -4,8 +4,10 @@ import {createPortal} from "react-dom";
 
 interface IModalProps {
     isOpen: boolean
-    emitIsOpen: () => void
+    emitIsOpen: ( () => boolean) | (() => void)
     additionalClass?: string
+    additionalClassOverlay?: string
+    additionalClassModalBody?: string
     children?: React.ReactNode
     isTransparentBack?: boolean
     isClickOutside?: boolean
@@ -19,6 +21,8 @@ export const Modal: FC<IModalProps> = ({
                                            isClickOutside = true,
                                            createPortalObj,
                                            additionalClass,
+                                           additionalClassOverlay,
+                                           additionalClassModalBody,
                                            children,
                                        }) => {
 
@@ -45,10 +49,10 @@ export const Modal: FC<IModalProps> = ({
         return <div className={`${s.root} ${additionalClass}`}>
             <div
                 onClick={closeModal}
-                className={`${s.modalOverlay} ${isTransparentBack ? s.isTransparentBack : ''}`}
+                className={`${s.modalOverlay} ${additionalClassOverlay} ${isTransparentBack ? s.isTransparentBack : ''}`}
             />
 
-            <div className={s.modalBody}>
+            <div className={`${s.modalBody} ${additionalClassModalBody}`}>
                 {children}
             </div>
         </div>

@@ -13,14 +13,14 @@
 }
 
 .modalBody {
-  width: 100%;
-  height: 100%;
+  position: absolute;
 }
 
 .modalOverlay {
+  position: absolute;
   width: 100%;
   height: 100vh;
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .isTransparentBack {
