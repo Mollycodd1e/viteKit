@@ -1,10 +1,10 @@
-import React, {FC, useEffect,} from 'react'
+import React, {Dispatch, FC, SetStateAction, useEffect,} from 'react'
 import s from './Modal.module.scss'
 import {createPortal} from "react-dom";
 
 interface IModalProps {
     isOpen: boolean
-    emitIsOpen:( () => boolean) | (() => void)
+    emitIsOpen: Dispatch<SetStateAction<boolean>>
     additionalClass?: string
     additionalClassOverlay?: string
     additionalClassModalBody?: string
@@ -27,7 +27,7 @@ export const Modal: FC<IModalProps> = ({
                                        }) => {
 
     const closeModal = () => {
-        if (isClickOutside) emitIsOpen()
+        if (isClickOutside) emitIsOpen(false)
     }
 
     useEffect(() => {
