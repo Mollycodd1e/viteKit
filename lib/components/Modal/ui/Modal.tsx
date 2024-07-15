@@ -1,54 +1,73 @@
-import React, { FC, useEffect } from 'react'
+import React, {FC, useEffect,} from 'react'
 import s from './Modal.module.scss'
+import {createPortal} from "react-dom";
 
 interface IModalProps {
-	isOpen: boolean
-	emitIsOpen: (isOpen: boolean) => void
-	additionalClass?: string
-	children?: React.ReactNode
+    isOpen: boolean
+    emitIsOpen: () => void
+    additionalClass?: string
+    children?: React.ReactNode
+    isTransparentBack?: boolean
+    isClickOutside?: boolean
+    createPortalObj?: { domNode: HTMLElement | null, key?: string | null | undefined }
 }
 
 export const Modal: FC<IModalProps> = ({
-	isOpen = false,
-	additionalClass,
-	emitIsOpen,
-	children,
-}) => {
-	const closeModal = () => {
-		emitIsOpen(false)
-	}
+                                           isOpen = false,
+                                           emitIsOpen,
+                                           isTransparentBack,
+                                           isClickOutside = true,
+                                           createPortalObj,
+                                           additionalClass,
+                                           children,
+                                       }) => {
 
-	useEffect(() => {
-		const enable = () => {
-			document.body.classList.toggle('disable-scroll')
-		}
+    const closeModal = () => {
+        if (isClickOutside) emitIsOpen()
+    }
 
-		const disable = () => {
-			document.body.classList.remove('disable-scroll')
-		}
+    useEffect(() => {
+        const enable = () => {
+            document.body.classList.toggle('disable-scroll')
+        }
 
-		if (isOpen) {
-			enable()
-			return disable
-		}
-	}, [isOpen])
+        const disable = () => {
+            document.body.classList.remove('disable-scroll')
+        }
 
-	if (isOpen) {
-		return (
-			<div className={`${s.root} ${additionalClass}`}>
-				<div
-					onClick={closeModal}
-					className={s.modalOverlay}
-				/>
+        if (isOpen) {
+            enable()
+            return disable
+        }
+    }, [isOpen])
 
-				<div className={s.modalBody}>
-					<div className={s.modalContentWrapper}>
-						<div className={s.modalContent}>{children}</div>
-					</div>
-				</div>
-			</div>
-		)
-	}
-	return <></>
+    const ModalComponent = ({children}: { children: React.ReactNode }) => {
+        return <div className={`${s.root} ${additionalClass}`}>
+            <div
+                onClick={closeModal}
+                className={`${s.modalOverlay} ${isTransparentBack ? s.isTransparentBack : ''}`}
+            />
+
+            <div className={s.modalBody}>
+                {children}
+            </div>
+        </div>
+    }
+
+
+    if (createPortalObj?.domNode && isOpen) return (
+        <>{createPortal(
+            <ModalComponent>{children}</ModalComponent>,
+            createPortalObj.domNode,
+            createPortalObj.key ? createPortalObj.key : undefined
+        )}
+        </>
+    )
+
+    else if (isOpen) return (
+        <ModalComponent>{children}</ModalComponent>
+    )
+
+    else return <></>
 }
 

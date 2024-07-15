@@ -1,29 +1,28 @@
 .root {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 102;
-	overflow: auto;
-	box-sizing: border-box;
-	background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  overflow: auto;
+  box-sizing: border-box;
 }
 
 .modalBody {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.modalContentWrapper {
-	width: 100%;
-	height: 100%;
+.modalOverlay {
+  width: 100%;
+  height: 100vh;
+  background: black;
 }
 
-.modalContent {
-	width: 100%;
-	height: 100%;
+.isTransparentBack {
+  opacity: 0.5;
 }
