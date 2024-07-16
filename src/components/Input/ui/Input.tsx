@@ -31,7 +31,6 @@ export const Input = ({
 				additionalClass
 			)}>
 			{pre && <span>{pre}</span>}
-			<label></label>
 			<input {...props}></input>
 			{post && <span>{post}</span>}
 		</div>

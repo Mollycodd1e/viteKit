@@ -9,6 +9,7 @@ import { Switcher } from './components/Switcher'
 import { Flex } from './components/Flex'
 import { Modal } from './components/Modal'
 import s from './app.module.scss'
+import { FieldInput } from './components/FieldInput'
 
 function App() {
 	const destinatinList = [
@@ -250,15 +251,28 @@ function App() {
 					placeholder='шушпинчик'
 				/>
 			</div>
-			<div style={{ padding: '20px', backgroundColor: 'gray' }}>
+			<div style={{ padding: '20px', backgroundColor: '#ffffff' }}>
 				<Input
 					size_s={'small'}
 					variant='light'
 					pre={'От'}
 					post={'м²'}
-					type='number'
-					placeholder='шушпинчик'
+					type='text'
+					placeholder='+7 (- - -) - - -  - -  - -'
 				/>
+			</div>
+
+			<div style={{ margin: '20px', backgroundColor: '#ffffff' }}>
+				<FieldInput label='Лейбл'>
+					<Input
+						size_s={'small'}
+						variant='light'
+						pre={'От'}
+						post={'м²'}
+						type='text'
+						placeholder='+7 (- - -) - - -  - -  - -'
+					/>
+				</FieldInput>
 			</div>
 			<div style={{ padding: '20px', backgroundColor: 'orange' }}>
 				<Switcher

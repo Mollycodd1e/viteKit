@@ -1,45 +1,49 @@
-import { readdir, copyFile, mkdir } from 'fs/promises';
-import { join } from 'path';
+import { readdir, copyFile, mkdir } from 'fs/promises'
+import { join } from 'path'
 
 async function copyDir(src, dest) {
-  try {
-    const entries = await readdir(src, { withFileTypes: true });
+	try {
+		const entries = await readdir(src, { withFileTypes: true })
 
-    await mkdir(dest, { recursive: true });
+		await mkdir(dest, { recursive: true })
 
-    for (let entry of entries) {
-      const srcPath = join(src, entry.name);
-      const destPath = join(dest, entry.name);
+		for (let entry of entries) {
+			const srcPath = join(src, entry.name)
+			const destPath = join(dest, entry.name)
 
-      if (entry.isDirectory()) {
-        await copyDir(srcPath, destPath); // Рекурсивное копирование подпапок
-      } else {
-        await copyFile(srcPath, destPath); // Копирование файлов
-      }
-    }
-  } catch (err) {
-    console.error('Error copying directory:', err);
-  }
+			if (entry.isDirectory()) {
+				await copyDir(srcPath, destPath) // Recursive copying of subfolders
+			} else {
+				await copyFile(srcPath, destPath) // Copying files
+			}
+		}
+	} catch (err) {
+		console.error('Error copying directory:', err)
+	}
 }
 
 async function copyComponentsAndShared(src, dest) {
-  try {
-    // Пути к папкам components и shared
-    const componentsPath = join(src, 'components');
-    const sharedPath = join(src, 'shared');
+	try {
+		// Paths to the components and shared folders
+		const componentsPath = join(src, 'components')
+		const sharedPath = join(src, 'shared')
+		const mainFilePath = join(src, 'main.ts')
 
-    // Копирование папки components
-    await copyDir(componentsPath, join(dest, 'components'));
+		// Copy the components folder
+		await copyDir(componentsPath, join(dest, 'components'))
 
-    // Копирование папки shared
-    await copyDir(sharedPath, join(dest, 'shared'));
+		// Copy the shared folder
+		await copyDir(sharedPath, join(dest, 'shared'))
 
-    console.log('Components and shared copied successfully!');
-  } catch (err) {
-    console.error('Error copying components and shared:', err);
-  }
+		// Copy the main.ts file
+		await copyFile(mainFilePath, join(dest, 'main.ts'))
+
+		console.log('Components, shared, and main.ts copied successfully!')
+	} catch (err) {
+		console.error('Error copying components, shared, and main.ts:', err)
+	}
 }
 
-// Вызов функции для копирования components и shared целиком
-copyComponentsAndShared('src', 'lib');
+// Call the function to copy components, shared, and main.ts
+copyComponentsAndShared('src', 'lib')
 

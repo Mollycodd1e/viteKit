@@ -1,0 +1,27 @@
+@mixin visuallyHiddenMix {
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.fieldInputWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+
+	& label {
+		font-family: inherit;
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: 400;
+		color: #141416;
+	}
+}
