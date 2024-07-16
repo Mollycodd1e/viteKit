@@ -23,5 +23,5 @@ export const useClientWidth = () => {
   const isTablet = currentClientWidth > 1023 && currentClientWidth < 1440
   const isDesktop = currentClientWidth >= 1440
 
-  return {currentClientWidth , isMobile, isTablet, isDesktop};
+  return {currentClientWidth, isMobile, isTablet, isDesktop};
 };

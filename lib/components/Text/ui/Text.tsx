@@ -18,13 +18,13 @@ export const Text = ({ children, className, additionalClass = '', html, html_l, 
 		)
 	}
 
-    const getInnerHtml = () => {
-        if (isMobile && html_s) return html_s
-        if (isTablet && html_m) return html_m
-        if (isDesktop && html_l) return html_l
+	const getInnerHtml = () => {
+		if (isMobile && html_s) return html_s
+		if (isTablet && html_m) return html_m
+		if (isDesktop && html_l) return html_l
 
-        else return html
-    }
+		else return html
+	}
 
 	return (
 		<div
