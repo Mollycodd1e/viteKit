@@ -31,6 +31,7 @@
 }
 
 .btnCommon {
+	position: relative;
 	font-family: inherit;
 	font-weight: 500;
 	display: flex;
@@ -46,6 +47,14 @@
 	&:disabled {
 		opacity: 0.2;
 	}
+}
+
+.btnLoading {
+	pointer-events: none;
+}
+
+.isHidden {
+	visibility: hidden;
 }
 
 .auto-width {
@@ -183,6 +192,7 @@
 }
 
 .loader {
+	position: absolute;
 	animation: LoaderSpin 1.4s infinite linear;
 }
 

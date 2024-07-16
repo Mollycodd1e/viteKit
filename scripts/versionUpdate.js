@@ -11,10 +11,11 @@ async function versionUpdate() {
 		packageJson.version = versionParts.join('.')
 		await writeFile(packagePath, JSON.stringify(packageJson, null, 2), 'utf-8')
 
-		console.log(`Version bumped to ${packageJson.version}`)
+		console.log(`Version updated to ${packageJson.version}`)
 	} catch (err) {
-		console.error('Error bumping version:', err)
+		console.error('Error updating version:', err)
 	}
 }
 
 versionUpdate()
+

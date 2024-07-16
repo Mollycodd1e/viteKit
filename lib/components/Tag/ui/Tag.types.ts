@@ -6,11 +6,13 @@ export const TAG_VARIANTS = {
 	red: 'red',
 	gray: 'gray',
 	shade: 'shade',
+	blackGrey: 'blackGrey',
+	chineseBlack: 'chineseBlack',
 }
 
 export type tagVariant = keyof typeof TAG_VARIANTS
 
-type tagSizes = 'medium' | 'tiny' | 'large'
+type tagSizes = 'medium' | 'tiny' | 'large' | 'small' | 'preLarge'
 
 interface TagProps {
 	size?: tagSizes
@@ -23,4 +25,3 @@ interface TagProps {
 }
 
 export type ComponentProps = TagProps & React.HTMLAttributes<HTMLDivElement>
-

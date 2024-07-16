@@ -25,6 +25,7 @@ export const Button = ({
 		s[`${size_m}-size_m`],
 		s[`${size_l}-size_l`],
 		s[`${variant}`],
+		{ [s.btnLoading]: isLoading },
 		{ [s.btnCommonInline]: pre || post },
 		s[`${width}-width`],
 		additionalClass
@@ -40,13 +41,11 @@ export const Button = ({
 						additionalClass={s.loader}
 					/>
 				)}
-				{!isLoading && (
-					<>
-						{pre && <span>{pre}</span>}
-						{children}
-						{post && <span>{post}</span>}
-					</>
-				)}
+				<>
+					{pre && <span className={cx({ [s.isHidden]: isLoading })}>{pre}</span>}
+					<span className={cx({[s.isHidden]: isLoading })}>{children}</span>
+					{post && <span className={cx({ [s.isHidden]: isLoading })}>{post}</span>}
+				</>
 			</>
 		)
 	}
