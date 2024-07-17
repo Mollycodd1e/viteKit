@@ -1,11 +1,14 @@
-export { Button } from './components/Button';
-export { MobileButton } from './components/mobileButton';
-export { NewIcon } from './components/NewIcon';
-export { DestinationTab } from './components/DestinationTab';
-export { RoundButton } from './components/RoundButton';
-export { Tag } from './components/Tag';
-export { Switcher } from './components/Switcher';
-export { Text } from './components/Text';
-export { Flex } from './components/Flex';
-export { Input } from './components/Input';
-export { Modal } from './components/Modal';
+export { Button } from './components/Button'
+export { MobileButton } from './components/mobileButton'
+export { NewIcon } from './components/NewIcon'
+export { DestinationTab } from './components/DestinationTab'
+export { RoundButton } from './components/RoundButton'
+export { Tag } from './components/Tag'
+export { Switcher } from './components/Switcher'
+export { Text } from './components/Text'
+export { Flex } from './components/Flex'
+export { Input } from './components/Input'
+export { Modal } from './components/Modal'
+export { FieldInput } from './components/FieldInput'
+export { TabSwitcher } from './components/TabSwitcher'
+

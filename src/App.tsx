@@ -10,6 +10,7 @@ import { Flex } from './components/Flex'
 import { Modal } from './components/Modal'
 import s from './app.module.scss'
 import { FieldInput } from './components/FieldInput'
+import { TabSwitcher } from './components/TabSwitcher'
 
 function App() {
 	const destinatinList = [
@@ -105,6 +106,9 @@ function App() {
 			link: '#contacts',
 		},
 	]
+
+	const tabs = ['Студия', '1', '2', '3', '4+']
+
 	return (
 		<>
 			<div
@@ -281,7 +285,61 @@ function App() {
 					Приветики
 				</Switcher>
 			</div>
-
+			<div style={{ padding: '20px', backgroundColor: 'white' }}>
+				<div style={{ padding: '20px', maxWidth: '327px' }}>
+					<FieldInput label='Количество спален'>
+						<TabSwitcher>
+							{tabs.map((m, i) => {
+								return (
+									<TabSwitcher.Item
+										key={i}
+										value={m}
+										addItemClassName={i === 0 ? s.gg : ''}>
+										{m}
+									</TabSwitcher.Item>
+								)
+							})}
+						</TabSwitcher>
+					</FieldInput>
+				</div>
+				<TabSwitcher>
+					{tabs.map((m, i) => {
+						return (
+							<TabSwitcher.Item
+								key={i}
+								value={m}>
+								{m}
+							</TabSwitcher.Item>
+						)
+					})}
+				</TabSwitcher>
+				<div style={{ padding: '20px' }}>
+					<TabSwitcher col>
+						{tabs.map((m, i) => {
+							return (
+								<TabSwitcher.Item
+									key={i}
+									value={m}>
+									{m}
+								</TabSwitcher.Item>
+							)
+						})}
+					</TabSwitcher>
+				</div>
+				<div style={{ padding: '20px', maxWidth: '327px' }}>
+					<TabSwitcher col>
+						{tabs.map((m, i) => {
+							return (
+								<TabSwitcher.Item
+									key={i}
+									value={m}>
+									{m}
+								</TabSwitcher.Item>
+							)
+						})}
+					</TabSwitcher>
+				</div>
+			</div>
 			<Flex
 				jc='between'
 				gap='1'>
