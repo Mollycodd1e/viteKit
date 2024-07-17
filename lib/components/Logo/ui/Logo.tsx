@@ -5,11 +5,16 @@ import { ILogoProps } from './Logo.types'
 import LogoWhite from '../assets/LogoWhite.svg?url'
 import LogoBlack from '../assets/LogoBlack.svg?url'
 
-export const Logo = ({ uk = false, variant = 'black', between = false }: ILogoProps) => {
+export const Logo = ({
+	uk = false,
+	variant = 'black',
+	between = false,
+	addClassName,
+}: ILogoProps) => {
 	const cx = classNames.bind(s)
 
 	return (
-		<div className={cx(s.wrapper, { [s.wrapperBetween]: between })}>
+		<div className={cx(s.wrapper, { [s.wrapperBetween]: between }, addClassName)}>
 			<img
 				src={variant === 'white' ? LogoWhite : LogoBlack}
 				alt='Лого'

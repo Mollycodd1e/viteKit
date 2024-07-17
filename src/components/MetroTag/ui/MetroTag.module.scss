@@ -1,0 +1,51 @@
+.root {
+	display: flex;
+	padding: 0;
+	gap: 8px;
+	width: max-content;
+	box-sizing: border-box;
+
+	& span {
+		display: block;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+	}
+}
+
+.metroColor {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 500;
+	gap: 8px;
+	color: #353945;
+}
+
+.route {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 500;
+	color: #777E90;
+}
+
+
+.auto-width {
+	width: max-content;
+}
+
+.full-width {
+	width: 100%;
+}
+
+@media(min-width: 1024px) {
+	.root {
+		padding: 10px 24px;
+		border-radius: 110px;
+		background: #F4F5F6;
+	}
+}

@@ -13,3 +13,5 @@ export { FieldInput } from './components/FieldInput'
 export { TabSwitcher } from './components/TabSwitcher'
 export { GroupedInputs } from './components/GroupedInput'
 export { Logo } from './components/Logo'
+export { MetroTag } from './components/MetroTag'
+

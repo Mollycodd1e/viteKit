@@ -13,6 +13,7 @@ import { FieldInput } from './components/FieldInput'
 import { TabSwitcher } from './components/TabSwitcher'
 import { GroupedInputs } from './components/GroupedInput'
 import { Logo } from './components/Logo'
+import { MetroTag } from './components/MetroTag/ui/MetroTag'
 
 function App() {
 	const destinatinList = [
@@ -109,6 +110,17 @@ function App() {
 		},
 	]
 
+	const metro = {
+		name: 'Сокольники',
+		color: 'red',
+		routes: [
+			{
+				text: '5 минут',
+				icon: 'car',
+			},
+		],
+	}
+
 	const tabs = ['Студия', '1', '2', '3', '4+']
 
 	return (
@@ -118,7 +130,6 @@ function App() {
 					width: '100%',
 					height: '56px',
 					background: 'white',
-					position: 'fixed',
 					display: 'flex',
 					justifyContent: 'space-between',
 					alignItems: 'center',
@@ -142,7 +153,7 @@ function App() {
 			))}
 			<Button
 				as='button'
-				variant='black'
+				variant='gray'
 				size='small'>
 				<NewIcon
 					name='phoneFilled'
@@ -171,11 +182,16 @@ function App() {
 			</Button>
 			<Button
 				as='button'
-				variant='black'
+				variant='volodiyaLight'
 				size='large'
 				width='full'>
 				Оставить сообщение
 			</Button>
+			<div style={{ display: 'flex', gap: '8px', width: '100%', margin: '16px 0' }}>
+				<MetroTag metro={metro} />
+				<MetroTag metro={metro} />
+				<MetroTag metro={metro} />
+			</div>
 			<Button
 				as='link'
 				variant='gray'
@@ -236,7 +252,7 @@ function App() {
 				2004
 			</Tag>
 			<Tag
-				variant='blackGrey'
+				variant='gray'
 				size='tiny'
 				size_l='preLarge'>
 				STONE Towers
@@ -346,7 +362,7 @@ function App() {
 				<Logo
 					variant='white'
 					uk
-				/> 
+				/>
 			</div>
 			<div style={{ padding: '20px', backgroundColor: 'white' }}>
 				<FieldInput label='Количество metrov'>

@@ -10,6 +10,7 @@ export const BUTTON_VARIANTS = {
 	black: 'black',
 	whiteFilled: 'whiteFilled',
 	shade: 'shade',
+	volodiyaLight: 'volodiyaLight',
 }
 
 export type btnVariant = keyof typeof BUTTON_VARIANTS
@@ -32,9 +33,9 @@ interface ButtonProps {
 
 export type ComponentProps = ButtonProps &
 	(
-		| ((React.ButtonHTMLAttributes<HTMLButtonElement> & {
+		| (React.ButtonHTMLAttributes<HTMLButtonElement> & {
 				as: 'button'
-		}))
+		})
 		| (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 				as: 'link'
 		} & Required<Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>>)
