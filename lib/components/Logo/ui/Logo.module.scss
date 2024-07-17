@@ -1,0 +1,43 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.logo {
+	width: 81px;
+	height: 16px;
+}
+
+.wrapperBetween {
+	width: 100%;
+	justify-content: space-between;
+}
+
+.uk {
+	font-size: 8px;
+	line-height: 8px;
+	font-weight: 600;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+
+	&_black {
+		color: #141416;
+	}
+
+	&_white {
+		color: #ffffff;
+	}
+}
+
+@media(min-width: 1024px) {
+	.logo {
+		width: 101px;
+		height: 20px;
+	}
+
+	.uk {
+		font-size: 9px;
+		line-height: 10px;
+	}
+}

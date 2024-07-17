@@ -11,6 +11,8 @@ import { Modal } from './components/Modal'
 import s from './app.module.scss'
 import { FieldInput } from './components/FieldInput'
 import { TabSwitcher } from './components/TabSwitcher'
+import { GroupedInputs } from './components/GroupedInput'
+import { Logo } from './components/Logo'
 
 function App() {
 	const destinatinList = [
@@ -339,6 +341,31 @@ function App() {
 						})}
 					</TabSwitcher>
 				</div>
+			</div>
+			<div style={{ padding: '20px', backgroundColor: 'orange' }}>
+				<Logo
+					variant='white'
+					uk
+				/> 
+			</div>
+			<div style={{ padding: '20px', backgroundColor: 'white' }}>
+				<FieldInput label='Количество metrov'>
+					<GroupedInputs>
+						<Input
+							size_s={'small'}
+							variant='light'
+							type='number'
+							placeholder='70'
+						/>
+						<Input
+							size_s={'small'}
+							variant='light'
+							post={'м²'}
+							type='number'
+							placeholder='50'
+						/>
+					</GroupedInputs>
+				</FieldInput>
 			</div>
 			<Flex
 				jc='between'

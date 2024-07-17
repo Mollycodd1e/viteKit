@@ -25,9 +25,10 @@ export const Input = ({
 				s[`${size_m}-size_m`],
 				s[`${size_l}-size_l`],
 				s[`${variant}`],
+				{ [s.inputWrapperPre]: pre },
 				{ [s.inputWrapperPost]: post },
 				s[`${width}-width`],
-				{[s.inputWrapperError]: error},
+				{ [s.inputWrapperError]: error },
 				additionalClass
 			)}>
 			{pre && <span>{pre}</span>}

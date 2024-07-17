@@ -26,9 +26,15 @@
 	padding: 10px 23px;
 	border: 1px solid #b1b5c3;
 
+	& input[type=number]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+
 	& input {
 		border: none;
 		background: transparent;
+		font-size: 16px;
+		line-height: 24px;
 
 		&:focus {
 			outline: none;
@@ -36,15 +42,12 @@
 	}
 }
 
-.inputWrapperPost {
+.inputWrapperPost,
+.inputWrapperPre {
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
 	padding: 10px 12px 10px 23px;
-
-	& input[type=number]::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-	}
 
 	& input {
 		font-size: 16px;
