@@ -1,5 +1,6 @@
 .root {
 	display: flex;
+	width: 100%;
 
 	&>div:not(:first-of-type) {
 		border-left-width: 0.5px;

@@ -15,6 +15,7 @@ export const Input = ({
 	width = 'auto',
 	error,
 	additionalClass = '',
+	ref,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
 	return (
@@ -32,7 +33,7 @@ export const Input = ({
 				additionalClass
 			)}>
 			{pre && <span>{pre}</span>}
-			<input {...props}></input>
+			<input ref={ref} {...props}></input>
 			{post && <span>{post}</span>}
 		</div>
 	)

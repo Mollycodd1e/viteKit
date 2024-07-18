@@ -22,6 +22,7 @@ interface InputProps {
 	variant?: inputVariant
 	width?: inputWidth
 	additionalClass?: string
+	ref?: React.RefObject<HTMLInputElement>
 }
 
 export type ComponentProps = InputProps & React.InputHTMLAttributes<HTMLInputElement>
