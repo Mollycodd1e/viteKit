@@ -370,7 +370,7 @@ function App() {
 			<Button
 				as='button'
 				variant='blue'
-				size='large'>
+				size='large' post={<NewIcon name='play2' size='24'/>}>
 				Оставить обращение
 			</Button>
 			<div style={{ width: '100%', margin: '40px 0', backgroundColor: 'white' }}>

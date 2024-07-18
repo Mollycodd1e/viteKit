@@ -37,7 +37,8 @@ import Food from './../assets/Food.svg'
 import Building from './../assets/Building.svg'
 import Case from './../assets/Case.svg'
 import Sport from './../assets/Sport.svg'
-import WithoutDecor from './../assets/withoutDecor.svg'
+import WithoutDecor from './../assets/WithoutDecor.svg'
+import Play2 from './../assets/Play2.svg'
 import { ReactSVGComponent } from './NewIcon.types'
 
 type IconComponentProps = {
@@ -91,6 +92,7 @@ const iconTypes: IconTypes = {
 	case: () => <Case />,
 	sport: () => <Sport />,
 	withoutDecor: () => <WithoutDecor />,
+	play2: () => <Play2 />,
 }
 
 export const NewIcon = ({ name, size = '24', color, additionalClass, deg }: IconComponentProps) => {
