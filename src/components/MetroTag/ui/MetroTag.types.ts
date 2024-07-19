@@ -5,8 +5,8 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 		name?: string
 		color?: string
 		routes?: {
-			text?: string
-			icon?: string
+			timeTo?: string
+			iconName?: string
 		}[]
 	}
 	addClassName?: string

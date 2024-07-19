@@ -117,8 +117,8 @@ function App() {
 		color: 'red',
 		routes: [
 			{
-				text: '5 минут',
-				icon: 'car',
+				timeTo: '5 минут',
+				iconName: 'car',
 			},
 		],
 	}
@@ -203,7 +203,7 @@ function App() {
 				val: 'Скидка 10%',
 				slug: 'discount',
 				category: 'Акция',
-				icoImg: { attributes: { url: 'https://example.com/promo-icon.png' } },
+				icoImg: 'https://example.com/promo-icon.png',
 				color: '#ff0000',
 			},
 		],

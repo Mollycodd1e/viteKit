@@ -16,4 +16,4 @@ export { Logo } from './components/Logo'
 export { MetroTag } from './components/MetroTag'
 export { LotCard } from './components/LotCard'
 export { Select } from './components/Select'
-
+export { useClientWidth } from './shared/useClientWidth'

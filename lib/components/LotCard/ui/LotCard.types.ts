@@ -55,11 +55,7 @@ interface ILotPromo {
 	/** Категория */
 	category: string
 	/** Ссылка на иконку */
-	icoImg: {
-		attributes: {
-			url: string
-		}
-	}
+	icoImg: string
 	/** hex цвет */
 	color: string
 }
@@ -128,7 +124,7 @@ interface ILot {
 	/** Количество комнат */
 	roomsCount: number | null
 	/** Количество спален */
-	bedroomsCount: number | null
+	bedroomsCount?: number | null
 	/** Корпус */
 	housing: string | null
 	/** Секция */
@@ -218,15 +214,15 @@ interface ILot {
 		floorPlanImg: string
 	}[]
 	/** Угол азимута */
-	azimuthAngle: number | null
+	azimuthAngle?: number | null
 	/** Тип недвижимости */
-	businessType: string | null
+	businessType?: string | null
 	/** С отделкой или без */
-	isDecoration: boolean | null
+	isDecoration?: boolean | null
 	/** С мокрой точкой */
-	isWaterPipes: boolean | null
+	isWaterPipes?: boolean | null
 	/** Данные всего проекта */
-	project: IProject | null
+	project?: IProject | null
 	/** Забронировано или нет????? */
 	reservations?: string[] | null
 }
