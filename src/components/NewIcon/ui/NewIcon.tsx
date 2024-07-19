@@ -39,6 +39,9 @@ import Case from './../assets/Case.svg'
 import Sport from './../assets/Sport.svg'
 import WithoutDecor from './../assets/WithoutDecor.svg'
 import Play2 from './../assets/Play2.svg'
+import SelectChecked from './../assets/SelectChecked.svg'
+import SelectUnchecked from './../assets/SelectUnchecked.svg'
+import ArrowShort from './../assets/ArrowShort.svg'
 import { ReactSVGComponent } from './NewIcon.types'
 
 type IconComponentProps = {
@@ -93,6 +96,9 @@ const iconTypes: IconTypes = {
 	sport: () => <Sport />,
 	withoutDecor: () => <WithoutDecor />,
 	play2: () => <Play2 />,
+	selectChecked: () => <SelectChecked />,
+	selectUnchecked: () => <SelectUnchecked />,
+	arrowShort: () => <ArrowShort />,
 }
 
 export const NewIcon = ({ name, size = '24', color, additionalClass, deg }: IconComponentProps) => {

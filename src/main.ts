@@ -14,4 +14,6 @@ export { TabSwitcher } from './components/TabSwitcher'
 export { GroupedInputs } from './components/GroupedInput'
 export { Logo } from './components/Logo'
 export { MetroTag } from './components/MetroTag'
+export { LotCard } from './components/LotCard'
+export { Select } from './components/Select'
 

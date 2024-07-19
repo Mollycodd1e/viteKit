@@ -15,6 +15,7 @@ import { GroupedInputs } from './components/GroupedInput'
 import { Logo } from './components/Logo'
 import { MetroTag } from './components/MetroTag/ui/MetroTag'
 import { LotCard } from './components/LotCard'
+import { Select } from './components/Select'
 
 function App() {
 	const destinatinList = [
@@ -269,6 +270,20 @@ function App() {
 		reservations: ['res-001', 'res-002'],
 	}
 
+	const options = [
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' },
+		{ value: 'option3', label: 'Option 3' },
+	]
+
+	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		console.log(e.target)
+	}
+
+	const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+		console.log(e.target)
+	}
+
 	return (
 		<>
 			<div
@@ -282,6 +297,13 @@ function App() {
 				}}>
 				Меню
 				<div onClick={() => setIsModalOpen((prev) => !prev)}>нажми</div>
+			</div>
+			<div style={{ margin: '20px 0' }}>
+				<Select
+					options={options}
+					onChange={handleClick}
+					placeholder='Выберите корпус'
+					onBlur={handleBlur}></Select>
 			</div>
 			{destinatinList.map((item, i) => (
 				<DestinationTab
@@ -333,7 +355,8 @@ function App() {
 				width='full'>
 				Оставить сообщение
 			</Button>
-			<div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', width: '100%', margin: '16px 0' }}>
+			<div
+				style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', width: '100%', margin: '16px 0' }}>
 				<MetroTag metro={metro} />
 				<MetroTag metro={metro} />
 				<MetroTag metro={metro} />
@@ -370,7 +393,13 @@ function App() {
 			<Button
 				as='button'
 				variant='blue'
-				size='large' post={<NewIcon name='play2' size='24'/>}>
+				size='large'
+				post={
+					<NewIcon
+						name='play2'
+						size='24'
+					/>
+				}>
 				Оставить обращение
 			</Button>
 			<div style={{ width: '100%', margin: '40px 0', backgroundColor: 'white' }}>
