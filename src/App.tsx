@@ -16,6 +16,7 @@ import { Logo } from './components/Logo'
 import { MetroTag } from './components/MetroTag/ui/MetroTag'
 import { LotCard } from './components/LotCard'
 import { Select } from './components/Select'
+import { SortSelect } from './components/SortSelect'
 
 function App() {
 	const destinatinList = [
@@ -284,6 +285,13 @@ function App() {
 		console.log(e.target)
 	}
 
+	const sort_options = [
+		{ label: 'Сначала дешевле', value: '-lots.selling_price' },
+		{ label: 'Сначала дороже', value: 'lots.selling_price' },
+		{ label: 'Площадь меньше', value: '-lots.area' },
+		{ label: 'Площадь больше', value: 'lots.area' },
+	]
+
 	return (
 		<>
 			<div
@@ -304,6 +312,11 @@ function App() {
 					onChange={handleClick}
 					placeholder='Выберите корпус'
 					onBlur={handleBlur}></Select>
+			</div>
+			<div>
+				<SortSelect
+					options={sort_options}
+					onChange={handleClick}></SortSelect>
 			</div>
 			{destinatinList.map((item, i) => (
 				<DestinationTab
