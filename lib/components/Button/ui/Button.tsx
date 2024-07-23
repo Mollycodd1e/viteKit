@@ -37,7 +37,7 @@ export const Button = ({
 					<NewIcon
 						name='loader'
 						size={'24'}
-						color='#fff'
+						color='currentColor'
 						additionalClass={s.loader}
 					/>
 				)}

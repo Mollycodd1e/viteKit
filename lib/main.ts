@@ -17,4 +17,6 @@ export { MetroTag } from './components/MetroTag'
 export { LotCard } from './components/LotCard'
 export { Select } from './components/Select'
 export { useClientWidth } from './shared/useClientWidth'
-export {SliderNavigation} from './components/SliderNavigation'
+export { SortSelect } from './components/SortSelect'
+
+export { SliderNavigation } from './components/SliderNavigation'

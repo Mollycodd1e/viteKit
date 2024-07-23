@@ -8,7 +8,7 @@ export interface SortSelectProps {
 	placeholder?: string
 	error?: boolean
 	disabled?: boolean
-	onChange?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
-	onBlur?: (event: React.FocusEvent<HTMLDivElement, Element>) => void
+	onChange?: (event: Option) => void
+	onBlur?: (event: Option) => void
 	additionalClass?: string
 }

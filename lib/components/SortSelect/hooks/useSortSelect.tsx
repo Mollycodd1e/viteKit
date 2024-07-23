@@ -13,8 +13,8 @@ interface IUseSortSelect {
 	isOpen: boolean
 	isMobile: boolean
 	placeholder: string
-	onChange?: (event: React.MouseEvent<HTMLDivElement>) => void
-	onBlur?: (event: React.FocusEvent<HTMLDivElement>) => void
+	onChange?: (event: { label: string; value: string }) => void
+	onBlur?: (event: { label: string; value: string }) => void
 }
 
 export const useSortSelect = ({
@@ -40,7 +40,7 @@ export const useSortSelect = ({
 				...event,
 				target: { value: newSelectedOption },
 			}
-			onChange(customEvent as unknown as MouseEvent<HTMLDivElement>)
+			onChange(customEvent as unknown as { label: string; value: string })
 		}
 		setIsOpen(false) // Close the dropdown after selection
 	}
@@ -57,7 +57,7 @@ export const useSortSelect = ({
 				...event,
 				target: { value: selectedOption },
 			}
-			onBlur(customEvent as unknown as React.FocusEvent<HTMLDivElement>)
+			onBlur(customEvent as unknown as { label: string; value: string })
 		}
 	}
 

@@ -1,13 +1,13 @@
-import {useState} from 'react'
-import {Button} from './components/Button'
-import {DestinationTab} from './components/DestinationTab'
-import {NewIcon} from './components/NewIcon'
-import {RoundButton} from './components/RoundButton'
-import {Tag} from './components/Tag'
-import {Input} from './components/Input'
-import {Switcher} from './components/Switcher'
-import {Flex} from './components/Flex'
-import {Modal} from './components/Modal'
+import { useEffect, useState } from 'react'
+import { Button } from './components/Button'
+import { DestinationTab } from './components/DestinationTab'
+import { NewIcon } from './components/NewIcon'
+import { RoundButton } from './components/RoundButton'
+import { Tag } from './components/Tag'
+import { Input } from './components/Input'
+import { Switcher } from './components/Switcher'
+import { Flex } from './components/Flex'
+import { Modal } from './components/Modal'
 import s from './app.module.scss'
 import {FieldInput} from './components/FieldInput'
 import {TabSwitcher} from './components/TabSwitcher'
@@ -280,17 +280,18 @@ function App() {
 	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		console.log(e.target)
 	}
-
+	const [sort, setSort] = useState('')
+	useEffect(() => {
+		console.log('sort', sort)
+	}, [sort])
 	const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
 		console.log(e.target)
 	}
 
 	const sort_options = [
-		{ label: 'Сначала дешевле', value: '-lots.selling_price' },
-		{ label: 'Сначала дороже', value: 'lots.selling_price' },
-		{ label: 'Площадь меньше', value: '-lots.area' },
-		{ label: 'Площадь больше', value: 'lots.area' },
+		{ label: 'По умолчанию', value: '' },
 	]
+
 
 	return (
 		<>
@@ -306,6 +307,8 @@ function App() {
 				Меню
 				<div onClick={() => setIsModalOpen((prev) => !prev)}>нажми</div>
 			</div>
+			<Button as='button' variant='whiteStroke' isLoading>приветики</Button>
+			<Button as='button' variant='blue' isLoading>приветики</Button>
 			<div style={{ margin: '20px 0' }}>
 				<Select
 					options={options}
@@ -316,7 +319,8 @@ function App() {
 			<div>
 				<SortSelect
 					options={sort_options}
-					onChange={handleClick}></SortSelect>
+					//@ts-expect-error кастомный эвент
+					onChange={(e) => setSort(e)}></SortSelect>
 			</div>
 			{destinatinList.map((item, i) => (
 				<DestinationTab
