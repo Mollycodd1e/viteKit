@@ -112,6 +112,13 @@
 	color: #ffffff;
 }
 
+.white{
+	background-color: #FFFFFF;
+	border: solid 1px #E6E8EC;
+	color: #141416;
+	font-weight: 500;
+}
+
 @media(min-width: 1024px) {
 	.tiny-size_m {
 		@include tag-tiny;
