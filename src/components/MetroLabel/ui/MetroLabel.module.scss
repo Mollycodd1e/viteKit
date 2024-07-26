@@ -1,0 +1,43 @@
+.root {
+  display: flex;
+  padding: 16px 0;
+  gap: 8px;
+  width: max-content;
+  box-sizing: border-box;
+
+  & span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+.metroColor {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  gap: 8px;
+  color: #353945;
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #777E90;
+}
+
+
+.auto {
+  width: max-content;
+}
+
+.full {
+  width: 100%;
+}

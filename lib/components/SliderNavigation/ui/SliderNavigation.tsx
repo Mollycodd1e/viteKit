@@ -1,16 +1,8 @@
 import {RoundButton} from "../../RoundButton";
 import {Tag} from "../../Tag";
 import {useClientWidth} from "../../../shared/useClientWidth.ts";
+import {ISliderNavigation} from "./SliderNavigation.types.ts";
 
-interface ISliderNavigation {
-    indexSlide: number
-    goPrev: () => void
-    goNext: () => void
-    arr: Array<unknown>
-    additionalClassTag?: string
-    additionalClassNavButton?: string
-    navigationClassName?: string
-}
 
 export const SliderNavigation = ({
                                      indexSlide,

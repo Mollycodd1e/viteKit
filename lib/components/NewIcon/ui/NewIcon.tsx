@@ -37,7 +37,7 @@ import Food from './../assets/Food.svg'
 import Building from './../assets/Building.svg'
 import Case from './../assets/Case.svg'
 import Sport from './../assets/Sport.svg'
-import WithoutDecor from './../assets/WithoutDecor.svg'
+import WithoutDecor from '../assets/WithoutDecor.svg'
 import Play2 from './../assets/Play2.svg'
 import SelectChecked from './../assets/SelectChecked.svg'
 import SelectUnchecked from './../assets/SelectUnchecked.svg'
@@ -54,7 +54,7 @@ type IconComponentProps = {
 
 type IconTypes = { [name: string]: ReactSVGComponent }
 
-const iconTypes: IconTypes = {
+export const iconTypes: IconTypes = {
 	loader: () => <Loader />,
 	filter: () => <Filter />,
 	fullscreen: () => <FullScreen />,
