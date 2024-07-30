@@ -12,5 +12,6 @@ export interface MultiSelectProps {
 	onChange?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 	onBlur?: (event: React.FocusEvent<HTMLDivElement, Element>) => void
 	additionalClass?: string
+	selectedValues?: Option[]
 }
 
