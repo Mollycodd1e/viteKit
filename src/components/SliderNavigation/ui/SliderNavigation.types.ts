@@ -7,4 +7,5 @@ export interface ISliderNavigation {
 	additionalClassTag?: string
 	additionalClassNavButton?: string
 	navigationClassName?: string
+	isNeedTag?: boolean
 }

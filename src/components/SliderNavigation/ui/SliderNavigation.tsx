@@ -9,6 +9,7 @@ export const SliderNavigation = ({
                                      goPrev,
                                      goNext,
                                      arr,
+    isNeedTag = true,
                                      additionalClassTag = '',
                                      navigationClassName = '',
                                      additionalClassNavButton = ''
@@ -25,13 +26,13 @@ export const SliderNavigation = ({
             onClick={goPrev}
         />
 
-        <Tag
+        {isNeedTag && <Tag
             style={{backgroundColor: '#141416'}}
             additionalClass={additionalClassTag}
             variant="shade"
             size={'medium'}>
             {`${indexSlide + 1} из ${arr.length}`}
-        </Tag>
+        </Tag>}
 
         <RoundButton
             disabled={indexSlide === arr.length - 1}
