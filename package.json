@@ -2,7 +2,7 @@
   "name": "stone-kit",
   "description": "uikit for redesign",
   "private": false,
-  "version": "0.0.106",
+  "version": "0.0.108",
   "author": "Mollycodd1e",
   "license": "ISC",
   "type": "module",
@@ -15,7 +15,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepublishOnly": "npm run build",
-    "release": "node scripts/versionUpdate.js && npm publish && git add . && git commit -m 'Release version ${npm_package_version}' && git push origin master"
+    "release": "node scripts/versionUpdate.js && node scripts/commitAndPush.js"
   },
   "dependencies": {
     "classnames": "^2.5.1"
