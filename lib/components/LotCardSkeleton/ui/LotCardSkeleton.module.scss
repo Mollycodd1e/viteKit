@@ -30,7 +30,8 @@
 
 .lotImageWrapper {
 	position: relative;
-	width: 311px;
+	max-width: 311px;
+	width: 100%;
 	height: 224px;
 	margin: 0 auto;
 	@include skeleton;
@@ -68,9 +69,10 @@
 .lotPropertyItem {
 	display: flex;
 	justify-content: space-between;
-	height: 20px;
+	height: 37px;
 	padding: 8px 0;
 	border-bottom: 1px solid #F4F5F6;
+	box-sizing: border-box;
 
 	& div:first-child {
 		width: 80px;
@@ -133,7 +135,7 @@
 	}
 
 	.lotImageWrapper {
-		width: 148px;
+		max-width: 148px;
 		height: 106px;
 		margin: 0;
 	}
