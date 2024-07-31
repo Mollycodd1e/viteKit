@@ -31,7 +31,6 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
       setSelectedOptions(newSelectedOptions);
 
       if (onChange) {
-        console.log('Selected options:', newSelectedOptions);
         const customEvent = {
           ...event,
           target: { value: newSelectedOptions },
@@ -67,10 +66,6 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
       document.removeEventListener('click', handleDocumentClick);
     };
   }, [handleDocumentClick]);
-
-  useEffect(() => {
-    setSelectedOptions(selectedValues);
-  }, [selectedValues]);
 
   return (
     <div

@@ -35,7 +35,7 @@ const TabSwitcher = ({
 
 const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, ref) => {
 	const { children, className, addItemClassName, ...rest } = props
-	console.log(addItemClassName)
+
 	return (
 		<label>
 			<input

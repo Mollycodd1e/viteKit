@@ -18,5 +18,5 @@ export { LotCard } from './components/LotCard'
 export { Select } from './components/Select'
 export { useClientWidth } from './shared/useClientWidth'
 export { SortSelect } from './components/SortSelect'
-
-export {SliderNavigation} from './components/SliderNavigation'
+export { SliderNavigation } from './components/SliderNavigation'
+export { LotCardSkeleton } from './components/LotCardSkeleton'

@@ -6,8 +6,6 @@ import {IMetroLabelProps} from "./MetroLabel.types.ts";
 const cx = classNames.bind(s)
 
 export const MetroLabel = ({ addClassName, metro, width = 'full', justifyContent = 'flex-start', colorIcon = '#777E90', ...rest }: IMetroLabelProps) => {
-    console.log(metro)
-
     return (
         <div style={{justifyContent: `${justifyContent}`}}
             className={cx(s.root, addClassName, s[width])}

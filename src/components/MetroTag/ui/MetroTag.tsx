@@ -7,8 +7,6 @@ const cx = classNames.bind(s)
 
 export const MetroTag = ({ addClassName, metro, width = 'auto', ...rest }: IMetroTagProps) => {
 	const possibleIcons = ['car', 'walk']
-	console.log(metro)
-
 	return (
 		<div
 			className={cx(s.root, addClassName, s[width])}
