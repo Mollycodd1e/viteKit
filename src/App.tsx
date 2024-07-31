@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { Button } from './components/Button'
 import { DestinationTab } from './components/DestinationTab'
 import { NewIcon } from './components/NewIcon'
@@ -282,14 +282,14 @@ function App() {
 		{ value: 'option3', label: 'Option 3' },
 	]
 
-	const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+	const handleClick = (e: ChangeEvent<HTMLInputElement>) => {
 		console.log(e.target)
 	}
 	const [sort, setSort] = useState('')
 	useEffect(() => {
 		console.log('sort', sort)
 	}, [sort])
-	const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+	const handleBlur = (e: ChangeEvent<HTMLInputElement>) => {
 		console.log(e.target)
 	}
 
