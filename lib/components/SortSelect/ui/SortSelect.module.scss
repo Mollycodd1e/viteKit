@@ -8,9 +8,7 @@
 .selectedOptions {
 	display: flex;
 	flex: 1;
-	min-width: 92px;
-	max-width: 92px;
-	width: 100%;
+	width: 92px;
 	padding-right: 1.5rem;
 	justify-content: space-between;
 	align-items: center;
@@ -18,7 +16,7 @@
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
-	padding: 11px 40px 11px 15px;
+	padding: 7px 40px 7px 15px;
 	border-radius: 48px;
 	border: 1px solid #B1B5C3;
 	background: #ffffff;
@@ -154,6 +152,7 @@
 	.selectedOptions {
 		display: flex;
 		flex: 1;
+		width: 100%;
 		max-width: unset;
 	}
 
