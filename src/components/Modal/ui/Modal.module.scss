@@ -23,8 +23,8 @@
   background: rgba(0, 0, 0, 0.5);
 
   @supports (height: 100dvh) {
-    .container {
-      height: 100dvh
+    .modalOverlay {
+      height: 100dvh;
     }
   }
 }
