@@ -20,6 +20,7 @@ import { SortSelect } from './components/SortSelect'
 import { iconTypes } from './components/NewIcon/ui/NewIcon.tsx'
 import { MetroLabel } from './components/MetroLabel/ui/MetroLabel.tsx'
 import { LotCardSkeleton } from './main.ts'
+import { ProjectCardSkeleton } from './components/ProjectCardSkeleton/index.ts'
 
 function App() {
 	const destinatinList = [
@@ -328,7 +329,8 @@ function App() {
 					flexDirection: 'column',
 					margin: '20px 0',
 				}}>
-				<LotCardSkeleton/>
+				<ProjectCardSkeleton></ProjectCardSkeleton>
+				<LotCardSkeleton />
 				<LotCard lot={testLot}></LotCard>
 			</div>
 			<div style={{ margin: '20px 0' }}>
