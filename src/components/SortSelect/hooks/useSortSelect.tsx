@@ -11,7 +11,7 @@ interface IUseSortSelect {
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	containerRef: React.RefObject<HTMLDivElement>
 	isOpen: boolean
-	isMobile: boolean
+	isDesktop: boolean
 	placeholder: string
 	onChange?: (event: { label: string; value: string }) => void
 	onBlur?: (event: { label: string; value: string }) => void
@@ -24,7 +24,7 @@ export const useSortSelect = ({
 	containerRef,
 	onBlur,
 	onChange,
-	isMobile,
+	isDesktop,
 	placeholder,
 }: IUseSortSelect) => {
 	const handleOptionClick = (option: Option) => (event: MouseEvent<HTMLDivElement>) => {
@@ -62,7 +62,7 @@ export const useSortSelect = ({
 	}
 
 	const getInputValue = () => {
-		if (isMobile) return ''
+		if (!isDesktop) return ''
 		if (!selectedOption) return placeholder
 		return selectedOption.label
 	}
