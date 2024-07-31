@@ -6,7 +6,7 @@ const packageJson = JSON.parse(await readFile(packagePath, 'utf-8'))
 
 const versionParts = packageJson.version
 exec(
-	`git add . && git commit -m "Release ${versionParts}" && git push origin master && npm publish`,
+	`npm publish && git add . && git commit -m "Release ${versionParts}" && git push origin master`,
 	(error, stdout, stderr) => {
 		if (error) {
 			console.error(`Error executing command: ${error}`)

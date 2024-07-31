@@ -21,6 +21,12 @@
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
+
+  @supports (height: 100dvh) {
+    .container {
+      height: 100dvh
+    }
+  }
 }
 
 .isTransparentBack {
