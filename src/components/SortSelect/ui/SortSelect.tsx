@@ -73,7 +73,7 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 						<div onClick={() => setIsOpen(false)}>
 							<NewIcon
 								name={'close'}
-								size={'24'}
+								size={'20'}
 							/>
 						</div>
 					</div>
