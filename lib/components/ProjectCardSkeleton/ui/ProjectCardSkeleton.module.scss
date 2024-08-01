@@ -98,9 +98,12 @@
 		flex-wrap: wrap;
 		gap: 8px;
 		max-width: 530px;
+		flex-direction: row;
 
 		&>div {
-			width: max-content;
+			width: 150px;
+			height: 40px;
+			@include skeleton;
 		}
 
 		&>div:not(:last-child) {
@@ -111,7 +114,7 @@
 	.filterBtnWrapper {
 		margin: auto 0 0 auto;
 
-		& button {
+		&>div:first-child {
 			min-width: 211px;
 		}
 	}
