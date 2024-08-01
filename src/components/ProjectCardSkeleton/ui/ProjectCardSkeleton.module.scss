@@ -123,3 +123,10 @@
 		}
 	}
 }
+
+@media(min-width: 1440px) {
+	.root {
+		flex: 1 0 0;
+		padding: 40px;
+	}
+}
