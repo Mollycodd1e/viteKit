@@ -54,8 +54,12 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 		}
 	}, [handleDocumentClick])
 
+	const prevSelectedValuesRef = useRef(selectedValues)
 	useEffect(() => {
-		setSelectedOptions(selectedValues)
+		if (selectedValues.length !== prevSelectedValuesRef.current.length) {
+			setSelectedOptions(selectedValues)
+			prevSelectedValuesRef.current = selectedValues
+		}
 	}, [selectedValues])
 
 	return (
@@ -87,7 +91,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 				<div className={s.optionsList}>
 					{options.map((option) => (
 						<div
-							key={option.value}
+							key={option.label}
 							className={cx(s.option, {
 								[s.selected]: selectedOptions.some((selected) => selected.value === option.value),
 							})}
