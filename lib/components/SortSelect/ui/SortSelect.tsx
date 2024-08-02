@@ -72,7 +72,8 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 				<Modal
 					isOpen={isOpen}
 					emitIsOpen={setIsOpen}
-					additionalClassModalBody={s.modalAddBody}>
+					additionalClassModalBody={s.modalAddBody}
+					createPortalObj={{ domNode: document.querySelector('body') }}>
 					<div className={s.mobileSortHeader}>
 						<Text>Сортировка</Text>
 						<div onClick={() => setIsOpen(false)}>
