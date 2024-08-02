@@ -8,12 +8,11 @@ export const Modal: FC<IModalProps> = ({
 	emitIsOpen,
 	isTransparentBack = false,
 	isClickOutside = true,
-	leaveDisableScroll,
+	leaveDisableScroll = false,
 	createPortalObj,
 	additionalClass,
 	additionalClassOverlay,
 	additionalClassModalBody,
-
 	children,
 }) => {
 	const closeModal = () => {
@@ -25,7 +24,8 @@ export const Modal: FC<IModalProps> = ({
 			if (document.body.classList.contains('disable-scroll')) return
 			document.body.classList.add('disable-scroll')
 		} else {
-			!leaveDisableScroll && document.body.classList.remove('disable-scroll')
+			if (leaveDisableScroll) return
+			document.body.classList.remove('disable-scroll')
 		}
 		// Cleanup function to remove the class if the component unmounts
 		return () => document.body.classList.remove('disable-scroll')

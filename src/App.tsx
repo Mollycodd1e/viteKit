@@ -294,6 +294,8 @@ function App() {
 	}
 
 	const sort_options = [{ label: 'По умолчанию', value: '' }]
+	const [modal1, setmodal1] = useState<boolean>(false)
+	const [modal2, setmodal2] = useState(false)
 
 	return (
 		<>
@@ -309,6 +311,25 @@ function App() {
 				Меню
 				<div onClick={() => setIsModalOpen((prev) => !prev)}>нажми</div>
 			</div>
+			<div onClick={() => setmodal1((prev) => !prev)}>Каскад модалок</div>
+			<Modal
+				isOpen={modal1}
+				emitIsOpen={() => setmodal1((prev) => !prev)}>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					вайди
+				</Button>
+			</Modal>
+			<Modal
+				isOpen={modal2}
+				emitIsOpen={() => setmodal2((prev) => !prev)} leaveDisableScroll>
+					<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				</Modal>
 			<Button
 				as='button'
 				variant='whiteStroke'
