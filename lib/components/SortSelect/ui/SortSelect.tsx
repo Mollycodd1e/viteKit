@@ -16,6 +16,7 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 	additionalClass = '',
 	onChange,
 	onBlur,
+	mini,
 }) => {
 	const [selectedOption, setSelectedOption] = useState<Option | null>(options[0])
 	const [isOpen, setIsOpen] = useState(false)
@@ -54,7 +55,11 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 					type='text'
 					readOnly
 					value={getInputValue()}
-					className={cx(s.selectedOptions, { [s.selectOptionsDisabled]: disabled })}
+					className={cx(
+						s.selectedOptions,
+						{ [s.selectOptionsDisabled]: disabled },
+						{ [s.selectionOptionMini]: mini }
+					)}
 					onClick={() => setIsOpen(!isOpen)}
 				/>
 				<NewIcon

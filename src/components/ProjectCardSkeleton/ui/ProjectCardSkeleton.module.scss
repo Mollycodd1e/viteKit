@@ -22,6 +22,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
+	padding: 0 24px;
 }
 
 .projectHeader {
@@ -82,10 +83,6 @@
 }
 
 @media(min-width: 1024px) {
-	.root {
-		padding: 0 24px;
-	}
-
 	.projectHeader {
 		display: flex;
 		flex-wrap: wrap;

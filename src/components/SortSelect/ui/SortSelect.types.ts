@@ -11,4 +11,5 @@ export interface SortSelectProps {
 	onChange?: (event: Option) => void
 	onBlur?: (event: Option) => void
 	additionalClass?: string
+	mini?: boolean
 }
