@@ -373,6 +373,7 @@ function App() {
 			<div>
 				<SortSelect
 					options={sort_options}
+					selectedOption={sort_options[0]}
 					//@ts-expect-error кастомный эвент
 					onChange={(e) => setSort(e)}></SortSelect>
 			</div>
