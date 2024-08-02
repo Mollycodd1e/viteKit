@@ -6,8 +6,8 @@ import classNames from 'classnames'
 const cx = classNames.bind(s)
 
 interface IUseSortSelect {
-	selectedOption?: Option
-	setSelectedOption?: (event: Option | undefined) => void
+	selectedOption: Option | null
+	setSelectedOption?: (event: Option | null) => void
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	containerRef: React.RefObject<HTMLDivElement>
 	isOpen: boolean
@@ -30,7 +30,7 @@ export const useSortSelect = ({
 	const handleOptionClick = (option: Option) => (event: MouseEvent<HTMLDivElement>) => {
 		event.stopPropagation()
 
-		const newSelectedOption = selectedOption?.value === option.value ? undefined : option
+		const newSelectedOption = selectedOption?.value === option.value ? null : option
 
 		setSelectedOption && setSelectedOption(newSelectedOption)
 
@@ -42,7 +42,6 @@ export const useSortSelect = ({
 			}
 			onChange(customEvent as unknown as { label: string; value: string })
 		}
-		setIsOpen(false) // Close the dropdown after selection
 	}
 
 	const handleDocumentClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
