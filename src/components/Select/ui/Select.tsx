@@ -89,7 +89,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 			</div>
 			{isOpen && (
 				<div className={s.optionsList}>
-					{options.map((option) => (
+					{options?.map((option) => (
 						<div
 							key={option.label}
 							className={cx(s.option, {

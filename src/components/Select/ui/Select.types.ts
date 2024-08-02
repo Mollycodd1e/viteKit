@@ -6,7 +6,7 @@ export interface Option {
 }
 
 export interface MultiSelectProps {
-	options: Option[]
+	options?: Option[]
 	placeholder?: string
 	error?: boolean
 	disabled?: boolean
