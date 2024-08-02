@@ -13,7 +13,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 		area,
 		floor,
 		floorsNumber,
-		section,
+		housing,
 		bedroomsCount,
 		number,
 		isDecoration = false,
@@ -48,7 +48,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 				)}
 				<div className={s.lotPropertyListDesktop}>
 					<Tag variant='gray'>{areaStr}</Tag>
-					<Tag variant='gray'>{section}</Tag>
+					<Tag variant='gray'>{housing}</Tag>
 					<Tag variant='gray'>{'Этаж' + ' ' + floorStr}</Tag>
 				</div>
 				<ul className={s.lotPropertyListMobile}>
@@ -57,8 +57,8 @@ export const LotCard = ({ lot }: ILotCard) => {
 						<div>{areaStr}</div>
 					</li>
 					<li className={s.lotPropertyItem}>
-						<div>{section?.split(' ')[0]}</div>
-						<div>{section?.split(' ')[1]}</div>
+						<div>{housing?.split(' ')[0]}</div>
+						<div>{housing?.split(' ')[1]}</div>
 					</li>
 					<li className={s.lotPropertyItem}>
 						<div>Этаж</div>
