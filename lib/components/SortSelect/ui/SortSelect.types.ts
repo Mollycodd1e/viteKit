@@ -5,10 +5,11 @@ export interface Option {
 
 export interface SortSelectProps {
 	options: Option[]
+	selectedOption?: Option
 	placeholder?: string
 	error?: boolean
 	disabled?: boolean
-	onChange?: (event: Option) => void
+	onChange?: (event: Option | undefined) => void
 	onBlur?: (event: Option) => void
 	additionalClass?: string
 	mini?: boolean

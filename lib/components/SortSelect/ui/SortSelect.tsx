@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import classNames from 'classnames'
-import { SortSelectProps, Option } from './SortSelect.types'
+import { SortSelectProps } from './SortSelect.types'
 import s from './SortSelect.module.scss'
 import { NewIcon } from '../../NewIcon'
 import { Modal, Text, useClientWidth } from '../../../main'
@@ -10,6 +10,7 @@ const cx = classNames.bind(s)
 
 export const SortSelect: React.FC<SortSelectProps> = ({
 	options,
+	selectedOption,
 	placeholder = '',
 	error,
 	disabled,
@@ -18,14 +19,13 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 	onBlur,
 	mini,
 }) => {
-	const [selectedOption, setSelectedOption] = useState<Option | null>(options[0])
 	const [isOpen, setIsOpen] = useState(false)
 	const containerRef = useRef<HTMLDivElement>(null)
 	const { isMobile, isDesktop } = useClientWidth()
 
 	const { handleBlur, getInputValue, getOption, handleDocumentClick } = useSortSelect({
 		selectedOption,
-		setSelectedOption,
+		setSelectedOption: onChange,
 		setIsOpen,
 		containerRef,
 		isOpen,
