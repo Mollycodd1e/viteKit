@@ -89,12 +89,12 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 							/>
 						</div>
 					</div>
-					<div className={s.mobileOptionList}>{options.map((option) => getOption(option))}</div>
+					<div className={s.mobileOptionList}>{options?.map((option) => getOption(option))}</div>
 				</Modal>
 			)}
 			{isOpen && !isMobile && (
 				<div className={cx(s.optionsList, { [s.optionListOnTop]: openOnTop })}>
-					{options.map((option) => getOption(option))}
+					{options?.map((option) => getOption(option))}
 				</div>
 			)}
 		</div>

@@ -4,7 +4,7 @@ export interface Option {
 }
 
 export interface SortSelectProps {
-	options: Option[]
+	options?: Option[]
 	selectedOption: Option | null
 	placeholder?: string
 	error?: boolean
