@@ -18,6 +18,7 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 	onChange,
 	onBlur,
 	mini,
+	openOnTop = false,
 }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const containerRef = useRef<HTMLDivElement>(null)
@@ -47,7 +48,12 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 	return (
 		<div
 			ref={containerRef}
-			className={cx(s.sortSelectWrapper, { [s.sortSelectWrapperError]: error }, additionalClass)}
+			className={cx(
+				s.sortSelectWrapper,
+				{ [s.sortSelectWrapperError]: error },
+				{ [s.sortSelectWrapperTop]: openOnTop },
+				additionalClass
+			)}
 			tabIndex={0}
 			onBlur={handleBlur}>
 			<div className={cx(s.inputWrapper)}>
@@ -87,7 +93,9 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 				</Modal>
 			)}
 			{isOpen && !isMobile && (
-				<div className={s.optionsList}>{options.map((option) => getOption(option))}</div>
+				<div className={cx(s.optionsList, { [s.optionListOnTop]: openOnTop })}>
+					{options.map((option) => getOption(option))}
+				</div>
 			)}
 		</div>
 	)

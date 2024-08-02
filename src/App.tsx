@@ -323,13 +323,14 @@ function App() {
 			</Modal>
 			<Modal
 				isOpen={modal2}
-				emitIsOpen={() => setmodal2((prev) => !prev)} leaveDisableScroll>
-					<Button
+				emitIsOpen={() => setmodal2((prev) => !prev)}
+				leaveDisableScroll>
+				<Button
 					as='button'
 					onClick={() => setmodal2((prev) => !prev)}>
 					выйди
 				</Button>
-				</Modal>
+			</Modal>
 			<Button
 				as='button'
 				variant='whiteStroke'
@@ -370,10 +371,16 @@ function App() {
 					placeholder='Выберите корпус'
 					onBlur={handleBlur}></Select>
 			</div>
-			<div>
+			<div style={{ width: 'max-content',position: 'relative', display: 'flex', gap: '20px', margin: '0 auto' }}>
+				<Button
+					as='button'
+					variant='blue'>
+					Фильтры
+				</Button>
 				<SortSelect
 					options={sort_options}
 					selectedOption={sort_options[0]}
+					openOnTop
 					//@ts-expect-error кастомный эвент
 					onChange={(e) => setSort(e)}></SortSelect>
 			</div>

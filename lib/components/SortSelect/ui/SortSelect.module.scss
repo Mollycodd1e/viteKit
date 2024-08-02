@@ -154,6 +154,18 @@
 		min-width: 375px;
 		right: 0;
 	}
+
+	.sortSelectWrapperTop {
+		position: unset;
+	}
+
+	.optionListOnTop {
+		top: unset;
+		right: unset;
+		bottom: 52px;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
 }
 
 @media(min-width: 1440px) {
