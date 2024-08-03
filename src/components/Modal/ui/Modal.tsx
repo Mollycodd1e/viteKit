@@ -13,6 +13,7 @@ export const Modal: FC<IModalProps> = ({
 	additionalClass,
 	additionalClassOverlay,
 	additionalClassModalBody,
+	opacity = 0.7,
 	children,
 }) => {
 	const closeModal = () => {
@@ -39,6 +40,8 @@ export const Modal: FC<IModalProps> = ({
 				className={`${s.modalOverlay} ${additionalClassOverlay} ${
 					isTransparentBack ? s.isTransparentBack : ''
 				}`}
+
+				style={isTransparentBack ? {opacity: "" + opacity} : {}}
 			/>
 			<div className={`${s.modalBody} ${additionalClassModalBody}`}>{children}</div>
 		</div>
