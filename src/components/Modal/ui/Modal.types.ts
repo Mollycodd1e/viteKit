@@ -11,5 +11,5 @@ export interface IModalProps {
 	isClickOutside?: boolean
 	leaveDisableScroll?: boolean
 	createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
-	opacity: number
+	opacity?: number
 }
