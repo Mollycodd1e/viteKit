@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction } from 'react'
 
 export interface IModalProps {
 	isOpen: boolean
@@ -10,6 +10,7 @@ export interface IModalProps {
 	isTransparentBack?: boolean
 	isClickOutside?: boolean
 	leaveDisableScroll?: boolean
+	notDisableScroll?: boolean
 	createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
 	opacity?: number
 }

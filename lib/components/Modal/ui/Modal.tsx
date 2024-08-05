@@ -14,6 +14,7 @@ export const Modal: FC<IModalProps> = ({
 	additionalClassOverlay,
 	additionalClassModalBody,
 	opacity = 0.7,
+	notDisableScroll = false,
 	children,
 }) => {
 	const closeModal = () => {
@@ -21,6 +22,7 @@ export const Modal: FC<IModalProps> = ({
 	}
 
 	useEffect(() => {
+		if (notDisableScroll) return
 		if (isOpen) {
 			if (document.body.classList.contains('disable-scroll')) return
 			document.body.classList.add('disable-scroll')
@@ -40,8 +42,7 @@ export const Modal: FC<IModalProps> = ({
 				className={`${s.modalOverlay} ${additionalClassOverlay} ${
 					isTransparentBack ? s.isTransparentBack : ''
 				}`}
-
-				style={isTransparentBack ? {opacity: "" + opacity} : {}}
+				style={isTransparentBack ? { opacity: '' + opacity } : {}}
 			/>
 			<div className={`${s.modalBody} ${additionalClassModalBody}`}>{children}</div>
 		</div>
