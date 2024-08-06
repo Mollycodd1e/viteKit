@@ -15,15 +15,12 @@
 	display: flex;
 	gap: 4px;
 	user-select: none;
+	cursor: pointer;
 
 	& label {
 		padding: 9px 11px;
 		min-height: 40px;
 		border-radius: 48px;
-		font-size: 14px;
-		line-height: 20px;
-		font-weight: 500;
-		color: #141416;
 		box-sizing: border-box;
 	}
 
@@ -39,15 +36,18 @@
 	color: #141416;
 }
 
+.textChecked {
+	color: #ffffff;
+}
+
 .whiteFill {
 	& label {
 		border: 1px solid #E6E8EC;
 		background: #ffffff;
+		color: #ffffff;
 	}
-}
 
-.whiteFill:has(input:checked) {
-	& label {
+	& label:has(>input:checked) {
 		border: 1px solid #141416;
 		background: #141416;
 	}

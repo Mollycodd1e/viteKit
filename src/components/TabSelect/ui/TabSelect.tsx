@@ -43,17 +43,19 @@ const TabSelect = ({ variant = 'whiteFill', classname, children }: ITabSelect) =
 }
 
 const TabSelectItem = forwardRef<HTMLInputElement, BaseInputProps>((props, ref) => {
-	const { children, className, additionalClassName, isLong, ...rest } = props
+	const { children, className, additionalClassName, isLong, checked, ...rest } = props
 	//isLong атрибут убирает ограничения в width, height 48px
+
 	return (
 		<label>
 			<input
 				ref={ref}
 				type='checkbox'
+				checked={checked}
 				{...rest}
 			/>
 			<div className={cx(className, additionalClassName, { isLong })}>
-				<Text className={s.text}>{children}</Text>
+				<Text className={cx(s.text, { [s.textChecked]: checked })}>{children}</Text>
 			</div>
 		</label>
 	)
@@ -64,4 +66,3 @@ TabSelectItem.displayName = 'TabSelectItem'
 const TabSelectNamespace = Object.assign(TabSelect, { Item: TabSelectItem })
 
 export { TabSelectNamespace as TabSelect }
-
