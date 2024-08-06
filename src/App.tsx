@@ -297,6 +297,10 @@ function App() {
 	const [modal1, setmodal1] = useState<boolean>(false)
 	const [modal2, setmodal2] = useState(false)
 
+	// const tabList = ['C мебелью', 'C размерами', 'План этажа', 'Ген. план']
+	// const [activeTab, setActiveTab] = useState('')
+
+
 	return (
 		<>
 			<div
@@ -321,6 +325,36 @@ function App() {
 					вайди
 				</Button>
 			</Modal>
+			<div style={{ margin: '20px 0' }}>
+				{/* <TabSelect variant='whiteFill'>
+					<TabSelect.Item
+						value={'C мебелью'}
+						onChange={() => setActiveTab('C мебелью')}
+						checked={activeTab === 'C мебелью'}>
+						С мебелью
+					</TabSelect.Item>
+					<TabSelect.Item
+						value={'C размерами'}
+						onChange={() => setActiveTab('C размерами')}
+						checked={activeTab === 'C размерами'}>
+						С размерами
+					</TabSelect.Item> */}
+					{/* {tabList.map((m, i) => {
+						return (
+							<TabSelect.Item
+								name='type'
+								key={i}
+								checked={activeTab === m}
+								onChange={(e) => (
+									console.log(e.target.value), console.log(m), () => selectActiveTab((prev) => m)
+								)}
+								value={m}>
+								{m}
+							</TabSelect.Item>
+						)
+					})} */}
+				{/* </TabSelect> */}
+			</div>
 			<Modal
 				isOpen={modal2}
 				emitIsOpen={() => setmodal2((prev) => !prev)}
@@ -371,7 +405,14 @@ function App() {
 					placeholder='Выберите корпус'
 					onBlur={handleBlur}></Select>
 			</div>
-			<div style={{ width: 'max-content',position: 'relative', display: 'flex', gap: '20px', margin: '0 auto' }}>
+			<div
+				style={{
+					width: 'max-content',
+					position: 'relative',
+					display: 'flex',
+					gap: '20px',
+					margin: '0 auto',
+				}}>
 				<Button
 					as='button'
 					variant='blue'>
