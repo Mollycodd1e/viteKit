@@ -9,9 +9,10 @@
 
 .inputWrapper {
 	display: flex;
+	align-items: center;
 	gap: 4px;
 	border-radius: 48px;
-	padding: 10px 23px;
+	padding: 0;
 	border: 1px solid #b1b5c3;
 	box-sizing: border-box;
 
@@ -20,6 +21,7 @@
 	}
 
 	& input {
+		padding: 10px 10px 10px 23px;
 		min-width: 50px;
 		width: 100%;
 		border: none;
@@ -39,12 +41,16 @@
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 400;
-	padding: 10px 12px 10px 23px;
+	padding: 0 12px 0 0;
 
 	& input {
 		font-size: 16px;
 		line-height: 24px;
 	}
+}
+
+.inputWrapperPre {
+	padding: 0 0 0 23px;
 }
 
 .light {

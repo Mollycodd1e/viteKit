@@ -627,6 +627,7 @@ function App() {
 					<GroupedInputs>
 						<Input
 							size_s={'small'}
+							pre={'От'}
 							variant='light'
 							type='number'
 							placeholder='70'

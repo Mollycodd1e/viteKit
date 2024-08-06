@@ -82,6 +82,7 @@
 
 	&>div:last-child {
 		font-weight: 500;
+		margin-left: auto;
 		color: #141416;
 	}
 }
@@ -122,6 +123,7 @@
 	}
 
 	.lotImageWrapper {
+		justify-content: space-between;
 
 		& img {
 			width: 148px;
