@@ -21,7 +21,7 @@ export const ProjectCardSkeleton = () => {
 				</div>
 			</div>
 			{skeletonElements.map((m) => {
-				return <LotCardSkeleton key={m} />	
+				return <LotCardSkeleton key={m} />
 			})}
 		</div>
 	)
