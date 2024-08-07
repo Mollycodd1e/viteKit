@@ -15,13 +15,13 @@
 	display: flex;
 	gap: 4px;
 	user-select: none;
-	cursor: pointer;
 
 	& label {
 		padding: 9px 11px;
 		min-height: 40px;
 		border-radius: 48px;
 		box-sizing: border-box;
+		cursor: pointer;
 	}
 
 	& input {

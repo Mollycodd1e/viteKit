@@ -2,30 +2,20 @@
 	max-width: 400px;
 }
 
+body {
+	margin: 0;
+}
+
+main {
+	padding: 20px 20px;
+	border-radius: 24px;
+	background: #eec296;
+}
+
 body.disable-scroll {
 	width: 100%;
 	overflow: hidden;
 	touch-action: none;
-}
-
-.modal {
-	top: 56px;
-	min-height: max-content;
-	height: calc(100% - 56px);
-	// flex-direction: column;
-	// justify-content: flex-start;
-	// align-items: flex-start;
-	// height: 100%;
-	// padding: 40px 32px;
-	// overflow: auto;
-}
-
-.modalContent {
-	padding: 40px 32px;
-	align-items: flex-start;
-	flex-direction: column;
-	gap: 40px;
-	overflow: auto;
 }
 
 .menuList {
@@ -55,8 +45,4 @@ body.disable-scroll {
 	&:last-child {
 		padding-bottom: 0;
 	}
-}
-
-.gg {
-	min-width: 101px;
 }

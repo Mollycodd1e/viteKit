@@ -1,0 +1,15 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.tabsShort {
+	width: 400px;
+}
+
+.destinationWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}

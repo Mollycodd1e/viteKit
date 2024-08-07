@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-type btnWidth = 'auto' | 'full'
+export type btnWidth = 'auto' | 'full'
 
 export const BUTTON_VARIANTS = {
 	blue: 'blue',

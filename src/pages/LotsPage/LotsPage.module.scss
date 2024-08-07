@@ -1,0 +1,24 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	border-radius: 48px;
+}
+
+.lotWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.optionsWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.isFetching {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}

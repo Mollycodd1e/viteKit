@@ -1,0 +1,15 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.optionsWrapper {
+	display: flex;
+	gap: 40px;
+}
+
+.isLoading {
+	display: flex;
+	align-items: center;
+}
