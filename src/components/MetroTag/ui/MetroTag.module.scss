@@ -42,10 +42,27 @@
 	width: 100%;
 }
 
+
+.transparent{
+	width: 100%;
+	padding: 0;
+	background: none;
+}
+.long{
+	justify-content: space-between;
+}
+
 @media(min-width: 1024px) {
 	.root {
 		padding: 10px 24px;
 		border-radius: 110px;
 		background: #F4F5F6;
 	}
+
+	.transparent{
+		width: 100%;
+		padding: 0;
+		background: none;
+	}
+
 }
