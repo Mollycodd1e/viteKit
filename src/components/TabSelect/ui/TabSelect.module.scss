@@ -13,6 +13,7 @@
 
 .root {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 4px;
 	user-select: none;
 
@@ -29,28 +30,58 @@
 	}
 }
 
-.text {
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 500;
-	color: #141416;
-}
-
-.textChecked {
-	color: #ffffff;
-}
-
 .whiteFill {
 	& label {
 		border: 1px solid #E6E8EC;
 		background: #ffffff;
-		color: #ffffff;
+
+		& .text {
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 500;
+			color: #141416;
+		}
 	}
 
 	& label:has(>input:checked) {
 		border: 1px solid #141416;
 		background: #141416;
+
+		& .text {
+			color: #ffffff;
+		}
 	}
 }
 
-@media(min-width: 1024px) {}
+@media((min-width: 1024px) and (pointer: fine)) {
+	.whiteFill {
+		& label:hover {
+			border: 1px solid #353945;
+			background: #23262F;
+
+			& div {
+				color: #ffffff;
+			}
+		}
+
+		& label:has(>input:checked):hover {
+			border: 1px solid #353945;
+			background: #23262F;
+		}
+	}
+}
+
+@media(min-width: 1440px) {
+	.root {
+		& label {
+			padding: 11px 13px;
+			min-height: 48px;
+
+			& .text {
+				font-size: 16px;
+				line-height: 24px;
+
+			}
+		}
+	}
+}

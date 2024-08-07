@@ -5,11 +5,16 @@
 }
 
 .tabsShort {
-	width: 400px;
+	max-width: 350px;
+}
+
+.tabSelectWrapper {
+	margin: 0 auto;
 }
 
 .destinationWrapper {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 20px;
+	margin: 0 auto;
 }

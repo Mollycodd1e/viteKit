@@ -91,7 +91,7 @@ const TabsPage = () => {
 					})}
 				</TabSwitcher>
 			</div>
-			<div>
+			<div className={s.tabSelectWrapper}>
 				<TabSelect variant='whiteFill'>
 					{tabList.map((m, i) => {
 						return (
