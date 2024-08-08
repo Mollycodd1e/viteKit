@@ -19,19 +19,26 @@ export const ButtonState = ({ children }: IButtonState) => {
 	const widthVariants = ['auto', 'full']
 	const variantsList = Object.values(BUTTON_VARIANTS)
 
+	// const hasWidthProp = Object.prototype.hasOwnProperty.call(children.props, 'width')
+	// const hasVariantProp = Object.prototype.hasOwnProperty.call(children.props, 'variant')
+	// const hasLoadingProp = Object.prototype.hasOwnProperty.call(children.props, 'isLoading')
+
 	return (
 		<div className={s.root}>
 			{modifiedChildren}
 			<div className={s.optionsWrapper}>
-				<select onChange={(e) => setWidth(e.target.value)}>
-					{widthVariants.map((variant) => (
-						<option
-							key={variant}
-							value={variant}>
-							{variant}
-						</option>
-					))}
-				</select>
+				{
+					<select onChange={(e) => setWidth(e.target.value)}>
+						{widthVariants.map((variant) => (
+							<option
+								key={variant}
+								value={variant}>
+								{variant}
+							</option>
+						))}
+					</select>
+				}
+
 				<select onChange={(e) => setVariants(e.target.value)}>
 					{variantsList.map((variant) => (
 						<option

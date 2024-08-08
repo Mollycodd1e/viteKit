@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 
 export const ROUND_BUTTON_VARIANTS = {
 	whiteStroke: 'whiteStroke',
+	blackFill: 'blackFill',
 }
 
 export type roundBtnVariant = keyof typeof ROUND_BUTTON_VARIANTS
@@ -26,4 +27,3 @@ interface IRoundButtonProps {
 }
 
 export type ComponentProps = IRoundButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
-
