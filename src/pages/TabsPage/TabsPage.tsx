@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DestinationTab, FieldInput, NewIcon, TabSelect, TabSwitcher } from '../../main'
+import {DestinationTab, FieldInput, Input, NewIcon, TabSelect, TabSwitcher} from '../../main'
 import s from './TabsPage.module.scss'
 
 const TabsPage = () => {
@@ -123,6 +123,14 @@ const TabsPage = () => {
 					/>
 				))}
 			</div>
+
+			<Input
+				width={'auto'}
+				variant="light"
+				type="text"
+				placeholder="Введите имя"
+				autoComplete={'name'}
+			/>
 		</div>
 	)
 }
