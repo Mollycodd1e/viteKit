@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { NewIcon } from '../../NewIcon'
 import s from './RoundButton.module.scss'
-import { ComponentProps } from './RoundButton.types'
+import { ComponentProps, sizeMap } from './RoundButton.types'
 
 const cx = classNames.bind(s)
 
@@ -18,6 +18,14 @@ export const RoundButton = ({
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
 	const { color } = props
+	const getIconSize = () => {
+		if (size_l) {
+			return sizeMap[size_l]
+		} else if (size_m) {
+			return sizeMap[size_m]
+		}
+		return sizeMap[size]
+	}
 
 	return (
 		<button
@@ -34,7 +42,7 @@ export const RoundButton = ({
 				{iconName ? (
 					<NewIcon
 						name={iconName}
-						size={size_l || size_m || size}
+						size={getIconSize()}
 						deg={deg}
 						color={color}
 					/>
