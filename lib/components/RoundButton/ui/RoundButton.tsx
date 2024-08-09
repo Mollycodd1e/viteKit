@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { NewIcon } from '../../NewIcon'
 import s from './RoundButton.module.scss'
@@ -17,15 +17,30 @@ export const RoundButton = ({
 	deg,
 	...props
 }: React.PropsWithChildren<ComponentProps>) => {
+	const [btnSize, setBtnSize] = useState(sizeMap.small)
+
 	const { color } = props
-	const getIconSize = () => {
-		if (size_l) {
-			return sizeMap[size_l]
-		} else if (size_m) {
-			return sizeMap[size_m]
+
+	useEffect(() => {
+		const handleResize = () => {
+			const width = window.innerWidth
+			const sizeValue =
+				width > 1440 && size_l
+					? sizeMap[size_l]
+					: width >= 1024 && width <= 1440 && size_m
+					? sizeMap[size_m]
+					: sizeMap[size] || sizeMap.small
+
+			setBtnSize(sizeValue)
 		}
-		return sizeMap[size]
-	}
+
+		window.addEventListener('resize', handleResize)
+		handleResize()
+
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [size, size_m, size_l])
 
 	return (
 		<button
@@ -42,7 +57,7 @@ export const RoundButton = ({
 				{iconName ? (
 					<NewIcon
 						name={iconName}
-						size={getIconSize()}
+						size={btnSize}
 						deg={deg}
 						color={color}
 					/>
