@@ -107,7 +107,7 @@ export const NewIcon = ({ name, size = '24', color, additionalClass, deg }: Icon
 	return (
 		<div
 			style={{
-				color: `${color} !important`,
+				color: color,
 				width: size + 'px',
 				height: size + 'px',
 				transform: `rotate(${deg}deg)`,
