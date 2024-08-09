@@ -1,146 +1,148 @@
 .auto-width {
-	width: max-content;
-	min-width: 100px;
+  width: max-content;
+  min-width: 100px;
 }
 
 .full-width {
-	width: 100%;
+  width: 100%;
 }
 
 .inputWrapper {
-	display: flex;
-	align-items: center;
-	gap: 4px;
-	border-radius: 48px;
-	padding: 0;
-	border: 1px solid #b1b5c3;
-	box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 48px;
+  padding: 0;
+  border: 1px solid #b1b5c3;
+  box-sizing: border-box;
 
-	& input[type=number]::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-	}
+  & input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 
-	& input {
-		padding: 10px 10px 10px 23px;
-		min-width: 50px;
-		width: 100%;
-		border: none;
-		background: transparent;
-		font-size: 16px;
-		line-height: 24px;
-		box-sizing: border-box;
+  & input {
+    padding: 10px 10px 10px 23px;
+    min-width: 50px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    line-height: 24px;
+    box-sizing: border-box;
 
-		&:focus {
-			outline: none;
-		}
-	}
+    &:focus {
+      outline: none;
+    }
+  }
+
 }
 
 .inputWrapperPost,
 .inputWrapperPre {
-	font-size: 16px;
-	line-height: 24px;
-	font-weight: 400;
-	padding: 0 12px 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 0 12px 0 0;
 
-	& input {
-		font-size: 16px;
-		line-height: 24px;
-	}
+  & input {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .inputWrapperPre {
-	padding: 0 0 0 23px;
+  padding: 0 0 0 23px;
 }
 
 .light {
-	background: #ffffff;
-	border: 1px solid #b1b5c3;
+  background: #ffffff;
+  border: 1px solid #b1b5c3;
 
-	& input {
-		color: #141416;
+  & input {
+    color: #141416;
 
-		&::placeholder {
-			color: #b1b5c3;
-		}
-	}
+    &::placeholder {
+      color: #b1b5c3;
+    }
+  }
 
-	& span {
-		color: #b1b5c3;
-	}
+  & span {
+    color: #b1b5c3;
+  }
 
-	&:hover {
-		border: 1px solid #777e90;
-	}
+  &:hover {
+    border: 1px solid #777e90;
+  }
 
-	&:has(input:focus) {
-		border: 1px solid #141416;
-	}
+  &:has(input:focus) {
+    border: 1px solid #141416;
+  }
 
-	&:has(input:disabled) {
-		background: #f4f5f6;
-		border: 1px solid #e6e8ec;
+  &:has(input:disabled) {
+    background: #f4f5f6;
+    border: 1px solid #e6e8ec;
 
-		& input {
-			color: #b1b5c3;
+    & input {
+      color: #b1b5c3;
 
-			&::placeholder {
-				color: #b1b5c3;
-			}
-		}
+      &::placeholder {
+        color: #b1b5c3;
+      }
+    }
 
-		& span {
-			color: #b1b5c3;
-		}
-	}
+    & span {
+      color: #b1b5c3;
+    }
+  }
 }
 
 .dark {
-	background: #23262f;
-	border: 1px solid #353945;
+  background: #23262f;
+  border: 1px solid #353945;
 
-	& input {
-		color: #ffffff;
+  & input {
+    color: #ffffff;
 
-		&::placeholder {
-			color: #777e90;
-		}
-	}
+    &::placeholder {
+      color: #777e90;
+    }
+  }
 
-	& span {
-		color: #777e90;
-	}
+  & span {
+    color: #777e90;
+  }
 
-	&:hover {
-		border: 1px solid #777e90;
-	}
+  &:hover {
+    border: 1px solid #777e90;
+  }
 
-	&:has(input:focus) {
-		border: 1px solid #ffffff;
-	}
+  &:has(input:focus) {
+    border: 1px solid #ffffff;
+  }
 
-	&:has(input:disabled) {
-		background: #141416;
-		border: 1px solid #353945;
+  &:has(input:disabled) {
+    background: #141416;
+    border: 1px solid #353945;
 
-		& input {
-			color: #353945;
+    & input {
+      color: #353945;
 
-			&::placeholder {
-				color: #353945;
-			}
-		}
+      &::placeholder {
+        color: #353945;
+      }
+    }
 
-		& span {
-			color: #353945;
-		}
-	}
+    & span {
+      color: #353945;
+    }
+  }
 
-	&:has(input:invalid) {
-		border: 1px solid #ec5353;
-	}
+  &:has(input:invalid) {
+    border: 1px solid #ec5353;
+  }
 }
 
 .inputWrapperError {
-	border: 1px solid #ec5353;
+  border: 1px solid #ec5353;
 }
