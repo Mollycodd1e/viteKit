@@ -11,6 +11,7 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 	}
 	variant?: 'default' | 'transparent'
 	addClassName?: string
+	addClassNameColor?: string
 	isBetween?: boolean
 	width?: TagWidth
 }

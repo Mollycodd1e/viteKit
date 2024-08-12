@@ -5,13 +5,21 @@ import {NewIcon} from '../../NewIcon'
 
 const cx = classNames.bind(s)
 
-export const MetroTag = ({addClassName, metro, width = 'auto', variant = 'default', isBetween = false,  ...rest}: IMetroTagProps) => {
+export const MetroTag = ({
+                             addClassName,
+                             addClassNameColor,
+                             metro,
+                             width = 'auto',
+                             variant = 'default',
+                             isBetween = false,
+                             ...rest
+                         }: IMetroTagProps) => {
     const possibleIcons = ['car', 'walk']
     return (
         <div
             className={cx(s.root, s[variant], s[isBetween ? 'long' : ''], addClassName, s[width])}
             {...rest}>
-            <div className={s.metroColor}>
+            <div className={cx(s.metroColor, addClassNameColor)}>
                 {metro?.color && <span style={{background: metro?.color ?? ''}}></span>}
                 {metro.name}
             </div>
