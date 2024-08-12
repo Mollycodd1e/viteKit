@@ -125,6 +125,7 @@ const TabsPage = () => {
 			</div>
 
 			<Input
+				error={true}
 				width={'auto'}
 				variant="light"
 				type="text"

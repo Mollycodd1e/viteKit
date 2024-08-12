@@ -144,5 +144,11 @@
 }
 
 .inputWrapperError {
+  background: #FFEBEB;
   border: 1px solid #ec5353;
+
+  input{
+    color: #ec5353;
+  }
+
 }
