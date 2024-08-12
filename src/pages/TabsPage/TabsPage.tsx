@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import {DestinationTab, FieldInput, Input, NewIcon, TabSelect, TabSwitcher} from '../../main'
+import {useState} from 'react'
+import {DestinationTab, FieldInput, NewIcon, TabSelect, TabSwitcher} from '../../main'
 import s from './TabsPage.module.scss'
+import {SliderNavigation} from "../../../lib/components/SliderNavigation";
 
 const TabsPage = () => {
 	const [activeTab, setActiveTab] = useState('C мебелью')
@@ -124,14 +125,7 @@ const TabsPage = () => {
 				))}
 			</div>
 
-			<Input
-				error={true}
-				width={'auto'}
-				variant="light"
-				type="text"
-				placeholder="Введите имя"
-				autoComplete={'name'}
-			/>
+			<SliderNavigation goNext={() => {}} arr={[1,2,3]} indexSlide={0} goPrev={() => {}} />
 		</div>
 	)
 }
