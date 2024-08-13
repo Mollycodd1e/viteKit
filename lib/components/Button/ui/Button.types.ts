@@ -11,6 +11,7 @@ export const BUTTON_VARIANTS = {
 	whiteFilled: 'whiteFilled',
 	shade: 'shade',
 	volodiyaLight: 'volodiyaLight',
+	transparent: 'transparent',
 }
 
 export type btnVariant = keyof typeof BUTTON_VARIANTS

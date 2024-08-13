@@ -13,7 +13,14 @@ export const ButtonsPage = () => {
 					<ButtonState>
 						<Button
 							as='button'
-							variant='blue'>
+							size='large'
+							variant='blue'
+							post={
+								<NewIcon
+									name={'arrowShort'}
+									deg='-90'
+								/>
+							}>
 							Приветики
 						</Button>
 					</ButtonState>

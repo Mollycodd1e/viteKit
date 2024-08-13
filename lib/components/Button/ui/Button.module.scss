@@ -181,6 +181,18 @@
 	color: #ffffff;
 }
 
+.transparent {
+	padding-left: 0;
+	padding-right: 0;
+	background: transparent;
+	border: 1px solid transparent;
+	color: #015FF9;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
 @keyframes LoaderSpin {
 	0% {
 		transform: rotate(0deg);
