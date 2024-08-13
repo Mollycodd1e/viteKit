@@ -1,45 +1,26 @@
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import s from './Menu.module.scss'
+import {NewIcon} from "../../main.ts";
 
 export const Menu = () => {
-	return (
-		<div className={s.root}>
-			<Link
-				className={s.link}
-				to='/buttons'>
-				Кнопки
-			</Link>
-			<Link
-				className={s.link}
-				to='/modals'>
-				Модалки
-			</Link>
-			<Link
-				className={s.link}
-				to='/tabs'>
-				Табы
-			</Link>
-			<Link
-				className={s.link}
-				to='/icons'>
-				Иконки
-			</Link>
-			<Link
-				className={s.link}
-				to='/lots'>
-				Лоты
-			</Link>
-			<Link
-				className={s.link}
-				to='/tags'>
-				Тэги
-			</Link>
-			<Link
-				className={s.link}
-				to='/select'>
-				Селект
-			</Link>
-		</div>
-	)
+    const LinkComponent = ({to, title}: { to: string, title: string }) => {
+        return <Link to={to} className={s.linkWrap}>
+            {title}
+
+            <NewIcon size={'24'} name={'play2'} deg={'90'} color={'white'}/>
+        </Link>
+    }
+
+    return (
+        <div className={s.root}>
+            <LinkComponent to={'/buttons'} title={'КНОПКИ'}/>
+            <LinkComponent to={'/modals'} title={'МОДАЛКИ'}/>
+            <LinkComponent to={'/tabs'} title={'ТАБЫ'}/>
+            <LinkComponent to={'/icons'} title={'ИКОНКИ'}/>
+            <LinkComponent to={'/lots'} title={'ЛОТЫ'}/>
+            <LinkComponent to={'/tags'} title={'ТЭГИ'}/>
+            <LinkComponent to={'/select'} title={'СЕЛЕКТ'}/>
+        </div>
+    )
 }
 

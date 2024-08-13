@@ -42,6 +42,8 @@ import Play2 from './../assets/Play2.svg'
 import SelectChecked from './../assets/SelectChecked.svg'
 import SelectUnchecked from './../assets/SelectUnchecked.svg'
 import ArrowShort from './../assets/ArrowShort.svg'
+import Search from './../assets/Search.svg'
+
 import { ReactSVGComponent } from './NewIcon.types'
 
 type IconComponentProps = {
@@ -50,6 +52,7 @@ type IconComponentProps = {
 	color?: string
 	additionalClass?: string
 	deg?: string
+	strokeWidth?: string
 }
 
 type IconTypes = { [name: string]: ReactSVGComponent }
@@ -99,9 +102,10 @@ export const iconTypes: IconTypes = {
 	selectChecked: () => <SelectChecked />,
 	selectUnchecked: () => <SelectUnchecked />,
 	arrowShort: () => <ArrowShort />,
+	search: () => <Search />,
 }
 
-export const NewIcon = ({ name, size = '24', color, additionalClass, deg }: IconComponentProps) => {
+export const NewIcon = ({ name, size = '24', color, strokeWidth, additionalClass, deg }: IconComponentProps) => {
 	const IconComponent = iconTypes[name]
 
 	return (
@@ -110,6 +114,7 @@ export const NewIcon = ({ name, size = '24', color, additionalClass, deg }: Icon
 				color: color,
 				width: size + 'px',
 				height: size + 'px',
+				strokeWidth: strokeWidth ?? '',
 				transform: `rotate(${deg}deg)`,
 			}}
 			className={additionalClass ?? ''}>

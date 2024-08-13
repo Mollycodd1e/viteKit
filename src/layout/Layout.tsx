@@ -1,18 +1,18 @@
-import { Menu } from './components/Menu'
-import s from './Layout.module.scss'
+import {Header} from "./components/Header/Header.tsx";
+
 // ваш компонент меню
 
 interface IMain {
-	children?: React.ReactNode
+    children?: React.ReactNode
 }
 
-const Layout = ({ children }: IMain) => {
-	return (
-		<div className={s.root}>
-			<Menu></Menu>
-			<main>{children}</main>
-		</div>
-	)
+const Layout = ({children}: IMain) => {
+    return (
+        <div>
+            <Header/>
+            <main>{children}</main>
+        </div>
+    )
 }
 
 export default Layout
