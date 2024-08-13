@@ -14,12 +14,7 @@ export const ButtonsPage = () => {
 						<Button
 							as='button'
 							size='large'
-							variant='blue'
-							post={
-								<NewIcon
-									name={'arrowRight'}
-								/>
-							}>
+							variant='blue'>
 							Приветики
 						</Button>
 					</ButtonState>
