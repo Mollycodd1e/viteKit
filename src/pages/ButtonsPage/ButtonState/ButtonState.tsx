@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import s from './ButtonState.module.scss'
 import { BUTTON_VARIANTS } from '../../../components/Button/ui/Button.types'
-import { iconTypes } from '../../../components/NewIcon/ui/NewIcon'
-import { NewIcon } from '../../../../lib/main'
+import { iconTypes, NewIcon } from '../../../components/NewIcon/ui/NewIcon'
 
 interface IButtonState {
 	children: React.ReactElement
