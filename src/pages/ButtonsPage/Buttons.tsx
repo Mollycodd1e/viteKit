@@ -17,8 +17,7 @@ export const ButtonsPage = () => {
 							variant='blue'
 							post={
 								<NewIcon
-									name={'arrowShort'}
-									deg='-90'
+									name={'arrowRight'}
 								/>
 							}>
 							Приветики

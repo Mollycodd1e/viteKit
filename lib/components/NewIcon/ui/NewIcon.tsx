@@ -43,6 +43,7 @@ import SelectChecked from './../assets/SelectChecked.svg'
 import SelectUnchecked from './../assets/SelectUnchecked.svg'
 import ArrowShort from './../assets/ArrowShort.svg'
 import Search from './../assets/Search.svg'
+import ArrowRight from './../assets/arrowRight.svg'
 
 import { ReactSVGComponent } from './NewIcon.types'
 
@@ -58,6 +59,7 @@ type IconComponentProps = {
 type IconTypes = { [name: string]: ReactSVGComponent }
 
 export const iconTypes: IconTypes = {
+	arrowRight: () => <ArrowRight />,
 	loader: () => <Loader />,
 	filter: () => <Filter />,
 	fullscreen: () => <FullScreen />,
@@ -105,7 +107,14 @@ export const iconTypes: IconTypes = {
 	search: () => <Search />,
 }
 
-export const NewIcon = ({ name, size = '24', color, strokeWidth, additionalClass, deg }: IconComponentProps) => {
+export const NewIcon = ({
+	name,
+	size = '24',
+	color,
+	strokeWidth,
+	additionalClass,
+	deg,
+}: IconComponentProps) => {
 	const IconComponent = iconTypes[name]
 
 	return (
