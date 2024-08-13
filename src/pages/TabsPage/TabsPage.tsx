@@ -1,7 +1,6 @@
 import {useState} from 'react'
-import {DestinationTab, FieldInput, NewIcon, TabSelect, TabSwitcher} from '../../main'
+import {DestinationTab, FieldInput, NewIcon, SliderNavigation, TabSelect, TabSwitcher} from '../../main'
 import s from './TabsPage.module.scss'
-import {SliderNavigation} from "../../../lib/components/SliderNavigation";
 
 const TabsPage = () => {
 	const [activeTab, setActiveTab] = useState('C мебелью')

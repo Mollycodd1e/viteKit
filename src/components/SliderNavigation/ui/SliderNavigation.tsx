@@ -9,17 +9,17 @@ export const SliderNavigation = ({
                                      goPrev,
                                      goNext,
                                      arr,
-    isNeedTag = true,
+                                     isNeedTag = true,
                                      additionalClassTag = '',
                                      navigationClassName = '',
                                      additionalClassNavButton = ''
                                  }: ISliderNavigation) => {
-    const {isDesktop} = useClientWidth()
+    const { isMobile} = useClientWidth()
 
     return <div className={navigationClassName}>
         <RoundButton
-            size={isDesktop ? 'large' : 'medium'}
-            iconName="arrowLong"
+            size={isMobile ? 'medium' : 'large'}
+            iconName="directionDown"
             deg="90"
             disabled={indexSlide === 0}
             additionalClass={additionalClassNavButton}
@@ -30,14 +30,14 @@ export const SliderNavigation = ({
             style={{backgroundColor: '#141416'}}
             additionalClass={additionalClassTag}
             variant="shade"
-            size={'medium'}>
+            size={isMobile ? 'medium' : 'large'}>
             {`${indexSlide + 1} из ${arr.length}`}
         </Tag>}
 
         <RoundButton
             disabled={indexSlide === arr.length - 1}
-            size={isDesktop ? 'large' : 'medium'}
-            iconName="arrowLong"
+            size={isMobile ? 'medium' : 'large'}
+            iconName="directionDown"
             deg="-90"
             additionalClass={additionalClassNavButton}
             onClick={goNext}
