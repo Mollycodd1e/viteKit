@@ -2,6 +2,8 @@
 	display: flex;
 	padding: 16px 0;
 	gap: 8px;
+	padding: 10px 24px;
+	border-radius: 110px;
 	width: max-content;
 	box-sizing: border-box;
 
@@ -33,7 +35,6 @@
 	color: #777E90;
 }
 
-
 .auto {
 	width: max-content;
 }
@@ -42,23 +43,26 @@
 	width: 100%;
 }
 
-
-.transparent{
+.transparent {
 	padding: 0;
 	background: none;
 }
-.long{
+
+.long {
 	justify-content: space-between;
+}
+
+.withBg {
+	background: #F4F5F6;
 }
 
 @media(min-width: 1024px) {
 	.root {
 		padding: 10px 24px;
 		border-radius: 110px;
-		background: #F4F5F6;
 	}
 
-	.transparent{
+	.transparent {
 		padding: 0;
 		background: none;
 	}

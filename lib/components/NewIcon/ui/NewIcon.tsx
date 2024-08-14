@@ -29,8 +29,8 @@ import WhatsApp from './../assets/WhatsApp.svg'
 import DirectionDown from './../assets/DirectionDown.svg'
 import ArrowLong from './../assets/ArrowLong.svg'
 import BurgerClose from './../assets/BurgerClose.svg'
-import Car from './../assets/Car.svg'
-import Walk from './../assets/Walk.svg'
+import Auto from './../assets/Auto.svg'
+import Pedestrian from './../assets/Pedestrian.svg'
 import Park from './../assets/Park.svg'
 import Metro from './../assets/Metro.svg'
 import Food from './../assets/Food.svg'
@@ -91,8 +91,8 @@ export const iconTypes: IconTypes = {
 	directionDown: () => <DirectionDown />,
 	burgerClose: () => <BurgerClose />,
 	arrowLong: () => <ArrowLong />,
-	car: () => <Car />,
-	walk: () => <Walk />,
+	auto: () => <Auto />,
+	pedestrian: () => <Pedestrian />,
 	park: () => <Park />,
 	metro: () => <Metro />,
 	food: () => <Food />,
