@@ -1,5 +1,10 @@
 import s from './TagsPage.module.scss'
+import {MetroTag} from "../../main.ts";
 
 export const TagsPage = () => {
-	return <div className={s.root}></div>
+	const metro = {name: 'car', color: 'red'}
+
+	return <div className={s.root}>
+		<MetroTag metro={metro} />
+	</div>
 }
