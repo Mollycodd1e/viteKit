@@ -8,6 +8,7 @@ const cx = classNames.bind(s)
 type TBtnWhiteFill = {
 	isLong?: boolean
 	additionalClassName?: string
+	additionalLabelClass?: string
 }
 
 type BaseInputProps = JSX.IntrinsicElements['input'] & TBtnWhiteFill
@@ -43,11 +44,19 @@ const TabSelect = ({ variant = 'whiteFill', classname, children }: ITabSelect) =
 }
 
 const TabSelectItem = forwardRef<HTMLInputElement, BaseInputProps>((props, ref) => {
-	const { children, className, additionalClassName, isLong, checked, ...rest } = props
+	const {
+		children,
+		className,
+		additionalClassName,
+		additionalLabelClass,
+		isLong,
+		checked,
+		...rest
+	} = props
 	//isLong атрибут убирает ограничения в width, height 48px
 
 	return (
-		<label>
+		<label className={cx(additionalLabelClass)}>
 			<input
 				ref={ref}
 				type='checkbox'
