@@ -1,8 +1,6 @@
 .root {
   background: #0e0e0e;
-  margin-top: 22px;
-  padding: 10px 20px;
-
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -14,9 +12,8 @@
 
 .wrap {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  padding-left: 10%;
-  padding-right: 10%;
 }
 
 .topSide {
@@ -38,7 +35,6 @@
 
 .search {
   position: relative;
-  margin-left: 50px;
 }
 
 .searchInp {

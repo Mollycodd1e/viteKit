@@ -22,6 +22,8 @@
 	border-radius: 50%;
 	padding: 7px;
 	box-sizing: border-box;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
 	cursor: pointer;
 
 	&:disabled {
@@ -63,7 +65,7 @@
 	}
 }
 
-@media(min-width: 1024px) {
+@media(min-width: 1024px) and (pointer: fine) {
 	.small-size_m {
 		@include button-small;
 	}
@@ -80,12 +82,21 @@
 		&:hover {
 			border: 1px solid #b1b5c3;
 		}
+
+		&:active {
+			border: 1px solid #141416;
+		}
 	}
 
 	.blackFill {
 		&:hover {
 			background: #23262F;
 			border: 1px solid #353945;
+		}
+
+		&:active {
+			background: #353945;
+			border: 1px solid #777E90;
 		}
 	}
 }

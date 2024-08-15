@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button, NewIcon, RoundButton } from '../../main'
 import s from './ButtonsPage.module.scss'
 import { ButtonState } from './ButtonState/ButtonState'
+import { ZoomControls } from '../../components/ZoomControls'
 
 export const ButtonsPage = () => {
 	const [isActive, setIsActive] = useState<boolean>(false)
@@ -34,6 +35,13 @@ export const ButtonsPage = () => {
 						/>
 					</RoundButton>
 				</div>
+			</div>
+			<div>
+				<ZoomControls
+					size='medium'
+					zoomIn={() => {}}
+					zoomOut={() => {}}
+				/>
 			</div>
 		</div>
 	)

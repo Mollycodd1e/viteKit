@@ -1,11 +1,12 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px 40px;
+  padding: 0 10px;
 }
 
 .linkWrap {
-  width: 165px;
+  width: max-content;
   height: 16px;
   display: flex;
   align-items: center;
@@ -24,4 +25,3 @@
     outline: 1px solid #232323;
   }
 }
-

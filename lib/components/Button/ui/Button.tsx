@@ -49,7 +49,7 @@ export const Button = ({
 			</>
 		)
 	}
-
+	
 	if (props.as === 'link') {
 		return (
 			<a

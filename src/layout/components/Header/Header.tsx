@@ -38,34 +38,36 @@ export const Header = () => {
 		<nav className={s.root}>
 			<div className={s.wrap}>
 				<svg
-					width='220'
-					height='60'
-					xmlns='http://www.w3.org/2000/svg'>
+					xmlns='http://www.w3.org/2000/svg'
+					width='200'
+					height='60'>
 					<rect
-						width='220'
+						width='200'
 						height='60'
 						fill='transparent'
 					/>
 					<text
-						x='10'
+						x='0'
 						y='42'
-						fontFamily='Arial, sans-serif'
-						fontSize='40'
+						font-family='Arial, sans-serif'
+						font-size='40'
 						fill='white'>
 						Stone
 					</text>
 					<rect
-						x='115'
+						x='110'
 						y='10'
-						width='95'
+						width='85'
 						height='40'
+						rx='8'
+						ry='8'
 						fill='#f90'
 					/>
 					<text
-						x='120'
+						x='115'
 						y='42'
-						fontFamily='Arial, sans-serif'
-						fontSize='40'
+						font-family='Arial, sans-serif'
+						font-size='40'
 						fill='black'>
 						Hub
 					</text>
