@@ -19,7 +19,7 @@ export const RoundButton = ({
 }: React.PropsWithChildren<ComponentProps>) => {
 	const [btnSize, setBtnSize] = useState(sizeMap.small)
 
-	const { color } = props
+	const { color = '#141416' } = props
 
 	useEffect(() => {
 		const handleResize = () => {
