@@ -124,6 +124,7 @@ export const NewIcon = ({
 				height: size + 'px',
 				transform: `rotate(${deg}deg)`,
 				color: color,
+				strokeWidth: strokeWidth
 			}}
 			className={additionalClass ?? ''}>
 			<IconComponent

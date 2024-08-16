@@ -28,9 +28,9 @@ export const CheckBox = forwardRef<Ref, Props>(({
             <Input type="checkbox" {...props} ref={ref}/>
 
             {isChecked && <NewIcon additionalClass={s.checkIcon}
-                                   color={'white'}
+                                   color={'white'} strokeWidth={'3'}
                                    name={'check'}
-                                   size='20'/>}
+                                   size='16'/>}
 
             <div className={s.labelText}
                  dangerouslySetInnerHTML={{__html: text}}
