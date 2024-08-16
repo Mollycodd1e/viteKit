@@ -1,0 +1,84 @@
+@mixin visuallyHiddenMix {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.btn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 50;
+  padding: 12px;
+}
+
+.modal {
+  flex-direction: column;
+
+  & form {
+    width: 100%;
+  }
+}
+
+.modalBody {
+  width: 100%;
+  height: 100%;
+}
+
+.root {
+  font-family: inherit;
+  height: 100%;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 32px;
+
+  color: #141416;
+
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #353945;
+
+  margin-bottom: 32px;
+}
+
+.inputWrapper {
+  width: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+@media (min-width: 1024px) {
+  .modalBody {
+    width: unset;
+    height: unset;
+  }
+  .title {
+    padding-top: unset;
+  }
+
+  .root {
+    border-radius: 32px;
+    width: 442px;
+    padding: 64px;
+  }
+}

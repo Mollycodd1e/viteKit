@@ -20,6 +20,7 @@ export const Menu = () => {
             <LinkComponent to={'/lots'} title={'ЛОТЫ'}/>
             <LinkComponent to={'/tags'} title={'ТЭГИ'}/>
             <LinkComponent to={'/select'} title={'СЕЛЕКТ'}/>
+            <LinkComponent to={'/forms'} title={'ФОРМЫ'}/>
         </div>
     )
 }

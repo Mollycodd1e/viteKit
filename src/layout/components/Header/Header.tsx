@@ -14,7 +14,7 @@ export const Header = () => {
 
 	const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
 		if (event.key === 'Enter') {
-			window.location.href = 'https://stone.ru'
+			window.location.href = 'https://test.stone.ru'
 		}
 	}
 
@@ -49,8 +49,8 @@ export const Header = () => {
 					<text
 						x='0'
 						y='42'
-						font-family='Arial, sans-serif'
-						font-size='40'
+						fontFamily='Arial, sans-serif'
+						fontSize='40'
 						fill='white'>
 						Stone
 					</text>
@@ -66,8 +66,9 @@ export const Header = () => {
 					<text
 						x='115'
 						y='42'
-						font-family='Arial, sans-serif'
-						font-size='40'
+						fontFamily='Arial, sans-serif'
+						fontWeight='bold'
+						fontSize='40'
 						fill='black'>
 						Hub
 					</text>
@@ -84,7 +85,7 @@ export const Header = () => {
 						}}
 						onClick={(e) => {
 							e.preventDefault()
-							window.location.href = 'https://stone.ru'
+							window.location.href = 'https://test.stone.ru'
 						}}>
 						<NewIcon
 							additionalClass={s.searchIcon}
