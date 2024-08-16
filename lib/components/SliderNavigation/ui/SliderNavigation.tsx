@@ -15,12 +15,12 @@ export const SliderNavigation = ({
 	navigationClassName = '',
 	additionalClassNavButton = '',
 }: ISliderNavigation) => {
-	const { isMobile } = useClientWidth()
+	const { isDesktop } = useClientWidth()
 
 	return (
 		<div className={navigationClassName}>
 			<RoundButton
-				size={isMobile ? 'medium' : 'large'}
+				size={!isDesktop ? 'medium' : 'large'}
 				iconName='directionDown'
 				deg='90'
 				disabled={indexSlide === 0}
@@ -32,14 +32,14 @@ export const SliderNavigation = ({
 				<Tag
 					additionalClass={cx(s.sliderTag, additionalClassTag)}
 					variant='shade'
-					size={isMobile ? 'medium' : 'large'}>
+					size={!isDesktop ? 'medium' : 'large'}>
 					{`${indexSlide + 1} из ${arr.length}`}
 				</Tag>
 			)}
 
 			<RoundButton
 				disabled={indexSlide === arr.length - 1}
-				size={isMobile ? 'medium' : 'large'}
+				size={!isDesktop ? 'medium' : 'large'}
 				iconName='directionDown'
 				deg='-90'
 				additionalClass={additionalClassNavButton}
