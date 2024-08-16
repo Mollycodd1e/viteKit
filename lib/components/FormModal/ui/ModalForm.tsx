@@ -13,10 +13,11 @@ import {CheckBox} from "../../CheckBox/CheckBox.tsx";
 interface IModalFormProps {
     isFormOpen: boolean
     setIsFormOpen: (isOpen: boolean) => void
+    submitHandler: (data: unknown) => void
 
     title: string
     subTitle: string
-    personalCheckbox: { text: string, isRequired: boolean }
+    personalCheckBox: { text: string, isRequired: boolean }
     advCheckBox?: { text: string, isRequired: boolean } | undefined | null
 }
 
@@ -24,7 +25,7 @@ type IFormPageInputs = {
     phone: string
     name: string
     email?: string
-    personalCheckbox: boolean
+    personalCheckBox: boolean
     advCheckBox?: boolean
 }
 
@@ -37,7 +38,8 @@ export const ModalForm = ({
                               setIsFormOpen,
                               title,
                               subTitle,
-                              personalCheckbox = {text: defaultTextCheckBox, isRequired: true},
+                              submitHandler,
+                              personalCheckBox = {text: defaultTextCheckBox, isRequired: true},
                               advCheckBox = {text: defaultTextCheckBox, isRequired: true},
                           }: IModalFormProps) => {
     const {
@@ -55,11 +57,11 @@ export const ModalForm = ({
         onBlur: () => trigger('phone'),
     })
 
-    const isCheckedPersonal = watch('personalCheckbox')
+    const isCheckedPersonal = watch('personalCheckBox')
     const isCheckAdvCheckBox = watch('advCheckBox')
 
     const onSubmit = (data: IFormPageInputs) => {
-        console.log(data)
+        submitHandler(data)
         reset()
     }
 
@@ -80,7 +82,8 @@ export const ModalForm = ({
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Flex className={s.inputWrapper}>
                         <Input width="full" size_s="small" variant="light" placeholder="Введите имя"
-                               {...register('name', {required: true, pattern: nameReg})} error={Boolean(errors.name)}
+                               data-testid="modal_name" {...register('name', {required: true, pattern: nameReg})}
+                               error={Boolean(errors.name)}
                         />
 
                         <InputMask
@@ -91,7 +94,6 @@ export const ModalForm = ({
                             placeholder="+7 (- - -)&ensp;- - -&ensp;- -&ensp;- -"
                             onBlur={onBlur}>
                             <Input width="full"
-                                //TODO 16.08 указать единый data-test-id
                                    data-testid="phone_modal"
                                    type="tel"
                                    size_s={'small'} variant="light"
@@ -101,15 +103,18 @@ export const ModalForm = ({
                             />
                         </InputMask>
 
-                        {advCheckBox && <CheckBox isChecked={isCheckAdvCheckBox} error={Boolean(errors.advCheckBox)}
-                                                  text={advCheckBox.text}
-                                                  {...register('advCheckBox', {required: advCheckBox?.isRequired})}/>}
+                        {advCheckBox && <CheckBox
+                            data-testid="modal_advCheckBox" isChecked={isCheckAdvCheckBox}
+                            error={Boolean(errors.advCheckBox)}
+                            text={advCheckBox.text} {...register('advCheckBox', {required: advCheckBox?.isRequired})}/>}
 
-                        <CheckBox isChecked={isCheckedPersonal} error={Boolean(errors.personalCheckbox)}
-                                  text={personalCheckbox.text}
-                                  {...register('personalCheckbox', {required: personalCheckbox.isRequired})}/>
+                        <CheckBox
+                            data-testid="modal_personalCheckBox" isChecked={isCheckedPersonal}
+                            error={Boolean(errors.personalCheckBox)}
+                            text={personalCheckBox.text} {...register('personalCheckBox', {required: personalCheckBox.isRequired})}/>
 
                         <Button
+                            data-testid="modal_submit"
                             variant="blue"
                             width="full"
                             type="submit"
@@ -131,8 +136,6 @@ export const ModalForm = ({
                     </Button>
                 </form>
             </div>
-
-
         </Modal>
     )
 }
