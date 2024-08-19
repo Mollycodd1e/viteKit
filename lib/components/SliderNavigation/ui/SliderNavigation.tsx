@@ -16,15 +16,20 @@ export const SliderNavigation = ({
                                      additionalClassTag = '',
                                      navigationClassName = '',
                                      additionalClassNavButton = '',
+                                     size = "medium",
+                                     size_m = "large",
+                                     size_l = "large",
                                  }: ISliderNavigation) => {
     const {isDesktop} = useClientWidth()
 
     return (
         <div className={navigationClassName}>
             <RoundButton
-                size={!isDesktop ? 'medium' : 'large'}
                 iconName='directionDown'
                 deg='90'
+                size={size}
+                size_m={size_m}
+                size_l={size_l}
                 disabled={isDisabledOff ? false : indexSlide === 0}
                 additionalClass={additionalClassNavButton}
                 onClick={goPrev}
@@ -34,14 +39,19 @@ export const SliderNavigation = ({
                 <Tag
                     additionalClass={cx(s.sliderTag, additionalClassTag)}
                     variant='shade'
-                    size={!isDesktop ? 'medium' : 'large'}>
+                    size={!isDesktop ? 'medium' : 'large'}
+                    size_m={size_m}
+                    size_l={size_l}
+                >
                     {`${indexSlide + 1} из ${arr.length}`}
                 </Tag>
             )}
 
             <RoundButton
                 disabled={isDisabledOff ? false : indexSlide === arr.length - 1}
-                size={!isDesktop ? 'medium' : 'large'}
+                size={size}
+                size_m={size_m}
+                size_l={size_l}
                 iconName='directionDown'
                 deg='-90'
                 additionalClass={additionalClassNavButton}
