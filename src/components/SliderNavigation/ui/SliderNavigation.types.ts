@@ -8,4 +8,5 @@ export interface ISliderNavigation {
 	additionalClassNavButton?: string
 	navigationClassName?: string
 	isNeedTag?: boolean
+	isDisabledOff?: boolean
 }
