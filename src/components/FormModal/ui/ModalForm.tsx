@@ -13,7 +13,7 @@ import {CheckBox} from "../../CheckBox/CheckBox.tsx";
 interface IModalFormProps {
     isFormOpen: boolean
     setIsFormOpen: (isOpen: boolean) => void
-    submitHandler: (data: unknown) => void
+    submitHandler: (data: IFormPageInputs) => void
 
     title: string
     subTitle: string

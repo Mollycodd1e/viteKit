@@ -32,7 +32,7 @@ export const CheckBox = forwardRef<Ref, Props>(({
                                    name={'check'}
                                    size='16'/>}
 
-            <div className={s.labelText}
+            <div className={cx(s.labelText, {[s.error]: error}) }
                  dangerouslySetInnerHTML={{__html: text}}
             />
         </label>)
