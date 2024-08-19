@@ -65,7 +65,7 @@
 	}
 }
 
-@media(min-width: 1024px) and (pointer: fine) {
+@media(min-width: 1024px) {
 	.small-size_m {
 		@include button-small;
 	}
