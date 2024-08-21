@@ -1,3 +1,4 @@
+'use client'
 import {RoundButton} from '../../RoundButton'
 import {Tag} from '../../Tag'
 import {useClientWidth} from '../../../shared/useClientWidth.ts'

@@ -1,87 +1,170 @@
 @mixin visuallyHiddenMix {
-	border: 0;
-	clip: rect(0 0 0 0);
-	clip-path: inset(100%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .root {
-	display: flex;
-	gap: 4px;
-	user-select: none;
+  display: flex;
+  gap: 4px;
+  user-select: none;
 
-	& label {
-		padding: 9px 11px;
-		min-height: 40px;
-		min-width: max-content;
-		border-radius: 48px;
-		box-sizing: border-box;
-		cursor: pointer;
-	}
+  & label {
+    min-height: 40px;
+    min-width: max-content;
+    border-radius: 48px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
 
-	& input {
-		@include visuallyHiddenMix;
-	}
+  & input {
+    @include visuallyHiddenMix;
+  }
 }
 
 .whiteFill {
-	& label {
-		border: 1px solid #E6E8EC;
-		background: #ffffff;
+  & label {
+    padding: 9px 11px;
+    border: 1px solid #E6E8EC;
+    background: #ffffff;
 
-		& .text {
-			font-size: 14px;
-			line-height: 20px;
-			font-weight: 500;
-			color: #141416;
-		}
-	}
+    & .text {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      color: #141416;
+    }
+  }
 
-	& label:has(>input:checked) {
-		border: 1px solid #141416;
-		background: #141416;
+  & label:has(>input:checked) {
+    border: 1px solid #141416;
+    background: #141416;
 
-		& .text {
-			color: #ffffff;
-		}
-	}
+    & .text {
+      color: #ffffff;
+    }
+  }
 }
 
-@media((min-width: 1024px) and (pointer: fine)) {
-	.whiteFill {
-		& label:hover {
-			border: 1px solid #353945;
-			background: #23262F;
+.whiteStroke {
+  &.root {
+    background-color: #FFFFFF;
+    border: solid 1px #E6E8EC;
+    border-radius: 80px;
+    padding: 3px;
+  }
 
-			& div {
-				color: #ffffff;
-			}
-		}
+  & label {
+    transition: background-color 100ms;
+    border: 1px solid #E6E8EC;
 
-		& label:has(>input:checked):hover {
-			border: 1px solid #353945;
-			background: #23262F;
-		}
-	}
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+
+    & .text {
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      color: #141416;
+    }
+  }
+
+  & label:has(>input:checked) {
+    border: 1px solid #141416;
+    background: #141416;
+
+    & .text {
+      color: #ffffff;
+    }
+  }
+
+  & label:has(>input:active) {
+    background: #353945;
+    border: 1px solid #777E90;
+
+    & .text {
+      color: #ffffff;
+    }
+  }
+
+  & label:has(>input:not(:checked):hover) {
+    border: 1px solid #B1B5C3;
+  }
+
+  .withPadding {
+    padding: 9px 11px;
+  }
+}
+
+@media((min-width: 1024px)) {
+  .whiteFill {
+    & label:hover {
+      border: 1px solid #353945;
+      background: #23262F;
+
+      & div {
+        color: #ffffff;
+      }
+    }
+
+    & label:has(>input:checked):hover {
+      border: 1px solid #353945;
+      background: #23262F;
+    }
+  }
+
+  .whiteStroke {
+    .text {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    .withPadding {
+      padding: 9px 11px;
+    }
+  }
 }
 
 @media(min-width: 1440px) {
-	.root {
-		& label {
-			padding: 11px 13px;
-			min-height: 48px;
+  .root {
+    & label {
+      min-height: 48px;
+    }
+  }
 
-			& .text {
-				font-size: 16px;
-				line-height: 24px;
+  .whiteFill {
+    & label {
+      padding: 11px 13px;
 
-			}
-		}
-	}
+      .text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .whiteStroke {
+    & label {
+      display: flex;
+      align-items: center;
+
+      .text {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+  }
 }

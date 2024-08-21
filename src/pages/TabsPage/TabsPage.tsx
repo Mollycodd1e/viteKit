@@ -8,9 +8,7 @@ const TabsPage = () => {
     const tabList = ['C мебелью', 'C размерами', 'План этажа', 'Ген. план']
     const tabs = ['Студия', '1', '2', '3', '4+']
 
-
     return (
-        //TODO Switcher.tsx
         <div className={s.root}>
             <TabSwitcher>
                 {tabs.map((m, i) => {
@@ -98,6 +96,25 @@ const TabsPage = () => {
                             <TabSelect.Item
                                 name='type'
                                 key={i}
+                                checked={activeTab === m}
+                                onChange={() => setActiveTab(m)}
+                                value={m}>
+                                {m}
+                            </TabSelect.Item>
+                        )
+                    })}
+                </TabSelect>
+            </div>
+
+            <div className={s.tabSelectWrapper}>
+                <TabSelect variant='whiteStroke'>
+                    {['для коммерции', 'для жилых'].map((m, i) => {
+                        return (
+                            <TabSelect.Item
+                                name='type'
+                                width={'160px'}
+                                key={i}
+                                withPadding={true}
                                 checked={activeTab === m}
                                 onChange={() => setActiveTab(m)}
                                 value={m}>

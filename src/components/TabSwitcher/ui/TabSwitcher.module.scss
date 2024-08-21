@@ -154,6 +154,7 @@ $roundRadius: 24px;
       background: #E6E8EC;
       border: solid 1px #B1B5C3;
     }
+    transition: background-color 100ms;
   }
 
   & input:not(:checked) ~ .item {
@@ -161,8 +162,12 @@ $roundRadius: 24px;
     border: solid 1px #E6E8EC;
   }
 
+  & input:not(:checked) ~ .item:hover {
+    border: solid 1px #B1B5C3;
+  }
+
   & input:checked ~ .item {
-    background-color: #141416;
+    background: #141416;
     color: #ffffff;
     border: solid 1px #141416;
   }
