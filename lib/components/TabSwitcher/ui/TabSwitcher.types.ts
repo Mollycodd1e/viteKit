@@ -1,6 +1,6 @@
 const TAB_SWITCHER_VARIANTS = {
 	whiteRow: 'whiteRow',
-	blackRow: 'blackRow',
+	whiteRow_apart: 'whiteRow_apart',
 }
 
 type BaseInputProps = JSX.IntrinsicElements['input']
@@ -10,6 +10,9 @@ export interface ITabSwitcherItem extends BaseInputProps {
 	index: number
 	isDisabled?: boolean
 	itemsLength: number
+	width?: string
+	width_m?: string
+	width_l?: string
 }
 
 export interface TabSwitcherProps {

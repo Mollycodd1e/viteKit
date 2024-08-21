@@ -13,6 +13,38 @@ const TabsPage = () => {
         //TODO Switcher.tsx
         <div className={s.root}>
             <TabSwitcher>
+                {tabs.map((m, i) => {
+                    return (
+                        <TabSwitcher.Item
+                            itemsLength={tabs.length}
+                            key={i}
+                            index={i}
+                            value={m}>
+                            {m}
+                        </TabSwitcher.Item>
+                    )
+                })}
+            </TabSwitcher>
+            <div className={s.tabsShort}>
+                <FieldInput label='Количество спален'>
+                    <TabSwitcher>
+                        {tabs.map((m, i) => {
+                            return (
+                                <TabSwitcher.Item
+                                    itemsLength={tabs.length}
+                                    key={i}
+                                    index={i}
+                                    value={m}
+                                    addItemClassName={i === 0 ? s.gg : ''}>
+                                    {m}
+                                </TabSwitcher.Item>
+                            )
+                        })}
+                    </TabSwitcher>
+                </FieldInput>
+            </div>
+            <div>
+                <TabSwitcher col>
                     {tabs.map((m, i) => {
                         return (
                             <TabSwitcher.Item
@@ -24,69 +56,39 @@ const TabsPage = () => {
                             </TabSwitcher.Item>
                         )
                     })}
-            </TabSwitcher>
-            <div className={s.tabsShort}>
-                <FieldInput label='Количество спален'>
-                    <TabSwitcher>
-                            {tabs.map((m, i) => {
-                                return (
-                                    <TabSwitcher.Item
-                                        itemsLength={tabs.length}
-                                        key={i}
-                                        index={i}
-                                        value={m}
-                                        addItemClassName={i === 0 ? s.gg : ''}>
-                                        {m}
-                                    </TabSwitcher.Item>
-                                )
-                            })}
-                    </TabSwitcher>
-                </FieldInput>
-            </div>
-            <div>
-                <TabSwitcher col>
-                        {tabs.map((m, i) => {
-                            return (
-                                <TabSwitcher.Item
-                                    itemsLength={tabs.length}
-                                    key={i}
-                                    index={i}
-                                    value={m}>
-                                    {m}
-                                </TabSwitcher.Item>
-                            )
-                        })}
                 </TabSwitcher>
             </div>
             <div className={s.tabsShort}>
                 <TabSwitcher col>
-                        {tabs.map((m, i) => {
-                            return (
-                                <TabSwitcher.Item
-                                    itemsLength={tabs.length}
-                                    key={i}
-                                    index={i}
-                                    value={m}>
-                                    {m}
-                                </TabSwitcher.Item>
-                            )
-                        })}
+                    {tabs.map((m, i) => {
+                        return (
+                            <TabSwitcher.Item
+                                itemsLength={tabs.length}
+                                key={i}
+                                index={i}
+                                value={m}>
+                                {m}
+                            </TabSwitcher.Item>
+                        )
+                    })}
                 </TabSwitcher>
             </div>
 
-            <div className={s.tabsBlackRow}>
-                <TabSwitcher variant={'blackRow'} col>
-                        {tabs.map((m, i) => {
-                            return (
-                                <TabSwitcher.Item
-                                    itemsLength={tabs.length}
-                                    key={i}
-                                    index={i}
-                                    value={m}>
-                                    {m}
-                                </TabSwitcher.Item>
-                            )
-                        })}
+            <div className={s.whiteRow_apart}>
+                <TabSwitcher variant={'whiteRow_apart'} addClassName={s.row_apart}>
+                    {tabs.map((m, i) => {
+                        return (
+                            <TabSwitcher.Item
+                                width={i === 0 ? '135px' : undefined}
+                                width_m={i === 0 ? '96px' : undefined}
+                                width_l={i === 0 ? '155px' : undefined}
+                                itemsLength={tabs.length}
+                                key={i}
+                                index={i}>
+                                {m}
+                            </TabSwitcher.Item>
+                        )
+                    })}
                 </TabSwitcher>
             </div>
             <div className={s.tabSelectWrapper}>
