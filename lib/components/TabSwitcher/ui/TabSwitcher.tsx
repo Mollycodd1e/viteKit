@@ -41,14 +41,19 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
         else return width
     }
 
+    const isAutoWidth = !width && !width_m && !width_l && isLong
+
     return (
         <label className={cx({[s.isLong]: isLong})}>
             <input ref={ref}
                    type='checkbox'
                    {...rest}/>
             <div style={{width: getWidth(isTablet, isDesktop)}}
-                 className={cx(cx(s.item, {[s.firstItem]: index === 0}, {[s.lastItem]: index === itemsLength - 1},
-                     {[s.isDisabled]: disabled}), addItemClassName)}>
+                 className={cx(cx(s.item, {[s.firstItem]: index === 0},
+                     {[s.lastItem]: index === itemsLength - 1},
+                     {[s.isDisabled]: disabled},
+                     {[s.autoWidth]: isAutoWidth}
+                 ), addItemClassName)}>
                 <Text className={s.text}>{children}</Text>
             </div>
         </label>

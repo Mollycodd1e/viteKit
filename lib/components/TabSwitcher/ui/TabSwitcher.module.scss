@@ -154,7 +154,13 @@ $roundRadius: 24px;
       background: #E6E8EC;
       border: solid 1px #B1B5C3;
     }
+
     transition: background-color 100ms;
+
+    &.autoWidth {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
   }
 
   & input:not(:checked) ~ .item {
@@ -179,4 +185,13 @@ $roundRadius: 24px;
     border: 1px solid #777E90;
   }
 
+}
+
+@media (min-width: 1024px) {
+  .item {
+    &.autoWidth {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
 }
