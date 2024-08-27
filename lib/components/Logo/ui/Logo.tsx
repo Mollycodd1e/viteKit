@@ -1,9 +1,7 @@
 import { Text } from '../../Text'
 import s from './Logo.module.scss'
 import classNames from 'classnames'
-import { ILogoProps } from './Logo.types'
-import LogoWhite from '../assets/LogoWhite.svg?url'
-import LogoBlack from '../assets/LogoBlack.svg?url'
+import { ILogoProps, logoVariant } from './Logo.types'
 
 export const Logo = ({
 	uk = false,
@@ -16,9 +14,9 @@ export const Logo = ({
 	return (
 		<div className={cx(s.wrapper, { [s.wrapperBetween]: between }, addClassName)}>
 			<img
-				src={variant === 'white' ? LogoWhite : LogoBlack}
+				src={logoVariant[variant]}
 				alt='Лого'
-				className={s.logo}
+				className={cx(s.logo, { [s.logoValue]: variant === 'value' })}
 			/>
 			{uk && (
 				<Text
