@@ -84,7 +84,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 					<div className={s.lotPricePerMetr}>{formatPrice(sellingPricePerMeter, true)}</div>
 				)}
 				<div className={s.btnWrapper}>
-					<Button
+					{/* <Button
 						as='button'
 						variant='gray'>
 						<NewIcon
@@ -92,7 +92,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 							color='#141416'
 							size='20'
 						/>
-					</Button>
+					</Button> */}
 					<Button
 						as='button'
 						variant='black'
