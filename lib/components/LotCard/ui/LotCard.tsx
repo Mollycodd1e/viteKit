@@ -84,15 +84,16 @@ export const LotCard = ({ lot }: ILotCard) => {
 					<div className={s.lotPricePerMetr}>{formatPrice(sellingPricePerMeter, true)}</div>
 				)}
 				<div className={s.btnWrapper}>
-					{/* <Button
+					<Button
 						as='button'
-						variant='gray'>
+						variant='gray'
+						className={s.fullscreenBtn}>
 						<NewIcon
 							name='fullscreen'
 							color='#141416'
 							size='20'
 						/>
-					</Button> */}
+					</Button>
 					<Button
 						as='button'
 						variant='black'

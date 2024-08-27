@@ -109,10 +109,10 @@
 	display: flex;
 	gap: 8px;
 	margin: 24px 0 0 0;
+}
 
-	&>button:first-child {
-		display: none;
-	}
+.fullscreenBtn {
+	display: none;
 }
 
 @media(min-width: 1024px) {
@@ -186,10 +186,6 @@
 
 	.btnWrapper {
 		justify-content: flex-end;
-
-		&>button:first-child {
-			display: block;
-		}
 
 		&>button:last-child {
 			width: max-content;
