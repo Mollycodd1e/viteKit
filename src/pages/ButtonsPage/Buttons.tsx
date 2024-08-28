@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, NewIcon, RoundButton } from '../../main'
+import { Button, NewIcon, RoundButton, SliderNavigation } from '../../main'
 import s from './ButtonsPage.module.scss'
 import { ButtonState } from './ButtonState/ButtonState'
 import { ZoomControls } from '../../components/ZoomControls'
@@ -37,10 +37,20 @@ export const ButtonsPage = () => {
 				</div>
 			</div>
 			<div>
+				<h2>Зум</h2>
 				<ZoomControls
 					size='medium'
 					zoomIn={() => {}}
 					zoomOut={() => {}}
+				/>
+			</div>
+			<div>
+				<h2>Слайдер</h2>
+				<SliderNavigation
+					goNext={() => {}}
+					arr={[1, 2, 3]}
+					indexSlide={0}
+					goPrev={() => {}}
 				/>
 			</div>
 		</div>

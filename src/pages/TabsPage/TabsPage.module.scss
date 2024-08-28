@@ -18,10 +18,12 @@
 	gap: 20px;
 	margin: 0 auto;
 }
-.whiteRow_apart{
+
+.whiteRow_apart {
 	display: flex;
 	justify-content: center;
-	.row_apart{
+
+	.row_apart {
 		gap: 8px;
 	}
 }
