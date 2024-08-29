@@ -87,7 +87,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 					<Button
 						as='button'
 						variant='gray'
-						className={s.fullscreenBtn}>
+						additionalClass={s.fullscreenBtn}>
 						<NewIcon
 							name='fullscreen'
 							color='#141416'
