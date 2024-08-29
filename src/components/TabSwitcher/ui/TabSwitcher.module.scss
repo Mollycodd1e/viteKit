@@ -116,20 +116,7 @@ $roundRadius: 24px;
   }
 }
 
-// VARIANT whiteRow_apart
-.whiteRow_apart {
-  width: max-content;
-
-  label {
-    cursor: pointer;
-
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    flex: unset;
-  }
-
+.apart {
   .isLong {
     width: max-content;
 
@@ -139,52 +126,97 @@ $roundRadius: 24px;
     }
   }
 
+  label {
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    flex: unset;
+  }
+
   .item {
-    background: white;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    border-radius: 100px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &.isDisabled {
-      background: #E6E8EC;
-      border: solid 1px #B1B5C3;
-    }
-
-    transition: background-color 100ms;
-
     &.autoWidth {
       padding-left: 32px;
       padding-right: 32px;
     }
+    transition: background-color 100ms;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  & input:not(:checked) ~ .item {
-    color: #141416;
-    border: solid 1px #E6E8EC;
+  // VARIANT whiteRow apart
+  &.whiteRow {
+    width: max-content;
+
+    .item {
+      &.isDisabled {
+        background: #E6E8EC;
+        border: solid 1px #B1B5C3;
+      }
+    }
+
+    & input:checked ~ .item {
+      background: #141416;
+      color: #ffffff;
+      border: solid 1px #141416;
+    }
+
+    & input:not(:checked) ~ .item {
+      background: white;
+      color: #141416;
+      border: solid 1px #E6E8EC;
+    }
+
+    & input ~ .item:hover {
+      border: solid 1px #B1B5C3;
+    }
+
+    & input ~ .item:active {
+      background: #353945;
+      color: #ffffff;
+      border: 1px solid #777E90;
+    }
   }
 
-  & input:not(:checked) ~ .item:hover {
-    border: solid 1px #B1B5C3;
+  // VARIANT grayRow apart
+  &.grayRow {
+    width: max-content;
+
+    .item {
+      &.isDisabled {
+        background: #E6E8EC;
+        border: solid 1px #B1B5C3;
+      }
+    }
+
+    & input:checked ~ .item {
+      background: #141416;
+      color: #ffffff;
+      border: solid 1px #141416;
+    }
+
+    & input:not(:checked) ~ .item {
+      background: #F4F5F6;
+      color: #353945;
+      border: solid 1px #F4F5F6;
+    }
+
+    & input ~ .item:hover {
+      border: solid 1px #B1B5C3;
+    }
+
+    & input ~ .item:active {
+      background: #353945;
+      color: #ffffff;
+      border: 1px solid #777E90;
+    }
   }
-
-  & input:checked ~ .item {
-    background: #141416;
-    color: #ffffff;
-    border: solid 1px #141416;
-  }
-
-
-  & input ~ .item:active {
-    background: #353945;
-    color: #ffffff;
-    border: 1px solid #777E90;
-  }
-
 }
 
 @media (min-width: 1024px) {

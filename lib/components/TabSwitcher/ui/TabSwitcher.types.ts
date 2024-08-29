@@ -1,6 +1,6 @@
 const TAB_SWITCHER_VARIANTS = {
 	whiteRow: 'whiteRow',
-	whiteRow_apart: 'whiteRow_apart',
+	grayRow: 'grayRow',
 }
 
 type BaseInputProps = JSX.IntrinsicElements['input']
@@ -18,6 +18,7 @@ export interface ITabSwitcherItem extends BaseInputProps {
 export interface TabSwitcherProps {
 	variant?: TABS_VARIANTS
 	addClassName?: string
+	isApart?: boolean
 	col?: boolean
 	children: React.ReactElement[]
 }

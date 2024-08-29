@@ -11,10 +11,10 @@ const cx = classNames.bind(s)
 const TabSwitcher = ({
                          children,
                          variant = 'whiteRow',
+                         isApart = false,
                          addClassName = '',
                          col = false,
                      }: TabSwitcherProps) => {
-    const isApart = variant.includes('_apart')
 
     return (
         <div className={cx(s.root, s[variant], addClassName, {[s.rootCol]: col, [s.apart]: isApart})}>

@@ -74,7 +74,8 @@ const TabsPage = () => {
 
 			<div className={s.whiteRow_apart}>
 				<TabSwitcher
-					variant={'whiteRow_apart'}
+					variant={'whiteRow'}
+					isApart={true}
 					addClassName={s.row_apart}>
 					{tabs.map((m, i) => {
 						return (
@@ -91,6 +92,28 @@ const TabsPage = () => {
 					})}
 				</TabSwitcher>
 			</div>
+
+			<div className={s.whiteRow_apart}>
+				<TabSwitcher
+					variant={'grayRow'}
+					isApart={true}
+					addClassName={s.row_apart}>
+					{tabs.map((m, i) => {
+						return (
+							<TabSwitcher.Item
+								width={i === 0 ? '135px' : undefined}
+								width_m={i === 0 ? '96px' : undefined}
+								width_l={i === 0 ? '155px' : undefined}
+								itemsLength={tabs.length}
+								key={i}
+								index={i}>
+								{m}
+							</TabSwitcher.Item>
+						)
+					})}
+				</TabSwitcher>
+			</div>
+
 			<div className={s.tabSelectWrapper}>
 				<TabSelect variant='whiteFill'>
 					{tabList.map((m, i) => {
