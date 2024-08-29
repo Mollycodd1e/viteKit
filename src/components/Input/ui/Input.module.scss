@@ -34,6 +34,12 @@
     &:focus {
       outline: none;
     }
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px white inset;
+      -webkit-text-fill-color: #141416;
+      background-color: transparent;
+    }
   }
 
 }
@@ -161,6 +167,6 @@
   }
 }
 
-.checkBox{
+.checkBox {
   display: none;
 }

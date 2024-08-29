@@ -9,6 +9,7 @@ import { TagsPage } from './pages/TagsPage/TagsPage.tsx'
 import { SelectPage } from './pages/SelectPage/SelectPage.tsx'
 import FormsPage from './pages/FormsPage/FormsPage.tsx'
 import { LogoPage } from './pages/LogoPage/LogoPage.tsx'
+import { InputPage } from './pages/InputPage/InputPage.tsx'
 
 const AppRouter = () => {
 	return (
@@ -52,6 +53,10 @@ const AppRouter = () => {
 			<Route
 				path='/logo'
 				element={<LogoPage />}
+			/>
+			<Route
+				path='/input'
+				element={<InputPage />}
 			/>
 		</Routes>
 	)

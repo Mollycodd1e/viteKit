@@ -58,6 +58,10 @@ export const Menu = () => {
 				to={'/logo'}
 				title={'ЛОГО'}
 			/>
+			<LinkComponent
+				to={'/input'}
+				title={'ИНПУТЫ'}
+			/>
 		</div>
 	)
 }
