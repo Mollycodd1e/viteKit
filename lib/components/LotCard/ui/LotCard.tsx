@@ -7,6 +7,7 @@ import { NewIcon } from '../../NewIcon'
 import { Tag } from '../../Tag'
 import { Button } from '../../Button'
 import { formatPrice } from '../utils/formatPrice'
+import { useClientWidth } from '../../../main'
 
 export const LotCard = ({ lot }: ILotCard) => {
 	const {
@@ -25,6 +26,8 @@ export const LotCard = ({ lot }: ILotCard) => {
 
 	const areaStr = area + ' ' + 'м²'
 	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
+
+	const { isMobile } = useClientWidth()
 
 	return (
 		<div className={s.root}>
@@ -96,6 +99,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 					</Button>
 					<Button
 						as='button'
+						size={isMobile ? 'large' : 'medium'}
 						variant='black'
 						width='full'>
 						Уточнить детали

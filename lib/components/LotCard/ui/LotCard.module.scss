@@ -111,6 +111,10 @@
 	margin: 24px 0 0 0;
 }
 
+.fullscreenBtn {
+	display: none;
+}
+
 @media(min-width: 1024px) {
 	.root {
 		flex-direction: row;
@@ -189,5 +193,9 @@
 		&>button:last-child {
 			width: max-content;
 		}
+	}
+
+	.fullscreenBtn {
+		display: block;
 	}
 }
