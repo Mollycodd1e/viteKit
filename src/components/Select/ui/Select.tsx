@@ -72,6 +72,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 				<input
 					type='text'
 					readOnly
+					autoComplete='off'
 					value={
 						selectedOptions.length === 0
 							? placeholder
