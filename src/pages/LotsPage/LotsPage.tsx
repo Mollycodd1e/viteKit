@@ -86,7 +86,7 @@ export const LotsPage = () => {
 			},
 		],
 		promoText: 'Скидка 10% на все лоты!',
-		interiorPlanImg: 'https://example.com/interior-plan.png',
+		interiorPlanImg: null,
 		floorPlanImg: 'https://example.com/floor-plan.png',
 		sitPlanImg: 'https://example.com/sit-plan.png',
 		createdAt: '2024-07-18',

@@ -22,6 +22,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 		sellingPricePerMeter,
 		discountedPrice,
 		discountVolume,
+		interiorPlanImg
 	} = lot
 
 	const areaStr = area + ' ' + 'м²'
@@ -33,7 +34,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 		<div className={s.root}>
 			<div className={s.lotImageWrapper}>
 				<img
-					src={LotImage}
+					src={interiorPlanImg ?? LotImage}
 					width={311}
 					height={224}
 				/>
