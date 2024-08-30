@@ -52,6 +52,11 @@
 	&:disabled {
 		opacity: 0.2;
 	}
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .auto-width {
