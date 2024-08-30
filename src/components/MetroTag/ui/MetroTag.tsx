@@ -8,6 +8,7 @@ const cx = classNames.bind(s)
 export const MetroTag = ({
 	addClassName,
 	addClassNameColor,
+							 addClassNameTimeTo,
 	metro,
 	width = 'auto',
 	variant = 'default',
@@ -34,7 +35,7 @@ export const MetroTag = ({
 			</div>
 
 			{metro.timeTo && (
-				<div className={s.route}>
+				<div className={cx(s.route, addClassNameTimeTo)}>
 					{metro.mode && possibleIcons.includes(metro.mode) && (
 						<NewIcon
 							size='20'
