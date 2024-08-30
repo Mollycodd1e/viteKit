@@ -69,19 +69,12 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 			tabIndex={0}
 			onBlur={handleBlur}>
 			<div className={cx(s.inputWrapper)}>
-				<input
-					type='text'
-					readOnly
-					autoCorrect='off'
-					autoComplete='off'
-					value={
-						selectedOptions.length === 0
-							? placeholder
-							: 'Выбрано ' + selectedOptions.length + ' опции'
-					}
+				<div
 					className={cx(s.selectedOptions, { [s.selectOptionsDisabled]: disabled })}
-					onClick={() => setIsOpen(!isOpen)}
-				/>
+					onClick={() => setIsOpen(!isOpen)}>
+					{' '}
+					{selectedOptions.length === 0 ? placeholder : 'Выбрано ' + selectedOptions.length}
+				</div>
 				<NewIcon
 					name={'arrowShort'}
 					deg={isOpen ? '180' : '0'}

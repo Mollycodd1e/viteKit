@@ -20,10 +20,6 @@
 	background: #ffffff;
 	box-sizing: border-box;
 	outline: none;
-
-	&:hover {
-		border: 1px solid #777E90;
-	}
 }
 
 .selectedOptionsOpened {
@@ -71,14 +67,24 @@
 	&:not(:last-child) {
 		border-bottom: 1px solid #F4F5F6;
 	}
-
-	&:hover {
-		opacity: 0.7;
-	}
 }
 
 .icon {
 	position: absolute;
 	right: 12px;
-	pointer-events: none; // Иконка не должна перехватывать клики
+	pointer-events: none;
+}
+
+@media(min-width: 1024px) and (pointer: fine) {
+	.selectedOptions {
+		&:hover {
+			border: 1px solid #777E90;
+		}
+	}
+
+	.option {
+		&:hover {
+			opacity: 0.7;
+		}
+	}
 }
