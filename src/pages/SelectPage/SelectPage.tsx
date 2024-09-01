@@ -35,8 +35,8 @@ export const SelectPage = () => {
 
 	return (
 		<div className={s.root}>
-			<div className={s.variant}>
-				<h2>Сорт селектор</h2>
+			<div>
+				<h2>Сорт селект</h2>
 				<div className={s.sort}>
 					<SortSelect
 						selectedOption={sort}
@@ -45,9 +45,23 @@ export const SelectPage = () => {
 					/>
 				</div>
 			</div>
-			<div className={s.variant}>
-				<h2>Селектор чекбокс</h2>
+			<div>
+				<h2>Селект чекбокс</h2>
 				<Select
+					selectedValues={select}
+					options={options2}
+					onChange={(e) => handleChangeSelect(e)}
+				/>
+			</div>
+
+			<div>
+				<h2>Селект кнопка</h2>
+				<Select
+					isBtn={true}
+					btnName={'Фильтр'}
+					widthBtn={'135px'}
+					widthOptionList={'540px'}
+					isListRight={true}
 					selectedValues={select}
 					options={options2}
 					onChange={(e) => handleChangeSelect(e)}

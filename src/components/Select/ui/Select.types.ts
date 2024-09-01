@@ -14,4 +14,9 @@ export interface MultiSelectProps {
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => unknown
 	onBlur?: (e: ChangeEvent<HTMLInputElement>) => unknown
 	selectedValues?: Option[]
+	isBtn?: boolean
+	btnName?: string
+	widthBtn?: string
+	widthOptionList?: string
+	isListRight?: boolean
 }
