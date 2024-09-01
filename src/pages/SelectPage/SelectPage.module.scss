@@ -2,3 +2,10 @@
 	display: flex;
 	justify-content: flex-end;
 }
+
+.addClass{
+	width: 40px;
+	&>div>div{
+		right: 10px;
+	}
+}

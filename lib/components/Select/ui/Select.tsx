@@ -12,13 +12,13 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
                                                          error,
                                                          disabled,
                                                          additionalClass = '',
+                                                         additionalClassOption,
+                                                         additionalClassBtn,
                                                          onChange,
                                                          onBlur,
                                                          selectedValues = [],
                                                          isBtn = false,
-                                                         btnName = 'Фильтр',
-                                                         widthBtn,
-                                                         widthOptionList,
+                                                         btnName,
                                                          isListRight = false
                                                      }) => {
     const [selectedOptions, setSelectedOptions] = useState<Option[]>(selectedValues)
@@ -72,8 +72,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
             ref={containerRef}
             className={cx(s.multiSelectWrapper, {[s.multiSelectWrapperError]: error}, additionalClass)}
             tabIndex={0}
-            onBlur={handleBlur}
-            style={{width: widthBtn}}>
+            onBlur={handleBlur}>
             <div className={cx(s.inputWrapper)}>
                 {!isBtn && <>
                     <div
@@ -92,7 +91,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 
                 {isBtn && <>
                     <button
-                        className={cx(s.selectedOptions, {[s.selectOptionsDisabled]: disabled})}
+                        className={cx(s.selectedOptions, {[s.selectOptionsDisabled]: disabled}, additionalClassBtn)}
                         onClick={() => setIsOpen(!isOpen)}>
                         {btnName}
                     </button>
@@ -105,7 +104,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
                 </>}
             </div>
             {isOpen && (
-                <div className={cx(s.optionsList, {[s.listRight] : isListRight})} style={{width: widthOptionList}}>
+                <div className={cx(s.optionsList, {[s.listRight]: isListRight}, additionalClassOption)}>
                     {options?.map((option) => (
                         <div
                             key={option.label}

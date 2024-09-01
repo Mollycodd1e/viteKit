@@ -11,6 +11,8 @@ export interface MultiSelectProps {
 	error?: boolean
 	disabled?: boolean
 	additionalClass?: string
+	additionalClassOption?: string
+	additionalClassBtn?: string
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => unknown
 	onBlur?: (e: ChangeEvent<HTMLInputElement>) => unknown
 	selectedValues?: Option[]
