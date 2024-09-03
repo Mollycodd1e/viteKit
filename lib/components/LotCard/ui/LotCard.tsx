@@ -92,7 +92,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 						as='button'
 						variant='gray'
 						additionalClass={s.fullscreenBtn}
-						onClick={(e) => e.stopPropagation()}>
+						onClick={(e) => e.preventDefault()}>
 						<NewIcon
 							name='fullscreen'
 							color='#141416'
@@ -104,7 +104,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 						size={isMobile ? 'large' : 'medium'}
 						variant='black'
 						width='full'
-						onClick={(e) => e.stopPropagation()}>
+						onClick={(e) => e.preventDefault()}>
 						Уточнить детали
 					</Button>
 				</div>
