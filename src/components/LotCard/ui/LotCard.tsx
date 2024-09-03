@@ -22,7 +22,7 @@ export const LotCard = ({ lot }: ILotCard) => {
 		sellingPricePerMeter,
 		discountedPrice,
 		discountVolume,
-		interiorPlanImg
+		interiorPlanImg,
 	} = lot
 
 	const areaStr = area + ' ' + 'м²'
@@ -91,7 +91,8 @@ export const LotCard = ({ lot }: ILotCard) => {
 					<Button
 						as='button'
 						variant='gray'
-						additionalClass={s.fullscreenBtn}>
+						additionalClass={s.fullscreenBtn}
+						onClick={(e) => e.stopPropagation()}>
 						<NewIcon
 							name='fullscreen'
 							color='#141416'
@@ -102,7 +103,8 @@ export const LotCard = ({ lot }: ILotCard) => {
 						as='button'
 						size={isMobile ? 'large' : 'medium'}
 						variant='black'
-						width='full'>
+						width='full'
+						onClick={(e) => e.stopPropagation()}>
 						Уточнить детали
 					</Button>
 				</div>
