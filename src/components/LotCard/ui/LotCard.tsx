@@ -9,7 +9,7 @@ import { Button } from '../../Button'
 import { formatPrice } from '../utils/formatPrice'
 import { useClientWidth } from '../../../main'
 
-export const LotCard = ({ lot }: ILotCard) => {
+export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
 	const {
 		area,
 		floor,
@@ -104,7 +104,10 @@ export const LotCard = ({ lot }: ILotCard) => {
 						size={isMobile ? 'large' : 'medium'}
 						variant='black'
 						width='full'
-						onClick={(e) => e.preventDefault()}>
+						onClick={(e) => {
+							e.preventDefault()
+							handleBtnForm()
+						}}>
 						Уточнить детали
 					</Button>
 				</div>

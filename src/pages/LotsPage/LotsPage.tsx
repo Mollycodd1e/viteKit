@@ -155,7 +155,11 @@ export const LotsPage = () => {
 			{/* <ProjectCardSkeleton></ProjectCardSkeleton> */}
 			<div className={s.lotWrapper}>
 				{isFetching && <LotCardSkeleton />}
-				{!isFetching && <LotCard lot={testLot}></LotCard>}
+				{!isFetching && (
+					<LotCard
+						lot={testLot}
+						handleBtnForm={() => {}}></LotCard>
+				)}
 				<div className={s.optionsWrapper}>
 					<label className={s.isFetching}>
 						isFetching
