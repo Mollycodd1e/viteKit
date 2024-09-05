@@ -60,7 +60,7 @@ interface ILotPromo {
 	color: string
 }
 
-interface ILot {
+export interface ILot {
 	/** id Лота */
 	id: number | string
 	/** Название проекта */
