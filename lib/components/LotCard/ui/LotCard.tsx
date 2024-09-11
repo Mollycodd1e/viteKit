@@ -10,7 +10,7 @@ import { formatPrice } from '../utils/formatPrice'
 import { useClientWidth } from '../../../main'
 import { formatPayment } from '../utils/monthlyPayment'
 
-export const LotCard = ({ lot, handleBtnForm, monthlyPayment }: ILotCard) => {
+export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
 	const {
 		area,
 		floor,
@@ -24,6 +24,7 @@ export const LotCard = ({ lot, handleBtnForm, monthlyPayment }: ILotCard) => {
 		discountedPrice,
 		discountVolume,
 		interiorPlanImg,
+		mortgageMonthlyPayment,
 	} = lot
 
 	const areaStr = area + ' ' + 'м²'
@@ -46,8 +47,8 @@ export const LotCard = ({ lot, handleBtnForm, monthlyPayment }: ILotCard) => {
 						className={s.infoHeader}
 						html={`${checkBedroomsCount(bedroomsCount)}, ${number}`}
 					/>
-					{monthlyPayment && (
-						<div className={s.monthlyPayment}>{formatPayment(monthlyPayment)}</div>
+					{mortgageMonthlyPayment && (
+						<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
 					)}
 				</div>
 

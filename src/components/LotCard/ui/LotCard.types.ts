@@ -153,6 +153,8 @@ export interface ILot {
 	isRamp: boolean | null
 	/** Близко ли вход к лифтовой группе */
 	isCloseToLift: boolean | null
+	/** Ежемясячный платеж */
+	mortgageMonthlyPayment?: string
 	/** Занят ли лот */
 	isOccupied: boolean | null
 	/** Является ли лот ГАБ */
@@ -230,6 +232,5 @@ export interface ILot {
 export interface ILotCard {
 	lot: ILot
 	handleBtnForm: () => void
-	monthlyPayment?: string
 }
 
