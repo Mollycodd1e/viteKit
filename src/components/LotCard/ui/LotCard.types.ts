@@ -230,5 +230,6 @@ export interface ILot {
 export interface ILotCard {
 	lot: ILot
 	handleBtnForm: () => void
+	monthlyPayment?: string
 }
 

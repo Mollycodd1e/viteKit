@@ -8,8 +8,9 @@ import { Tag } from '../../Tag'
 import { Button } from '../../Button'
 import { formatPrice } from '../utils/formatPrice'
 import { useClientWidth } from '../../../main'
+import { formatPayment } from '../utils/monthlyPayment'
 
-export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
+export const LotCard = ({ lot, handleBtnForm, monthlyPayment }: ILotCard) => {
 	const {
 		area,
 		floor,
@@ -40,10 +41,16 @@ export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
 				/>
 			</div>
 			<div className={s.lotInfoWrapper}>
-				<Text
-					className={s.infoHeader}
-					html={`${checkBedroomsCount(bedroomsCount)}, ${number}`}
-				/>
+				<div className={s.monthlyWrapper}>
+					<Text
+						className={s.infoHeader}
+						html={`${checkBedroomsCount(bedroomsCount)}, ${number}`}
+					/>
+					{monthlyPayment && (
+						<div className={s.monthlyPayment}>{formatPayment(monthlyPayment)}</div>
+					)}
+				</div>
+
 				{isDecoration && (
 					<div className={s.decor}>
 						<NewIcon name={'withoutDecor'}></NewIcon>
