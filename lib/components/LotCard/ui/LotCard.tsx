@@ -18,7 +18,7 @@ export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
 		housing,
 		bedroomsCount,
 		number,
-		isDecoration = false,
+		isDecoration,
 		sellingPrice,
 		sellingPricePerMeter,
 		discountedPrice,
@@ -52,9 +52,9 @@ export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
 					)}
 				</div>
 
-				{isDecoration && (
+				{!isDecoration && (
 					<div className={s.decor}>
-						<NewIcon name={'withoutDecor'}></NewIcon>
+						<NewIcon name={'withoutDecor'} />
 						<span>Без отделки</span>
 					</div>
 				)}

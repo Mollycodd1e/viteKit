@@ -101,7 +101,7 @@ export const LotsPage = () => {
 		],
 		azimuthAngle: 45,
 		businessType: 'Residential',
-		isDecoration: true,
+		isDecoration: false,
 		isWaterPipes: true,
 		project: {
 			address: 'г. Москва, ул. Ленина, д. 10',
