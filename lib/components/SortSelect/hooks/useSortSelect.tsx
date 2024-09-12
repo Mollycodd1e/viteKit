@@ -31,6 +31,7 @@ export const useSortSelect = ({
 		event.stopPropagation()
 
 		const newSelectedOption = selectedOption?.value === option.value ? null : option
+		if (!newSelectedOption) return
 
 		setSelectedOption && setSelectedOption(newSelectedOption)
 

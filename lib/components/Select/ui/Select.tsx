@@ -42,6 +42,11 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 
 	const handleDocumentClick = useCallback((event: MouseEvent) => {
 		if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+			const target = event.target as HTMLElement
+			if (target.closest('svg')) {
+				return
+			}
+
 			setIsOpen(false)
 		}
 	}, [])
