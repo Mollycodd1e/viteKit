@@ -1,0 +1,32 @@
+.auto-width {
+  width: max-content;
+  min-width: 100px;
+}
+
+.full-width {
+  width: 100%;
+
+
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.root {
+  max-height: 180px;
+  font-family: inherit;
+  font-weight: 400;
+  padding: 11px 23px;
+  border: 1px solid #b1b5c3;
+  border-radius: 48px;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:focus {
+    border: 1px solid #141416;
+  }
+
+  &::placeholder {
+    color: #b1b5c3;
+  }
+}
+

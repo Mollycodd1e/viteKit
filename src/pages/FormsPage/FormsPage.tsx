@@ -10,11 +10,13 @@ const FormsPage = () => {
         <div className={s.root}>
             <Button as={'button'} onClick={() => setIsFormModalOpen(true)}>ModalForm</Button>
 
-            <ModalForm submitHandler={() => {}} subTitle={'`Оставьте номер телефона для получения консультации`'} title={'Оставить обращение'}
+            <ModalForm submitHandler={(data) => {
+                console.log(data)
+            }} subTitle={'Оставьте номер телефона для получения консультации'} title={'Оставить обращение'}
                        personalCheckBox={{
                            text: 'Я принимаю условия Политики обработки и защиты персональных данных, даю согласия на обработку персональных\n' +
                                'данных', isRequired: true
-                       }} isFormOpen={isFormModalOpen} setIsFormOpen={setIsFormModalOpen}/>
+                       }} isFormOpen={isFormModalOpen} setIsFormOpen={setIsFormModalOpen} isEmail={true} isTextArea={true} textAreaPlaceholder={'Напишите ваш вопрос или комментарий'}/>
         </div>
     )
 }

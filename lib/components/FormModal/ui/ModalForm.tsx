@@ -6,8 +6,9 @@ import {Input} from "../../Input";
 import {useForm} from "react-hook-form";
 import {Button} from "../../Button";
 import {NewIcon} from "../../NewIcon";
-import {nameReg, phoneReg} from "../utils/reg.ts";
+import {emailReg, nameReg, phoneReg} from "../utils/reg.ts";
 import {CheckBox} from "../../CheckBox/CheckBox.tsx";
+import {TextArea} from "../../TextArea/TextArea.tsx";
 
 
 interface IModalFormProps {
@@ -16,9 +17,13 @@ interface IModalFormProps {
     submitHandler: (data: IFormPageInputs) => void
 
     title: string
+    isEmail?: boolean
+    isTextArea?: boolean
     subTitle: string
     personalCheckBox: { text: string, isRequired: boolean }
     advCheckBox?: { text: string, isRequired: boolean } | undefined | null
+    textAreaPlaceholder?: string
+    rowsTextArea?: number
 }
 
 type IFormPageInputs = {
@@ -27,6 +32,7 @@ type IFormPageInputs = {
     email?: string
     personalCheckBox: boolean
     advCheckBox?: boolean
+    textarea?: string
 }
 
 const defaultTextCheckBox = 'Я принимаю условия Политики обработки\n' +
@@ -37,8 +43,12 @@ export const ModalForm = ({
                               isFormOpen,
                               setIsFormOpen,
                               title,
+                              isEmail,
+                              isTextArea,
+                              textAreaPlaceholder,
                               subTitle,
                               submitHandler,
+                              rowsTextArea = 2,
                               personalCheckBox = {text: defaultTextCheckBox, isRequired: true},
                               advCheckBox = {text: defaultTextCheckBox, isRequired: true},
                           }: IModalFormProps) => {
@@ -102,6 +112,13 @@ export const ModalForm = ({
                                    error={Boolean(errors.phone)}
                             />
                         </InputMask>
+
+                        {isEmail && <Input width="full" size_s="small" variant="light" placeholder="Введите email"
+                                           data-testid="modal_email" {...register('email',
+                            {required: false, pattern: emailReg})} error={Boolean(errors.email)}/>}
+
+                        {isTextArea && <TextArea data-testid="modal_textarea" placeholder={textAreaPlaceholder} rows={rowsTextArea}
+                                                 width={'full'}  {...register('textarea')}/>}
 
                         {advCheckBox && <CheckBox
                             data-testid="modal_advCheckBox" isChecked={isCheckAdvCheckBox}
