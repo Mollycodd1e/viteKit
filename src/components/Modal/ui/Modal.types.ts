@@ -13,4 +13,5 @@ export interface IModalProps {
 	notDisableScroll?: boolean
 	createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
 	opacity?: number
+	colorOverlay?: string
 }

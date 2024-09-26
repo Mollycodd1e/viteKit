@@ -14,6 +14,7 @@ export const Modal: FC<IModalProps> = ({
 	additionalClassOverlay,
 	additionalClassModalBody,
 	opacity = 0.7,
+	colorOverlay,
 	notDisableScroll = false,
 	children,
 }) => {
@@ -42,7 +43,7 @@ export const Modal: FC<IModalProps> = ({
 				className={`${s.modalOverlay} ${additionalClassOverlay} ${
 					isTransparentBack ? s.isTransparentBack : ''
 				}`}
-				style={isTransparentBack ? { opacity: '' + opacity } : {}}
+				style={{ opacity: isTransparentBack ? opacity : undefined, backgroundColor: colorOverlay ? colorOverlay : undefined }}
 			/>
 			<div className={`${s.modalBody} ${additionalClassModalBody}`}>{children}</div>
 		</div>
