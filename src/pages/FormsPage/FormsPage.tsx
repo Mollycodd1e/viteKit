@@ -16,7 +16,7 @@ const FormsPage = () => {
                        personalCheckBox={{
                            text: 'Я принимаю условия Политики обработки и защиты персональных данных, даю согласия на обработку персональных\n' +
                                'данных', isRequired: true
-                       }} isFormOpen={isFormModalOpen} setIsFormOpen={setIsFormModalOpen} isEmail={true} isTextArea={true} textAreaPlaceholder={'Напишите ваш вопрос или комментарий'}/>
+                       }} modalWidth={'530px'} isFormOpen={isFormModalOpen} setIsFormOpen={setIsFormModalOpen} isEmail={true} isTextArea={true} textAreaPlaceholder={'Напишите ваш вопрос или комментарий'}/>
         </div>
     )
 }

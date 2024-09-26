@@ -15,6 +15,7 @@ interface IModalFormProps {
     isFormOpen: boolean
     setIsFormOpen: (isOpen: boolean) => void
     submitHandler: (data: IFormPageInputs) => void
+    modalWidth?: string
 
     title: string
     isEmail?: boolean
@@ -48,6 +49,7 @@ export const ModalForm = ({
                               textAreaPlaceholder,
                               subTitle,
                               submitHandler,
+                              modalWidth = '442px',
                               rowsTextArea = 2,
                               personalCheckBox = {text: defaultTextCheckBox, isRequired: true},
                               advCheckBox = {text: defaultTextCheckBox, isRequired: true},
@@ -83,7 +85,7 @@ export const ModalForm = ({
             opacity={0.7}
             isTransparentBack={true}
             additionalClassModalBody={s.modalBody}>
-            <div className={s.root}>
+            <div className={s.root} style={{width: modalWidth}}>
                 <div className={s.title} dangerouslySetInnerHTML={{__html: title ?? 'Оставить обращение'}}/>
                 <div
                     className={s.description}
