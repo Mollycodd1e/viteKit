@@ -25,6 +25,9 @@ interface IModalFormProps {
     advCheckBox?: { text: string, isRequired: boolean } | undefined | null
     textAreaPlaceholder?: string
     rowsTextArea?: number
+    isRequiredPhone?: boolean
+    isRequiredEmail?: boolean
+    isRequiredPhoneOrEmail?: boolean
 }
 
 type IFormPageInputs = {
@@ -46,6 +49,9 @@ export const ModalForm = ({
                               title,
                               isEmail,
                               isTextArea,
+                              isRequiredPhone = true,
+                              isRequiredEmail = false,
+                              isRequiredPhoneOrEmail,
                               textAreaPlaceholder,
                               subTitle,
                               submitHandler,
@@ -63,8 +69,10 @@ export const ModalForm = ({
         formState: {errors},
     } = useForm<IFormPageInputs>()
 
+    const isEmailFill = Boolean(watch('email'))
+
     const {onChange, onBlur, ...rest} = register('phone', {
-        required: true,
+        required: isRequiredPhone || isRequiredPhoneOrEmail ? !isEmailFill : true,
         pattern: {value: phoneReg, message: ''},
         onBlur: () => trigger('phone'),
     })
@@ -117,10 +125,11 @@ export const ModalForm = ({
 
                         {isEmail && <Input width="full" size_s="small" variant="light" placeholder="Введите email"
                                            data-testid="modal_email" {...register('email',
-                            {required: false, pattern: emailReg})} error={Boolean(errors.email)}/>}
+                            {required: isRequiredEmail || isRequiredPhoneOrEmail ? isEmailFill : false, pattern: emailReg})} error={Boolean(errors.email)}/>}
 
-                        {isTextArea && <TextArea data-testid="modal_textarea" placeholder={textAreaPlaceholder} rows={rowsTextArea}
-                                                 width={'full'}  {...register('textarea')}/>}
+                        {isTextArea &&
+                            <TextArea data-testid="modal_textarea" placeholder={textAreaPlaceholder} rows={rowsTextArea}
+                                      width={'full'}  {...register('textarea')}/>}
 
                         {advCheckBox && <CheckBox
                             data-testid="modal_advCheckBox" isChecked={isCheckAdvCheckBox}
