@@ -17,7 +17,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, React.PropsWithChildren<
         ref
     ) => {
         return (
-            <textarea className={cx(s.root, s[`${width}-width`], additionalClass)} ref={ref} {...props}>{children}</textarea>
+            <textarea className={cx(s.root, s[`${width}-width`], additionalClass)} ref={ref} style={{resize: 'none'}} {...props}>{children}</textarea>
         )
     }
 )

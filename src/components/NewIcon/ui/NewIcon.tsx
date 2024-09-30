@@ -8,6 +8,7 @@ import User from './../assets/User.svg'
 import SquareMeter from './../assets/SquareMeter.svg'
 import Check from './../assets/Check.svg'
 import Close from './../assets/Close.svg'
+import Circle from './../assets/Circle.svg'
 import Layers from './../assets/Layers.svg'
 import LayersFilled from './../assets/LayersFilled.svg'
 import Minus from './../assets/Minus.svg'
@@ -105,16 +106,17 @@ export const iconTypes: IconTypes = {
 	selectUnchecked: () => <SelectUnchecked />,
 	arrowShort: () => <ArrowShort />,
 	search: () => <Search />,
+	circle: () => <Circle />,
 }
 
 export const NewIcon = ({
-	name,
-	size = '24',
-	color,
-	strokeWidth,
-	additionalClass,
-	deg,
-}: IconComponentProps) => {
+							name,
+							size = '24',
+							color,
+							strokeWidth,
+							additionalClass,
+							deg,
+						}: IconComponentProps) => {
 	const IconComponent = iconTypes[name]
 
 	return (
