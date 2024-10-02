@@ -56,7 +56,7 @@ export const ModalForm = ({
                               textAreaPlaceholder,
                               subTitle,
                               submitHandler,
-                              modalWidth,
+                              modalWidth = '442px',
                               rowsTextArea = 2,
                               personalCheckBox = {text: defaultTextCheckBox, isRequired: true},
                               advCheckBox = {text: defaultTextCheckBox, isRequired: true},
