@@ -9,6 +9,7 @@ import {NewIcon} from "../../NewIcon";
 import {emailReg, nameReg, phoneReg} from "../utils/reg.ts";
 import {CheckBox} from "../../CheckBox/CheckBox.tsx";
 import {TextArea} from "../../TextArea/TextArea.tsx";
+import {useClientWidth} from "../../../../lib/shared/useClientWidth.ts";
 
 
 interface IModalFormProps {
@@ -55,7 +56,7 @@ export const ModalForm = ({
                               textAreaPlaceholder,
                               subTitle,
                               submitHandler,
-                              modalWidth = '442px',
+                              modalWidth,
                               rowsTextArea = 2,
                               personalCheckBox = {text: defaultTextCheckBox, isRequired: true},
                               advCheckBox = {text: defaultTextCheckBox, isRequired: true},
@@ -77,6 +78,8 @@ export const ModalForm = ({
         onBlur: () => trigger('phone'),
     })
 
+    const {isMobile} = useClientWidth()
+
     const isCheckedPersonal = watch('personalCheckBox')
     const isCheckAdvCheckBox = watch('advCheckBox')
 
@@ -93,7 +96,7 @@ export const ModalForm = ({
             opacity={0.7}
             isTransparentBack={true}
             additionalClassModalBody={s.modalBody}>
-            <div className={s.root} style={{width: modalWidth}}>
+            <div className={s.root} style={{width: isMobile ? '100%' : modalWidth}}>
                 <div className={s.title} dangerouslySetInnerHTML={{__html: title ?? 'Оставить обращение'}}/>
                 <div
                     className={s.description}
@@ -125,7 +128,10 @@ export const ModalForm = ({
 
                         {isEmail && <Input width="full" size_s="small" variant="light" placeholder="Введите email"
                                            data-testid="modal_email" {...register('email',
-                            {required: isRequiredEmail || isRequiredPhoneOrEmail ? isEmailFill : false, pattern: emailReg})} error={Boolean(errors.email)}/>}
+                            {
+                                required: isRequiredEmail || isRequiredPhoneOrEmail ? isEmailFill : false,
+                                pattern: emailReg
+                            })} error={Boolean(errors.email)}/>}
 
                         {isTextArea &&
                             <TextArea data-testid="modal_textarea" placeholder={textAreaPlaceholder} rows={rowsTextArea}
