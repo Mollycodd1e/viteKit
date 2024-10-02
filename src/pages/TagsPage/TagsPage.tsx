@@ -21,7 +21,7 @@ export const TagsPage = () => {
 				variant='shade'
 				size='medium'
 				size_m='tiny'
-				size_l='medium'>
+				size_l='tiny'>
 				От 285 000 ₽/м2
 			</Tag>
 
