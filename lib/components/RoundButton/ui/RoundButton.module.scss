@@ -1,3 +1,9 @@
+@mixin button-tiny {
+	width: 24px;
+	height: 24px;
+	padding: 4px 5px 6px;
+}
+
 @mixin button-small {
 	width: 32px;
 	height: 32px;
@@ -35,6 +41,10 @@
 	}
 }
 
+.tiny-size {
+	@include button-tiny;
+}
+
 .small-size {
 	@include button-small;
 }
@@ -66,6 +76,10 @@
 }
 
 @media(min-width: 1024px) {
+	.tiny-size_m {
+		@include button-tiny;
+	}
+
 	.small-size_m {
 		@include button-small;
 	}
@@ -102,6 +116,9 @@
 }
 
 @media(min-width: 1440px) {
+	.tiny-size_l {
+		@include button-tiny;
+	}
 
 	.small-size_l {
 		@include button-small;

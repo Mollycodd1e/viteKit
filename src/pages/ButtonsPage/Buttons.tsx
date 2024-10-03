@@ -26,11 +26,11 @@ export const ButtonsPage = () => {
 				<div className={s.buttonsWrapper}>
 					<RoundButton
 						variant={isActive ? 'blackFill' : 'whiteStroke'}
-						size='medium'
+						size='tiny'
 						onClick={() => setIsActive(!isActive)}>
 						<NewIcon
-							name='sun'
-							size='20'
+							name='close'
+							size='12'
 							color={isActive ? '#fff' : '#000'}
 						/>
 					</RoundButton>

@@ -7,12 +7,13 @@ export const ROUND_BUTTON_VARIANTS = {
 
 export type roundBtnVariant = keyof typeof ROUND_BUTTON_VARIANTS
 
-type btnSizes = 'large' | 'medium' | 'small'
+type btnSizes = 'large' | 'medium' | 'small' | 'tiny'
 
 export const sizeMap = {
 	large: '24',
 	medium: '20',
 	small: '16',
+	tiny: '12',
 }
 
 interface IRoundButtonProps {
