@@ -36,6 +36,10 @@
 	display: flex;
 	gap: 8px;
 	align-items: center;
+
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 500;
 	outline: none;
 }
 
@@ -77,4 +81,12 @@
 
 .swiperPointActive {
 	left: 16px;
+}
+
+@media(min-width: 1440px) {
+	.switcherWrapper {
+		font-size: 16px;
+		line-height: 24px;
+		gap: 12px;
+	}
 }
