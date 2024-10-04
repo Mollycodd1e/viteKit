@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Button, NewIcon, RoundButton, SliderNavigation } from '../../main'
+import { Button, NewIcon, RoundButton, SliderNavigation, Switcher } from '../../main'
 import s from './ButtonsPage.module.scss'
 import { ButtonState } from './ButtonState/ButtonState'
 import { ZoomControls } from '../../components/ZoomControls'
 
 export const ButtonsPage = () => {
 	const [isActive, setIsActive] = useState<boolean>(false)
+
 	return (
 		<div className={s.root}>
 			<div className={s.clearButton}>
@@ -53,6 +54,7 @@ export const ButtonsPage = () => {
 					goPrev={() => {}}
 				/>
 			</div>
+			<Switcher isActive={isActive} onClick={() => setIsActive(!isActive)}>В продаже</Switcher>
 		</div>
 	)
 }

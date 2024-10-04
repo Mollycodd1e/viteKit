@@ -15,7 +15,6 @@ export const Switcher = ({ children, isActive, onClick }: ISwitcherProps) => {
 
 	return (
 		<div className={s.switcherWrapper}>
-			{children}
 			<div
 				className={cx(
 					s.swiper,
@@ -25,6 +24,7 @@ export const Switcher = ({ children, isActive, onClick }: ISwitcherProps) => {
 				onClick={onClick}>
 				<div className={cx(s.swiperPoint, { [s.swiperPointActive]: isActive })} />
 			</div>
+			{children}
 		</div>
 	)
 }
