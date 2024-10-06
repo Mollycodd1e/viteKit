@@ -78,7 +78,7 @@ export const ModalForm = ({
         onBlur: () => trigger('phone'),
     })
 
-    const {isMobile} = useClientWidth()
+    const {isMobile, currentClientWidth} = useClientWidth()
 
     const isCheckedPersonal = watch('personalCheckBox')
     const isCheckAdvCheckBox = watch('advCheckBox')
@@ -87,6 +87,8 @@ export const ModalForm = ({
         submitHandler(data)
         reset()
     }
+
+    if (!currentClientWidth) return null
 
     return (
         <Modal
