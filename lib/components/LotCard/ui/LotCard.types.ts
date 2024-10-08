@@ -232,5 +232,6 @@ export interface ILot {
 export interface ILotCard {
 	lot: ILot
 	handleBtnForm: () => void
+	handleFullScreenBtn?: () => void
 }
 

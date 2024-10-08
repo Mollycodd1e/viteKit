@@ -10,7 +10,7 @@ import { formatPrice } from '../utils/formatPrice'
 import { useClientWidth } from '../../../main'
 import { formatPayment } from '../utils/monthlyPayment'
 
-export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
+export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) => {
 	const {
 		area,
 		floor,
@@ -100,7 +100,10 @@ export const LotCard = ({ lot, handleBtnForm }: ILotCard) => {
 						as='button'
 						variant='gray'
 						additionalClass={s.fullscreenBtn}
-						onClick={(e) => e.preventDefault()}>
+						onClick={(e) => {
+							e.preventDefault()
+							handleFullScreenBtn && handleFullScreenBtn()
+						}}>
 						<NewIcon
 							name='fullscreen'
 							color='#141416'
