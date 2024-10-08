@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef} from 'react'
 import classNames from 'classnames'
 import { SortSelectProps } from './SortSelect.types'
 import s from './SortSelect.module.scss'
@@ -24,7 +24,7 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 	const containerRef = useRef<HTMLDivElement>(null)
 	const { isMobile, isDesktop } = useClientWidth()
 
-	const { handleBlur, getInputValue, getOption, handleDocumentClick } = useSortSelect({
+	const { handleBlur, getInputValue, getOption, } = useSortSelect({
 		selectedOption,
 		setSelectedOption: onChange,
 		setIsOpen,
@@ -36,14 +36,14 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 		onBlur,
 	})
 
-	useEffect(() => {
-		//@ts-expect-error кастомный эвент
-		document.addEventListener('click', handleDocumentClick)
-		return () => {
-			//@ts-expect-error кастомный эвент
-			document.removeEventListener('click', handleDocumentClick)
-		}
-	}, [])
+	// useEffect(() => {
+	// 	//@ts-expect-error кастомный эвент
+	// 	document.addEventListener('click', handleDocumentClick)
+	// 	return () => {
+	// 		//@ts-expect-error кастомный эвент
+	// 		document.removeEventListener('click', handleDocumentClick)
+	// 	}
+	// }, [])
 
 	return (
 		<div
