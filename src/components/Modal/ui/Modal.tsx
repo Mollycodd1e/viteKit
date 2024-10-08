@@ -37,13 +37,18 @@ export const Modal: FC<IModalProps> = ({
 	}, [isOpen])
 
 	const modalContent = (
-		<div className={`${s.root} ${additionalClass}`}>
+		<div
+			className={`${s.root} ${additionalClass}`}
+			onClick={(e) => e.stopPropagation()}>
 			<div
 				onClick={closeModal}
 				className={`${s.modalOverlay} ${additionalClassOverlay} ${
 					isTransparentBack ? s.isTransparentBack : ''
 				}`}
-				style={{ opacity: isTransparentBack ? opacity : undefined, backgroundColor: colorOverlay ? colorOverlay : undefined }}
+				style={{
+					opacity: isTransparentBack ? opacity : undefined,
+					backgroundColor: colorOverlay ? colorOverlay : undefined,
+				}}
 			/>
 			<div className={`${s.modalBody} ${additionalClassModalBody}`}>{children}</div>
 		</div>

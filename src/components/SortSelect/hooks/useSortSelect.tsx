@@ -47,6 +47,7 @@ export const useSortSelect = ({
 
 	const handleDocumentClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		event.preventDefault()
+		event.stopPropagation()
 		if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
 			setIsOpen(false)
 		}
