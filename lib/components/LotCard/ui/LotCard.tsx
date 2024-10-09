@@ -34,6 +34,22 @@ export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) =
 
 	return (
 		<div className={s.root}>
+			<Button
+				as='button'
+				variant='gray'
+				size='small'
+				additionalClass={s.fullscreenBtnMobile}
+				onClick={(e) => {
+					e.preventDefault()
+					handleFullScreenBtn && handleFullScreenBtn()
+				}}>
+				<NewIcon
+					name='fullscreen'
+					color='#141416'
+					size='16'
+				/>
+			</Button>
+
 			<div className={s.lotImageWrapper}>
 				<img
 					src={interiorPlanImg ?? LotImage}
