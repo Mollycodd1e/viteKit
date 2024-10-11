@@ -7,6 +7,7 @@ export const InputPage = () => {
 			<div>
 				<form>
 					<Input></Input>
+					<Input variant='dark'></Input>
 				</form>
 			</div>
 		</div>

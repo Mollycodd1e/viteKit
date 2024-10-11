@@ -34,12 +34,6 @@
     &:focus {
       outline: none;
     }
-
-    &:-webkit-autofill {
-      box-shadow: 0 0 0px 1000px white inset;
-      -webkit-text-fill-color: #141416;
-      background-color: transparent;
-    }
   }
 
 }
@@ -67,6 +61,12 @@
 
   & input {
     color: #141416;
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px white inset;
+      -webkit-text-fill-color: #141416;
+      background-color: transparent;
+    }
 
     &::placeholder {
       color: #b1b5c3;
@@ -109,6 +109,12 @@
 
   & input {
     color: #ffffff;
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px #23262f inset;
+      -webkit-text-fill-color: white;
+      background-color: transparent;
+    }
 
     &::placeholder {
       color: #777e90;
