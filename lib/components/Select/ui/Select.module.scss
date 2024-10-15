@@ -23,6 +23,10 @@
 	color: #141416;
 }
 
+.optionDisabled {
+	opacity: 0.7;
+}
+
 .selectedOptionsOpened {
 	border: 1px solid #141416;
 }
@@ -48,7 +52,8 @@
 	max-height: 262px;
 	overflow-y: auto;
 }
-.listRight{
+
+.listRight {
 	right: 0;
 }
 

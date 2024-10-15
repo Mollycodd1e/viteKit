@@ -11,6 +11,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 	placeholder = 'Выберите опции',
 	error,
 	disabled,
+	disabledOptions = [],
 	additionalClass = '',
 	additionalClassOption,
 	additionalClassBtn,
@@ -27,6 +28,9 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 
 	const handleOptionClick = useCallback(
 		(option: Option) => () => {
+			if (disabledOptions.some((disabled) => disabled.value === option.value)) {
+				return
+			}
 			const newSelectedOptions = selectedOptions.some((selected) => selected.value === option.value)
 				? selectedOptions.filter((selected) => selected.value !== option.value)
 				: [...selectedOptions, option]
@@ -122,6 +126,9 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 							key={option.value}
 							className={cx(s.option, {
 								[s.selected]: selectedOptions.some((selected) => selected.value === option.value),
+								[s.optionDisabled]: disabledOptions.some(
+									(disabled) => disabled.value === option.value
+								),
 							})}
 							onClick={handleOptionClick(option)}>
 							<div>{option.label}</div>

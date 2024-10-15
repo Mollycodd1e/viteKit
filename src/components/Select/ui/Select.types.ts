@@ -19,4 +19,5 @@ export interface MultiSelectProps {
 	widthBtn?: string
 	widthOptionList?: string
 	isListRight?: boolean
+	disabledOptions?: Option[]
 }
