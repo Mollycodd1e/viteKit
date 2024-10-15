@@ -79,6 +79,7 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 					isOpen={isOpen}
 					emitIsOpen={setIsOpen}
 					additionalClassModalBody={s.modalAddBody}
+					additionalClass={s.selectModal}
 					createPortalObj={{ domNode: document.querySelector('body') }}
 					isTransparentBack>
 					<div className={s.mobileSortHeader}>
