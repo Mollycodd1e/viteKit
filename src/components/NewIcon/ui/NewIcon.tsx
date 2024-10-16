@@ -45,7 +45,7 @@ import SelectUnchecked from './../assets/SelectUnchecked.svg'
 import ArrowShort from './../assets/ArrowShort.svg'
 import Search from './../assets/Search.svg'
 import ArrowRight from './../assets/arrowRight.svg'
-
+import Redo from './../assets/Redo.svg'
 import { ReactSVGComponent } from './NewIcon.types'
 
 type IconComponentProps = {
@@ -107,16 +107,17 @@ export const iconTypes: IconTypes = {
 	arrowShort: () => <ArrowShort />,
 	search: () => <Search />,
 	circle: () => <Circle />,
+	redo: () => <Redo />,
 }
 
 export const NewIcon = ({
-							name,
-							size = '24',
-							color,
-							strokeWidth,
-							additionalClass,
-							deg,
-						}: IconComponentProps) => {
+	name,
+	size = '24',
+	color,
+	strokeWidth,
+	additionalClass,
+	deg,
+}: IconComponentProps) => {
 	const IconComponent = iconTypes[name]
 
 	return (
@@ -126,7 +127,7 @@ export const NewIcon = ({
 				height: size + 'px',
 				transform: `rotate(${deg}deg)`,
 				color: color,
-				strokeWidth: strokeWidth
+				strokeWidth: strokeWidth,
 			}}
 			className={additionalClass ?? ''}>
 			<IconComponent
