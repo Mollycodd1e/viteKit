@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Select, SortSelect } from '../../main'
 import s from './SelectPage.module.scss'
 import { Option } from '../../components/Select/ui/Select.types'
+import { SummarySelect } from '../../components/SummarySelect'
 
 export const SelectPage = () => {
 	const options: Option[] = [
@@ -44,6 +45,10 @@ export const SelectPage = () => {
 						onChange={(e) => handleChangeSort(e as Option)}
 					/>
 				</div>
+			</div>
+			<div className={s.summarySelect}>
+				<h2>Селект с опциями</h2>
+				<SummarySelect></SummarySelect>
 			</div>
 			<div>
 				<h2>Селект чекбокс</h2>
