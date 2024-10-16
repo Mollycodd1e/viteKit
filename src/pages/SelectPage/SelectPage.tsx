@@ -29,7 +29,7 @@ export const SelectPage = () => {
 	}
 
 	const handleChangeSelect = (selectedOptions: Option[]) => {
-		if (!selectedOptions || selectedOptions.length === 0) return
+		if (!selectedOptions) return
 
 		setSelect(selectedOptions)
 	}
@@ -48,7 +48,12 @@ export const SelectPage = () => {
 			</div>
 			<div className={s.summarySelect}>
 				<h2>Селект с опциями</h2>
-				<SummarySelect></SummarySelect>
+				<SummarySelect
+					label='Проект'
+					selectedValues={select}
+					options={options2}
+					onChange={(e) => handleChangeSelect(e)}
+				/>
 			</div>
 			<div>
 				<h2>Селект чекбокс</h2>

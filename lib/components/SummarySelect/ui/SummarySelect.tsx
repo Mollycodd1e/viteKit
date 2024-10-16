@@ -1,45 +1,58 @@
-import { useState } from 'react'
+import { NewIcon } from '../../NewIcon'
 import { Select } from '../../Select'
-import { Option } from '../../Select/ui/Select.types'
+import { Option, MultiSelectProps } from '../../Select/ui/Select.types'
 import s from './SummarySelect.module.scss'
 
-interface ISummarySelectProps {}
+interface ISummarySelectProps extends MultiSelectProps {
+	label?: string
+}
 
-export const SummarySelect = ({}: ISummarySelectProps) => {
-	const options2: Option[] = [
-		{ value: 'option1', label: 'Option 1' },
-		{ value: 'option2', label: 'Option 2' },
-		{ value: 'option3', label: 'Option 3' },
-		{ value: 'option4', label: 'Option 4' },
-	]
-
-	const [select, setSelect] = useState<Option[] | undefined>([])
-
+export const SummarySelect: React.FC<ISummarySelectProps> = ({ label = '', ...props }) => {
 	const handleChangeSelect = (selectedOptions: Option[]) => {
-		if (!selectedOptions || selectedOptions.length === 0) return
+		if (props.onChange) {
+			props.onChange(selectedOptions)
+		}
+	}
 
-		setSelect(selectedOptions)
+	const handleRemoveOption = (value: string) => {
+		const updatedSelect = props.selectedValues?.filter((s) => s.value !== value) || []
+		handleChangeSelect(updatedSelect)
+	}
+
+	const handleClearAll = () => {
+		handleChangeSelect([])
 	}
 
 	return (
 		<div className={s.root}>
+			<div className={s.nameWrapper}>
+				<div>{label}</div>
+				<div
+					className={s.clearBtn}
+					onClick={handleClearAll}>
+					Очистить
+				</div>
+			</div>
 			<Select
-				selectedValues={select}
-				options={options2}
-				onChange={(e) => handleChangeSelect(e)}
+				{...props}
+				onChange={handleChangeSelect}
 			/>
-			{select &&
-				select.length > 0 &&
-				select?.map((s) => {
-					return (
+			{props.selectedValues && props.selectedValues.length > 0 && (
+				<div className={s.summaryList}>
+					{props.selectedValues.map((m) => (
 						<div
-							onClick={(e) => console.log(e.target)}
-							key={s.value}>
-							{s.label}
+							key={m.value}
+							onClick={() => handleRemoveOption(m.value.toString())}
+							className={s.summaryOption}>
+							{m.label}
+							<NewIcon
+								name='close'
+								size='16'
+							/>
 						</div>
-					)
-				})}
+					))}
+				</div>
+			)}
 		</div>
 	)
 }
-
