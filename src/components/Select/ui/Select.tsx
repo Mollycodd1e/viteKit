@@ -86,7 +86,11 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 				{!isBtn && (
 					<>
 						<div
-							className={cx(s.selectedOptions, { [s.selectOptionsDisabled]: disabled })}
+							className={cx(
+								s.selectedOptions,
+								{ [s.selectedOptionsNotEmpty]: selectedOptions.length > 0 },
+								{ [s.selectOptionsDisabled]: disabled }
+							)}
 							onClick={() => setIsOpen(!isOpen)}>
 							{selectedOptions.length === 0 ? placeholder : 'Выбрано ' + selectedOptions.length}
 						</div>
@@ -104,6 +108,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 						<button
 							className={cx(
 								s.selectedOptions,
+								{ [s.selectedOptionsNotEmpty]: selectedOptions.length > 0 },
 								{ [s.selectOptionsDisabled]: disabled },
 								additionalClassBtn
 							)}
