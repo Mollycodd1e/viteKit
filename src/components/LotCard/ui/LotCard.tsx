@@ -33,6 +33,7 @@ export const LotCard = ({
 		mortgageMonthlyPayment,
 		workPlacesCount,
 		type,
+		floorPlanImg,
 	} = lot
 
 	const areaStr = area + ' ' + 'м²'
@@ -60,7 +61,7 @@ export const LotCard = ({
 
 			<div className={s.lotImageWrapper}>
 				<img
-					src={interiorPlanImg ?? LotImage}
+					src={interiorPlanImg ?? floorPlanImg ?? LotImage}
 					width={311}
 					height={224}
 				/>
