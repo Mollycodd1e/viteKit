@@ -9,8 +9,14 @@ import { Button } from '../../Button'
 import { formatPrice } from '../utils/formatPrice'
 import { useClientWidth } from '../../../main'
 import { formatPayment } from '../utils/monthlyPayment'
+import { OFFICE_TYPES } from '../utils/const'
 
-export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) => {
+export const LotCard = ({
+	lot,
+	handleBtnForm,
+	handleFullScreenBtn,
+	isOffice = false,
+}: ILotCard) => {
 	const {
 		area,
 		floor,
@@ -25,6 +31,7 @@ export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) =
 		discountVolume,
 		interiorPlanImg,
 		mortgageMonthlyPayment,
+		type,
 	} = lot
 
 	const areaStr = area + ' ' + 'м²'
@@ -61,7 +68,11 @@ export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) =
 				<div className={s.monthlyWrapper}>
 					<Text
 						className={s.infoHeader}
-						html={`${checkBedroomsCount(bedroomsCount)}, ${number}`}
+						html={`${
+							isOffice && type
+								? OFFICE_TYPES[type as keyof typeof OFFICE_TYPES]
+								: checkBedroomsCount(bedroomsCount)
+						}, ${number}`}
 					/>
 					{mortgageMonthlyPayment && (
 						<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
@@ -142,4 +153,3 @@ export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) =
 		</div>
 	)
 }
-

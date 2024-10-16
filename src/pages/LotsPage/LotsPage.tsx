@@ -157,8 +157,10 @@ export const LotsPage = () => {
 				{isFetching && <LotCardSkeleton />}
 				{!isFetching && (
 					<LotCard
+						isOffice
 						lot={testLot}
-						handleBtnForm={() => {}}></LotCard>
+						handleBtnForm={() => {}}
+					/>
 				)}
 				<div className={s.optionsWrapper}>
 					<label className={s.isFetching}>
