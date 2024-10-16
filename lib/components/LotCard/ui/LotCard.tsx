@@ -31,6 +31,7 @@ export const LotCard = ({
 		discountVolume,
 		interiorPlanImg,
 		mortgageMonthlyPayment,
+		workPlacesCount,
 		type,
 	} = lot
 
@@ -78,11 +79,15 @@ export const LotCard = ({
 						<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
 					)}
 				</div>
-
 				{!isDecoration && (
 					<div className={s.decor}>
-						<NewIcon name={'withoutDecor'} />
-						<span>Без отделки</span>
+						{!isOffice && (
+							<>
+								<NewIcon name={'withoutDecor'} />
+								<span>Без отделки</span>
+							</>
+						)}
+						{isOffice && workPlacesCount && <span>{workPlacesCount + ' рабочих мест'}</span>}
 					</div>
 				)}
 				<div className={s.lotPropertyListDesktop}>
