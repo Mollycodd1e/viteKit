@@ -11,12 +11,7 @@ import { useClientWidth } from '../../../main'
 import { formatPayment } from '../utils/monthlyPayment'
 import { OFFICE_TYPES } from '../utils/const'
 
-export const LotCard = ({
-	lot,
-	handleBtnForm,
-	handleFullScreenBtn,
-	isOffice = false,
-}: ILotCard) => {
+export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) => {
 	const {
 		area,
 		floor,
@@ -33,9 +28,11 @@ export const LotCard = ({
 		mortgageMonthlyPayment,
 		workPlacesCount,
 		type,
+		direction,
 		floorPlanImg,
 	} = lot
 
+	const isOffice = direction === 1
 	const areaStr = area + ' ' + 'м²'
 	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
 

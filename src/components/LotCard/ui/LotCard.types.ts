@@ -230,7 +230,6 @@ export interface ILot {
 }
 
 export interface ILotCard {
-	isOffice?: boolean
 	lot: ILot
 	handleBtnForm: () => void
 	handleFullScreenBtn?: () => void

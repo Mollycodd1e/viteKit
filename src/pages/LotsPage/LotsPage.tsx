@@ -157,7 +157,6 @@ export const LotsPage = () => {
 				{isFetching && <LotCardSkeleton />}
 				{!isFetching && (
 					<LotCard
-						isOffice
 						lot={testLot}
 						handleBtnForm={() => {}}
 					/>
