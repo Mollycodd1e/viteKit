@@ -11,7 +11,12 @@ import { useClientWidth } from '../../../main'
 import { formatPayment } from '../utils/monthlyPayment'
 import { OFFICE_TYPES } from '../utils/const'
 
-export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) => {
+export const LotCard = ({
+	lot,
+	handleBtnForm,
+	handleFullScreenBtn,
+	btnName = 'Уточнить детали',
+}: ILotCard) => {
 	const {
 		area,
 		floor,
@@ -149,7 +154,7 @@ export const LotCard = ({ lot, handleBtnForm, handleFullScreenBtn }: ILotCard) =
 							e.preventDefault()
 							handleBtnForm()
 						}}>
-						Уточнить детали
+						{btnName}
 					</Button>
 				</div>
 			</div>
