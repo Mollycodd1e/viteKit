@@ -20,6 +20,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 	selectedValues = [],
 	isBtn = false,
 	btnName,
+	clickableOptions,
 	isListRight = false,
 }) => {
 	const [selectedOptions, setSelectedOptions] = useState<Option[]>(selectedValues)
@@ -108,7 +109,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 						<button
 							className={cx(
 								s.selectedOptions,
-								{ [s.selectedOptionsNotEmpty]: selectedOptions.length > 0 },
+								s.selectedOptionsBtn,
 								{ [s.selectOptionsDisabled]: disabled },
 								additionalClassBtn
 							)}
@@ -134,6 +135,8 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 								[s.optionDisabled]: disabledOptions.some(
 									(disabled) => disabled.value === option.value
 								),
+								[s.optionClickable]:
+									(clickableOptions && clickableOptions.includes(`${option.value}`)) || isBtn,
 							})}
 							onClick={handleOptionClick(option)}>
 							<div>{option.label}</div>

@@ -20,4 +20,5 @@ export interface MultiSelectProps {
 	widthOptionList?: string
 	isListRight?: boolean
 	disabledOptions?: Option[]
+	clickableOptions?: string[]
 }

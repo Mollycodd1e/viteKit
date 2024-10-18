@@ -20,6 +20,10 @@
 	background: #ffffff;
 	box-sizing: border-box;
 	outline: none;
+	color: #B1B5C3;
+}
+
+.selectedOptionsBtn {
 	color: #141416;
 }
 
@@ -28,6 +32,7 @@
 }
 
 .selectedOptionsNotEmpty {
+	color: #141416;
 	border: 1px solid #015FF9;
 }
 
@@ -68,6 +73,7 @@
 }
 
 .option {
+	opacity: 0.5;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -81,6 +87,10 @@
 
 .optionDisabled {
 	opacity: 0.3;
+}
+
+.optionClickable {
+	opacity: 1;
 }
 
 .icon {

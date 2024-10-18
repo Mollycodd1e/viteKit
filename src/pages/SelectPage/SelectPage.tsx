@@ -53,6 +53,7 @@ export const SelectPage = () => {
 					selectedValues={select}
 					options={options2}
 					onChange={(e) => handleChangeSelect(e)}
+					clickableOptions={['option1', 'option2']}
 				/>
 			</div>
 			<div>
