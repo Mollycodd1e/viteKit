@@ -1,6 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import s from './LotCardSkeleton.module.scss';
-export const LotCardSkeleton = () => {
-    const isDecoration = true;
-    return (_jsxs("div", { className: s.root, children: [_jsx("div", { className: s.lotImageWrapper }), _jsxs("div", { className: s.lotInfoWrapper, children: [_jsx("div", { className: s.infoHeader }), isDecoration && _jsx("div", { className: s.decor }), _jsxs("div", { className: s.lotPropertyListDesktop, children: [_jsx("div", { className: s.lotPropertyItemDesktop }), _jsx("div", { className: s.lotPropertyItemDesktop }), _jsx("div", { className: s.lotPropertyItemDesktop })] }), _jsxs("ul", { className: s.lotPropertyListMobile, children: [_jsxs("li", { className: s.lotPropertyItem, children: [_jsx("div", {}), _jsx("div", {})] }), _jsxs("li", { className: s.lotPropertyItem, children: [_jsx("div", {}), _jsx("div", {})] }), _jsxs("li", { className: s.lotPropertyItem, children: [_jsx("div", {}), _jsx("div", {})] })] })] }), _jsxs("div", { className: s.lotPriceWrapper, children: [_jsx("div", { className: s.discountWrapper, children: _jsx("div", {}) }), _jsx("div", { className: s.lotPricePerMetr }), _jsxs("div", { className: s.btnWrapper, children: [_jsx("div", {}), _jsx("div", {})] })] })] }));
-};
