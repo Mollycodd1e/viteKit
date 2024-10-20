@@ -14,8 +14,9 @@
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build",
-    "release": "node scripts/versionUpdate.js && node scripts/commitAndPush.js"
+    "version-update": "node scripts/versionUpdate.js",
+    "commit-and-push": "node scripts/commitAndPush.js",
+    "release": "npm run build && npm run version-update && npm run commit-and-push && npm run publish"
   },
   "dependencies": {
     "@react-input/mask": "^1.2.5",
