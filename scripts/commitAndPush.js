@@ -23,9 +23,9 @@ async function commitAndPush() {
 		const versionParts = packageJson.version
 		const commitMessage =
 			process.argv[2] || (await getCommitMessage()) || `Release version ${versionParts}`
-
+		const sanitizedCommitMessage = commitMessage.replace(/"/g, '\\"').replace(/'/g, "\\'").trim()
 		exec(
-			`git add . && git commit -m "${commitMessage}" && git push origin master`,
+			`git add . && git commit -m "${sanitizedCommitMessage}" && git push origin master`,
 			(error, stdout, stderr) => {
 				if (error) {
 					console.error(`Error during git operations: ${error}`)
