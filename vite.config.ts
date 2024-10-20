@@ -26,7 +26,6 @@ export default defineConfig({
 			formats: ['es'],
 		},
 		minify: true,
-		sourcemap: true,
 		rollupOptions: {
 			external: ['react', 'react/jsx-runtime'],
 			input: Object.fromEntries(
@@ -41,7 +40,6 @@ export default defineConfig({
 			),
 			output: {
 				entryFileNames: '[name].js',
-				sourcemap: true,
 			},
 		},
 	},
