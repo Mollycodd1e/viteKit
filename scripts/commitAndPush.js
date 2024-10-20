@@ -6,11 +6,8 @@ async function commitAndPush() {
 		const packagePath = './package.json'
 		const packageJson = JSON.parse(await readFile(packagePath, 'utf-8'))
 		const versionParts = packageJson.version
-		const commitMessageArgIndex = process.argv.indexOf('--m') + 1
-		const commitMessage =
-			commitMessageArgIndex > 0
-				? process.argv[commitMessageArgIndex]
-				: `Release version ${versionParts}`
+
+		const commitMessage = process.env.npm_config_m ?? `Update version to ${versionParts}`
 
 		exec(
 			`git add . && git commit -m "${commitMessage}" && git push origin master`,
