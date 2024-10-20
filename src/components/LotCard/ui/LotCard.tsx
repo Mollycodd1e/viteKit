@@ -90,8 +90,8 @@ export const LotCard = ({
 								<span>Без отделки</span>
 							</>
 						)}
-						{isOffice && workPlacesCount !== null && workPlacesCount !== undefined && (
-							<span>{workPlacesCount + ' рабочих мест'}</span>
+						{isOffice && (workPlacesCount === 0 || workPlacesCount) && (
+							<span>{`${workPlacesCount} рабочих мест`}</span>
 						)}
 					</div>
 				)}
