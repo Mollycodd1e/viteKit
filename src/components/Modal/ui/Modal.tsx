@@ -31,9 +31,8 @@ export const Modal: FC<IModalProps> = ({
 			if (leaveDisableScroll) return
 			document.body.classList.remove('disable-scroll')
 		}
-		// Cleanup function to remove the class if the component unmounts
+
 		return () => document.body.classList.remove('disable-scroll')
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isOpen])
 
 	const modalContent = (
