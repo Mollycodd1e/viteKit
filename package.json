@@ -16,6 +16,7 @@
     "preview": "vite preview",
     "version-update": "node scripts/versionUpdate.js",
     "commit-and-push": "node scripts/commitAndPush.js",
+    "publish": "npm publish",
     "release": "npm run build && npm run version-update && npm run commit-and-push && npm run publish"
   },
   "dependencies": {
