@@ -20,7 +20,7 @@ async function commitAndPush() {
 		const packagePath = './package.json'
 		const packageJson = JSON.parse(await readFile(packagePath, 'utf-8'))
 		const versionParts = packageJson.version
-		let commitMessage = process.argv[2]
+		let commitMessage = process.argv.slice(2).join(' ')
 
 		if (!commitMessage) {
 			commitMessage = (await getCommitMessage()) + ` (${versionParts})`

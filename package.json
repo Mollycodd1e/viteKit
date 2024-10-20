@@ -2,7 +2,7 @@
   "name": "stone-kit",
   "description": "uikit for redesign",
   "private": false,
-  "version": "0.0.319",
+  "version": "0.0.320",
   "author": "Mollycodd1e",
   "license": "ISC",
   "type": "module",
@@ -16,7 +16,7 @@
     "preview": "vite preview",
     "version-update": "node scripts/versionUpdate.js",
     "commit-and-push": "node scripts/commitAndPush.js",
-    "release": "npm run build && npm run version-update && npm run commit-and-push && npm publish"
+    "release": "npm run build && npm run version-update && npm run commit-and-push -- && npm publish"
   },
   "dependencies": {
     "@react-input/mask": "^1.2.5",
