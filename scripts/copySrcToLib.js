@@ -12,9 +12,9 @@ async function copyDir(src, dest) {
 			const destPath = join(dest, entry.name)
 
 			if (entry.isDirectory()) {
-				await copyDir(srcPath, destPath) // Recursive copying of subfolders
+				await copyDir(srcPath, destPath)
 			} else {
-				await copyFile(srcPath, destPath) // Copying files
+				await copyFile(srcPath, destPath)
 			}
 		}
 	} catch (err) {
