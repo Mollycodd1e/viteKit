@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts'
+// import dts from 'vite-plugin-dts'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
@@ -13,7 +13,7 @@ export default defineConfig({
 			svgrOptions: { exportType: 'default', ref: true, svgo: false, titleProp: true },
 			include: '**/*.svg',
 		}),
-		dts({ include: ['lib'] }),
+		// dts({ include: ['lib'] }),
 	],
 	ssr: {
 		noExternal: true,
