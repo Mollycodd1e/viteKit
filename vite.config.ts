@@ -4,6 +4,7 @@ import { glob } from 'glob'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import svgr from 'vite-plugin-svgr'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
 	plugins: [
@@ -12,6 +13,7 @@ export default defineConfig({
 			svgrOptions: { exportType: 'default', ref: true, svgo: false, titleProp: true },
 			include: '**/*.svg',
 		}),
+		dts({ include: ['lib'] }),
 	],
 	ssr: {
 		noExternal: true,
