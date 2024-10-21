@@ -10,12 +10,14 @@ export const LotsPage = () => {
 		lotUuid: 'abcd-efgh-ijkl-mnop',
 		projectUuid: 'proj-1234',
 		sellingPrice: '5000000',
+		sellingPriceBeforeDiscount: '5400000',
 		showPriceFlg: true,
 		sellingPricePerMeter: '200000',
 		rentPricePerMeterPerYear: '2400000',
 		rentPricePerMonth: '200000',
-		discountVolume: 10,
-		discountedPrice: 4500000,
+		discount: '3.00',
+		discountVolume: null,
+		discountedPrice: null,
 		availableFrom: '2024-09-01',
 		handoverKeys: '2024-12-31',
 		status: 1,
@@ -174,4 +176,3 @@ export const LotsPage = () => {
 		</div>
 	)
 }
-

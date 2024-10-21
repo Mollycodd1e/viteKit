@@ -27,14 +27,14 @@ export const LotCard = ({
 		isDecoration,
 		sellingPrice,
 		sellingPricePerMeter,
-		discountedPrice,
-		discountVolume,
 		interiorPlanImg,
 		mortgageMonthlyPayment,
 		workPlacesCount,
 		type,
 		direction,
 		floorPlanImg,
+		discount,
+		sellingPriceBeforeDiscount,
 	} = lot
 
 	const isOffice = direction === 1
@@ -117,17 +117,18 @@ export const LotCard = ({
 			</div>
 			<div className={s.lotPriceWrapper}>
 				<div className={s.discountWrapper}>
-					{discountedPrice && sellingPrice && (
+					{discount && sellingPrice && sellingPriceBeforeDiscount && (
 						<div className={s.discountPrice}>
 							<span>{formatPrice(sellingPrice)}</span>
 							<Tag
+								additionalClass={s.discountTag}
 								variant='red'
 								size='tiny'>
-								{'-' + discountVolume + '%'}
+								{'-' + Number(discount) + '%'}
 							</Tag>
 						</div>
 					)}
-					<div>{formatPrice(discountedPrice || sellingPrice)}</div>
+					<div>{formatPrice(sellingPriceBeforeDiscount || sellingPrice)}</div>
 				</div>
 				{sellingPricePerMeter && (
 					<div className={s.lotPricePerMetr}>{formatPrice(sellingPricePerMeter, true)}</div>

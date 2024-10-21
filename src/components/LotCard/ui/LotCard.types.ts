@@ -215,6 +215,10 @@ export interface ILot {
 		floor: number
 		floorPlanImg: string
 	}[]
+	//** Цена до скидки */
+	sellingPriceBeforeDiscount: string | null
+	//** Скидка */
+	discount: string | null
 	/** Угол азимута */
 	azimuthAngle?: number | null
 	/** Тип недвижимости */
@@ -235,4 +239,3 @@ export interface ILotCard {
 	handleBtnForm: () => void
 	handleFullScreenBtn?: () => void
 }
-
