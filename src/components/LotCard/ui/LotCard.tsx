@@ -119,7 +119,7 @@ export const LotCard = ({
 				<div className={s.discountWrapper}>
 					{discount && sellingPrice && sellingPriceBeforeDiscount && (
 						<div className={s.discountPrice}>
-							<span>{formatPrice(sellingPrice)}</span>
+							<span>{formatPrice(sellingPriceBeforeDiscount ?? sellingPrice)}</span>
 							<Tag
 								additionalClass={s.discountTag}
 								variant='red'
@@ -128,7 +128,7 @@ export const LotCard = ({
 							</Tag>
 						</div>
 					)}
-					<div>{formatPrice(sellingPriceBeforeDiscount || sellingPrice)}</div>
+					<div>{formatPrice(sellingPrice)}</div>
 				</div>
 				{sellingPricePerMeter && (
 					<div className={s.lotPricePerMetr}>{formatPrice(sellingPricePerMeter, true)}</div>
