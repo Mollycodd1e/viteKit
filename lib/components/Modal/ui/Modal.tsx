@@ -33,7 +33,7 @@ export const Modal: FC<IModalProps> = ({
 		}
 
 		return () => {
-			if (notDisableScroll) return
+			if (leaveDisableScroll) return
 			document.body.classList.remove('disable-scroll')
 		}
 	}, [isOpen])
