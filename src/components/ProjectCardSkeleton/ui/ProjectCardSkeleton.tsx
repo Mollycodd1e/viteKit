@@ -15,10 +15,6 @@ export const ProjectCardSkeleton = () => {
 					<div></div>
 					<div></div>
 				</div>
-				<div className={s.filterBtnWrapper}>
-					<div></div>
-					<div></div>
-				</div>
 			</div>
 			{skeletonElements.map((m) => {
 				return <LotCardSkeleton key={m} />
