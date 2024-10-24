@@ -28,16 +28,11 @@ export const Modal: FC<IModalProps> = ({
 			if (document.body.classList.contains('disable-scroll')) return
 			document.body.classList.add('disable-scroll')
 		} else {
-			if (!leaveDisableScroll) {
-				document.body.classList.remove('disable-scroll')
-			}
+			if (leaveDisableScroll) return
+			document.body.classList.remove('disable-scroll')
 		}
 
-		return () => {
-			if (!leaveDisableScroll) {
-				document.body.classList.remove('disable-scroll')
-			}
-		}
+		return () => document.body.classList.remove('disable-scroll')
 	}, [isOpen])
 
 	const modalContent = (
