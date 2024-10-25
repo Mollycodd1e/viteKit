@@ -59,7 +59,6 @@ export const SelectPage = () => {
 			<div>
 				<h2>Селект чекбокс</h2>
 				<Select
-					clickableOptions={[]}
 					selectedValues={select}
 					options={options2}
 					onChange={(e) => handleChangeSelect(e)}
@@ -70,7 +69,6 @@ export const SelectPage = () => {
 				<h2>Селект кнопка</h2>
 				<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
 					<Select
-						clickableOptions={[]}
 						isBtn={true}
 						btnName={'Фильтр'}
 						isListRight={true}
