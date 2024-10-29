@@ -27,8 +27,8 @@
     content: '';
     left: 0;
     top: 0;
-    width: 18.5px;
-    height: 18.5px;
+    width: 18px;
+    height: 18px;
     border-radius: 4px;
     background: #e6e8ec;
     border: 1px solid #b1b5c3;
@@ -51,16 +51,18 @@
   color: #777e90;
 }
 
-.error{
+.error {
   &:has(input:not(:checked))::before {
     border: 1px solid #f44336;
     z-index: 1;
   }
+
   color: #f44336;
 }
 
-.checkIcon{
+.checkIcon {
   z-index: 5;
   position: absolute;
   left: 2px;
+  top: 2px;
 }
