@@ -27,11 +27,12 @@
     content: '';
     left: 0;
     top: 0;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border-radius: 4px;
     background: #e6e8ec;
     border: 1px solid #b1b5c3;
+    box-sizing: border-box;
     z-index: 1;
   }
 
