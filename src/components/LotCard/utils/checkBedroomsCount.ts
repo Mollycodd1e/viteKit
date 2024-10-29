@@ -1,6 +1,6 @@
 export const checkBedroomsCount = (count?: number | null) => {
-	if (!count || typeof count !== 'number' || count < 0) {
-		return 'нет спален'
+	if (!count || typeof count !== 'number' || count < 1) {
+		return 'Студия'
 	}
 
 	const lastDigit = count % 10
