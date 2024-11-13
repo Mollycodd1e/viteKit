@@ -28,4 +28,3 @@ export const Switcher = ({ children, isActive, onClick }: ISwitcherProps) => {
 		</div>
 	)
 }
-
