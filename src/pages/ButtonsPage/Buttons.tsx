@@ -5,7 +5,7 @@ import { ButtonState } from './ButtonState/ButtonState'
 import { ZoomControls } from '../../components/ZoomControls'
 
 export const ButtonsPage = () => {
-	const [isActive, setIsActive] = useState<boolean>(false)
+	const [isActive, setIsActive] = useState<boolean>(true)
 	const [isActive1, setIsActive1] = useState<boolean>(false)
 	return (
 		<div className={s.root}>

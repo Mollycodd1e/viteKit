@@ -111,6 +111,11 @@
 		left: unset;
 		right: 4px;
 	}
+
+	.swiperInitialize.swiperActive:hover::before {
+		left: 4px;
+		right: unset;
+	}
 }
 
 @media(min-width: 1440px) {
