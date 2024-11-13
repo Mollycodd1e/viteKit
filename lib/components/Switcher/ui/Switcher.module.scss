@@ -105,7 +105,8 @@
 		left: 4px;
 	}
 
-	.swiperInactive:hover::before {
+	.swiperInactive:hover::before,
+	.swiperInitialize:hover::before {
 		display: block;
 		left: unset;
 		right: 4px;

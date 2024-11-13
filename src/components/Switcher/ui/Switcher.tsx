@@ -18,6 +18,7 @@ export const Switcher = ({ children, isActive, onClick }: ISwitcherProps) => {
 			<div
 				className={cx(
 					s.swiper,
+					{ [s.swiperInitialize]: isFirstRender.current },
 					{ [s.swiperActive]: isActive },
 					{ [s.swiperInactive]: !isActive && !isFirstRender.current }
 				)}
