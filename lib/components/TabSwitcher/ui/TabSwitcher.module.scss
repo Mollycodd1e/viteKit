@@ -6,6 +6,7 @@ $roundRadius: 24px;
 .root {
   display: flex;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
 
   input {
     position: absolute;
@@ -90,27 +91,27 @@ $roundRadius: 24px;
     border-radius: 0 48px 48px 0;
   }
 
-  & input:not(:checked) ~ .item {
+  & input:not(:checked)~.item {
     color: #141416;
   }
 
-  & input:checked ~ .item {
+  & input:checked~.item {
     background-color: #141416;
     color: #ffffff;
   }
 
   @media(min-width: 1024px) {
-    & input:not(:checked) ~ .item:hover {
+    & input:not(:checked)~.item:hover {
       background-color: #141416;
       color: #ffffff;
       opacity: 0.9;
     }
 
-    & input:checked ~ .item:hover {
+    & input:checked~.item:hover {
       opacity: 0.9;
     }
 
-    & input:disabled ~ .item {
+    & input:disabled~.item {
       opacity: 0.7;
     }
   }
@@ -140,6 +141,7 @@ $roundRadius: 24px;
       padding-left: 32px;
       padding-right: 32px;
     }
+
     transition: background-color 100ms;
     width: 48px;
     height: 48px;
@@ -161,23 +163,23 @@ $roundRadius: 24px;
       }
     }
 
-    & input:checked ~ .item {
+    & input:checked~.item {
       background: #141416;
       color: #ffffff;
       border: solid 1px #141416;
     }
 
-    & input:not(:checked) ~ .item {
+    & input:not(:checked)~.item {
       background: white;
       color: #141416;
       border: solid 1px #E6E8EC;
     }
 
-    & input ~ .item:hover {
+    & input~.item:hover {
       border: solid 1px #B1B5C3;
     }
 
-    & input ~ .item:active {
+    & input~.item:active {
       background: #353945;
       color: #ffffff;
       border: 1px solid #777E90;
@@ -195,23 +197,23 @@ $roundRadius: 24px;
       }
     }
 
-    & input:checked ~ .item {
+    & input:checked~.item {
       background: #141416;
       color: #ffffff;
       border: solid 1px #141416;
     }
 
-    & input:not(:checked) ~ .item {
+    & input:not(:checked)~.item {
       background: #F4F5F6;
       color: #353945;
       border: solid 1px #F4F5F6;
     }
 
-    & input ~ .item:hover {
+    & input~.item:hover {
       border: solid 1px #B1B5C3;
     }
 
-    & input ~ .item:active {
+    & input~.item:active {
       background: #353945;
       color: #ffffff;
       border: 1px solid #777E90;

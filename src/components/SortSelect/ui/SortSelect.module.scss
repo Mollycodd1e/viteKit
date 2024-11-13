@@ -5,6 +5,7 @@
 	max-width: 178px;
 	min-height: 100%;
 	max-height: 48px;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .selectedOptions {
@@ -70,6 +71,7 @@
 	padding: 8px 24px 24px;
 	background: #ffffff;
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .mobileSortHeader {
