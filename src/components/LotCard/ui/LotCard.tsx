@@ -63,6 +63,7 @@ export const LotCard = ({
 
 			<div className={s.lotImageWrapper}>
 				<img
+					loading="lazy"
 					src={interiorPlanImg ?? floorPlanImg ?? LotImage}
 					width={311}
 					height={224}
