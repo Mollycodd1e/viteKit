@@ -15,6 +15,7 @@ export const LotCard = ({
 	lot,
 	handleBtnForm,
 	handleFullScreenBtn,
+	btnDisabled,
 	btnName = 'Уточнить детали',
 }: ILotCard) => {
 	const {
@@ -41,7 +42,9 @@ export const LotCard = ({
 	const areaStr = area + ' ' + 'м²'
 	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
 
-	const { isMobile } = useClientWidth()
+	const { isMobile, currentClientWidth } = useClientWidth()
+
+	if (!currentClientWidth) return null
 
 	return (
 		<div className={s.root}>
@@ -137,6 +140,7 @@ export const LotCard = ({
 				<div className={s.btnWrapper}>
 					<Button
 						as='button'
+						disabled={btnDisabled}
 						variant='gray'
 						additionalClass={s.fullscreenBtn}
 						onClick={(e) => {
