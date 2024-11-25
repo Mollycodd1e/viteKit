@@ -1,3 +1,5 @@
+'use client'
+
 import classNames from 'classnames'
 import s from './Text.module.scss'
 import { ITextProps } from './Text.types'
