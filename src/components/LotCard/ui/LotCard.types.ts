@@ -239,4 +239,5 @@ export interface ILotCard {
 	btnDisabled?: boolean
 	handleBtnForm: () => void
 	handleFullScreenBtn?: () => void
+	addClassname?: string
 }
