@@ -31,12 +31,11 @@ export const MetroTag = ({
 			{...rest}>
 			<div className={cx(s.metroColor, addClassNameColor)}>
 				{metro?.icon && (
-					<div
-						style={{
-							backgroundImage: `url${metro.icon}`,
-							backgroundSize: '20px 20px',
-							backgroundRepeat: 'no-repeat',
-						}}></div>
+					<img
+						src={metro.icon}
+						width={20}
+						height={20}
+					/>
 				)}
 				{metro?.color && !metro?.icon && <span style={{ background: metro?.color ?? '' }}></span>}
 				{metro.name}
