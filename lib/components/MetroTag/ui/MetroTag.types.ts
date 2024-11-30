@@ -7,6 +7,7 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 		color?: string
 		timeTo?: number
 		mode?: string
+		icon?: string
 	}
 	variant?: 'default' | 'transparent'
 	addClassName?: string
