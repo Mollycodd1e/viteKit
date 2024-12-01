@@ -115,7 +115,7 @@ const TabsPage = () => {
 			</div>
 
 			<div className={s.tabSelectWrapper}>
-				<TabSelect variant='whiteFill'>
+				<TabSelect variant='grayDesign'>
 					{tabList.map((m, i) => {
 						return (
 							<TabSelect.Item

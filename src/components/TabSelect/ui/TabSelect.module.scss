@@ -17,6 +17,8 @@
   user-select: none;
 
   & label {
+    display: flex;
+    align-items: center;
     min-height: 40px;
     min-width: max-content;
     border-radius: 48px;
@@ -107,6 +109,30 @@
   }
 }
 
+.grayDesign {
+  & label {
+    padding: 7px 15px;
+    border: 1px solid #F4F5F6;
+    background: #F4F5F6;
+
+    & .text {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+      color: #353945;
+    }
+  }
+
+  & label:has(>input:checked) {
+    border: 1px solid #23262F;
+    background: #23262F;
+
+    & .text {
+      color: #ffffff;
+    }
+  }
+}
+
 @media((min-width: 1024px)) {
   .whiteFill {
     & label:hover {
@@ -165,6 +191,17 @@
         font-size: 18px;
         font-weight: 500;
         line-height: 24px;
+      }
+    }
+  }
+
+  .grayDesign {
+    & label {
+      padding: 9px 23px;
+
+      & .text {
+        font-size: 14px;
+        line-height: 20px;
       }
     }
   }

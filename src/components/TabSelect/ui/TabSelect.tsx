@@ -28,7 +28,8 @@ interface ITabSelect {
 
 export const TAB_SELECT_VARIANTS = {
     whiteFill: 'whiteFill',
-    whiteStroke: 'whiteStroke'
+    whiteStroke: 'whiteStroke',
+    grayDesign: 'grayDesign'
 }
 
 export type SwitcherVariant = keyof typeof TAB_SELECT_VARIANTS
