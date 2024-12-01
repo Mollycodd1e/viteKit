@@ -114,6 +114,7 @@
     padding: 7px 15px;
     border: 1px solid #F4F5F6;
     background: #F4F5F6;
+    min-height: 32px;
 
     & .text {
       font-size: 12px;
@@ -198,6 +199,7 @@
   .grayDesign {
     & label {
       padding: 9px 23px;
+      min-height: 40px;
 
       & .text {
         font-size: 14px;
