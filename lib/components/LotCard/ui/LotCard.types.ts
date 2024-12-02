@@ -240,4 +240,5 @@ export interface ILotCard {
 	handleBtnForm: () => void
 	handleFullScreenBtn?: () => void
 	addClassname?: string
+	orientation?: 'horizontal' | 'vertical'
 }

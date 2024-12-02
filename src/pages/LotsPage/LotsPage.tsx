@@ -88,7 +88,7 @@ export const LotsPage = () => {
 			},
 		],
 		promoText: 'Скидка 10% на все лоты!',
-		interiorPlanImg: null,
+		interiorPlanImg: 'https://ugra-news.ru/upload/medialibrary/4ba/eoi2i79bfunr3t8zvr12mbt0nupuhnnx/Foto-03.png',
 		floorPlanImg: 'https://example.com/floor-plan.png',
 		sitPlanImg: 'https://example.com/sit-plan.png',
 		createdAt: '2024-07-18',
@@ -159,6 +159,14 @@ export const LotsPage = () => {
 				{isFetching && <LotCardSkeleton />}
 				{!isFetching && (
 					<LotCard
+						lot={testLot}
+						handleBtnForm={() => {}}
+					/>
+				)}
+
+				{!isFetching && (
+					<LotCard
+						orientation={'vertical'}
 						lot={testLot}
 						handleBtnForm={() => {}}
 					/>

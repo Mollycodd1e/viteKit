@@ -20,6 +20,7 @@ export const LotCard = ({
                             handleFullScreenBtn,
                             btnDisabled,
                             addClassname,
+                            orientation = 'horizontal',
                             btnName = 'Уточнить детали',
                         }: ILotCard) => {
     const {
@@ -50,7 +51,42 @@ export const LotCard = ({
 
     if (!currentClientWidth) return null
 
-    return (
+    if (orientation === 'vertical') {
+        return <div className={s.verticalWrapper}>
+            <div className={cx(s.root, addClassname)}>
+                <img
+                    className={s.img}
+                    loading="lazy"
+                    alt={'floor plan image'}
+                    src={interiorPlanImg ?? floorPlanImg ?? LotImage}
+                />
+
+                <div className={s.title}>{number}</div>
+
+                <ul className={s.features}>
+                    {area && <li className={s.feature}>
+                        <p className={s.text}>{'Площадь'}</p>
+                        <p className={s.value}>{area}</p>
+                    </li>}
+
+                    {housing && <li className={s.feature}>
+                        <p className={s.text}>{'Площадь'}</p>
+                        <p className={s.value}>{housing}</p>
+                    </li>}
+
+                    {floor && <li className={s.feature}>
+                        <p className={s.text}>{'Этаж'}</p>
+                        <p className={s.value}>{floor}</p>
+                    </li>}
+                </ul>
+
+                <div className={s.bot}>
+                    <p className={s.price}>{'Цена'}</p>
+                    <p className={s.priceValue}>{btnName}</p>
+                </div>
+            </div>
+        </div>
+    } else return (
         <div className={cx(s.root, addClassname)}>
             <Button
                 as='button'
