@@ -36,7 +36,7 @@ export const MetroTag = ({
 							if (m.icon) {
 								return (
 									<div
-										key={i + `${m.name}`}
+										key={`${m.name} - ${i}`}
 										className={s.icon}>
 										{m?.icon && (
 											<NewIcon
