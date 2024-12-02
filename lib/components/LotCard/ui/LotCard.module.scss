@@ -9,13 +9,6 @@
 	background: #ffffff;
 }
 
-.fullscreenBtnMobile {
-	position: absolute;
-	top: 8px;
-	right: 8px;
-	z-index: 3;
-}
-
 .lotImageWrapper {
 	display: flex;
 	justify-content: center;
@@ -135,12 +128,9 @@
 
 .btnWrapper {
 	display: flex;
-	gap: 8px;
+	flex-direction: row-reverse;
+	gap: 16px;
 	margin: 24px 0 0 0;
-}
-
-.fullscreenBtn {
-	display: none;
 }
 
 @media(min-width: 1024px) {
@@ -148,10 +138,6 @@
 		flex-direction: row;
 		gap: 32px;
 		padding: 31px 30px 31px 32px;
-	}
-
-	.fullscreenBtnMobile {
-		display: none;
 	}
 
 	.lotImageWrapper {
