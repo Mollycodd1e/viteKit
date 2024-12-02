@@ -22,7 +22,7 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const containerRef = useRef<HTMLDivElement>(null)
-	const { isMobile, isDesktop } = useClientWidth()
+	const { isMobile } = useClientWidth()
 
 	const { handleBlur, getInputValue, getOption, handleDocumentClick } = useSortSelect({
 		selectedOption,
@@ -30,7 +30,7 @@ export const SortSelect: React.FC<SortSelectProps> = ({
 		setIsOpen,
 		containerRef,
 		isOpen,
-		isDesktop,
+		isMobile,
 		placeholder,
 		onChange,
 		onBlur,

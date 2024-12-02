@@ -162,6 +162,27 @@
 		right: 0;
 	}
 
+	.selectedOptions {
+		width: 100%;
+		max-width: unset;
+	}
+
+	.icon {
+		left: unset;
+		right: 16px;
+		transform: translate(0, 0);
+	}
+
+	.selectionOptionMini {
+		width: 92px;
+		font-size: 0;
+
+		&~.icon {
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+	}
+
 	.sortSelectWrapperTop {
 		position: unset;
 	}
@@ -187,5 +208,15 @@
 		left: unset;
 		right: 16px;
 		transform: translate(0, 0);
+	}
+
+	.selectionOptionMini {
+		width: 92px;
+		font-size: 0;
+
+		&~.icon {
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
 	}
 }

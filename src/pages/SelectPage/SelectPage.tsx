@@ -40,6 +40,7 @@ export const SelectPage = () => {
 				<h2>Сорт селект</h2>
 				<div className={s.sort}>
 					<SortSelect
+					mini
 						selectedOption={sort}
 						options={options}
 						onChange={(e) => handleChangeSort(e as Option)}
