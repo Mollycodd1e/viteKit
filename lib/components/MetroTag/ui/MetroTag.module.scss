@@ -1,6 +1,7 @@
 .root {
 	display: flex;
-	gap: 8px;
+	flex-wrap: wrap;
+	gap: 4px;
 	padding: 10px 24px;
 	border-radius: 110px;
 	width: max-content;
@@ -11,6 +12,17 @@
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
+	}
+}
+
+.iconsWrapper {
+	display: flex;
+	align-items: center;
+
+	& span:nth-child(n + 2) {
+		width: 10px;
+		height: 10px;
+		margin-left: -2px;
 	}
 }
 
@@ -28,8 +40,8 @@
 	display: flex;
 	align-items: center;
 	gap: 4px;
-	font-size: 12px;
-	line-height: 16px;
+	font-size: 14px;
+	line-height: 20px;
 	font-weight: 500;
 	color: #777E90;
 }

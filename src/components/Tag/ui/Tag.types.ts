@@ -9,6 +9,7 @@ export const TAG_VARIANTS = {
 	shade: 'shade',
 	blackGrey: 'blackGrey',
 	chineseBlack: 'chineseBlack',
+	fullWhite: 'fullWhite',
 }
 
 export type tagVariant = keyof typeof TAG_VARIANTS

@@ -3,9 +3,14 @@ import { MetroTag, Tag } from '../../main.ts'
 
 export const TagsPage = () => {
 	const metro = { name: 'sokolnuyaki', color: 'red', timeTo: 10, mode: 'auto' }
+	const metroArray = [
+		{ name: 'Сокольники', color: 'red', timeTo: 10, mode: 'auto' },
+		{ name: 'Электрозаводская', color: 'blue', timeTo: 10, mode: 'auto' },
+	]
 
 	return (
 		<div className={s.root}>
+			<MetroTag metro={metroArray} />
 			<MetroTag metro={metro} />
 			<MetroTag
 				metro={metro}

@@ -6,6 +6,7 @@
 	border: 1px solid #e6e8ec;
 	border-radius: 24px;
 	box-sizing: border-box;
+	background: #ffffff;
 }
 
 .fullscreenBtnMobile {
@@ -236,13 +237,16 @@
 	}
 }
 
-.verticalWrapper{
-	ul, p{
+.verticalWrapper {
+
+	ul,
+	p {
 		padding: 0;
 		margin: 0;
 		margin-block-start: unset;
 		margin-block-end: unset;
 	}
+
 	.root {
 		background: white;
 		border: solid 1px rgba(230, 232, 236, 1);
@@ -309,14 +313,14 @@
 	}
 
 	@media (min-width: 1024px) {
-		.root{
+		.root {
 			gap: unset;
 			flex-direction: column;
 		}
 	}
-	
+
 	@media (min-width: 1440px) {
-		.root{
+		.root {
 			display: none;
 		}
 	}

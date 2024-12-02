@@ -10,6 +10,7 @@ export const MetroTag = ({
 	addClassNameColor,
 	addClassNameTimeTo,
 	metro,
+	separatorColor = '#F4F5F6',
 	width = 'auto',
 	variant = 'default',
 	isBetween = false,
@@ -17,7 +18,72 @@ export const MetroTag = ({
 	...rest
 }: IMetroTagProps) => {
 	const possibleIcons = ['pedestrian', 'auto']
-	if (Array.isArray(metro)) return null
+	if (Array.isArray(metro)) {
+		return (
+			<div
+				className={cx(
+					s.root,
+					s[variant],
+					s[isBetween ? 'long' : ''],
+					s[withBg ? 'withBg' : ''],
+					addClassName,
+					s[width]
+				)}
+				{...rest}>
+				<div className={cx(s.metroColor, addClassNameColor)}>
+					<div className={s.iconsWrapper}>
+						{metro.map((m, i) => {
+							if (m.icon) {
+								return (
+									<div
+										key={i}
+										className={s.icon}>
+										{m?.icon && (
+											<NewIcon
+												size='20'
+												name={m.icon}
+												color='#777E90'
+											/>
+										)}
+									</div>
+								)
+							}
+							return (
+								<span
+									style={{
+										background: m?.color ?? '',
+										border: i > 0 ? `1px solid ${separatorColor}` : '',
+									}}
+								/>
+							)
+						})}
+					</div>
+					{metro
+						.map((m) => {
+							return m.name
+						})
+						.join(', ')}
+				</div>
+				{metro?.map((m, i) => {
+					if (!m.mode || !m.timeTo) return null
+					return (
+						<div
+							key={i}
+							className={s.route}>
+							{possibleIcons.includes(m.mode) && (
+								<NewIcon
+									size='20'
+									name={m.mode}
+									color='#777E90'
+								/>
+							)}
+							{m.timeTo + ' ' + 'мин'}
+						</div>
+					)
+				})}
+			</div>
+		)
+	}
 	return (
 		<div
 			className={cx(

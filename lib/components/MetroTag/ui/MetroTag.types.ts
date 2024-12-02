@@ -18,6 +18,7 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 				mode?: string
 				icon?: string
 		  }[]
+	separatorColor?: string
 	variant?: 'default' | 'transparent'
 	addClassName?: string
 	addClassNameColor?: string
