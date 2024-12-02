@@ -47,7 +47,7 @@ export const LotCard = ({
 	const areaStr = area + ' ' + 'м²'
 	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
 
-	const { isMobile, currentClientWidth } = useClientWidth()
+	const { currentClientWidth } = useClientWidth()
 
 	if (!currentClientWidth) return null
 
@@ -189,9 +189,8 @@ export const LotCard = ({
 					<div className={s.btnWrapper}>
 						<Button
 							as='button'
-							size='medium'
 							disabled={btnDisabled}
-							variant='blue'
+							variant='gray'
 							additionalClass={s.fullscreenBtn}
 							onClick={(e) => {
 								e.preventDefault()
@@ -205,8 +204,8 @@ export const LotCard = ({
 						</Button>
 						<Button
 							as='button'
-							size={isMobile ? 'large' : 'medium'}
-							variant='black'
+							size='medium'
+							variant='blue'
 							width='full'
 							onClick={(e) => {
 								e.preventDefault()
