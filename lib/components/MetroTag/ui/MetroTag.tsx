@@ -50,6 +50,7 @@ export const MetroTag = ({
 							}
 							return (
 								<span
+									key={`color + ${m.name} + ${i}`}
 									style={{
 										background: m?.color ?? '',
 										border: i > 0 ? `1px solid ${separatorColor}` : '',
