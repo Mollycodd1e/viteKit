@@ -210,7 +210,9 @@
 	}
 
 	.btnWrapper {
+		flex-direction: row;
 		justify-content: flex-end;
+		gap: 8px;
 		margin: auto 0 0 0;
 
 		&>button:last-child {
