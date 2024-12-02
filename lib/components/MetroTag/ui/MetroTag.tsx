@@ -17,7 +17,7 @@ export const MetroTag = ({
 	...rest
 }: IMetroTagProps) => {
 	const possibleIcons = ['pedestrian', 'auto']
-
+	if (Array.isArray(metro)) return null
 	return (
 		<div
 			className={cx(
