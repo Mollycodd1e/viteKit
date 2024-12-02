@@ -15,6 +15,7 @@ export const MetroTag = ({
 	variant = 'default',
 	isBetween = false,
 	withBg = false,
+	withWhiteBg = false,
 	...rest
 }: IMetroTagProps) => {
 	const possibleIcons = ['pedestrian', 'auto']
@@ -26,6 +27,7 @@ export const MetroTag = ({
 					s[variant],
 					s[isBetween ? 'long' : ''],
 					s[withBg ? 'withBg' : ''],
+					s[withWhiteBg ? 'withWhiteBg' : ''],
 					addClassName,
 					s[width]
 				)}
@@ -92,6 +94,7 @@ export const MetroTag = ({
 				s[variant],
 				s[isBetween ? 'long' : ''],
 				s[withBg ? 'withBg' : ''],
+				s[withWhiteBg ? 'withWhiteBg' : ''],
 				addClassName,
 				s[width]
 			)}

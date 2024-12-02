@@ -26,4 +26,5 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 	isBetween?: boolean
 	width?: TagWidth
 	withBg?: boolean
+	withWhiteBg?: boolean
 }
