@@ -36,7 +36,7 @@ export const MetroTag = ({
 							if (m.icon) {
 								return (
 									<div
-										key={i}
+										key={i + `${m.name}`}
 										className={s.icon}>
 										{m?.icon && (
 											<NewIcon
@@ -68,7 +68,7 @@ export const MetroTag = ({
 					if (!m.mode || !m.timeTo) return null
 					return (
 						<div
-							key={i}
+							key={i + m.timeTo}
 							className={s.route}>
 							{possibleIcons.includes(m.mode) && (
 								<NewIcon
