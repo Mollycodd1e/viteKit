@@ -63,6 +63,35 @@
 	justify-content: space-between;
 }
 
+.mini {
+	padding: 8px 16px;
+}
+
+.metroColorMini {
+	font-size: 12px;
+	line-height: 16px;
+
+	& span {
+		width: 6px;
+		height: 6px;
+	}
+}
+
+.routeMini {
+	font-size: 12px;
+	line-height: 16px;
+
+	&>div {
+		width: 16px !important;
+		height: 16px !important;
+	}
+
+	& svg {
+		width: 16px;
+		height: 16px;
+	}
+}
+
 .withBg {
 	background: #F4F5F6;
 }
@@ -96,5 +125,34 @@
 
 	.route {
 		font-weight: 500;
+	}
+
+	.mini {
+		padding: 10px 24px;
+	}
+
+	.metroColorMini {
+		font-size: 14px;
+		line-height: 20px;
+
+		& span {
+			width: 8px;
+			height: 8px;
+		}
+	}
+
+	.routeMini {
+		font-size: 12px;
+		line-height: 16px;
+
+		&>div {
+			width: 20px !important;
+			height: 20px !important;
+		}
+
+		& svg {
+			width: 20px;
+			height: 20px;
+		}
 	}
 }

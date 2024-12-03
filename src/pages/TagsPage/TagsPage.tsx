@@ -12,6 +12,7 @@ export const TagsPage = () => {
 		<div className={s.root}>
 			<MetroTag metro={metroArray} />
 			<MetroTag metro={metro} />
+			<MetroTag metro={metro} variant='mini' withBg/>
 			<MetroTag
 				metro={metro}
 				withBg

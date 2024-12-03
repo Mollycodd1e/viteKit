@@ -99,7 +99,8 @@ export const MetroTag = ({
 				s[width]
 			)}
 			{...rest}>
-			<div className={cx(s.metroColor, addClassNameColor)}>
+			<div
+				className={cx(s.metroColor, addClassNameColor, { [s.metroColorMini]: variant === 'mini' })}>
 				{metro?.icon && (
 					<img
 						src={metro.icon}
@@ -112,7 +113,7 @@ export const MetroTag = ({
 			</div>
 
 			{metro.timeTo && (
-				<div className={cx(s.route, addClassNameTimeTo)}>
+				<div className={cx(s.route, addClassNameTimeTo, { [s.routeMini]: variant === 'mini' })}>
 					{metro.mode && possibleIcons.includes(metro.mode) && (
 						<NewIcon
 							size='20'
