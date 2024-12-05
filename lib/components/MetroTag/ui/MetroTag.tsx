@@ -80,7 +80,7 @@ export const MetroTag = ({
 									color='#777E90'
 								/>
 							)}
-							{m.timeTo}
+							{m.timeTo + ' ' + 'мин'}
 						</div>
 					)
 				})}
@@ -121,7 +121,7 @@ export const MetroTag = ({
 							color='#777E90'
 						/>
 					)}
-					{metro.timeTo}
+					{metro.timeTo + ' ' + 'мин'}
 				</div>
 			)}
 		</div>

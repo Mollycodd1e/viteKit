@@ -6,7 +6,7 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 				name?: string
 				station?: string
 				color?: string
-				timeTo?: string | number
+				timeTo?: number
 				mode?: string
 				icon?: string
 		  }
