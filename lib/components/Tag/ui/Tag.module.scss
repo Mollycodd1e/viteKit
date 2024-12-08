@@ -131,6 +131,13 @@
 	font-weight: 500;
 }
 
+.transparent {
+	color: #B1B5C3;
+	border: 1px solid #B1B5C3;
+	background: transparent;
+	font-weight: 500;
+}
+
 @media(min-width: 1024px) {
 	.tiny-size_m {
 		@include tag-tiny;

@@ -33,9 +33,9 @@ export const TagsPage = () => {
 
 			<Tag
 				variant='chineseBlack'
-				size='medium'
+				size='small'
 				size_m='tiny'
-				size_l='medium'>
+				size_l='small'>
 				От 285 000 ₽/м2
 			</Tag>
 		</div>
