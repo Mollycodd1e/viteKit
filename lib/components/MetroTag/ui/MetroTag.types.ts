@@ -8,6 +8,7 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 				color?: string
 				timeTo?: number
 				mode?: string
+				selfIconText?: string | undefined
 				icon?: string
 		  }
 		| {
@@ -16,6 +17,7 @@ export interface IMetroTagProps extends React.HTMLAttributes<HTMLDivElement> {
 				color?: string
 				timeTo?: number
 				mode?: string
+				selfIconText?: string | undefined
 				icon?: string
 		  }[]
 	separatorColor?: string
