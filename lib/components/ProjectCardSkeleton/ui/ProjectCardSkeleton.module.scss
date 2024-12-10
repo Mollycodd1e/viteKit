@@ -21,21 +21,27 @@
 .root {
 	display: flex;
 	flex-direction: column;
+	padding: 24px 8px;
 	gap: 8px;
 }
 
 .projectHeader {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
-	padding: 0 24px;
-	margin: 0 0 24px 0;
+	gap: 8px;
+	padding: 0 16px;
+	margin: 0 0 16px 0;
 }
 
-.titleWrapper {
+.projectTitleWrapper {
 	display: flex;
-	flex-direction: column;
-	gap: 8px;
+	justify-content: space-between;
+}
+
+.projectBtn {
+	width: 32px;
+	height: 32px;
+	@include skeleton;
 }
 
 .projectTitle {
@@ -44,25 +50,22 @@
 	@include skeleton;
 }
 
-.projectYear {
+.projectYearMobile {
 	width: 120px;
-	height: 16px;
+	height: 32px;
+	margin: 8px 0 0 0;
 	@include skeleton;
 }
 
 .metroWrapper {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 8px;
 
 	&>div {
-		height: 52px;
+		height: 20px;
 		width: 100%;
 		@include skeleton;
-	}
-
-	&>div:not(:last-child) {
-		border-bottom: 1px solid #f4f5f6;
 	}
 }
 
@@ -84,35 +87,35 @@
 }
 
 @media(min-width: 1024px) {
+	.root {
+		padding: 32px;
+	}
+
 	.projectHeader {
-		flex-wrap: wrap;
-		flex-direction: row;
+		gap: 24px;
 		padding: 0;
-	}
-
-	.titleWrapper {
-		width: 100%;
-	}
-
-	.projectTitle {
-		height: 48px;
 	}
 
 	.metroWrapper {
 		flex-wrap: wrap;
-		gap: 8px;
-		max-width: 530px;
+		gap: 4px;
 		flex-direction: row;
 
 		&>div {
 			width: 150px;
-			height: 40px;
+			height: 32px;
 			@include skeleton;
 		}
+	}
 
-		&>div:not(:last-child) {
-			border-bottom: unset;
-		}
+	.projectYearMobile {
+		display: none;
+	}
+
+	.projectYearDesktop {
+		width: 120px;
+		height: 32px;
+		@include skeleton;
 	}
 
 	.filterBtnWrapper {
@@ -126,6 +129,33 @@
 
 @media(min-width: 1440px) {
 	.root {
+		padding: 40px;
 		flex: 1 0 0;
+	}
+
+	.projectBtn {
+		width: 40px;
+		height: 40px;
+	}
+
+	.projectTitle {
+		height: 40px;
+	}
+
+	.projectHeader {
+		gap: 32px;
+		margin: 0 0 24px 0;
+	}
+
+	.projectYearDesktop {
+		height: 40px;
+	}
+
+	.metroWrapper {
+		gap: 8px;
+
+		&>div {
+			height: 40px;
+		}
 	}
 }

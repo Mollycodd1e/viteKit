@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { LotCard, LotCardSkeleton } from '../../main'
+import { LotCard, LotCardSkeleton, ProjectCardSkeleton } from '../../main'
 import s from './LotsPage.module.scss'
 
 export const LotsPage = () => {
@@ -88,7 +88,8 @@ export const LotsPage = () => {
 			},
 		],
 		promoText: 'Скидка 10% на все лоты!',
-		interiorPlanImg: 'https://ugra-news.ru/upload/medialibrary/4ba/eoi2i79bfunr3t8zvr12mbt0nupuhnnx/Foto-03.png',
+		interiorPlanImg:
+			'https://ugra-news.ru/upload/medialibrary/4ba/eoi2i79bfunr3t8zvr12mbt0nupuhnnx/Foto-03.png',
 		floorPlanImg: 'https://example.com/floor-plan.png',
 		sitPlanImg: 'https://example.com/sit-plan.png',
 		createdAt: '2024-07-18',
@@ -163,7 +164,6 @@ export const LotsPage = () => {
 						handleBtnForm={() => {}}
 					/>
 				)}
-
 				{!isFetching && (
 					<LotCard
 						orientation={'vertical'}
@@ -171,6 +171,7 @@ export const LotsPage = () => {
 						handleBtnForm={() => {}}
 					/>
 				)}
+				<ProjectCardSkeleton />
 				<div className={s.optionsWrapper}>
 					<label className={s.isFetching}>
 						isFetching
