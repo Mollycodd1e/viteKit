@@ -51,6 +51,22 @@ export const LotCard = ({
 		return 'Этаж: ' + floorStr
 	}
 
+	const FloorByType = () => {
+		if (type === 11)
+			return (
+				<>
+					<div>Количество этажей</div>
+					<div>{floorsNumber}</div>
+				</>
+			)
+		return (
+			<>
+				<div>Этаж</div>
+				<div>{floorStr}</div>
+			</>
+		)
+	}
+
 	if (orientation === 'vertical') {
 		return (
 			<div className={s.verticalWrapper}>
@@ -155,8 +171,7 @@ export const LotCard = ({
 							<div>{housing?.split(' ')[1]}</div>
 						</li>
 						<li className={s.lotPropertyItem}>
-							<div>Этаж</div>
-							<div>{floorStr}</div>
+							<FloorByType />
 						</li>
 					</ul>
 				</div>
