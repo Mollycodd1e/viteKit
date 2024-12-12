@@ -8,9 +8,10 @@ import {NewIcon} from "../NewIcon";
 const cx = classNames.bind(s)
 
 interface Props {
-    text: string;
+    text?: string;
     error: boolean
     isChecked?: boolean
+    children?: React.ReactNode
 }
 
 export type Ref = HTMLInputElement;
@@ -20,6 +21,7 @@ export const CheckBox = forwardRef<Ref, Props>(({
                                                     text,
                                                     isChecked,
                                                     error,
+                                                    children,
                                                     ...props
                                                 },
                                                 ref) => {
@@ -32,8 +34,8 @@ export const CheckBox = forwardRef<Ref, Props>(({
                                    name={'check'}
                                    size='16'/>}
 
-            <div className={cx(s.labelText, {[s.error]: error}) }
-                 dangerouslySetInnerHTML={{__html: text}}
-            />
+            <div className={cx(s.labelText, {[s.error]: error})}
+                 dangerouslySetInnerHTML={text ? {__html: text} : undefined}
+            >{children}</div>
         </label>)
 })
