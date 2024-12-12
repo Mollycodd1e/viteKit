@@ -21,7 +21,6 @@ interface IModalFormProps {
     isEmail?: boolean
     isTextArea?: boolean
     subTitle: string
-    personalCheckBox: { text: string; isRequired: boolean }
     advCheckBox?: { text: string; isRequired: boolean } | undefined | null
     textAreaPlaceholder?: string
     rowsTextArea?: number
@@ -45,6 +44,7 @@ const defaultTextCheckBox =
 export const ModalForm = ({
                               isFormOpen,
                               setIsFormOpen,
+
                               title,
                               isEmail,
                               isPhone,

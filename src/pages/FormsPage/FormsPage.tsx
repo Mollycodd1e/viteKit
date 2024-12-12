@@ -16,10 +16,7 @@ const FormsPage = () => {
                 console.log(data)
             }} subTitle={'Оставьте номер телефона для получения консультации'} title={'Оставить обращение'}
                        isRequiredPhoneOrEmail={true}
-                       personalCheckBox={{
-                           text: 'Я принимаю условия Политики обработки и защиты персональных данных, даю согласия на обработку персональных данных',
-                           isRequired: true
-                       }} isRequiredPhone={false} modalWidth={'530px'} isFormOpen={isFormModalOpen}
+                        isRequiredPhone={false} modalWidth={'530px'} isFormOpen={isFormModalOpen}
                        setIsFormOpen={setIsFormModalOpen} isEmail={true} isTextArea={true}
                        textAreaPlaceholder={'Напишите ваш вопрос или комментарий'}/>
 
