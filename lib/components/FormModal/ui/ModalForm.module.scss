@@ -40,6 +40,10 @@
   align-items: flex-start;
   gap: 16px;
   background: #fff;
+
+  a{
+    color: #777E90;
+  }
 }
 
 .title {
@@ -67,7 +71,7 @@
 
 .linkPolicy{
   text-decoration: underline;
-  color: #777E90 !important;
+  color: #777E90;
 }
 
 @media (min-width: 1024px) {
