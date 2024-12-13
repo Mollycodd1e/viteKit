@@ -30,6 +30,7 @@ interface ButtonProps {
 	additionalClass?: string
 	isLoading?: boolean
 	as: 'button' | 'link'
+	onCLick?: () => {}
 }
 
 export type ComponentProps = ButtonProps &

@@ -10,6 +10,7 @@ export const Button = ({
 	size = 'medium',
 	size_m,
 	size_l,
+	onCLick,
 	pre = false,
 	children = '',
 	post = false,
@@ -54,6 +55,7 @@ export const Button = ({
 		return (
 			<a
 				className={btnClassName}
+				onClick={onCLick}
 				{...props}>
 				{btnBody()}
 			</a>
@@ -63,6 +65,7 @@ export const Button = ({
 	return (
 		<button
 			className={btnClassName}
+			onClick={onCLick}
 			{...props}>
 			{btnBody()}
 		</button>
