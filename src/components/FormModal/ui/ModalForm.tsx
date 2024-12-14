@@ -172,7 +172,7 @@ export const ModalForm = ({
 								placeholder='Введите email'
 								data-testid='modal_email'
 								{...register('email', {
-									required: isRequiredEmail || isRequiredPhoneOrEmail ? isEmailFill : false,
+									required: isRequiredEmail || (isRequiredPhoneOrEmail && !isEmailFill),
 									pattern: emailReg,
 								})}
 								error={Boolean(errors.email)}
@@ -229,7 +229,6 @@ export const ModalForm = ({
 								</div>
 							)}
 						</CheckBox>
-
 						<Button
 							data-testid='modal_submit'
 							variant='blue'
@@ -237,7 +236,12 @@ export const ModalForm = ({
 							type='submit'
 							size='large'
 							as='button'
-							additionalClass={s.modalBtn}>
+							additionalClass={s.modalBtn}
+							disabled={
+								Boolean(errors.name) ||
+								(Boolean(errors.phone) && isRequiredPhone) ||
+								(Boolean(errors.email) && isRequiredEmail)
+							}>
 							Отправить
 						</Button>
 					</Flex>
