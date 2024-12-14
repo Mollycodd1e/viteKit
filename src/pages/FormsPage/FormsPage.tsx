@@ -26,7 +26,6 @@ const FormsPage = () => {
 				}}
 				subTitle={'Оставьте номер телефона для получения консультации'}
 				title={'Оставить обращение'}
-
 				modalWidth={'530px'}
 				isEmail
 				isNews

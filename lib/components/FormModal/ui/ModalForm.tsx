@@ -240,9 +240,11 @@ export const ModalForm = ({
 							disabled={
 								Boolean(errors.name) ||
 								(Boolean(errors.phone) && isRequiredPhone) ||
-								(Boolean(errors.email) && isRequiredEmail)
+								(Boolean(errors.email) && isRequiredEmail) ||
+								(Boolean(errors.advCheckBox) && advCheckBox?.isRequired) ||
+								(Boolean(errors.personalCheckBox) && !isNews)
 							}>
-							Отправить
+							Отправить запрос
 						</Button>
 					</Flex>
 
