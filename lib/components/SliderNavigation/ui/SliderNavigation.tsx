@@ -50,9 +50,9 @@ export const SliderNavigation = ({
 
             <RoundButton
                 disabled={isDisabledOff ? false : indexSlide === arr.length - 1}
-                size={size}
-                size_m={size_m}
-                size_l={size_l}
+                size={'tiny'}
+                size_m={'tiny'}
+                size_l={'tiny'}
                 iconName='directionDown'
                 deg='-90'
                 additionalClass={additionalClassNavButton}

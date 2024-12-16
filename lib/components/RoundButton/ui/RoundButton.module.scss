@@ -41,6 +41,10 @@
 	}
 }
 
+.icon{
+	display: flex;
+}
+
 .tiny-size {
 	@include button-tiny;
 }

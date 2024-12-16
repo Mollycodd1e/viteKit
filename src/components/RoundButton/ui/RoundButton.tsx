@@ -56,6 +56,7 @@ export const RoundButton = ({
 			<>
 				{iconName ? (
 					<NewIcon
+						additionalClass={s.icon}
 						name={iconName}
 						size={btnSize}
 						deg={deg}
