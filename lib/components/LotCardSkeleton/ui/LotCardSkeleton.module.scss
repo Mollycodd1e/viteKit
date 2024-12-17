@@ -28,6 +28,10 @@
 	pointer-events: none;
 }
 
+.projectRoot {
+	padding: 24px;
+}
+
 .lotImageWrapper {
 	position: relative;
 	max-width: 311px;
@@ -37,6 +41,10 @@
 	@include skeleton;
 }
 
+.projectLotImageWrapper {
+	height: 141px;
+}
+
 .lotInfoWrapper {
 	display: flex;
 	flex-direction: column;
@@ -44,10 +52,18 @@
 	margin: 32px 0 0 0;
 }
 
+.projectLotInfoWrapper {
+	margin: 24px 0 0 0;
+}
+
 .infoHeader {
 	width: 250px;
 	height: 32px;
 	@include skeleton;
+}
+
+.projectInfoHeader {
+	height: 24px;
 }
 
 .decor {
@@ -85,12 +101,21 @@
 	}
 }
 
+.projectLotPropertyItem {
+	height: 36px;
+	padding: 7px 0;
+}
+
 .lotPropertyListDesktop {
 	display: none;
 }
 
 .lotPriceWrapper {
 	margin: 16px 0 0 0;
+}
+
+.projectLotPriceWrapper {
+	margin: 13px 0 0 0;
 }
 
 .discountWrapper {
@@ -126,11 +151,21 @@
 	}
 }
 
+.projectBtnWrapper {
+	display: none;
+}
+
 @media(min-width: 1024px) {
 	.root {
 		flex-direction: row;
 		gap: 32px;
 		padding: 31px 30px 31px 32px;
+	}
+
+	.projectRoot {
+		flex-direction: column;
+		gap: unset;
+		padding: 24px;
 	}
 
 	.lotImageWrapper {
@@ -139,11 +174,25 @@
 		margin: 0;
 	}
 
+	.projectLotImageWrapper {
+		max-width: 311px;
+		height: 141px;
+	}
+
 	.lotInfoWrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 0;
 		margin: 0;
+	}
+
+	.projectLotInfoWrapper {
+		gap: 16px;
+		margin: 24px 0 0 0;
+	}
+
+	.projectInfoHeader {
+		height: 24px;
 	}
 
 	.decor {
@@ -154,14 +203,30 @@
 		@include skeleton;
 	}
 
+	.projectDecor {
+		display: none;
+
+		& span {
+			display: block;
+		}
+	}
+
 	.lotPropertyListMobile {
 		display: none;
+	}
+
+	.projectLotPropertyListMobile {
+		display: flex;
 	}
 
 	.lotPropertyListDesktop {
 		display: flex;
 		gap: 8px;
 		margin: 16px 0 0 0;
+	}
+
+	.projectLotPropertyListDesktop {
+		display: none;
 	}
 
 	.lotPropertyItemDesktop {
@@ -181,6 +246,12 @@
 		}
 	}
 
+	.projectDiscountWrapper {
+		&>div {
+			height: 24px;
+		}
+	}
+
 	.discountPrice {
 		font-size: 14px;
 		line-height: 20px;
@@ -193,6 +264,18 @@
 		width: 80px;
 		height: 16px;
 		@include skeleton;
+	}
+
+	.lotPriceWrapper {
+		margin: 16px 0 0 0;
+	}
+
+	.projectLotPriceWrapper {
+		margin: 13px 0 0 0;
+	}
+
+	.projectLotPricePerMetr {
+		display: none;
 	}
 
 	.btnWrapper {
