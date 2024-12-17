@@ -240,6 +240,6 @@ export interface ILotCard {
 	handleBtnForm: () => void
 	handleFullScreenBtn?: () => void
 	addClassname?: string
-	orientation?: 'horizontal' | 'vertical'
+	isProjectCard?: boolean
 	imgNode?: React.ReactNode
 }

@@ -9,10 +9,23 @@
 	background: #ffffff;
 }
 
+.rootProject {
+	width: 283px;
+	padding: 24px;
+}
+
 .lotImageWrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.projectLotImageWrapper {
+	max-height: 141px;
+}
+
+.projectLotImg {
+	height: 141px;
 }
 
 .lotInfoWrapper {
@@ -22,6 +35,10 @@
 	margin: 32px 0 0 0;
 }
 
+.projectLotInfoWrapper {
+	margin: 24px 0 0 0;
+}
+
 .infoHeader {
 	font-family: inherit;
 	font-size: 24px;
@@ -29,6 +46,11 @@
 	font-weight: 500;
 	letter-spacing: -0.01em;
 	color: #141416;
+}
+
+.projectLotInfoHeader {
+	font-size: 18px;
+	line-height: 24px;
 }
 
 .monthlyWrapper {
@@ -81,6 +103,14 @@
 	}
 }
 
+.projectLotPropertyItem {
+	padding: 7px 0;
+
+	&:not(:first-child) {
+		padding: 8px 0;
+	}
+}
+
 .lotPropertyListDesktop {
 	display: none;
 }
@@ -90,6 +120,11 @@
 	font-size: 18px;
 	line-height: 24px;
 	margin: 16px 0 0 0;
+}
+
+.projectLotPriceWrapper {
+	font-size: 16px;
+	margin: 13px 0 0 0;
 }
 
 .discountWrapper {
@@ -117,8 +152,17 @@
 	}
 }
 
+.projectDiscountPrice {
+	font-size: 14px;
+}
+
 .discountTag {
 	padding: 5px 6px;
+}
+
+.projectDiscountTag {
+	min-height: 20px;
+	padding: 3px 5px;
 }
 
 .lotPricePerMetr {
@@ -131,6 +175,10 @@
 	flex-direction: row-reverse;
 	gap: 16px;
 	margin: 24px 0 0 0;
+}
+
+.projectBtnWrapper {
+	display: none;
 }
 
 @media(min-width: 1024px) {

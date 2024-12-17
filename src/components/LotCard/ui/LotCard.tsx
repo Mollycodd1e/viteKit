@@ -19,9 +19,9 @@ export const LotCard = ({
 	handleFullScreenBtn,
 	btnDisabled,
 	addClassname,
-	orientation = 'horizontal',
 	btnName = 'Уточнить детали',
 	imgNode,
+	isProjectCard,
 }: ILotCard) => {
 	const {
 		area,
@@ -67,161 +67,114 @@ export const LotCard = ({
 		)
 	}
 
-	if (orientation === 'vertical') {
-		return (
-			<div className={s.verticalWrapper}>
-				<div className={cx(s.root, addClassname)}>
-					{imgNode ? (
-						imgNode
-					) : (
-						<img
-							className={s.img}
-							loading='lazy'
-							alt={'floor plan image'}
-							src={interiorPlanImg ?? floorPlanImg ?? LotImage}
-						/>
-					)}
-
-					<div className={s.title}>{number}</div>
-
-					<ul className={s.features}>
-						{area && (
-							<li className={s.feature}>
-								<p className={s.text}>{'Площадь'}</p>
-								<p className={s.value}>{area}</p>
-							</li>
-						)}
-
-						{housing && (
-							<li className={s.feature}>
-								<p className={s.text}>{'Площадь'}</p>
-								<p className={s.value}>{housing}</p>
-							</li>
-						)}
-
-						{floor && (
-							<li className={s.feature}>
-								<p className={s.text}>{'Этаж'}</p>
-								<p className={s.value}>{floor}</p>
-							</li>
-						)}
-					</ul>
-
-					<div className={s.bot}>
-						<p className={s.price}>{'Цена'}</p>
-						<p className={s.priceValue}>{btnName}</p>
-					</div>
-				</div>
+	return (
+		<div className={cx(s.root, addClassname, { [s.rootProject]: isProjectCard })}>
+			<div className={cx(s.lotImageWrapper, { [s.projectLotImageWrapper]: isProjectCard })}>
+				{imgNode ? (
+					imgNode
+				) : (
+					<img
+						loading='lazy'
+						src={interiorPlanImg ?? floorPlanImg ?? LotImage}
+						className={cx(s.lotImg, { [s.projectLotImg]: isProjectCard })}
+						width={311}
+						height={224}
+					/>
+				)}
 			</div>
-		)
-	} else
-		return (
-			<div className={cx(s.root, addClassname)}>
-				<div className={s.lotImageWrapper}>
-					{imgNode ? (
-						imgNode
-					) : (
-						<img
-							loading='lazy'
-							src={interiorPlanImg ?? floorPlanImg ?? LotImage}
-							width={311}
-							height={224}
-						/>
+			<div className={cx(s.lotInfoWrapper, { [s.projectLotInfoWrapper]: isProjectCard })}>
+				<div className={s.monthlyWrapper}>
+					<Text
+						className={cx(s.infoHeader, { [s.projectLotInfoHeader]: isProjectCard })}
+						html={`${
+							isOffice && type
+								? OFFICE_TYPES[type as keyof typeof OFFICE_TYPES]
+								: checkBedroomsCount(bedroomsCount)
+						}, ${number}`}
+					/>
+					{mortgageMonthlyPayment && (
+						<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
 					)}
 				</div>
-				<div className={s.lotInfoWrapper}>
-					<div className={s.monthlyWrapper}>
-						<Text
-							className={s.infoHeader}
-							html={`${
-								isOffice && type
-									? OFFICE_TYPES[type as keyof typeof OFFICE_TYPES]
-									: checkBedroomsCount(bedroomsCount)
-							}, ${number}`}
-						/>
-						{mortgageMonthlyPayment && (
-							<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
+				{!isDecoration && (
+					<div className={s.decor}>
+						{!isOffice && (
+							<>
+								<NewIcon name={'withoutDecor'} />
+								<span>Без отделки</span>
+							</>
+						)}
+						{isOffice && (workPlacesCount === 0 || workPlacesCount) && (
+							<span>{`${workPlacesCount} рабочих мест`}</span>
 						)}
 					</div>
-					{!isDecoration && (
-						<div className={s.decor}>
-							{!isOffice && (
-								<>
-									<NewIcon name={'withoutDecor'} />
-									<span>Без отделки</span>
-								</>
-							)}
-							{isOffice && (workPlacesCount === 0 || workPlacesCount) && (
-								<span>{`${workPlacesCount} рабочих мест`}</span>
-							)}
+				)}
+				<div className={s.lotPropertyListDesktop}>
+					<Tag variant='gray'>{areaStr}</Tag>
+					<Tag variant='gray'>{housing}</Tag>
+					<Tag variant='gray'>{getFloorStr()}</Tag>
+				</div>
+				<ul className={s.lotPropertyListMobile}>
+					<li className={cx(s.lotPropertyItem, { [s.projectLotPropertyItem]: isProjectCard })}>
+						<div>Площадь</div>
+						<div>{areaStr}</div>
+					</li>
+					<li className={cx(s.lotPropertyItem, { [s.projectLotPropertyItem]: isProjectCard })}>
+						<div>{housing?.split(' ')[0]}</div>
+						<div>{housing?.split(' ')[1]}</div>
+					</li>
+					<li className={cx(s.lotPropertyItem, { [s.projectLotPropertyItem]: isProjectCard })}>
+						<FloorByType />
+					</li>
+				</ul>
+			</div>
+			<div className={cx(s.lotPriceWrapper, { [s.projectLotPriceWrapper]: isProjectCard })}>
+				<div className={s.discountWrapper}>
+					{discount && sellingPrice && sellingPriceBeforeDiscount && (
+						<div className={cx(s.discountPrice, { [s.projectDiscountPrice]: isProjectCard })}>
+							<span>{formatPrice(sellingPriceBeforeDiscount ?? sellingPrice)}</span>
+							<Tag
+								additionalClass={cx(s.discountTag, { [s.projectDiscountTag]: isProjectCard })}
+								variant='red'
+								size={'tiny'}>
+								{'-' + Number(discount) + '%'}
+							</Tag>
 						</div>
 					)}
-					<div className={s.lotPropertyListDesktop}>
-						<Tag variant='gray'>{areaStr}</Tag>
-						<Tag variant='gray'>{housing}</Tag>
-						<Tag variant='gray'>{getFloorStr()}</Tag>
-					</div>
-					<ul className={s.lotPropertyListMobile}>
-						<li className={s.lotPropertyItem}>
-							<div>Площадь</div>
-							<div>{areaStr}</div>
-						</li>
-						<li className={s.lotPropertyItem}>
-							<div>{housing?.split(' ')[0]}</div>
-							<div>{housing?.split(' ')[1]}</div>
-						</li>
-						<li className={s.lotPropertyItem}>
-							<FloorByType />
-						</li>
-					</ul>
+					<div>{formatPrice(sellingPrice)}</div>
 				</div>
-				<div className={s.lotPriceWrapper}>
-					<div className={s.discountWrapper}>
-						{discount && sellingPrice && sellingPriceBeforeDiscount && (
-							<div className={s.discountPrice}>
-								<span>{formatPrice(sellingPriceBeforeDiscount ?? sellingPrice)}</span>
-								<Tag
-									additionalClass={s.discountTag}
-									variant='red'
-									size='tiny'>
-									{'-' + Number(discount) + '%'}
-								</Tag>
-							</div>
-						)}
-						<div>{formatPrice(sellingPrice)}</div>
-					</div>
-					{sellingPricePerMeter && (
-						<div className={s.lotPricePerMetr}>{formatPrice(sellingPricePerMeter, true)}</div>
-					)}
-					<div className={s.btnWrapper}>
-						<Button
-							as='button'
-							disabled={btnDisabled}
-							variant='gray'
-							additionalClass={s.fullscreenBtn}
-							onClick={(e) => {
-								e.preventDefault()
-								handleFullScreenBtn && handleFullScreenBtn()
-							}}>
-							<NewIcon
-								name='fullscreen'
-								color='#141416'
-								size='20'
-							/>
-						</Button>
-						<Button
-							as='button'
-							size='medium'
-							variant='blue'
-							width='full'
-							onClick={(e) => {
-								e.preventDefault()
-								handleBtnForm()
-							}}>
-							{btnName}
-						</Button>
-					</div>
+				{sellingPricePerMeter && (
+					<div className={s.lotPricePerMetr}>{formatPrice(sellingPricePerMeter, true)}</div>
+				)}
+				<div className={cx(s.btnWrapper, { [s.projectBtnWrapper]: isProjectCard })}>
+					<Button
+						as='button'
+						disabled={btnDisabled}
+						variant='gray'
+						additionalClass={s.fullscreenBtn}
+						onClick={(e) => {
+							e.preventDefault()
+							handleFullScreenBtn && handleFullScreenBtn()
+						}}>
+						<NewIcon
+							name='fullscreen'
+							color='#141416'
+							size='20'
+						/>
+					</Button>
+					<Button
+						as='button'
+						size='medium'
+						variant='blue'
+						width='full'
+						onClick={(e) => {
+							e.preventDefault()
+							handleBtnForm()
+						}}>
+						{btnName}
+					</Button>
 				</div>
 			</div>
-		)
+		</div>
+	)
 }

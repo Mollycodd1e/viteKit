@@ -166,7 +166,7 @@ export const LotsPage = () => {
 				)}
 				{!isFetching && (
 					<LotCard
-						orientation={'vertical'}
+						isProjectCard
 						lot={testLot}
 						handleBtnForm={() => {}}
 					/>
