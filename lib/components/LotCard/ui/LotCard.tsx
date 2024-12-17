@@ -96,7 +96,7 @@ export const LotCard = ({
 						<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
 					)}
 				</div>
-				{!isDecoration && (
+				{!isDecoration && !isProjectCard && (
 					<div className={s.decor}>
 						{!isOffice && (
 							<>
@@ -109,12 +109,18 @@ export const LotCard = ({
 						)}
 					</div>
 				)}
-				<div className={s.lotPropertyListDesktop}>
+				<div
+					className={cx(s.lotPropertyListDesktop, {
+						[s.projectLotPropertyListDesktop]: isProjectCard,
+					})}>
 					<Tag variant='gray'>{areaStr}</Tag>
 					<Tag variant='gray'>{housing}</Tag>
 					<Tag variant='gray'>{getFloorStr()}</Tag>
 				</div>
-				<ul className={s.lotPropertyListMobile}>
+				<ul
+					className={cx(s.lotPropertyListMobile, {
+						[s.projectLotPropertyListMobile]: isProjectCard,
+					})}>
 					<li className={cx(s.lotPropertyItem, { [s.projectLotPropertyItem]: isProjectCard })}>
 						<div>Площадь</div>
 						<div>{areaStr}</div>
@@ -144,7 +150,9 @@ export const LotCard = ({
 					<div>{formatPrice(sellingPrice)}</div>
 				</div>
 				{sellingPricePerMeter && (
-					<div className={s.lotPricePerMetr}>{formatPrice(sellingPricePerMeter, true)}</div>
+					<div className={cx(s.lotPricePerMetr, s.projectLotPricePerMetr)}>
+						{formatPrice(sellingPricePerMeter, true)}
+					</div>
 				)}
 				<div className={cx(s.btnWrapper, { [s.projectBtnWrapper]: isProjectCard })}>
 					<Button
