@@ -114,22 +114,20 @@ export const NewIcon = ({
 	name,
 	size = '24',
 	color,
-	strokeWidth,
-	additionalClass,
-	deg,
+	strokeWidth
 }: IconComponentProps) => {
 	const IconComponent = iconTypes[name]
 
 	return (
-		<div
-			style={{
-				width: size + 'px',
-				height: size + 'px',
-				transform: `rotate(${deg}deg)`,
-				color: color,
-				strokeWidth: strokeWidth,
-			}}
-			className={additionalClass ?? ''}>
+		// <div
+		// 	style={{
+		// 		width: size + 'px',
+		// 		height: size + 'px',
+		// 		transform: `rotate(${deg}deg)`,
+		// 		color: color,
+		// 		strokeWidth: strokeWidth,
+		// 	}}
+		// 	className={additionalClass ?? ''}>
 			<IconComponent
 				width={size}
 				height={size}
@@ -137,6 +135,6 @@ export const NewIcon = ({
 				stroke={color}
 				strokeWidth={strokeWidth}
 			/>
-		</div>
+		// </div>
 	)
 }
