@@ -7,7 +7,8 @@ export const LogoPage = () => {
 			<Logo variant='black' />
 			<Logo variant='white' />
 			<Logo variant='value' />
+			<Logo variant='office' />
+			<Logo variant='dom' />
 		</div>
 	)
 }
-

@@ -16,7 +16,12 @@ export const Logo = ({
 			<img
 				src={logoVariant[variant]}
 				alt='Лого'
-				className={cx(s.logo, { [s.logoValue]: variant === 'value' })}
+				className={cx(
+					s.logo,
+					{ [s.logoValue]: variant === 'value' },
+					{ [s.logoDom]: variant === 'dom' },
+					{ [s.logoOffice]: variant === 'office' }
+				)}
 			/>
 			{uk && (
 				<Text
@@ -27,4 +32,3 @@ export const Logo = ({
 		</div>
 	)
 }
-
