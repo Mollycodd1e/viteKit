@@ -23,6 +23,7 @@ interface IRoundButtonProps {
 	children?: string | ReactNode
 	variant?: roundBtnVariant
 	additionalClass?: string
+	additionalClassIcon?: string
 	iconName?: string
 	deg?: string
 }
