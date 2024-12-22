@@ -1,3 +1,5 @@
+import {ReactNode} from "react";
+
 const TAB_SWITCHER_VARIANTS = {
 	whiteRow: 'whiteRow',
 	grayRow: 'grayRow',
@@ -13,6 +15,7 @@ export interface ITabSwitcherItem extends BaseInputProps {
 	width?: string
 	width_m?: string
 	width_l?: string
+	children?: ReactNode
 }
 
 export interface TabSwitcherProps {
