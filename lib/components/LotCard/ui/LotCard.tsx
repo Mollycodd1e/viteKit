@@ -100,8 +100,7 @@ export const LotCard = ({
 					<div className={s.decor}>
 						{!isOffice && (
 							<>
-								<NewIcon name={'withoutDecor'} />
-								<span>Без отделки</span>
+								<span></span>
 							</>
 						)}
 						{isOffice && (workPlacesCount === 0 || workPlacesCount) && (
