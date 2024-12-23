@@ -35,7 +35,18 @@ export const ButtonsPage = () => {
 							color={isActive ? '#fff' : '#000'}
 						/>
 					</RoundButton>
+
+					<RoundButton
+						iconName={'close' }
+						variant={isActive ? 'blackFill' : 'whiteStroke'}
+						deg="90"
+						size={'tiny'}
+						size_l={'small'}
+						onClick={() => setIsActive(!isActive)}>
+					</RoundButton>
 				</div>
+
+
 			</div>
 			<div>
 				<h2>Зум</h2>

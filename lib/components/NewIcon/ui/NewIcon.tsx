@@ -47,6 +47,8 @@ import Search from './../assets/Search.svg'
 import ArrowRight from './../assets/arrowRight.svg'
 import Redo from './../assets/Redo.svg'
 import { ReactSVGComponent } from './NewIcon.types'
+import classNames from "classnames";
+import s from './NewIcon.module.scss'
 
 type IconComponentProps = {
 	name: keyof typeof iconTypes
@@ -109,6 +111,7 @@ export const iconTypes: IconTypes = {
 	circle: () => <Circle />,
 	redo: () => <Redo />,
 }
+const cx = classNames.bind(s)
 
 export const NewIcon = ({
 	name,
@@ -129,7 +132,7 @@ export const NewIcon = ({
 				color: color,
 				strokeWidth: strokeWidth,
 			}}
-			className={additionalClass ?? ''}>
+			className={cx(s.root, additionalClass)}>
 			<IconComponent
 				width={size}
 				height={size}
