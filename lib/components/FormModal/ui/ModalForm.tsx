@@ -29,6 +29,7 @@ interface IModalFormProps {
 	isNews?: boolean
 	isRequiredEmail?: boolean
 	isRequiredPhoneOrEmail?: boolean
+	isAdvCheckBox?: boolean
 }
 
 type IFormPageInputs = {
@@ -61,6 +62,7 @@ export const ModalForm = ({
 	modalWidth = '442px',
 	rowsTextArea = 2,
 	advCheckBox = { text: defaultTextCheckBox, isRequired: true },
+	isAdvCheckBox,
 }: IModalFormProps) => {
 	const {
 		register,
@@ -189,7 +191,7 @@ export const ModalForm = ({
 							/>
 						)}
 
-						{advCheckBox && !isNews && (
+						{advCheckBox && !isNews && isAdvCheckBox && (
 							<CheckBox
 								data-testid='modal_advCheckBox'
 								isChecked={isCheckAdvCheckBox}

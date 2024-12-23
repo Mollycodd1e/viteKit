@@ -27,10 +27,9 @@ const FormsPage = () => {
 				subTitle={'Оставьте номер телефона для получения консультации'}
 				title={'Оставить обращение'}
 				modalWidth={'530px'}
-				isEmail
-				isNews
-				isRequiredPhone={false}
-				isRequiredEmail
+				isPhone
+				isRequiredPhoneOrEmail
+				isRequiredPhone
 				isFormOpen={isFormModalOpen}
 				setIsFormOpen={setIsFormModalOpen}
 			/>
