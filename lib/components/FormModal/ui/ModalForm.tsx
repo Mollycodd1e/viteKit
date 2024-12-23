@@ -76,7 +76,7 @@ export const ModalForm = ({
 	const isEmailFill = Boolean(watch('email'))
 
 	const { onChange, onBlur, ...rest } = register('phone', {
-		required: isRequiredEmail || (isRequiredPhoneOrEmail && !isEmailFill),
+		required: isRequiredEmail || isRequiredPhone || (isRequiredPhoneOrEmail && !isEmailFill),
 		pattern: { value: phoneReg, message: '' },
 		onBlur: () => trigger('phone'),
 	})
