@@ -17,6 +17,8 @@ export const Modal: FC<IModalProps> = ({
 	colorOverlay,
 	notDisableScroll = false,
 	children,
+	modalBodyRef,
+	additionalStylesModalBody,
 }) => {
 	const closeModal = () => {
 		if (isClickOutside) emitIsOpen(false)
@@ -49,7 +51,12 @@ export const Modal: FC<IModalProps> = ({
 					backgroundColor: colorOverlay ? colorOverlay : undefined,
 				}}
 			/>
-			<div className={`${s.modalBody} ${additionalClassModalBody}`}>{children}</div>
+			<div
+				className={`${s.modalBody} ${additionalClassModalBody}`}
+				ref={modalBodyRef}
+				style={additionalStylesModalBody}>
+				{children}
+			</div>
 		</div>
 	)
 

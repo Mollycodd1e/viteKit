@@ -14,4 +14,6 @@ export interface IModalProps {
 	createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
 	opacity?: number
 	colorOverlay?: string
+	modalBodyRef?: React.RefObject<HTMLDivElement>
+	additionalStylesModalBody?: React.CSSProperties
 }
