@@ -157,7 +157,7 @@ export const LotsPage = () => {
 		<div className={s.root}>
 			{/* <ProjectCardSkeleton></ProjectCardSkeleton> */}
 			<div className={s.lotWrapper}>
-				{isFetching && <LotCardSkeleton />}
+				{<LotCardSkeleton />}
 				{!isFetching && (
 					<LotCard
 						lot={testLot}

@@ -222,7 +222,7 @@
 	.lotPropertyListDesktop {
 		display: flex;
 		gap: 8px;
-		margin: 16px 0 0 0;
+		margin: auto 0 0 0;
 	}
 
 	.projectLotPropertyListDesktop {
@@ -233,10 +233,6 @@
 		min-width: 90px;
 		height: 40px;
 		@include skeleton;
-	}
-
-	.lotPriceWrapper {
-		margin: 0 0 0 auto;
 	}
 
 	.discountWrapper {
@@ -267,7 +263,7 @@
 	}
 
 	.lotPriceWrapper {
-		margin: 16px 0 0 0;
+		margin: 0 0 0 auto;
 	}
 
 	.projectLotPriceWrapper {
