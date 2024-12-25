@@ -57,19 +57,11 @@
 .whiteStroke {
 	border: 1px solid #e6e8ec;
 	background-color: #ffffff;
-
-	& path {
-		stroke: currentColor;
-	}
 }
 
 .blackFill {
 	border: 1px solid #141416;
 	background-color: #141416;
-
-	& path {
-		stroke: #ffffff;
-	}
 }
 
 @media(min-width: 1024px) {
