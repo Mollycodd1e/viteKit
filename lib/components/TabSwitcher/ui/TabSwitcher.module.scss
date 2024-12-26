@@ -175,14 +175,16 @@ $roundRadius: 24px;
       border: solid 1px #E6E8EC;
     }
 
-    & input~.item:hover {
-      border: solid 1px #B1B5C3;
-    }
+    @media(min-width: 1024px) {
+      & input~.item:hover {
+        border: solid 1px #B1B5C3;
+      }
 
-    & input~.item:active {
-      background: #353945;
-      color: #ffffff;
-      border: 1px solid #777E90;
+      & input~.item:active {
+        background: #353945;
+        color: #ffffff;
+        border: 1px solid #777E90;
+      }
     }
   }
 
@@ -209,14 +211,16 @@ $roundRadius: 24px;
       border: solid 1px #F4F5F6;
     }
 
-    & input~.item:hover {
-      border: solid 1px #B1B5C3;
-    }
+    @media(min-width: 1024px) {
+      & input~.item:hover {
+        border: solid 1px #B1B5C3;
+      }
 
-    & input~.item:active {
-      background: #353945;
-      color: #ffffff;
-      border: 1px solid #777E90;
+      & input~.item:active {
+        background: #353945;
+        color: #ffffff;
+        border: 1px solid #777E90;
+      }
     }
   }
 }
