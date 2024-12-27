@@ -36,7 +36,7 @@
 	position: relative;
 	max-width: 311px;
 	width: 100%;
-	height: 224px;
+	height: 213px;
 	margin: 0 auto;
 	@include skeleton;
 }
@@ -49,7 +49,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	margin: 32px 0 0 0;
+	margin: 15px 0 0 0;
 }
 
 .projectLotInfoWrapper {
@@ -93,6 +93,11 @@
 	& div:first-child {
 		width: 80px;
 		@include skeleton;
+	}
+
+	&:not(:first-child) {
+		padding: 7px 0;
+		height: 35px;
 	}
 
 	& div:last-child {
@@ -146,7 +151,7 @@
 
 	&>div:last-child {
 		width: 100%;
-		height: 48px;
+		height: 40px;
 		@include skeleton;
 	}
 }

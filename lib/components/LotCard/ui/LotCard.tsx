@@ -78,7 +78,7 @@ export const LotCard = ({
 						src={interiorPlanImg ?? floorPlanImg ?? LotImage}
 						className={cx(s.lotImg, { [s.projectLotImg]: isProjectCard })}
 						width={311}
-						height={224}
+						height={213}
 					/>
 				)}
 			</div>
