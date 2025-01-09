@@ -114,12 +114,12 @@ $roundRadius: 24px;
     & input:disabled~.item {
       background: #F4F5F6;
       color: #B1B5C3;
-      opacity: 0.7;
+      opacity: 0;
 
       &:hover {
         background: #F4F5F6;
         color: #B1B5C3;
-        opacity: 0.7;
+        opacity: 0;
       }
     }
   }
