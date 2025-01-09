@@ -47,7 +47,7 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
         <label className={cx({[s.isLong]: isLong})}>
             <input ref={ref}
                    type='checkbox'
-                   {...rest}/>
+                   {...rest} disabled={disabled}/>
             <div style={{width: getWidth(isTablet, isDesktop)}}
                  className={cx(cx(s.item, {[s.firstItem]: index === 0},
                      {[s.lastItem]: index === itemsLength - 1},

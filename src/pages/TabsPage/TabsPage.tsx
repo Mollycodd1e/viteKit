@@ -17,7 +17,7 @@ const TabsPage = () => {
 							itemsLength={tabs.length}
 							key={i}
 							index={i}
-							value={m}>
+							value={m} disabled={i === 2 || i === 1}>
 							{m}
 						</TabSwitcher.Item>
 					)
