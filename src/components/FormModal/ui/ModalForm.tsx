@@ -10,6 +10,7 @@ import { emailReg, nameReg, phoneReg } from '../utils/reg.ts'
 import { CheckBox } from '../../CheckBox/CheckBox.tsx'
 import { TextArea } from '../../TextArea/TextArea.tsx'
 import { useClientWidth } from '../../../../lib/shared/useClientWidth.ts'
+import classNames from "classnames";
 
 interface IModalFormProps {
 	isFormOpen: boolean
@@ -30,6 +31,7 @@ interface IModalFormProps {
 	isRequiredEmail?: boolean
 	isRequiredPhoneOrEmail?: boolean
 	isAdvCheckBox?: boolean
+	addTitleClassName?: string
 }
 
 type IFormPageInputs = {
@@ -40,6 +42,9 @@ type IFormPageInputs = {
 	advCheckBox?: boolean
 	textarea?: string
 }
+
+
+const cx = classNames.bind(s)
 
 const defaultTextCheckBox =
 	'Я принимаю условия Политики обработки и защиты персональных данных, даю согласия на обработку персональных данных'
@@ -63,6 +68,7 @@ export const ModalForm = ({
 	rowsTextArea = 2,
 	advCheckBox = { text: defaultTextCheckBox, isRequired: true },
 	isAdvCheckBox,
+	addTitleClassName
 }: IModalFormProps) => {
 	const {
 		register,
@@ -105,7 +111,7 @@ export const ModalForm = ({
 				className={s.root}
 				style={{ width: isMobile ? '100%' : modalWidth }}>
 				<div
-					className={s.title}
+					className={cx(s.title, addTitleClassName)}
 					dangerouslySetInnerHTML={{ __html: title ?? 'Оставить обращение' }}
 				/>
 				{isNews && (
