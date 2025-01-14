@@ -231,23 +231,22 @@ $roundRadius: 24px;
       }
     }
   }
-}
 
-@media (min-width: 1024px) {}
+  @media(min-width: 1440px) {
+    .item {
+      height: 40px;
+
+      &.autoWidth {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+
+  }
+}
 
 @media (min-width: 1440px) {
   .text {
     font-size: 14px;
-  }
-
-  .item {
-    .item {
-      height: 40px;
-    }
-
-    &.autoWidth {
-      padding-left: 24px;
-      padding-right: 24px;
-    }
   }
 }
