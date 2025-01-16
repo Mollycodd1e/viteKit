@@ -6,7 +6,6 @@
 }
 
 .selectedOptions {
-	height: 32px;
 	cursor: pointer;
 	display: flex;
 	flex: 1;
@@ -120,11 +119,5 @@
 			opacity: 0.3;
 			cursor: not-allowed;
 		}
-	}
-}
-
-@media(min-width: 1440px) {
-	.selectedOptions {
-		height: 40px;
 	}
 }
