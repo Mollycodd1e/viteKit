@@ -16,7 +16,7 @@
 	font-size: 12px;
 	line-height: 18px;
 	font-weight: 500;
-	padding: 8px 12px;
+	padding: 11px 12px 11px 24px;
 	border-radius: 48px;
 	border: 1px solid #B1B5C3;
 	background: #ffffff;
@@ -125,7 +125,6 @@
 
 @media(min-width: 1440px) {
 	.selectedOptions {
-		padding: 10px 16px;
 		height: 40px;
 	}
 }
