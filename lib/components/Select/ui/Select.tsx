@@ -119,7 +119,7 @@ const SelectComponent: React.FC<MultiSelectProps> = ({
 						<NewIcon
 							name={'filter'}
 							deg={isOpen ? '180' : '0'}
-							size='16'
+							size='24'
 							additionalClass={s.icon}
 						/>
 					</>
