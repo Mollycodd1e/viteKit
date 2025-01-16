@@ -15,6 +15,7 @@ export interface ITabSwitcherItem extends React.InputHTMLAttributes<HTMLInputEle
     width_m?: string
     width_l?: string
     children?: ReactNode
+    isLongOn?: boolean
 }
 
 export interface TabSwitcherProps {
