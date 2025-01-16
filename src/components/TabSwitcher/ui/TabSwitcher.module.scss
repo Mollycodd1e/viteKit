@@ -100,6 +100,12 @@ $roundRadius: 24px;
     color: #ffffff;
   }
 
+  & input:disabled~.item {
+    background: #F4F5F6;
+    color: #B1B5C3;
+    opacity: 1;
+  }
+
   @media(min-width: 1024px) {
     & input:not(:checked)~.item:hover {
       background-color: #141416;
@@ -112,10 +118,6 @@ $roundRadius: 24px;
     }
 
     & input:disabled~.item {
-      background: #F4F5F6;
-      color: #B1B5C3;
-      opacity: 1;
-
       &:hover {
         background: #F4F5F6;
         color: #B1B5C3;
