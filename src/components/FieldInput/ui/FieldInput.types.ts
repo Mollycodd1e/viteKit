@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 
 interface InputProps {
 	label: string
+	handleClear?: () => void
 	children?: ReactNode
 }
 

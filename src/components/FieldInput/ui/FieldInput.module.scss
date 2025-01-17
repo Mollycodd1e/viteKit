@@ -26,3 +26,31 @@
 		color: #141416;
 	}
 }
+
+.clearBtn {
+	font-size: 12px;
+	line-height: 16px;
+	color: #777E90;
+	cursor: pointer;
+
+	&:active {
+		opacity: 0.7;
+	}
+
+	@media(min-width: 1024px)and (pointer: fine) {
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.nameWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #141416;
+}
