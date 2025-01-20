@@ -234,6 +234,7 @@ export interface ILot {
 }
 
 export interface ILotCard {
+	subTypeName: string
 	lot: ILot
 	btnName?: string
 	btnDisabled?: boolean

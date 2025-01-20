@@ -14,6 +14,7 @@ import classNames from 'classnames'
 const cx = classNames.bind(s)
 
 export const LotCard = ({
+	subTypeName,
 	lot,
 	handleBtnForm,
 	handleFullScreenBtn,
@@ -66,6 +67,8 @@ export const LotCard = ({
 			</>
 		)
 	}
+console.log( OFFICE_TYPES[type as keyof typeof OFFICE_TYPES]);
+console.log(subTypeName,'subTypeName');
 
 	return (
 		<div className={cx(s.root, addClassname, { [s.rootProject]: isProjectCard })}>

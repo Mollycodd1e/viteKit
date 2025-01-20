@@ -160,16 +160,18 @@ export const LotsPage = () => {
 				{<LotCardSkeleton />}
 				{!isFetching && (
 					<LotCard
+						subTypeName={''}
 						lot={testLot}
-						handleBtnForm={() => {}}
+						handleBtnForm={() => { }}
 					/>
 				)}
 				<div style={{ display: 'flex', flexWrap: 'wrap' }}>
 					{!isFetching && (
 						<LotCard
+							subTypeName={''}
 							isProjectCard
 							lot={testLot}
-							handleBtnForm={() => {}}
+							handleBtnForm={() => { }}
 						/>
 					)}
 					<LotCardSkeleton isProjectCard />
