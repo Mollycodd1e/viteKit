@@ -11,7 +11,7 @@ interface IFeatures {
 		attributes: {
 			url: string
 		}
-	}
+	} | null
 	slug: string | null
 	val: string | null
 }

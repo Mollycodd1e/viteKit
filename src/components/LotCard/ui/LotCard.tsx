@@ -8,7 +8,6 @@ import { Tag } from '../../Tag'
 import { Button } from '../../Button'
 import { formatPrice } from '../utils/formatPrice'
 import { formatPayment } from '../utils/monthlyPayment'
-import { OFFICE_TYPES } from '../utils/const'
 import classNames from 'classnames'
 
 const cx = classNames.bind(s)
@@ -42,17 +41,41 @@ export const LotCard = ({
 		floorPlanImg,
 		discount,
 		sellingPriceBeforeDiscount,
+		features,
 	} = lot
+
+	const BigLotAreaStart = 3000
+	const isBigLotFloorFeature =
+		Number(area) >= BigLotAreaStart && features !== null && features?.length > 0
+
+	const featureFloor = isBigLotFloorFeature
+		? features.find((feature) => feature?.val?.toLowerCase().includes('этаж'))
+		: undefined
 
 	const isOffice = direction === 1
 	const areaStr = area + ' ' + 'м²'
 	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
+
 	const getFloorStr = () => {
+		if (isBigLotFloorFeature) {
+			return featureFloor?.val
+		}
+
 		if (type === 11) return 'Кол-во этажей: ' + floorsNumber
 		return 'Этаж: ' + floorStr
 	}
 
 	const FloorByType = () => {
+		if (isBigLotFloorFeature) {
+			const result = featureFloor?.val?.split(/\s+(.*)/)[1]
+			return (
+				<>
+					<div>Этажи</div>
+					<div>{result}</div>
+				</>
+			)
+		}
+
 		if (type === 11)
 			return (
 				<>
@@ -67,8 +90,6 @@ export const LotCard = ({
 			</>
 		)
 	}
-console.log( OFFICE_TYPES[type as keyof typeof OFFICE_TYPES]);
-console.log(subTypeName,'subTypeName');
 
 	return (
 		<div className={cx(s.root, addClassname, { [s.rootProject]: isProjectCard })}>
@@ -90,9 +111,7 @@ console.log(subTypeName,'subTypeName');
 					<Text
 						className={cx(s.infoHeader, { [s.projectLotInfoHeader]: isProjectCard })}
 						html={`${
-							isOffice && type
-								? subTypeName
-								: checkBedroomsCount(bedroomsCount)
+							isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
 						}, ${number}`}
 					/>
 					{mortgageMonthlyPayment && (
