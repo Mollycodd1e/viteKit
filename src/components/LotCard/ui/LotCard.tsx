@@ -91,7 +91,7 @@ console.log(subTypeName,'subTypeName');
 						className={cx(s.infoHeader, { [s.projectLotInfoHeader]: isProjectCard })}
 						html={`${
 							isOffice && type
-								? OFFICE_TYPES[type as keyof typeof OFFICE_TYPES]
+								? subTypeName
 								: checkBedroomsCount(bedroomsCount)
 						}, ${number}`}
 					/>
