@@ -155,6 +155,7 @@ export const LotCard = ({
 				<div className={cx(s.btnWrapper, { [s.projectBtnWrapper]: isProjectCard })}>
 					<Button
 						as='button'
+						data-testid={'lot_fullscreen'}
 						disabled={btnDisabled}
 						variant='gray'
 						additionalClass={s.fullscreenBtn}
@@ -173,6 +174,7 @@ export const LotCard = ({
 						size='medium'
 						variant='blue'
 						width='full'
+						data-testid={'lot_form'}
 						onClick={(e) => {
 							e.preventDefault()
 							handleBtnForm()
