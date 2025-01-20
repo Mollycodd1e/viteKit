@@ -41,41 +41,23 @@ export const LotCard = ({
 		floorPlanImg,
 		discount,
 		sellingPriceBeforeDiscount,
-		features,
 	} = lot
 
 	const BigLotAreaStart = 3000
-	const isBigLotFloorFeature =
-		Number(area) >= BigLotAreaStart && features !== null && features?.length > 0
-
-	const featureFloor = isBigLotFloorFeature
-		? features.find((feature) => feature?.val?.toLowerCase().includes('этаж'))
-		: undefined
+	const isBigLotArea = Number(area) >= BigLotAreaStart
 
 	const isOffice = direction === 1
 	const areaStr = area + ' ' + 'м²'
 	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
 
 	const getFloorStr = () => {
-		if (isBigLotFloorFeature) {
-			return featureFloor?.val
-		}
+		if (isBigLotArea) return
 
 		if (type === 11) return 'Кол-во этажей: ' + floorsNumber
 		return 'Этаж: ' + floorStr
 	}
 
 	const FloorByType = () => {
-		if (isBigLotFloorFeature) {
-			const result = featureFloor?.val?.split(/\s+(.*)/)[1]
-			return (
-				<>
-					<div>Этажи</div>
-					<div>{result}</div>
-				</>
-			)
-		}
-
 		if (type === 11)
 			return (
 				<>
@@ -136,7 +118,7 @@ export const LotCard = ({
 					})}>
 					<Tag variant='gray'>{areaStr}</Tag>
 					<Tag variant='gray'>{housing}</Tag>
-					<Tag variant='gray'>{getFloorStr()}</Tag>
+					{!isBigLotArea && <Tag variant='gray'>{getFloorStr()}</Tag>}
 				</div>
 				<ul
 					className={cx(s.lotPropertyListMobile, {
@@ -150,7 +132,12 @@ export const LotCard = ({
 						<div>{housing?.split(' ')[0]}</div>
 						<div>{housing?.split(' ')[1]}</div>
 					</li>
-					<li className={cx(s.lotPropertyItem, { [s.projectLotPropertyItem]: isProjectCard })}>
+					<li
+						className={cx(
+							s.lotPropertyItem,
+							{ [s.projectLotPropertyItem]: isProjectCard },
+							{ [s.projectLotPropertyItemBig]: isBigLotArea }
+						)}>
 						<FloorByType />
 					</li>
 				</ul>
