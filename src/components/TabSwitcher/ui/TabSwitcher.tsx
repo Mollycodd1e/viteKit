@@ -28,12 +28,13 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
     const {isTablet, isDesktop} = useClientWidth()
     const {
         index, children, addItemClassName, disabled = false, itemsLength = 0,
+        isLongOn = true,
         width,
         width_m,
         width_l,
         ...rest
     } = props
-    const isLong = children?.toString().length ? children?.toString().length > 2 : false
+    const isLong = (children?.toString().length ? children?.toString().length > 2 : false) && isLongOn
 
     const getWidth = (isTablet: boolean, isDesktop: boolean) => {
         if (isTablet && width_m) return width_m
