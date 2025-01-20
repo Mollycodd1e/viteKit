@@ -13,7 +13,6 @@ import classNames from 'classnames'
 const cx = classNames.bind(s)
 
 export const LotCard = ({
-	subTypeName,
 	lot,
 	handleBtnForm,
 	handleFullScreenBtn,
@@ -41,6 +40,7 @@ export const LotCard = ({
 		floorPlanImg,
 		discount,
 		sellingPriceBeforeDiscount,
+		subTypeName
 	} = lot
 
 	const BigLotAreaStart = 3000

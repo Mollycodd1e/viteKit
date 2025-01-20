@@ -231,10 +231,11 @@ export interface ILot {
 	project?: IProject | null
 	/** Забронировано или нет????? */
 	reservations?: string[] | null
+	/** Подтип помещения */
+	subTypeName?: string
 }
 
 export interface ILotCard {
-	subTypeName: string
 	lot: ILot
 	btnName?: string
 	btnDisabled?: boolean

@@ -313,14 +313,12 @@ export const LotsPage = () => {
 				{<LotCardSkeleton />}
 				{!isFetching && (
 					<LotCard
-						subTypeName={''}
 						lot={testLot}
 						handleBtnForm={() => {}}
 					/>
 				)}
 				{!isFetching && (
 					<LotCard
-						subTypeName={''}
 						lot={testBigLot}
 						handleBtnForm={() => {}}
 					/>
@@ -328,7 +326,6 @@ export const LotsPage = () => {
 				<div style={{ display: 'flex', flexWrap: 'wrap' }}>
 					{!isFetching && (
 						<LotCard
-							subTypeName={''}
 							isProjectCard
 							lot={testLot}
 							handleBtnForm={() => {}}
