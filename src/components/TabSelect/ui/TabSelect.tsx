@@ -1,5 +1,5 @@
 'use client'
-import {forwardRef} from 'react'
+import {forwardRef, JSX} from 'react'
 import s from './TabSelect.module.scss'
 import classNames from 'classnames'
 import {Text} from '../../Text'

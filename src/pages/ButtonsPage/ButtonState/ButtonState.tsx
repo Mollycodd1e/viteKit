@@ -16,7 +16,9 @@ export const ButtonState = ({ children }: IButtonState) => {
 	const [preSize, setPreSize] = useState<string | null>(null)
 	const [postSize, setPostSize] = useState<string | null>(null)
 	const IconSizeList = ['12', '16', '20', '24']
-	const modifiedChildren = React.cloneElement(children, {
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	const modifiedChildren = React.cloneElement(children as React.ReactElement<any>, {
 		width: width,
 		variant: variants,
 		isLoading: isLoader,
