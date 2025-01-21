@@ -1,8 +1,10 @@
 import {useEffect, useRef, useState} from 'react'
 import classNames from 'classnames'
-import {MultiSelectProps, Option} from './Select.types'
+import {MultiSelectProps, TOption} from './Select.types'
 import s from './Select.module.scss'
+import {Option} from './Option'
 import {NewIcon} from '../../NewIcon'
+import {Category} from "./Category.tsx";
 
 const cx = classNames.bind(s)
 
@@ -23,12 +25,35 @@ export const Select = ({
                            clickableOptions,
                            isListRight = false,
                            sizeIcon,
+                           mode = 'options',
                        }: MultiSelectProps) => {
-    const [selectedOptions, setSelectedOptions] = useState<Option[]>(selectedValues)
+
+    const fakeCategory = [
+        {
+            value: 'Category1',
+            label: 'category1',
+            options: [
+                {value: 'optionsFake1', label: 'labelFake1'},
+                {value: 'optionsFake2', label: 'labelFake2'},
+                {value: 'optionsFake3', label: 'labelFake3'}
+            ]
+        },
+        {
+            value: 'Category2',
+            label: 'category2',
+            options: [
+                {value: 'optionsFake4', label: 'labelFake4'},
+                {value: 'optionsFake5', label: 'labelFake5'},
+                {value: 'optionsFake6', label: 'labelFake6'}
+            ]
+        }
+    ]
+
+    const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
     const [isOpen, setIsOpen] = useState(false)
     const containerRef = useRef<HTMLDivElement>(null)
 
-    const handleOptionClick = (option: Option) => () => {
+    const handleOptionClick = (option: TOption) => () => {
         //если эта опция в списке disable то помянем
         if (disabledOptions.includes(option)) {
             return
@@ -125,29 +150,17 @@ export const Select = ({
             </div>
             {isOpen && (
                 <div className={cx(s.optionsList, {[s.listRight]: isListRight}, additionalClassOption)}>
-                    {options?.map((option) => (
-                        <div
-                            key={option.value}
-                            className={cx(s.option, {
-                                [s.selected]: selectedOptions.some((selected) => selected.value === option.value),
-                                [s.optionDisabled]: disabledOptions.some(
-                                    (disabled) => disabled.value === option.value
-                                ),
-                                [s.optionClickable]:
-                                (clickableOptions && clickableOptions.includes(`${option.value}`)) || isBtn,
-                            })}
-                            onClick={handleOptionClick(option)}>
-                            <div>{option.label}</div>
-                            <NewIcon
-                                size={sizeIcon ?? '20'}
-                                name={
-                                    selectedOptions.some((selected) => selected.value === option.value)
-                                        ? 'selectChecked'
-                                        : 'selectUnchecked'
-                                }
-                            />
-                        </div>
+                    {mode === 'options' && options?.map((option, i) => (
+                        <Option key={i} disabledOptions={disabledOptions} clickableOptions={clickableOptions}
+                                selectedOptions={selectedOptions} sizeIcon={sizeIcon} option={option}
+                                handleOptionClick={handleOptionClick}/>
                     ))}
+                    {mode === 'category' && fakeCategory?.map((cat, i) => (
+                        <Category key={i} disabledOptions={disabledOptions} clickableOptions={clickableOptions}
+                                  selectedOptions={selectedOptions} sizeIcon={sizeIcon} category={cat}
+                                  selectedValues={selectedValues} handleOptionClick={handleOptionClick}/>
+                    ))}
+
                 </div>
             )}
         </div>

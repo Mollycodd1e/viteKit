@@ -1,21 +1,20 @@
-export type Option = {
+export type TOption = {
 	value: string | number
 	label: string
+	parent?: string
 }
 
-export type Categories = {
-	options: Option[]
+export type TCategory = {
+	value: string | number
+	label: string
+	options: TOption[]
 }
 
-export type TModeSelect = 'options' | 'categories'
+export type TModeSelect = 'options' | 'category'
 
 export interface MultiSelectProps {
-	/**
-	 * Опции (могут быть опции или категории опций)
-	 *
-	 * @default false
-	 */
-	options?: Option[]
+	options?: TOption[]
+	category?: TCategory[]
 	placeholder?: string
 	error?: boolean
 	disabled?: boolean
@@ -37,22 +36,12 @@ export interface MultiSelectProps {
 	 * @default false
 	 */
 	additionalClassBtn?: string
-	onChange?: (selectedOptions: Option[]) => unknown
-	onBlur?: (selectedOptions: Option[]) => unknown
-	/**
-	 * Значения
-	 *
-	 * @default false
-	 */
-	selectedValues?: Option[]
+	onChange?: (selectedOptions: TOption[]) => unknown
+	onBlur?: (selectedOptions: TOption[]) => unknown
+	selectedValues?: TOption[]
 	isBtn?: boolean
 	btnName?: string
 	widthBtn?: string
-	/**
-	 * Ширина
-	 *
-	 * @default false
-	 */
 	widthOptionList?: string
 	isListRight?: boolean
 	/**
@@ -60,9 +49,9 @@ export interface MultiSelectProps {
 	 *
 	 * @default false
 	 */
-	disabledOptions?: Option[]
+	disabledOptions?: TOption[]
 	/**
-	 * Да...
+	 * Список опций которые доступны для клика
 	 *
 	 * @default false
 	 */

@@ -87,6 +87,17 @@
 	}
 }
 
+.category{
+	justify-content: flex-start;
+	gap: 8px;
+}
+
+.optionCategory {
+	gap: 8px;
+	justify-content: flex-start;
+	margin-left: 28px;
+}
+
 .optionDisabled {
 	opacity: 0.3;
 }
