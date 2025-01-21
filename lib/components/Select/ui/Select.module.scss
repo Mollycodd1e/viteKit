@@ -1,123 +1,138 @@
 .multiSelectWrapper {
-	position: relative;
-	width: 100%;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
+  position: relative;
+  width: 100%;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .selectedOptions {
-	cursor: pointer;
-	display: flex;
-	flex: 1;
-	justify-content: space-between;
-	align-items: center;
-	font-family: inherit;
-	font-size: 16px;
-	line-height: 24px;
-	font-weight: 400;
-	padding: 11px 12px 11px 24px;
-	border-radius: 48px;
-	border: 1px solid #B1B5C3;
-	background: #ffffff;
-	box-sizing: border-box;
-	outline: none;
-	color: #B1B5C3;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 11px 12px 11px 24px;
+  border-radius: 48px;
+  border: 1px solid #B1B5C3;
+  background: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+  color: #B1B5C3;
 }
 
 .selectedOptionsBtn {
-	color: #141416;
+  color: #141416;
 }
 
 .selectedOptionsOpened {
-	border: 1px solid #141416;
+  border: 1px solid #141416;
 }
 
 .selectedOptionsNotEmpty {
-	color: #141416;
-	border: 1px solid #015FF9;
+  color: #141416;
+  border: 1px solid #015FF9;
 }
 
 .selectOptionsDisabled {
-	pointer-events: none;
-	background: #F4F5F6;
-	border: 1px solid #E6E8EC;
-	color: #B1B5C3;
+  pointer-events: none;
+  background: #F4F5F6;
+  border: 1px solid #E6E8EC;
+  color: #B1B5C3;
 }
 
 .optionsList {
-	position: absolute;
-	top: 52px;
-	width: inherit;
-	padding: 12px 24px;
-	border: 1px solid #e6e8ec;
-	border-radius: 24px;
-	background: #ffffff;
-	box-shadow: 0 5px 12px 0 #0000001F, 0 21px 21px 0 #0000001A;
-	z-index: 120;
-	box-sizing: border-box;
-	max-height: 262px;
-	overflow-y: auto;
-	scrollbar-width: thin;
+  position: absolute;
+  top: 52px;
+  width: inherit;
+  padding: 12px 24px;
+  border: 1px solid #e6e8ec;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 5px 12px 0 #0000001F, 0 21px 21px 0 #0000001A;
+  z-index: 120;
+  box-sizing: border-box;
+  max-height: 262px;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .listRight {
-	right: 0;
+  right: 0;
 }
 
 .inputWrapper {
-	cursor: pointer;
-	display: flex;
-	align-items: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 
-	& input {
-		cursor: pointer;
-	}
+  & input {
+    cursor: pointer;
+  }
 }
 
 .option {
-	opacity: 0.5;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 12px 0;
-	cursor: pointer;
+  opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  cursor: pointer;
 
-	&:not(:last-child) {
-		border-bottom: 1px solid #F4F5F6;
-	}
+  &:not(:last-child) {
+    border-bottom: 1px solid #F4F5F6;
+  }
+}
+
+.category {
+  justify-content: space-between;
+}
+
+.leftSide {
+  display: flex;
+  gap: 8px;
+}
+
+.optionCategory {
+  gap: 8px;
+  justify-content: flex-start;
+  margin-left: 28px;
 }
 
 .optionDisabled {
-	opacity: 0.3;
+  opacity: 0.3;
 }
 
 .optionClickable {
-	opacity: 1;
+  opacity: 1;
 }
 
 .icon {
-	position: absolute;
-	right: 12px;
-	pointer-events: none;
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
 }
 
 @media(min-width: 1024px) and (pointer: fine) {
-	.selectedOptions {
-		&:hover {
-			border: 1px solid #777E90;
-		}
-	}
+  .selectedOptions {
+    &:hover {
+      border: 1px solid #777E90;
+    }
+  }
 
-	.option {
-		&:hover {
-			opacity: 0.7;
-		}
-	}
+  .option {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 
-	.optionDisabled {
-		&:hover {
-			opacity: 0.3;
-			cursor: not-allowed;
-		}
-	}
+  .optionDisabled {
+    &:hover {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
 }

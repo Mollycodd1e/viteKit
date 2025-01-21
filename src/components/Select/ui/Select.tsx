@@ -38,34 +38,56 @@ export const Select = ({
                 {value: 'optionsFake3', label: 'labelFake3'}
             ]
         },
-        {
-            value: 'Category2',
-            label: 'category2',
-            options: [
-                {value: 'optionsFake4', label: 'labelFake4'},
-                {value: 'optionsFake5', label: 'labelFake5'},
-                {value: 'optionsFake6', label: 'labelFake6'}
-            ]
-        }
+        // {
+        //     value: 'Category2',
+        //     label: 'category2',
+        //     options: [
+        //         {value: 'optionsFake4', label: 'labelFake4'},
+        //         {value: 'optionsFake5', label: 'labelFake5'},
+        //         {value: 'optionsFake6', label: 'labelFake6'}
+        //     ]
+        // }
     ]
 
     const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
     const [isOpen, setIsOpen] = useState(false)
     const containerRef = useRef<HTMLDivElement>(null)
 
-    const handleOptionClick = (option: TOption) => () => {
-        //если эта опция в списке disable то помянем
-        if (disabledOptions.includes(option)) {
-            return
+    const handleOptionClick = (option: TOption | TOption[]) => () => {
+        if (!Array.isArray(option)) {
+            //если эта опция в списке disable то помянем
+            if (disabledOptions.includes(option)) {
+                return
+            }
+
+            const newSelectedOptions = selectedOptions.some((selected) => selected.value === option.value)
+                ? selectedOptions.filter((selected) => selected.value !== option.value)
+                : [...selectedOptions, option]
+
+            setSelectedOptions(newSelectedOptions)
+            onChange && onChange(newSelectedOptions)
+        } else {
+            const optionsAfterDisable = option.filter((e) => !disabledOptions?.includes(e))
+
+            //если все опции есть в selected
+            if (optionsAfterDisable.every((e) => {
+                return selectedOptions.map((e) => JSON.stringify(e)).includes(JSON.stringify(e))
+            })) {
+                //то фильтруем так чтобы в selected не осталось ни одной опции категории
+                const newSelectedOptions = selectedOptions.filter((e) => !option.map((e) => JSON.stringify(e)).includes(JSON.stringify(e)))
+                setSelectedOptions(newSelectedOptions)
+                onChange && onChange(newSelectedOptions)
+            } else {
+                //а если их нет, то добавляем все в selected
+                const optionsAfterSelected = optionsAfterDisable.filter((e) => !selectedOptions.map((e) => JSON.stringify(e)).includes(JSON.stringify(e)))
+
+                const newSelectedOptions = [...selectedOptions, ...optionsAfterSelected]
+                setSelectedOptions(newSelectedOptions)
+                onChange && onChange(newSelectedOptions)
+            }
+
         }
-
-        const newSelectedOptions = selectedOptions.some((selected) => selected.value === option.value)
-            ? selectedOptions.filter((selected) => selected.value !== option.value)
-            : [...selectedOptions, option]
-        setSelectedOptions(newSelectedOptions)
-        onChange && onChange(newSelectedOptions)
     }
-
 
     const handleBlur = () => {
         onBlur && onBlur(selectedOptions)

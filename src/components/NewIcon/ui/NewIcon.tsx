@@ -44,6 +44,7 @@ import SelectChecked from './../assets/SelectChecked.svg'
 import SelectUnchecked from './../assets/SelectUnchecked.svg'
 import ArrowShort from './../assets/ArrowShort.svg'
 import Search from './../assets/Search.svg'
+import MinusCheck from './../assets/MinusCheck.svg'
 import ArrowRight from './../assets/arrowRight.svg'
 import Redo from './../assets/Redo.svg'
 import { ReactSVGComponent } from './NewIcon.types'
@@ -72,6 +73,7 @@ export const iconTypes: IconTypes = {
 	user: () => <User />,
 	squareMeter: () => <SquareMeter />,
 	check: () => <Check />,
+	minusCheck: () => <MinusCheck />,
 	close: () => <Close />,
 	layers: () => <Layers />,
 	layersFilled: () => <LayersFilled />,

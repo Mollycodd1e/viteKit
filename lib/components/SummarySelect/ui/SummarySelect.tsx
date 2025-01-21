@@ -1,6 +1,6 @@
 import {NewIcon} from '../../NewIcon'
 import {Select} from '../../Select'
-import {MultiSelectProps, Option} from '../../Select/ui/Select.types'
+import {MultiSelectProps, TOption} from '../../Select/ui/Select.types'
 import s from './SummarySelect.module.scss'
 
 interface ISummarySelectProps extends MultiSelectProps {
@@ -10,7 +10,7 @@ interface ISummarySelectProps extends MultiSelectProps {
 
 
 export const SummarySelect: React.FC<ISummarySelectProps> = ({label = '', isShowReset, ...props}) => {
-    const handleChangeSelect = (selectedOptions: Option[]) => {
+    const handleChangeSelect = (selectedOptions: TOption[]) => {
         if (props.onChange) {
             props.onChange(selectedOptions)
         }
