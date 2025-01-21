@@ -51,6 +51,7 @@ export const SelectPage = () => {
 				<h2>Селект с опциями</h2>
 				<SummarySelect
 					label='Проект'
+					isShowReset
 					selectedValues={select}
 					options={options2}
 					onChange={(e) => handleChangeSelect(e)}
