@@ -8,6 +8,7 @@ const TAB_SWITCHER_VARIANTS = {
 
 export interface ITabSwitcherItem extends React.InputHTMLAttributes<HTMLInputElement> {
     addItemClassName?: string
+    addTextClass?: string
     index: number
     isDisabled?: boolean
     itemsLength: number

@@ -21,13 +21,12 @@ const TabSwitcher = ({
             {children}
         </div>
     )
-
 }
 
 const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, ref) => {
     const {isTablet, isDesktop} = useClientWidth()
     const {
-        index, children, addItemClassName, disabled = false, itemsLength = 0,
+        index, children, addItemClassName, addTextClass,  disabled = false, itemsLength = 0,
         isLongOn = true,
         width,
         width_m,
@@ -55,7 +54,7 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
                      {[s.isDisabled]: disabled},
                      {[s.autoWidth]: isAutoWidth}
                  ), addItemClassName)}>
-                <Text className={s.text}>{children}</Text>
+                <Text className={cx(s.text, addTextClass)}>{children}</Text>
             </div>
         </label>
     )
