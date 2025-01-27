@@ -41,11 +41,18 @@ export const LotCard = ({
 		discount,
 		sellingPriceBeforeDiscount,
 		subTypeName,
+		saleFloorMax,
+		saleFloorMin,
 	} = lot
 
 	const isOffice = direction === 1
 	const areaStr = area + ' ' + 'м²'
-	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
+	const floorStr =
+		(saleFloorMin !== saleFloorMax ? saleFloorMin + '-' + saleFloorMax : floor) +
+		' ' +
+		'из' +
+		' ' +
+		floorsNumber
 
 	const getFloorStr = () => {
 		if (type === 11) return 'Кол-во этажей: ' + floorsNumber
