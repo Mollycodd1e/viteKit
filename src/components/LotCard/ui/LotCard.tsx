@@ -41,11 +41,17 @@ export const LotCard = ({
 		discount,
 		sellingPriceBeforeDiscount,
 		subTypeName,
+		endFloor,
 	} = lot
 
 	const isOffice = direction === 1
 	const areaStr = area + ' ' + 'м²'
-	const floorStr = floor + ' ' + 'из' + ' ' + floorsNumber
+	const floorStr =
+		(endFloor && endFloor !== floor ? floor + '-' + endFloor : floor) +
+		' ' +
+		'из' +
+		' ' +
+		floorsNumber
 
 	const getFloorStr = () => {
 		if (type === 11) return 'Кол-во этажей: ' + floorsNumber
@@ -102,7 +108,7 @@ export const LotCard = ({
 								<span></span>
 							</>
 						)}
-						{isOffice && (workPlacesCount === 0 || workPlacesCount) && (
+						{isOffice && workPlacesCount !== 0 && workPlacesCount && (
 							<span>{`${workPlacesCount} рабочих мест`}</span>
 						)}
 					</div>

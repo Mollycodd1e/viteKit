@@ -5,7 +5,7 @@ import { Button, ModalSuccess } from '../../main.ts'
 
 const FormsPage = () => {
 	const [isFormModalOpen, setIsFormModalOpen] = useState<boolean>(false)
-	const [isSuccessModalOpen, setIsSuccessModalOpen] = useState<boolean>(false)
+	const [isSuccessModalOpen, setIsSuccessModalOpen] = useState<boolean>(true)
 
 	return (
 		<div className={s.root}>
