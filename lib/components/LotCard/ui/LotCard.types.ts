@@ -117,6 +117,8 @@ export interface ILot {
 	floor: number | null
 	/** Высота потолков */
 	ceiling: string | null
+	/** Последний этаж лота */
+	endFloor: number | null
 	/** Этаж, с которого начинаются продаваемые лоты */
 	saleFloorMin: number | null
 	/** Этаж, на котором заканчиваются продаваемые лоты */

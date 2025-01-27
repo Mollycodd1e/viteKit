@@ -41,14 +41,13 @@ export const LotCard = ({
 		discount,
 		sellingPriceBeforeDiscount,
 		subTypeName,
-		saleFloorMax,
-		saleFloorMin,
+		endFloor,
 	} = lot
 
 	const isOffice = direction === 1
 	const areaStr = area + ' ' + 'м²'
 	const floorStr =
-		(saleFloorMin !== saleFloorMax ? saleFloorMin + '-' + saleFloorMax : floor) +
+		(endFloor && endFloor !== floor ? floor + '-' + endFloor : floor) +
 		' ' +
 		'из' +
 		' ' +

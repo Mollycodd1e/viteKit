@@ -77,6 +77,7 @@ export const LotsPage = () => {
 		combinedWcsCount: 1,
 		speciality: 1,
 		showcaseWindows: 'Юг',
+		endFloor: null,
 		windowView: 'Парк',
 		promo: [
 			{
@@ -179,6 +180,7 @@ export const LotsPage = () => {
 		area: '3050',
 		kitchenArea: 10,
 		livingArea: 30,
+		endFloor: 15,
 		floorsNumber: 25,
 		floor: 10,
 		ceiling: '2.7',
