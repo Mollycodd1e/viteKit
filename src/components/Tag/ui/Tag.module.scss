@@ -10,7 +10,7 @@
 	font-size: 12px;
 	line-height: 16px;
 	min-height: 32px;
-	padding: 8px 16px;
+	padding: 7px 15px;
 	gap: 4px;
 }
 
@@ -134,7 +134,7 @@
 
 .shadeWhite {
 	background-color: #FFFFFFCC;
-	border: solid 1px #FFFFFFCC;
+	border: 1px solid transparent;
 	backdrop-filter: blur(6px);
 	color: #353945;
 	font-weight: 500;
