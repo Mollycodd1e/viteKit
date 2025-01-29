@@ -115,6 +115,7 @@
 	background-color: #141416;
 	border: none;
 	color: #ffffff;
+	font-weight: 500;
 }
 
 .white {
@@ -128,6 +129,14 @@
 	background-color: #FFFFFF;
 	border: solid 1px #ffffff;
 	color: #141416;
+	font-weight: 500;
+}
+
+.shadeWhite {
+	background-color: #FFFFFFCC;
+	border: solid 1px #FFFFFFCC;
+	backdrop-filter: blur(6px);
+	color: #353945;
 	font-weight: 500;
 }
 

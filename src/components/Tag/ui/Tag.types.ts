@@ -11,6 +11,7 @@ export const TAG_VARIANTS = {
 	chineseBlack: 'chineseBlack',
 	fullWhite: 'fullWhite',
 	transparent: 'transparent',
+	shadeWhite: 'shadeWhite',
 }
 
 export type tagVariant = keyof typeof TAG_VARIANTS
