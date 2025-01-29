@@ -12,7 +12,7 @@ export interface IOption {
     disabledOptions: TOption[]
     selectedOptions: TOption[]
     clickableOptions?: (string | undefined)[]
-    handleOptionClick: (option: TOption | TOption[]) => () => void
+    handleOptionClick: (option: TOption | TOption[]) => void
     sizeIcon?: string
 }
 
@@ -38,7 +38,7 @@ export const Category = ({
                         (disabled) => disabled.value === category.value
                     ),
                 })}
-            onClick={handleOptionClick(category.options)}>
+            onClick={() => handleOptionClick(category.options)}>
             <div className={s.leftSide}><NewIcon
                 size={sizeIcon ?? '20'}
                 name={
@@ -62,7 +62,7 @@ export const Category = ({
 
         {category.options.map((e, k) => {
             return <Option key={k} option={e} disabledOptions={disabledOptions} selectedOptions={selectedOptions}
-                           handleOptionClick={handleOptionClick} sizeIcon={sizeIcon} clickableOptions={clickableOptions}
+                           handleOptionClick={() => handleOptionClick(e)} sizeIcon={sizeIcon} clickableOptions={clickableOptions}
                            isOptionCategory={true}/>
         })}
     </>

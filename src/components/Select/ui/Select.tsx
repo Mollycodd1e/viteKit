@@ -26,6 +26,8 @@ export const Select = ({
                            isListRight = false,
                            sizeIcon,
                            mode = 'options',
+                           onClickItem,
+                           onCLickSelect
                        }: MultiSelectProps) => {
 
     const fakeCategory = [
@@ -53,7 +55,9 @@ export const Select = ({
     const [isOpen, setIsOpen] = useState(false)
     const containerRef = useRef<HTMLDivElement>(null)
 
-    const handleOptionClick = (option: TOption | TOption[]) => () => {
+    const handleOptionClick = (option: TOption | TOption[]) => {
+        onClickItem && onClickItem(option)
+
         if (!Array.isArray(option)) {
             //если эта опция в списке disable то помянем
             if (disabledOptions.includes(option)) {
@@ -85,7 +89,6 @@ export const Select = ({
                 setSelectedOptions(newSelectedOptions)
                 onChange && onChange(newSelectedOptions)
             }
-
         }
     }
 
@@ -137,6 +140,7 @@ export const Select = ({
                                 {[s.selectedOptionsNotEmpty]: selectedOptions.length > 0},
                                 {[s.selectOptionsDisabled]: disabled}
                             )}
+
                             onClick={() => setIsOpen(!isOpen)}>
                             {selectedOptions.length === 0 ? placeholder : 'Выбрано ' + selectedOptions.length}
                         </div>
@@ -152,13 +156,17 @@ export const Select = ({
                 {isBtn && (
                     <>
                         <button
+
                             className={cx(
                                 s.selectedOptions,
                                 s.selectedOptionsBtn,
                                 {[s.selectOptionsDisabled]: disabled},
                                 additionalClassBtn
                             )}
-                            onClick={() => setIsOpen(!isOpen)}>
+                            onClick={() => {
+                                onCLickSelect && onCLickSelect()
+                                setIsOpen(!isOpen)
+                            }}>
                             {btnName}
                         </button>
                         <NewIcon

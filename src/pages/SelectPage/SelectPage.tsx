@@ -78,6 +78,11 @@ export const SelectPage = () => {
 						selectedValues={select}
 						options={options2}
 						onChange={(e) => handleChangeSelect(e)}
+						onClickItem={(option) => {
+							console.log(option)
+						}}
+						onCLickSelect={() => {
+							console.log('select')}}
 					/>
 				</div>
 			</div>

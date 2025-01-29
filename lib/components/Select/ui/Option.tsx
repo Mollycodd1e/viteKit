@@ -11,7 +11,7 @@ export interface IOption {
     disabledOptions: TOption[]
     selectedOptions: TOption[]
     clickableOptions?: (string | undefined)[]
-    handleOptionClick: (option: TOption) => () => void
+    handleOptionClick: (option: TOption) => void
     sizeIcon?: string
 }
 
@@ -35,7 +35,7 @@ export const Option = ({
                 [s.optionCategory]: isOptionCategory,
                 [s.optionClickable]: (clickableOptions && clickableOptions.includes(`${option.value}`)),
             })}
-        onClick={handleOptionClick(option)}>
+        onClick={() => handleOptionClick(option)}>
         {isOptionCategory && <NewIcon
             size={sizeIcon ?? '20'}
             name={
