@@ -8,11 +8,12 @@ export const Logo = ({
 	variant = 'black',
 	between = false,
 	addClassName,
+	onClick
 }: ILogoProps) => {
 	const cx = classNames.bind(s)
 
 	return (
-		<div className={cx(s.wrapper, { [s.wrapperBetween]: between }, addClassName)}>
+		<div className={cx(s.wrapper, { [s.wrapperBetween]: between }, addClassName)} onClick={() => {onClick && onClick()}}>
 			<img
 				src={logoVariant[variant]}
 				alt='Лого'

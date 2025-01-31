@@ -9,6 +9,7 @@ export interface ILogoProps {
 	variant?: 'black' | 'white' | 'value' | 'dom' | 'office'
 	between?: boolean
 	addClassName?: string
+	onClick?: () => void
 }
 
 export const logoVariant = {
