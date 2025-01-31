@@ -23,7 +23,7 @@ export const TagsPage = () => {
 				width='full'
 			/>
 			<Tag
-				variant='shade'
+				variant='shadeWhite'
 				size='medium'
 				size_m='tiny'
 				size_l='tiny'>

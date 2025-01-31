@@ -10,7 +10,7 @@
 	font-size: 12px;
 	line-height: 16px;
 	min-height: 32px;
-	padding: 8px 16px;
+	padding: 7px 15px;
 	gap: 4px;
 }
 
@@ -18,7 +18,7 @@
 	font-size: 14px;
 	line-height: 20px;
 	min-height: 40px;
-	padding: 10px 16px;
+	padding: 9px 15px;
 	gap: 8px;
 }
 
@@ -115,6 +115,7 @@
 	background-color: #141416;
 	border: none;
 	color: #ffffff;
+	font-weight: 500;
 }
 
 .white {
@@ -128,6 +129,14 @@
 	background-color: #FFFFFF;
 	border: solid 1px #ffffff;
 	color: #141416;
+	font-weight: 500;
+}
+
+.shadeWhite {
+	background-color: #FFFFFFCC;
+	border: 1px solid transparent;
+	backdrop-filter: blur(6px);
+	color: #353945;
 	font-weight: 500;
 }
 
