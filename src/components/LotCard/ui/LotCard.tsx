@@ -42,7 +42,10 @@ export const LotCard = ({
 		sellingPriceBeforeDiscount,
 		subTypeName,
 		endFloor,
+		status
 	} = lot
+
+	const isReserved = status === 2
 
 	const isOffice = direction === 1
 	const areaStr = area + ' ' + 'м²'
@@ -75,7 +78,7 @@ export const LotCard = ({
 	}
 
 	return (
-		<div className={cx(s.root, addClassname, { [s.rootProject]: isProjectCard })}>
+		<div className={cx(s.root, addClassname, { [s.rootProject]: isProjectCard, [s.rootDisable] : isReserved })}>
 			<div className={cx(s.lotImageWrapper, { [s.projectLotImageWrapper]: isProjectCard })}>
 				{imgNode ? (
 					imgNode
@@ -139,12 +142,12 @@ export const LotCard = ({
 				</ul>
 			</div>
 			<div className={cx(s.lotPriceWrapper, { [s.projectLotPriceWrapper]: isProjectCard })}>
-				<div className={s.discountWrapper}>
+				{!isReserved && <div className={s.discountWrapper}>
 					{discount && sellingPrice && sellingPriceBeforeDiscount && (
-						<div className={cx(s.discountPrice, { [s.projectDiscountPrice]: isProjectCard })}>
+						<div className={cx(s.discountPrice, {[s.projectDiscountPrice]: isProjectCard})}>
 							<span>{formatPrice(sellingPriceBeforeDiscount ?? sellingPrice)}</span>
 							<Tag
-								additionalClass={cx(s.discountTag, { [s.projectDiscountTag]: isProjectCard })}
+								additionalClass={cx(s.discountTag, {[s.projectDiscountTag]: isProjectCard})}
 								variant='red'
 								size={'tiny'}>
 								{'-' + Number(discount) + '%'}
@@ -152,8 +155,8 @@ export const LotCard = ({
 						</div>
 					)}
 					<div>{formatPrice(sellingPrice)}</div>
-				</div>
-				{sellingPricePerMeter && (
+				</div>}
+				{(sellingPricePerMeter && !isReserved) && (
 					<div className={cx(s.lotPricePerMetr, s.projectLotPricePerMetr)}>
 						{formatPrice(sellingPricePerMeter, true)}
 					</div>
@@ -163,7 +166,7 @@ export const LotCard = ({
 						as='button'
 						data-testid={'lot_fullscreen'}
 						disabled={btnDisabled}
-						variant='gray'
+						variant='whiteStroke'
 						additionalClass={s.fullscreenBtn}
 						onClick={(e) => {
 							e.preventDefault()
@@ -178,9 +181,12 @@ export const LotCard = ({
 					<Button
 						as='button'
 						size='medium'
-						variant='blue'
+						disabled={isReserved}
+						variant={isReserved ? 'gray' : 'blue'}
 						width='full'
+						additionalClass={s.lotBtn}
 						data-testid={'lot_form'}
+						post={isReserved ? <NewIcon name={'lock'} size={'24'}  color={'#777E90'}/> : undefined}
 						onClick={(e) => {
 							e.preventDefault()
 							handleBtnForm()

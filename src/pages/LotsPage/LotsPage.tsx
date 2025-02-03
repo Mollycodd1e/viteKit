@@ -308,6 +308,10 @@ export const LotsPage = () => {
 	}
 	const [isFetching, setIsFetching] = useState(false)
 
+	const testLot2 = JSON.parse(JSON.stringify(testLot))
+
+	testLot2.status = 2
+
 	return (
 		<div className={s.root}>
 			{/* <ProjectCardSkeleton></ProjectCardSkeleton> */}
@@ -316,6 +320,12 @@ export const LotsPage = () => {
 				{!isFetching && (
 					<LotCard
 						lot={testLot}
+						handleBtnForm={() => {}}
+					/>
+				)}
+				{!isFetching && (
+					<LotCard
+						lot={testLot2}
 						handleBtnForm={() => {}}
 					/>
 				)}

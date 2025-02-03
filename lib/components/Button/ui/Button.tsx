@@ -54,6 +54,7 @@ export const Button = ({
 	if (props.as === 'link') {
 		return (
 			<a
+
 				className={btnClassName}
 				onClick={onCLick}
 				{...props}>
