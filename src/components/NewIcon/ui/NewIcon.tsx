@@ -18,6 +18,7 @@ import Plus from './../assets/Plus.svg'
 import Ruble from './../assets/Ruble.svg'
 import Share from './../assets/Share.svg'
 import Sun from './../assets/Sun.svg'
+import Lock from './../assets/Lock.svg'
 import Star from './../assets/Star.svg'
 import StarFilled from './../assets/StarFilled.svg'
 import Burger from './../assets/Burger.svg'
@@ -66,6 +67,7 @@ export const iconTypes: IconTypes = {
 	arrowRight: () => <ArrowRight />,
 	loader: () => <Loader />,
 	filter: () => <Filter />,
+	lock: () => <Lock />,
 	fullscreen: () => <FullScreen />,
 	twoArrows: () => <TwoArrows />,
 	heart: () => <Heart />,

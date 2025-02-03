@@ -11,6 +11,7 @@ export const ButtonState = ({ children }: IButtonState) => {
 	const [width, setWidth] = useState('auto')
 	const [variants, setVariants] = useState('blue')
 	const [isLoader, setIsLoader] = useState(false)
+	const [isDisable, setIsDisable] = useState(false)
 	const [preIcon, setPreIcon] = useState<string | null>(null)
 	const [postIcon, setPostIcon] = useState<string | null>(null)
 	const [preSize, setPreSize] = useState<string | null>(null)
@@ -32,6 +33,7 @@ export const ButtonState = ({ children }: IButtonState) => {
 				size={postSize ?? '24'}
 			/>
 		) : null,
+		disabled: isDisable
 	})
 	const widthVariants = ['auto', 'full']
 	const variantsList = Object.values(BUTTON_VARIANTS)
@@ -134,6 +136,14 @@ export const ButtonState = ({ children }: IButtonState) => {
 					<input
 						type='checkbox'
 						onChange={() => setIsLoader(!isLoader)}
+					/>
+				</label>
+
+				<label className={s.isLoading}>
+					isDisable
+					<input
+						type='checkbox'
+						onChange={() => setIsDisable(!isLoader)}
 					/>
 				</label>
 			</div>
