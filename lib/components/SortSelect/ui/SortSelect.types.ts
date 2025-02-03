@@ -1,3 +1,5 @@
+import {TOption} from "../../Select/ui/Select.types.ts";
+
 export interface Option {
 	value: string | number
 	label: string
@@ -14,4 +16,7 @@ export interface SortSelectProps {
 	additionalClass?: string
 	mini?: boolean
 	openOnTop?: boolean
+
+	onClickItem?: (option: TOption | TOption[]) => void
+	onCLickSelect?: () => void
 }
