@@ -39,7 +39,6 @@ export const LotCard = ({
 		direction,
 		floorPlanImg,
 		discount,
-        showPriceFlg,
 		sellingPriceBeforeDiscount,
 		subTypeName,
 		endFloor,
@@ -148,7 +147,7 @@ export const LotCard = ({
 				</ul>
 			</div>
 			<div className={cx(s.lotPriceWrapper, { [s.projectLotPriceWrapper]: isProjectCard })}>
-				{!isReserved && showPriceFlg && (
+				{!isReserved && (
 					<div className={s.discountWrapper}>
 						{discount && sellingPrice && sellingPriceBeforeDiscount && (
 							<div className={cx(s.discountPrice, { [s.projectDiscountPrice]: isProjectCard })}>
@@ -166,7 +165,7 @@ export const LotCard = ({
 						<div>{formatPrice(sellingPrice, false, direction)}</div>
 					</div>
 				)}
-				{sellingPricePerMeter && !isReserved && showPriceFlg && (
+				{sellingPricePerMeter && !isReserved && (
 					<div className={cx(s.lotPricePerMetr, s.projectLotPricePerMetr)}>
 						{formatPrice(sellingPricePerMeter, true, direction)}
 					</div>
