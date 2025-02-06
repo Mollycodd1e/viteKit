@@ -229,6 +229,8 @@ export interface ILot {
 	isDecoration?: boolean | null
 	/** С мокрой точкой */
 	isWaterPipes?: boolean | null
+	/** id проекта */
+	projectId?: number | null
 	/** Данные всего проекта */
 	project?: IProject | null
 	/** Забронировано или нет????? */
