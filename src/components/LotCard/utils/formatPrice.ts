@@ -4,6 +4,7 @@ export const formatPrice = (
 	direction?: number | null
 ) => {
 	if (!price && direction === 2) return ''
+	if (!price) 'Цена по запросу'
 
 	const symbol = perMetr ? ' ₽/м²' : ' ₽'
 
@@ -11,3 +12,4 @@ export const formatPrice = (
 
 	return res
 }
+
