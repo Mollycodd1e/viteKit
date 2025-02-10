@@ -12,6 +12,8 @@ interface IFilterWithSave {
 	disabledOptions?: TOption[]
 	selectedValues?: TOption[]
 	tabs?: { value: string; state: boolean }[]
+	selectedTabs?: { value: string; state: boolean }[]
+	setSelectedTabs?: React.Dispatch<React.SetStateAction<{ value: string; state: boolean }[]>>
 	onChange?: (selectedOptions: TOption[]) => unknown
 }
 
@@ -21,10 +23,10 @@ export const FilterWithSave = ({
 	selectOptions = [],
 	onChange,
 	selectedValues = [],
+	setSelectedTabs,
+	selectedTabs,
 }: IFilterWithSave) => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-
-	const [selectedTabs, setSelectedTabs] = useState<{ value: string; state: boolean }[]>(tabs)
 
 	const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
 
@@ -40,7 +42,7 @@ export const FilterWithSave = ({
 	}
 
 	const handleResetClick = () => {
-		setSelectedTabs(tabs)
+		setSelectedTabs?.(tabs)
 		setSelectedOptions([])
 	}
 
@@ -52,6 +54,7 @@ export const FilterWithSave = ({
 	const handleSaveClick = () => {
 		if (onChange) {
 		}
+		setIsModalOpen(false)
 	}
 
 	return (
@@ -98,12 +101,12 @@ export const FilterWithSave = ({
 										mini
 										value={value}
 										onClick={() => {}}
-										checked={selectedTabs.find((e) => e.value === value)?.state ?? false}
-										onChange={() =>
-											setSelectedTabs((prev) => {
-												return prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
-											})
-										}
+										checked={selectedTabs?.find((e) => e.value === value)?.state ?? false}
+										onChange={() => {
+											setSelectedTabs?.((prev: { value: string; state: boolean }[]) =>
+												prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
+											)
+										}}
 										index={i}
 										addItemClassName={s.tabSwitcher}>
 										{value}
