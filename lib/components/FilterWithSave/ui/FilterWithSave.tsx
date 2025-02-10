@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { NewIcon } from '../NewIcon'
+import { NewIcon } from '../../NewIcon'
 import s from './s.module.scss'
-import { Modal } from '../Modal'
-import { TabSwitcher } from '../TabSwitcher'
-import { Option } from '../Select/ui/Option'
-import { TOption } from '../Select/ui/Select.types'
-import { Button } from '../Button'
+import { Modal } from '../../Modal'
+import { TabSwitcher } from '../../TabSwitcher'
+import { Option } from '../../Select/ui/Option'
+import { TOption } from '../../Select/ui/Select.types'
+import { Button } from '../../Button'
 
 interface IFilterWithSave {
 	selectOptions?: TOption[]

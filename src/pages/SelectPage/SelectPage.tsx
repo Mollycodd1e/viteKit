@@ -3,7 +3,7 @@ import { Select, SortSelect } from '../../main'
 import s from './SelectPage.module.scss'
 import { SummarySelect } from '../../components/SummarySelect'
 import { TOption } from '../../components/Select/ui/Select.types.ts'
-import { FilterWithSave } from '../../components/FilterWIthSave/FilterWithSave.tsx'
+import { FilterWithSave } from '../../components/FilterWithSave/ui/FilterWithSave.tsx'
 
 export const SelectPage = () => {
 	const options: TOption[] = [
