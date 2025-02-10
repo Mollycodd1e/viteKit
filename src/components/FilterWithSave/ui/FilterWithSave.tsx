@@ -27,7 +27,7 @@ export const FilterWithSave = ({
 	const [selectedTabs, setSelectedTabs] = useState<{ value: string; state: boolean }[]>(tabs)
 
 	const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
-	console.log(onChange)
+
 	const handleOptionClick = (option: TOption) => {
 		if (disabledOptions.some((disabled) => disabled.value === option.value)) {
 			return
@@ -39,11 +39,28 @@ export const FilterWithSave = ({
 		setSelectedOptions(newSelectedOptions)
 	}
 
+	const handleResetClick = () => {
+		setSelectedTabs(tabs)
+		setSelectedOptions([])
+	}
+
+	const handleCloseModal = () => {
+		handleResetClick()
+		setIsModalOpen(false)
+	}
+
+	const handleSaveClick = () => {
+		if (onChange) {
+		}
+	}
+
 	return (
 		<>
 			<div
 				className={s.root}
-				onClick={() => setIsModalOpen((prev) => !prev)}>
+				onClick={() => {
+					setIsModalOpen((prev) => !prev)
+				}}>
 				<NewIcon
 					name={'filter'}
 					size='16'
@@ -57,7 +74,7 @@ export const FilterWithSave = ({
 				additionalClass={s.filterWithSaveModal}>
 				<div
 					className={s.closeBtn}
-					onClick={() => setIsModalOpen(false)}>
+					onClick={handleCloseModal}>
 					<NewIcon
 						name={'close'}
 						size='24'
@@ -114,16 +131,13 @@ export const FilterWithSave = ({
 						as='button'
 						variant='gray'
 						additionalClass={s.resetBtn}
-						onClick={() => {
-							setSelectedTabs(tabs)
-							setSelectedOptions([])
-						}}>
+						onClick={handleResetClick}>
 						Сбросить
 					</Button>
 					<Button
 						as='button'
 						additionalClass={s.saveBtn}
-						onClick={() => null}>
+						onClick={handleSaveClick}>
 						Сохранить
 					</Button>
 				</div>
