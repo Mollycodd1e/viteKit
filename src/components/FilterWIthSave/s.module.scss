@@ -1,0 +1,70 @@
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid #E6E8EC;
+}
+
+.filterWithSaveModal {
+	top: -64px;
+	align-items: flex-end;
+}
+
+.modalAddBody {
+	position: relative;
+	width: 100%;
+	border-top-left-radius: 24px;
+	border-top-right-radius: 24px;
+	padding: 0 0 24px 0;
+	background: #ffffff;
+}
+
+.closeBtn {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+}
+
+.modalTitle {
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+	padding: 24px;
+	color: #000000;
+	border-bottom: 1px solid #E6E8EC;
+}
+
+.tabSWitcherWrapper {
+	padding: 24px;
+	border-bottom: 1px solid #E6E8EC;
+}
+
+.tabs {
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.selectWrapper {
+	padding: 24px;
+}
+
+.filterOption {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 500;
+	color: #141416;
+}
+
+.btnWrapper {
+	display: flex;
+	gap: 9px;
+	padding: 0 24px;
+}
+
+.resetBtn,
+.saveBtn {
+	flex: 1;
+}

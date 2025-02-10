@@ -1,8 +1,9 @@
-import {useState} from 'react'
-import {Select, SortSelect} from '../../main'
+import { useState } from 'react'
+import { Select, SortSelect } from '../../main'
 import s from './SelectPage.module.scss'
-import {SummarySelect} from '../../components/SummarySelect'
-import {TOption} from "../../components/Select/ui/Select.types.ts";
+import { SummarySelect } from '../../components/SummarySelect'
+import { TOption } from '../../components/Select/ui/Select.types.ts'
+import { FilterWithSave } from '../../components/FilterWIthSave/FilterWithSave.tsx'
 
 export const SelectPage = () => {
 	const options: TOption[] = [
@@ -37,10 +38,14 @@ export const SelectPage = () => {
 	return (
 		<div className={s.root}>
 			<div>
+				<div className={s.filterWithSave}>
+					<h2> Фильтрация с сохранением</h2>
+					<FilterWithSave></FilterWithSave>
+				</div>
 				<h2>Сорт селект</h2>
 				<div className={s.sort}>
 					<SortSelect
-					mini
+						mini
 						selectedOption={sort}
 						options={options}
 						onChange={(e) => handleChangeSort(e as TOption)}
@@ -82,7 +87,8 @@ export const SelectPage = () => {
 							console.log(option)
 						}}
 						onCLickSelect={() => {
-							console.log('select')}}
+							console.log('select')
+						}}
 					/>
 				</div>
 			</div>

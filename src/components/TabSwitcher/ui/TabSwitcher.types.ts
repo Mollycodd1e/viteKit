@@ -14,6 +14,7 @@ export interface ITabSwitcherItem extends React.InputHTMLAttributes<HTMLInputEle
     itemsLength: number
     width?: string
     width_m?: string
+    mini?: boolean
     width_l?: string
     children?: ReactNode
     isLongOn?: boolean
