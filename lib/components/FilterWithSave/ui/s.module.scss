@@ -54,10 +54,13 @@
 	color: #141416;
 }
 
+.switcherScroll {
+	overflow-x: scroll;
+}
+
 .tabs {
 	flex-wrap: wrap;
 	gap: 4px;
-	overflow-x: scroll;
 }
 
 .selectWrapper {

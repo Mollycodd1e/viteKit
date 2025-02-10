@@ -67,32 +67,34 @@ export const FilterWithSave = ({
 				<div className={s.modalTitle}>Фильтры</div>
 				<div className={s.tabSWitcherWrapper}>
 					<div className={s.switcherTitle}>Готовность</div>
-					<TabSwitcher
-						variant={'grayRow'}
-						addClassName={s.tabs}
-						isApart={true}>
-						{tabs?.map((m, i) => {
-							const value = m.value
-							return (
-								<TabSwitcher.Item
-									itemsLength={tabs?.length}
-									key={i}
-									mini
-									value={value}
-									onClick={() => {}}
-									checked={selectedTabs.find((e) => e.value === value)?.state ?? false}
-									onChange={() =>
-										setSelectedTabs((prev) => {
-											return prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
-										})
-									}
-									index={i}
-									addItemClassName={s.tabSwitcher}>
-									{value}
-								</TabSwitcher.Item>
-							)
-						})}
-					</TabSwitcher>
+					<div className={s.switcherScroll}>
+						<TabSwitcher
+							variant={'grayRow'}
+							addClassName={s.tabs}
+							isApart={true}>
+							{tabs?.map((m, i) => {
+								const value = m.value
+								return (
+									<TabSwitcher.Item
+										itemsLength={tabs?.length}
+										key={i}
+										mini
+										value={value}
+										onClick={() => {}}
+										checked={selectedTabs.find((e) => e.value === value)?.state ?? false}
+										onChange={() =>
+											setSelectedTabs((prev) => {
+												return prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
+											})
+										}
+										index={i}
+										addItemClassName={s.tabSwitcher}>
+										{value}
+									</TabSwitcher.Item>
+								)
+							})}
+						</TabSwitcher>
+					</div>
 				</div>
 				<div className={s.selectWrapper}>
 					{selectOptions?.map((option, i) => (
