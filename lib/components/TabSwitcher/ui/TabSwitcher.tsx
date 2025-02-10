@@ -69,7 +69,7 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 					),
 					addItemClassName
 				)}>
-				<Text className={cx(s.text, addTextClass)}>{children}</Text>
+				<Text className={cx(s.text, {[s.textMini]: mini}, addTextClass)}>{children}</Text>
 			</div>
 		</label>
 	)

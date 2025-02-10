@@ -33,6 +33,12 @@ $roundRadius: 24px;
   font-family: inherit;
 }
 
+.textMini {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
 .rootCol {
   flex-wrap: wrap;
 
@@ -162,9 +168,6 @@ $roundRadius: 24px;
     justify-content: center;
 
     &.mini {
-      font-size: 12px;
-      line-height: 16px;
-      font-weight: 500;
       height: 32px;
       padding-left: 12px;
       padding-right: 12px;
