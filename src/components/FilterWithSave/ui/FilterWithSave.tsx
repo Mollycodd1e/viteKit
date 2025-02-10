@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState } from 'react'
 import { NewIcon } from '../../NewIcon'
 import s from './s.module.scss'
 import { Modal } from '../../Modal'
@@ -49,6 +49,10 @@ export const FilterWithSave = ({
 	const handleClearClick = () => {
 		setLocalSelectedTabs([])
 		setSelectedOptions([])
+		if (onChange) {
+			onChange([])
+			setSelectedTabs?.([])
+		}
 	}
 
 	const handleResetClick = () => {
