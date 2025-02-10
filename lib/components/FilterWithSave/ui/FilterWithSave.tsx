@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import { NewIcon } from '../../NewIcon'
 import s from './s.module.scss'
 import { Modal } from '../../Modal'
@@ -26,10 +26,14 @@ export const FilterWithSave = ({
 	setSelectedTabs,
 	selectedTabs = [],
 }: IFilterWithSave) => {
+	// Сохраняем начальные значения при рендере
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+	const [initialSelectedTabs] = useState<{ value: string; state: boolean }[]>(selectedTabs)
+	const [initialSelectedOptions] = useState<TOption[]>(selectedValues)
+
 	const [localSelectedTabs, setLocalSelectedTabs] =
-		useState<{ value: string; state: boolean }[]>(selectedTabs)
-	const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
+		useState<{ value: string; state: boolean }[]>(initialSelectedTabs)
+	const [selectedOptions, setSelectedOptions] = useState<TOption[]>(initialSelectedOptions)
 
 	const handleOptionClick = (option: TOption) => {
 		if (disabledOptions.some((disabled) => disabled.value === option.value)) {
@@ -42,9 +46,14 @@ export const FilterWithSave = ({
 		setSelectedOptions(newSelectedOptions)
 	}
 
-	const handleResetClick = () => {
-		setLocalSelectedTabs(selectedTabs)
+	const handleClearClick = () => {
+		setLocalSelectedTabs([])
 		setSelectedOptions([])
+	}
+
+	const handleResetClick = () => {
+		setSelectedOptions(initialSelectedOptions)
+		setLocalSelectedTabs(initialSelectedTabs)
 	}
 
 	const handleCloseModal = () => {
@@ -137,7 +146,7 @@ export const FilterWithSave = ({
 						as='button'
 						variant='gray'
 						additionalClass={s.resetBtn}
-						onClick={handleResetClick}>
+						onClick={handleClearClick}>
 						Сбросить
 					</Button>
 					<Button
