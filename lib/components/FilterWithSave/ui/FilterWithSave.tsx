@@ -26,7 +26,6 @@ export const FilterWithSave = ({
 	setSelectedTabs,
 	selectedTabs = [],
 }: IFilterWithSave) => {
-	// Сохраняем начальные значения при рендере
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 	const [initialSelectedTabs] = useState<{ value: string; state: boolean }[]>(selectedTabs)
 	const [initialSelectedOptions] = useState<TOption[]>(selectedValues)
@@ -51,7 +50,7 @@ export const FilterWithSave = ({
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
-			setSelectedTabs?.([])
+			setSelectedTabs?.(initialSelectedTabs)
 		}
 	}
 
