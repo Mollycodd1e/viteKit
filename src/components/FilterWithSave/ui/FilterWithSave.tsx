@@ -66,6 +66,7 @@ export const FilterWithSave = ({
 
 				<div className={s.modalTitle}>Фильтры</div>
 				<div className={s.tabSWitcherWrapper}>
+					<div className={s.switcherTitle}>Готовность</div>
 					<TabSwitcher
 						variant={'grayRow'}
 						addClassName={s.tabs}
