@@ -24,10 +24,11 @@ export const FilterWithSave = ({
 	onChange,
 	selectedValues = [],
 	setSelectedTabs,
-	selectedTabs,
+	selectedTabs = [],
 }: IFilterWithSave) => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-
+	const [localSelectedTabs, setLocalSelectedTabs] =
+		useState<{ value: string; state: boolean }[]>(selectedTabs)
 	const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
 
 	const handleOptionClick = (option: TOption) => {
@@ -42,7 +43,7 @@ export const FilterWithSave = ({
 	}
 
 	const handleResetClick = () => {
-		setSelectedTabs?.(tabs)
+		setLocalSelectedTabs(selectedTabs)
 		setSelectedOptions([])
 	}
 
@@ -53,6 +54,8 @@ export const FilterWithSave = ({
 
 	const handleSaveClick = () => {
 		if (onChange) {
+			setSelectedTabs?.(localSelectedTabs)
+			onChange(selectedOptions)
 		}
 		setIsModalOpen(false)
 	}
@@ -101,9 +104,9 @@ export const FilterWithSave = ({
 										mini
 										value={value}
 										onClick={() => {}}
-										checked={selectedTabs?.find((e) => e.value === value)?.state ?? false}
+										checked={localSelectedTabs?.find((e) => e.value === value)?.state ?? false}
 										onChange={() => {
-											setSelectedTabs?.((prev: { value: string; state: boolean }[]) =>
+											setLocalSelectedTabs?.((prev: { value: string; state: boolean }[]) =>
 												prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
 											)
 										}}
