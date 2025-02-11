@@ -98,6 +98,7 @@ export const FilterWithSave = ({
 				}
 				return prevTabs
 			})
+			setSelectedOptions(selectedValues)
 		}
 	}, [isModalOpen, selectedTabs])
 
