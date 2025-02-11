@@ -109,6 +109,11 @@ export const FilterWithSave = ({
 			handleCloseModal()
 		}
 	}
+	//@ts-ignore
+	const gg = (e) => {
+		e.stopPropagation()
+		handleOptionClick(e)
+	}
 
 	useEffect(() => {
 		console.log('Добавляю обработчик клика на document')
@@ -174,7 +179,7 @@ export const FilterWithSave = ({
 						clickableOptions={[]}
 						selectedOptions={selectedOptions}
 						option={option}
-						handleOptionClick={handleOptionClick}
+						handleOptionClick={gg}
 					/>
 				))}
 			</div>
