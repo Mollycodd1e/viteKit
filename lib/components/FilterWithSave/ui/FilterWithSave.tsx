@@ -27,7 +27,8 @@ export const FilterWithSave = ({
 	selectedTabs = [],
 }: IFilterWithSave) => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-	const [initialSelectedTabs] = useState<{ value: string; state: boolean }[]>(selectedTabs)
+	const [initialSelectedTabs, setInitialSelectedTabs] =
+		useState<{ value: string; state: boolean }[]>(selectedTabs)
 	const [initialSelectedOptions] = useState<TOption[]>(selectedValues)
 
 	const [localSelectedTabs, setLocalSelectedTabs] =
@@ -46,7 +47,7 @@ export const FilterWithSave = ({
 	}
 
 	const handleClearClick = () => {
-		setLocalSelectedTabs(tabs)
+		setInitialSelectedTabs(tabs)
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
