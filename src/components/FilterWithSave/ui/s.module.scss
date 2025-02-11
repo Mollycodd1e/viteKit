@@ -147,3 +147,15 @@
 		overflow-x: unset;
 	}
 }
+
+@media(min-width: 1440px) {
+	.root {
+		width: 109px;
+		height: 40px;
+	}
+
+	.btnName {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
