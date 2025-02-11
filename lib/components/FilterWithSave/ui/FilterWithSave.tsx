@@ -106,7 +106,7 @@ export const FilterWithSave = ({
 			!containerRef.current.contains(target) &&
 			event.target !== containerRef.current
 		) {
-			setIsModalOpen(false)
+			// setIsModalOpen(false)
 		}
 	}
 
