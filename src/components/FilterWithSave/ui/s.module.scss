@@ -120,13 +120,15 @@
 	.desktopWrapperOpen {
 		display: block;
 		position: absolute;
-		top: 8px;
+		top: 40px;
 		right: 0;
 		width: 375px;
 		min-height: 420px;
 		border-radius: 24px;
 		background: #FFFFFF;
 		z-index: 1;
+
+		box-shadow: 0px 5px 12px 0px #0000001F, 0px 21px 21px 0px #0000001A, 0px 48px 29px 0px #0000000F, 0px 85px 34px 0px #00000005, 0px 132px 37px 0px #00000000;
 	}
 
 	.modalTitle {
