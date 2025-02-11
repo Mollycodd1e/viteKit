@@ -122,7 +122,6 @@ export const FilterWithSave = ({
 			//@ts-ignore
 			console.log(event?.target?.closest('#id'))
 			if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-
 				handleCloseModal()
 			}
 		}
@@ -210,6 +209,7 @@ export const FilterWithSave = ({
 	return (
 		<>
 			<div
+				ref={containerRef}
 				className={s.root}
 				id='modal-container'
 				onClick={(e) => {
@@ -228,7 +228,6 @@ export const FilterWithSave = ({
 				/>
 				{!isMobile && (
 					<div
-						ref={containerRef}
 						className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}
 						onClick={(e) => e.stopPropagation()}>
 						<ModalBody />
