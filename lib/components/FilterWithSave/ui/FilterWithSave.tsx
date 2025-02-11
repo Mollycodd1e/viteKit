@@ -94,10 +94,9 @@ export const FilterWithSave = ({
 			setLocalSelectedTabs(selectedTabs)
 		}
 	}, [isModalOpen])
-
 	useEffect(() => {
-		
-	},[selectedTabs])
+		setLocalSelectedTabs(selectedTabs)
+	}, [selectedTabs])
 	const handleDocumentClick = (event: MouseEvent) => {
 		if (
 			isModalOpen &&
@@ -160,9 +159,7 @@ export const FilterWithSave = ({
 					</TabSwitcher>
 				</div>
 			</div>
-			<div
-				className={s.selectWrapper}
-				>
+			<div className={s.selectWrapper}>
 				{selectOptions?.map((option, i) => (
 					<Option
 						key={i}
