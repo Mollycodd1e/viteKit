@@ -119,12 +119,8 @@ export const FilterWithSave = ({
 	useEffect(() => {
 		//отслеживает клик и если он вне селекта то закрывает его
 		const handleDocumentClick = (event: MouseEvent) => {
-			const target = event.target as HTMLElement
 
 			if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-				if (target.closest('svg')) {
-					return
-				}
 
 				handleCloseModal()
 			}
