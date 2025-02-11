@@ -118,11 +118,9 @@ export const FilterWithSave = ({
 		}
 
 		if (isModalOpen) {
-			// Добавляем обработчик, только если модалка открыта
-			document.addEventListener('click', handleDocumentClick)
+			document.addEventListener('click', handleDocumentClick, { capture: true })
 		} else {
-			// Убираем обработчик, если модалка закрыта
-			document.removeEventListener('click', handleDocumentClick)
+			document.removeEventListener('click', handleDocumentClick, { capture: true })
 		}
 
 		return () => {
