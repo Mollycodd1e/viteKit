@@ -208,7 +208,8 @@ export const FilterWithSave = ({
 				/>
 				<div
 					ref={containerRef}
-					className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
+					className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}
+					onClick={(e) => e.stopPropagation()}>
 					<ModalBody />
 				</div>
 			</div>
