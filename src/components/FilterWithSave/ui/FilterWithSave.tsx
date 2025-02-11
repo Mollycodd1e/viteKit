@@ -98,16 +98,12 @@ export const FilterWithSave = ({
 	const handleDocumentClick = (event: MouseEvent) => {
 		if (!isModalOpen || isMobile) return
 
-		const target = event.target as Node
+		const target = event.target as HTMLElement
 
 		console.log('Клик по:', target)
-		console.log('Внутри контейнера?', containerRef.current?.contains(target))
+		console.log('Внутри модалки?', target.closest('.modal-content')) // заменяем contains
 
-		if (
-			containerRef.current &&
-			!containerRef.current.contains(target) &&
-			event.target !== containerRef.current
-		) {
+		if (!target.closest('.modal-content')) {
 			console.log('Закрываем модалку')
 			handleCloseModal()
 		}
