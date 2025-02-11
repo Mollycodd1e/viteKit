@@ -78,7 +78,7 @@ export const FilterWithSave = ({
 
 	const handleCloseModal = () => {
 		handleResetClick()
-		setIsModalOpen(false)
+		isMobile && setIsModalOpen(false)
 	}
 
 	const handleSaveClick = () => {
@@ -100,7 +100,6 @@ export const FilterWithSave = ({
 
 		const target = event.target as Node
 
-		// Проверяем, что клик был ВНЕ containerRef
 		if (containerRef.current && !containerRef.current.contains(target)) {
 			handleCloseModal()
 		}
