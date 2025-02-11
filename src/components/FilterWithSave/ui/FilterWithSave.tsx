@@ -100,29 +100,41 @@ export const FilterWithSave = ({
 		setLocalSelectedTabs(selectedTabs)
 	}, [selectedTabs])
 
-	const handleDocumentClick = (event: MouseEvent) => {
-		if (!isModalOpen || isMobile) return
+	// const handleDocumentClick = (event: MouseEvent) => {
+	// 	if (!isModalOpen || isMobile) return
 
-		const target = event.target as HTMLElement
+	// 	const target = event.target as HTMLElement
 
-		// Логируем сам target и его closest
-		console.log('Target:', target)
-		console.log('родитель ', target.parentElement)
-		console.log('Closest to modal-container:', target.closest('#modal-container'))
+	// 	// Логируем сам target и его closest
+	// 	console.log('Target:', target)
+	// 	console.log('родитель ', target.parentElement)
+	// 	console.log('Closest to modal-container:', target.closest('#modal-container'))
 
-		if (!target.closest('#modal-container')) {
-			console.log('Закрываем модалку')
-			handleCloseModal()
-		}
-	}
+	// 	if (!target.closest('#modal-container')) {
+	// 		console.log('Закрываем модалку')
+	// 		handleCloseModal()
+	// 	}
+	// }
 
 	useEffect(() => {
-		document.addEventListener('click', handleDocumentClick)
+		//отслеживает клик и если он вне селекта то закрывает его
+		const handleDocumentClick = (event: MouseEvent) => {
+			const target = event.target as HTMLElement
 
+			if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+				if (target.closest('svg')) {
+					return
+				}
+
+				handleCloseModal()
+			}
+		}
+
+		document.addEventListener('click', handleDocumentClick)
 		return () => {
 			document.removeEventListener('click', handleDocumentClick)
 		}
-	}, [isModalOpen])
+	}, [])
 
 	const ModalBody = () => (
 		<>
