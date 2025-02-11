@@ -93,7 +93,6 @@ export const FilterWithSave = ({
 	useEffect(() => {
 		if (!isModalOpen) {
 			setLocalSelectedTabs((prevTabs) => {
-				// Only update if different to prevent unnecessary updates
 				if (JSON.stringify(prevTabs) !== JSON.stringify(selectedTabs)) {
 					return selectedTabs
 				}
@@ -106,14 +105,15 @@ export const FilterWithSave = ({
 		const handleDocumentClick = (event: MouseEvent) => {
 			event.stopPropagation()
 			event.stopImmediatePropagation()
-			console.log('gdfgdfgdfg')
-			if (containerRef.current) console.log(containerRef.current.contains(event.target as Node))
-			// Если клик внутри модалки — не закрываем
-			if (containerRef.current && containerRef.current.contains(event.target as Node)) {
+
+			if (
+				containerRef.current &&
+				containerRef.current.contains(event.target as Node) &&
+				event.target !== containerRef.current
+			) {
 				return
 			}
 
-			// Закрываем модалку, если клик был вне
 			handleCloseModal()
 		}
 
@@ -124,7 +124,7 @@ export const FilterWithSave = ({
 		}
 
 		return () => {
-			document.removeEventListener('click', handleDocumentClick) // Очистка после выхода
+			document.removeEventListener('click', handleDocumentClick, { capture: true })
 		}
 	}, [isModalOpen])
 
