@@ -95,6 +95,9 @@ export const FilterWithSave = ({
 		}
 	}, [isModalOpen])
 
+	useEffect(() => {
+		
+	},[selectedTabs])
 	const handleDocumentClick = (event: MouseEvent) => {
 		if (
 			isModalOpen &&
