@@ -102,6 +102,7 @@ export const FilterWithSave = ({
 
 	useEffect(() => {
 		const handleDocumentClick = (event: MouseEvent) => {
+			if (containerRef.current) console.log(containerRef.current.contains(event.target as Node))
 			// Если клик внутри модалки — не закрываем
 			if (containerRef.current && containerRef.current.contains(event.target as Node)) {
 				return
