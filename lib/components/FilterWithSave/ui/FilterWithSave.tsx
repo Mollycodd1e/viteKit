@@ -120,6 +120,8 @@ export const FilterWithSave = ({
 		//отслеживает клик и если он вне селекта то закрывает его
 		const handleDocumentClick = (event: MouseEvent) => {
 			//@ts-ignore
+			console.log(event.target.closest('div'))
+			//@ts-ignore
 			console.log(event?.target?.closest('#id'))
 			if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
 				handleCloseModal()
