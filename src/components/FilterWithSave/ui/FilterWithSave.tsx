@@ -92,17 +92,19 @@ export const FilterWithSave = ({
 
 	useEffect(() => {
 		if (!isModalOpen) {
-			setLocalSelectedTabs(selectedTabs)
+			setLocalSelectedTabs((prevTabs) => {
+				// Only update if different to prevent unnecessary updates
+				if (JSON.stringify(prevTabs) !== JSON.stringify(selectedTabs)) {
+					return selectedTabs
+				}
+				return prevTabs
+			})
 		}
-	}, [isModalOpen])
-
-	useEffect(() => {
-		setLocalSelectedTabs(selectedTabs)
-	}, [selectedTabs])
+	}, [isModalOpen, selectedTabs])
 
 	useEffect(() => {
 		const handleDocumentClick = (event: MouseEvent) => {
-			event.stopImmediatePropagation()
+			console.log('gdfgdfgdfg')
 			if (containerRef.current) console.log(containerRef.current.contains(event.target as Node))
 			// Если клик внутри модалки — не закрываем
 			if (containerRef.current && containerRef.current.contains(event.target as Node)) {
@@ -130,8 +132,7 @@ export const FilterWithSave = ({
 		<>
 			<div
 				className={s.closeBtn}
-				onClick={(e) => {
-					e.stopPropagation()
+				onClick={() => {
 					handleCloseModal()
 				}}>
 				<NewIcon
@@ -209,8 +210,7 @@ export const FilterWithSave = ({
 				ref={containerRef}
 				className={s.root}
 				id='modal-container'
-				onClick={(e) => {
-					e.stopPropagation()
+				onClick={() => {
 					onCLickSelect && onCLickSelect()
 					if (isMobile) {
 						setIsModalOpen((prev) => !prev)
@@ -224,9 +224,7 @@ export const FilterWithSave = ({
 					size='16'
 				/>
 				{!isMobile && (
-					<div
-						className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}
-						onClick={(e) => e.stopPropagation()}>
+					<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
 						<ModalBody />
 					</div>
 				)}
