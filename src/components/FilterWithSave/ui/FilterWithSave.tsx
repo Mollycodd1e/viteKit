@@ -95,20 +95,25 @@ export const FilterWithSave = ({
 		}
 	}, [isModalOpen])
 
-	useEffect(() => {
-		const handleDocumentClick = (event: MouseEvent) => {
-			if (!isModalOpen || isMobile) return
+	const handleDocumentClick = (event: MouseEvent) => {
+		if (!isModalOpen || isMobile) return
 
-			const target = event.target as Node
+		const target = event.target as Node
 
-			if (containerRef.current && !containerRef.current.contains(target)) {
-				setIsModalOpen(false)
-			}
+		// Проверяем, что клик был ВНЕ containerRef
+		if (
+			containerRef.current &&
+			!containerRef.current.contains(target) &&
+			event.target !== containerRef.current
+		) {
+			setIsModalOpen(false)
 		}
+	}
 
-		setTimeout(() => {
+	useEffect(() => {
+		if (isModalOpen && !isMobile) {
 			document.addEventListener('click', handleDocumentClick)
-		}, 0) // ⏳ Даем время `ref` обновиться
+		}
 
 		return () => {
 			document.removeEventListener('click', handleDocumentClick)
