@@ -67,7 +67,7 @@ export const FilterWithSave = ({
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
-			setSelectedTabs?.([])
+			setSelectedTabs?.(tabs)
 		}
 	}
 
@@ -159,7 +159,7 @@ export const FilterWithSave = ({
 			</div>
 			<div
 				className={s.selectWrapper}
-				onClick={(e) => e.stopPropagation()}>
+				>
 				{selectOptions?.map((option, i) => (
 					<Option
 						key={i}
