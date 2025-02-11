@@ -38,9 +38,11 @@ export const SelectPage = () => {
 	return (
 		<div className={s.root}>
 			<div>
-				<div className={s.filterWithSave}>
+				<div>
 					<h2> Фильтрация с сохранением</h2>
-					<FilterWithSave></FilterWithSave>
+					<div className={s.filterWithSave}>
+						<FilterWithSave />
+					</div>
 				</div>
 				<h2>Сорт селект</h2>
 				<div className={s.sort}>

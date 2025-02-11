@@ -3,9 +3,17 @@
 	justify-content: flex-end;
 }
 
-.addClass{
+.addClass {
 	width: 40px;
-	&>div>div{
+
+	&>div>div {
 		right: 10px;
+	}
+}
+
+@media(min-width: 1024px) {
+	.filterWithSave {
+		display: flex;
+		justify-content: flex-end;
 	}
 }

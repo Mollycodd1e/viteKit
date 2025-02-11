@@ -6,6 +6,10 @@ import { TabSwitcher } from '../../TabSwitcher'
 import { Option } from '../../Select/ui/Option'
 import { TOption } from '../../Select/ui/Select.types'
 import { Button } from '../../Button'
+import classNames from 'classnames/bind'
+import { useClientWidth } from '../../../main'
+
+const cx = classNames.bind(s)
 
 interface IFilterWithSave {
 	selectOptions?: TOption[]
@@ -17,6 +21,7 @@ interface IFilterWithSave {
 	onChange?: (selectedOptions: TOption[]) => unknown
 	onClickItem?: (option: TOption | TOption[]) => void
 	onCLickSelect?: () => void
+	btnName?: string
 }
 
 export const FilterWithSave = ({
@@ -29,7 +34,9 @@ export const FilterWithSave = ({
 	selectedTabs = [],
 	onClickItem,
 	onCLickSelect,
+	btnName = 'Фильтр',
 }: IFilterWithSave) => {
+	const { isMobile } = useClientWidth()
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 	const [initialSelectedTabs, setInitialSelectedTabs] =
 		useState<{ value: string; state: boolean }[]>(selectedTabs)
@@ -80,10 +87,84 @@ export const FilterWithSave = ({
 	}
 
 	useEffect(() => {
-		if (!isModalOpen) {
+		if (isModalOpen) {
 			setLocalSelectedTabs(selectedTabs)
 		}
-	}, [isModalOpen, selectedTabs])
+	}, [isModalOpen])
+
+	const ModalBody = () => (
+		<>
+			<div
+				className={s.closeBtn}
+				onClick={handleCloseModal}>
+				<NewIcon
+					name={'close'}
+					size='24'
+				/>
+			</div>
+
+			<div className={s.modalTitle}>Фильтры</div>
+			<div className={s.tabSWitcherWrapper}>
+				<div className={s.switcherTitle}>Готовность</div>
+				<div className={s.switcherScroll}>
+					<TabSwitcher
+						variant={'grayRow'}
+						addClassName={s.tabs}
+						isApart={true}>
+						{tabs?.map((m, i) => {
+							const value = m.value
+							return (
+								<TabSwitcher.Item
+									itemsLength={tabs?.length}
+									key={i}
+									mini
+									value={value}
+									onClick={() => {}}
+									checked={localSelectedTabs?.find((e) => e.value === value)?.state ?? false}
+									onChange={() => {
+										setLocalSelectedTabs?.((prev: { value: string; state: boolean }[]) =>
+											prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
+										)
+									}}
+									index={i}
+									addItemClassName={s.tabSwitcher}>
+									{value}
+								</TabSwitcher.Item>
+							)
+						})}
+					</TabSwitcher>
+				</div>
+			</div>
+			<div className={s.selectWrapper}>
+				{selectOptions?.map((option, i) => (
+					<Option
+						key={i}
+						addClassName={s.filterOption}
+						disabledOptions={[]}
+						clickableOptions={[]}
+						selectedOptions={selectedOptions}
+						option={option}
+						handleOptionClick={handleOptionClick}
+					/>
+				))}
+			</div>
+			<div className={s.btnWrapper}>
+				<Button
+					as='button'
+					variant='gray'
+					additionalClass={s.resetBtn}
+					onClick={handleClearClick}>
+					Сбросить
+				</Button>
+				<Button
+					as='button'
+					additionalClass={s.saveBtn}
+					onClick={handleSaveClick}>
+					Сохранить
+				</Button>
+			</div>
+		</>
+	)
 
 	return (
 		<>
@@ -93,87 +174,25 @@ export const FilterWithSave = ({
 					onCLickSelect && onCLickSelect()
 					setIsModalOpen((prev) => !prev)
 				}}>
+				<div className={s.btnName}>{btnName}</div>
 				<NewIcon
 					name={'filter'}
 					size='16'
 				/>
+				<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
+					<ModalBody />
+				</div>
 			</div>
-			<Modal
-				isOpen={isModalOpen}
-				emitIsOpen={setIsModalOpen}
-				isTransparentBack
-				additionalClassModalBody={s.modalAddBody}
-				additionalClass={s.filterWithSaveModal}>
-				<div
-					className={s.closeBtn}
-					onClick={handleCloseModal}>
-					<NewIcon
-						name={'close'}
-						size='24'
-					/>
-				</div>
-
-				<div className={s.modalTitle}>Фильтры</div>
-				<div className={s.tabSWitcherWrapper}>
-					<div className={s.switcherTitle}>Готовность</div>
-					<div className={s.switcherScroll}>
-						<TabSwitcher
-							variant={'grayRow'}
-							addClassName={s.tabs}
-							isApart={true}>
-							{tabs?.map((m, i) => {
-								const value = m.value
-								return (
-									<TabSwitcher.Item
-										itemsLength={tabs?.length}
-										key={i}
-										mini
-										value={value}
-										onClick={() => {}}
-										checked={localSelectedTabs?.find((e) => e.value === value)?.state ?? false}
-										onChange={() => {
-											setLocalSelectedTabs?.((prev: { value: string; state: boolean }[]) =>
-												prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
-											)
-										}}
-										index={i}
-										addItemClassName={s.tabSwitcher}>
-										{value}
-									</TabSwitcher.Item>
-								)
-							})}
-						</TabSwitcher>
-					</div>
-				</div>
-				<div className={s.selectWrapper}>
-					{selectOptions?.map((option, i) => (
-						<Option
-							key={i}
-							addClassName={s.filterOption}
-							disabledOptions={[]}
-							clickableOptions={[]}
-							selectedOptions={selectedOptions}
-							option={option}
-							handleOptionClick={handleOptionClick}
-						/>
-					))}
-				</div>
-				<div className={s.btnWrapper}>
-					<Button
-						as='button'
-						variant='gray'
-						additionalClass={s.resetBtn}
-						onClick={handleClearClick}>
-						Сбросить
-					</Button>
-					<Button
-						as='button'
-						additionalClass={s.saveBtn}
-						onClick={handleSaveClick}>
-						Сохранить
-					</Button>
-				</div>
-			</Modal>
+			{isMobile && (
+				<Modal
+					isOpen={isModalOpen}
+					emitIsOpen={setIsModalOpen}
+					isTransparentBack
+					additionalClassModalBody={s.modalAddBody}
+					additionalClass={s.filterWithSaveModal}>
+					<ModalBody />
+				</Modal>
+			)}
 		</>
 	)
 }

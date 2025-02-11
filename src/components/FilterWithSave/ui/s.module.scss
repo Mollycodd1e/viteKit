@@ -33,6 +33,10 @@
 	right: 24px;
 }
 
+.btnName {
+	display: none;
+}
+
 .modalTitle {
 	font-size: 18px;
 	line-height: 24px;
@@ -86,4 +90,54 @@
 .resetBtn,
 .saveBtn {
 	flex: 1;
+}
+
+.desktopWrapper {
+	display: none;
+}
+
+@media(min-width: 1024px) {
+	.root {
+		position: relative;
+		width: 90px;
+		height: 32px;
+		gap: 8px;
+		border-radius: 48px;
+	}
+
+	.btnName {
+		display: block;
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: 500;
+		color: #141416;
+	}
+
+	.desktopWrapper {
+		display: none;
+	}
+
+	.desktopWrapperOpen {
+		display: block;
+		position: absolute;
+		top: 8px;
+		right: 0;
+		width: 375px;
+		min-height: 420px;
+		border-radius: 24px;
+		background: #FFFFFF;
+		z-index: 1;
+	}
+
+	.modalTitle {
+		display: none;
+	}
+
+	.closeBtn {
+		display: none;
+	}
+
+	.tabSWitcherWrapper {
+		padding: 32px 24px 24px;
+	}
 }
