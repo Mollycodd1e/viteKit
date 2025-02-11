@@ -64,6 +64,7 @@ export const FilterWithSave = ({
 
 	const handleClearClick = () => {
 		setInitialSelectedTabs(tabs)
+		setLocalSelectedTabs([])
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
@@ -94,9 +95,11 @@ export const FilterWithSave = ({
 			setLocalSelectedTabs(selectedTabs)
 		}
 	}, [isModalOpen])
+
 	useEffect(() => {
 		setLocalSelectedTabs(selectedTabs)
 	}, [selectedTabs])
+
 	const handleDocumentClick = (event: MouseEvent) => {
 		if (
 			isModalOpen &&
