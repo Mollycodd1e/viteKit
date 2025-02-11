@@ -209,12 +209,14 @@ export const FilterWithSave = ({
 					name={'filter'}
 					size='16'
 				/>
-				<div
-					ref={containerRef}
-					className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}
-					onClick={(e) => e.stopPropagation()}>
-					<ModalBody />
-				</div>
+				{!isMobile && (
+					<div
+						ref={containerRef}
+						className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}
+						onClick={(e) => e.stopPropagation()}>
+						<ModalBody />
+					</div>
+				)}
 			</div>
 			{isMobile && (
 				<Modal
