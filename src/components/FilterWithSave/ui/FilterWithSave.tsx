@@ -108,8 +108,7 @@ export const FilterWithSave = ({
 
 			if (
 				containerRef.current &&
-				containerRef.current.contains(event.target as Node) &&
-				event.target !== containerRef.current
+				containerRef.current.contains(event.target as Node)
 			) {
 				return
 			}
