@@ -78,7 +78,7 @@ export const FilterWithSave = ({
 
 	const handleCloseModal = () => {
 		handleResetClick()
-		isMobile && setIsModalOpen(false)
+		setIsModalOpen(false)
 	}
 
 	const handleSaveClick = () => {
