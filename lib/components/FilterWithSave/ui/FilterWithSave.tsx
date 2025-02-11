@@ -107,6 +107,7 @@ export const FilterWithSave = ({
 
 		// Логируем сам target и его closest
 		console.log('Target:', target)
+		console.log('родитель ', target.parentElement)
 		console.log('Closest to modal-container:', target.closest('#modal-container'))
 
 		if (!target.closest('#modal-container')) {
