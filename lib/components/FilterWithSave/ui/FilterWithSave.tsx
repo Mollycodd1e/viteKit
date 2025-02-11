@@ -15,6 +15,8 @@ interface IFilterWithSave {
 	selectedTabs?: { value: string; state: boolean }[]
 	setSelectedTabs?: React.Dispatch<React.SetStateAction<{ value: string; state: boolean }[]>>
 	onChange?: (selectedOptions: TOption[]) => unknown
+	onClickItem?: (option: TOption | TOption[]) => void
+	onCLickSelect?: () => void
 }
 
 export const FilterWithSave = ({
@@ -25,6 +27,8 @@ export const FilterWithSave = ({
 	selectedValues = [],
 	setSelectedTabs,
 	selectedTabs = [],
+	onClickItem,
+	onCLickSelect,
 }: IFilterWithSave) => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 	const [initialSelectedTabs, setInitialSelectedTabs] =
@@ -36,6 +40,8 @@ export const FilterWithSave = ({
 	const [selectedOptions, setSelectedOptions] = useState<TOption[]>(initialSelectedOptions)
 
 	const handleOptionClick = (option: TOption) => {
+		onClickItem && onClickItem(option)
+
 		if (disabledOptions.some((disabled) => disabled.value === option.value)) {
 			return
 		}
@@ -84,6 +90,7 @@ export const FilterWithSave = ({
 			<div
 				className={s.root}
 				onClick={() => {
+					onCLickSelect && onCLickSelect()
 					setIsModalOpen((prev) => !prev)
 				}}>
 				<NewIcon
