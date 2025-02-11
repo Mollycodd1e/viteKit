@@ -46,7 +46,7 @@ export const FilterWithSave = ({
 	}
 
 	const handleClearClick = () => {
-		setLocalSelectedTabs([])
+		setLocalSelectedTabs(tabs)
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
@@ -54,7 +54,7 @@ export const FilterWithSave = ({
 		}
 	}
 
-const handleResetClick = () => {
+	const handleResetClick = () => {
 		setSelectedOptions(selectedValues)
 		setLocalSelectedTabs(selectedTabs)
 	}
@@ -77,6 +77,7 @@ const handleResetClick = () => {
 			setLocalSelectedTabs(selectedTabs)
 		}
 	}, [isModalOpen, selectedTabs])
+
 	return (
 		<>
 			<div
