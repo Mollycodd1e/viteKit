@@ -82,12 +82,14 @@ export const FilterWithSave = ({
 		setIsModalOpen(false)
 	}
 
-	const handleSaveClick = () => {
+	const handleSaveClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+		event.stopPropagation() // Теперь это работает, потому что event имеет тип MouseEvent
+
 		if (onChange) {
 			setSelectedTabs?.(localSelectedTabs)
 			onChange(selectedOptions)
 		}
-		setIsModalOpen(false)
+		setIsModalOpen
 	}
 
 	useEffect(() => {
@@ -106,10 +108,7 @@ export const FilterWithSave = ({
 			event.stopPropagation()
 			event.stopImmediatePropagation()
 
-			if (
-				containerRef.current &&
-				containerRef.current.contains(event.target as Node)
-			) {
+			if (containerRef.current && containerRef.current.contains(event.target as Node)) {
 				return
 			}
 
