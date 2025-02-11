@@ -205,8 +205,11 @@ export const FilterWithSave = ({
 				className={s.root}
 				onClick={() => {
 					onCLickSelect && onCLickSelect()
-
-					setIsModalOpen((prev) => !prev)
+					if (isMobile) {
+						setIsModalOpen((prev) => !prev)
+					} else {
+						setIsModalOpen(true)
+					}
 				}}>
 				<div className={s.btnName}>{btnName}</div>
 				<NewIcon
