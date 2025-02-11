@@ -82,7 +82,8 @@ export const FilterWithSave = ({
 		setIsModalOpen(false)
 	}
 
-	const handleSaveClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+	const handleSaveClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+		event.stopPropagation()
 		if (onChange) {
 			setSelectedTabs?.(localSelectedTabs)
 			onChange(selectedOptions)
@@ -98,17 +99,12 @@ export const FilterWithSave = ({
 				}
 				return prevTabs
 			})
-			setSelectedOptions(selectedValues)
 		}
 	}, [isModalOpen, selectedTabs])
 
 	useEffect(() => {
 		const handleDocumentClick = (event: MouseEvent) => {
-			if (
-				containerRef.current &&
-				containerRef.current.contains(event.target as Node) &&
-				event.target !== containerRef.current
-			) {
+			if (containerRef.current && containerRef.current.contains(event.target as Node)) {
 				return
 			}
 
@@ -206,15 +202,11 @@ export const FilterWithSave = ({
 		<>
 			<div
 				ref={containerRef}
-				id='modal-container'
 				className={s.root}
 				onClick={() => {
 					onCLickSelect && onCLickSelect()
-					if (isMobile) {
-						setIsModalOpen((prev) => !prev)
-					} else {
-						setIsModalOpen(true)
-					}
+
+					setIsModalOpen((prev) => !prev)
 				}}>
 				<div className={s.btnName}>{btnName}</div>
 				<NewIcon
