@@ -64,7 +64,7 @@ export const FilterWithSave = ({
 
 	const handleClearClick = () => {
 		setInitialSelectedTabs(tabs)
-		setLocalSelectedTabs([])
+		setLocalSelectedTabs(tabs)
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
