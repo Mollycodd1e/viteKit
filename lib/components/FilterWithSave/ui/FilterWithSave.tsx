@@ -106,7 +106,7 @@ export const FilterWithSave = ({
 			!containerRef.current.contains(target) &&
 			event.target !== containerRef.current
 		) {
-			// setIsModalOpen(false)
+			handleCloseModal()
 		}
 	}
 
@@ -198,6 +198,7 @@ export const FilterWithSave = ({
 		<>
 			<div
 				className={s.root}
+				ref={containerRef}
 				onClick={() => {
 					onCLickSelect && onCLickSelect()
 					if (isMobile) {
@@ -212,7 +213,6 @@ export const FilterWithSave = ({
 					size='16'
 				/>
 				<div
-					ref={containerRef}
 					className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}
 					onClick={(e) => e.stopPropagation()}>
 					<ModalBody />
