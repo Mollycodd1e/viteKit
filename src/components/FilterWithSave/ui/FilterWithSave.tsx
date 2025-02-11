@@ -138,7 +138,10 @@ export const FilterWithSave = ({
 		<>
 			<div
 				className={s.closeBtn}
-				onClick={handleCloseModal}>
+				onClick={(e) => {
+					e.stopPropagation()
+					handleCloseModal()
+				}}>
 				<NewIcon
 					name={'close'}
 					size='24'
