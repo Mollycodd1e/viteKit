@@ -87,7 +87,7 @@ export const FilterWithSave = ({
 			setSelectedTabs?.(localSelectedTabs)
 			onChange(selectedOptions)
 		}
-		setIsModalOpen
+		setIsModalOpen(false)
 	}
 
 	useEffect(() => {
@@ -103,7 +103,11 @@ export const FilterWithSave = ({
 
 	useEffect(() => {
 		const handleDocumentClick = (event: MouseEvent) => {
-			if (containerRef.current && containerRef.current.contains(event.target as Node)) {
+			if (
+				containerRef.current &&
+				containerRef.current.contains(event.target as Node) &&
+				event.target !== containerRef.current
+			) {
 				return
 			}
 
@@ -201,8 +205,8 @@ export const FilterWithSave = ({
 		<>
 			<div
 				ref={containerRef}
-				className={s.root}
 				id='modal-container'
+				className={s.root}
 				onClick={() => {
 					onCLickSelect && onCLickSelect()
 					if (isMobile) {
