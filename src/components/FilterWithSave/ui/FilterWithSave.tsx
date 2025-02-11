@@ -111,11 +111,11 @@ export const FilterWithSave = ({
 	}
 
 	useEffect(() => {
-		if (isModalOpen && !isMobile) {
-			document.addEventListener('click', handleDocumentClick)
-		}
+		console.log('Добавляю обработчик клика на document')
+		document.addEventListener('click', handleDocumentClick)
 
 		return () => {
+			console.log('Удаляю обработчик клика с document')
 			document.removeEventListener('click', handleDocumentClick)
 		}
 	}, [isModalOpen])
