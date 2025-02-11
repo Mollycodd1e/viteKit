@@ -67,7 +67,7 @@ export const FilterWithSave = ({
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
-			setSelectedTabs?.(tabs)
+			setSelectedTabs?.([])
 		}
 	}
 
