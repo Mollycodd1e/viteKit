@@ -96,31 +96,27 @@ export const FilterWithSave = ({
 	}, [isModalOpen])
 
 	const handleDocumentClick = (event: MouseEvent) => {
-		console.log('Клик по:', event.target)
 		if (!isModalOpen || isMobile) return
 
 		const target = event.target as Node
+
+		console.log('Клик по:', target)
+		console.log('Внутри контейнера?', containerRef.current?.contains(target))
+
 		if (
 			containerRef.current &&
 			!containerRef.current.contains(target) &&
 			event.target !== containerRef.current
 		) {
-			console.log('Закрытие модалки')
+			console.log('Закрываем модалку')
 			handleCloseModal()
 		}
 	}
-	//@ts-ignore
-	const gg = (e) => {
-		e.stopPropagation()
-		handleOptionClick(e)
-	}
 
 	useEffect(() => {
-		console.log('Добавляю обработчик клика на document')
 		document.addEventListener('click', handleDocumentClick)
 
 		return () => {
-			console.log('Удаляю обработчик клика с document')
 			document.removeEventListener('click', handleDocumentClick)
 		}
 	}, [isModalOpen])
@@ -179,7 +175,7 @@ export const FilterWithSave = ({
 						clickableOptions={[]}
 						selectedOptions={selectedOptions}
 						option={option}
-						handleOptionClick={gg}
+						handleOptionClick={handleOptionClick}
 					/>
 				))}
 			</div>
