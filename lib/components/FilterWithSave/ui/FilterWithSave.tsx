@@ -163,7 +163,9 @@ export const FilterWithSave = ({
 					</TabSwitcher>
 				</div>
 			</div>
-			<div className={s.selectWrapper}>
+			<div
+				className={s.selectWrapper}
+				onClick={(e) => e.stopPropagation()}>
 				{selectOptions?.map((option, i) => (
 					<Option
 						key={i}
