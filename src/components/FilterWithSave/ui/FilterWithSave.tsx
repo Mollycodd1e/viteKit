@@ -101,13 +101,17 @@ export const FilterWithSave = ({
 	}, [selectedTabs])
 
 	const handleDocumentClick = (event: MouseEvent) => {
-		if (
-			isModalOpen &&
-			!isMobile &&
-			containerRef.current &&
-			!containerRef.current.contains(event.target as Node)
-		) {
-			setIsModalOpen(false)
+		if (!isModalOpen || isMobile) return
+
+		const target = event.target as HTMLElement
+
+		// Логируем сам target и его closest
+		console.log('Target:', target)
+		console.log('Closest to modal-container:', target.closest('#modal-container'))
+
+		if (!target.closest('#modal-container')) {
+			console.log('Закрываем модалку')
+			handleCloseModal()
 		}
 	}
 
