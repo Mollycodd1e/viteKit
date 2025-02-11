@@ -101,9 +101,9 @@ export const FilterWithSave = ({
 		const target = event.target as HTMLElement
 
 		console.log('Клик по:', target)
-		console.log('Внутри модалки?', target.closest('.modal-content')) // заменяем contains
+		console.log('Внутри модалки?', target.closest('#modal-container')) // заменяем contains
 
-		if (!target.closest('.modal-content')) {
+		if (!target.closest('#modal-container')) {
 			console.log('Закрываем модалку')
 			handleCloseModal()
 		}
@@ -197,6 +197,7 @@ export const FilterWithSave = ({
 		<>
 			<div
 				className={s.root}
+				id='modal-container'
 				onClick={(e) => {
 					e.stopPropagation()
 					onCLickSelect && onCLickSelect()
