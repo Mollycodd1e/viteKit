@@ -91,7 +91,7 @@ export const FilterWithSave = ({
 	}
 
 	useEffect(() => {
-		if (isModalOpen) {
+		if (!isModalOpen) {
 			setLocalSelectedTabs(selectedTabs)
 		}
 	}, [isModalOpen])
