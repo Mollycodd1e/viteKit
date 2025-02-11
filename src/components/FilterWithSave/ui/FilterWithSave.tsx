@@ -105,6 +105,8 @@ export const FilterWithSave = ({
 	useEffect(() => {
 		const handleDocumentClick = (event: MouseEvent) => {
 			if (!containerRef.current) return
+			console.log(event.target)
+			console.log(containerRef)
 			if (containerRef.current.contains(event.target as Node)) {
 				if (event.target === containerRef.current) {
 					setIsModalOpen(false)
