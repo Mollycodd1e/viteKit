@@ -104,6 +104,8 @@ export const FilterWithSave = ({
 
 	useEffect(() => {
 		const handleDocumentClick = (event: MouseEvent) => {
+			event.stopPropagation()
+			event.stopImmediatePropagation()
 			console.log('gdfgdfgdfg')
 			if (containerRef.current) console.log(containerRef.current.contains(event.target as Node))
 			// Если клик внутри модалки — не закрываем
