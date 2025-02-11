@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NewIcon } from '../../NewIcon'
 import s from './s.module.scss'
 import { Modal } from '../../Modal'
@@ -38,6 +38,9 @@ export const FilterWithSave = ({
 }: IFilterWithSave) => {
 	const { isMobile } = useClientWidth()
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+
+	const containerRef = useRef<HTMLDivElement | null>(null)
+
 	const [initialSelectedTabs, setInitialSelectedTabs] =
 		useState<{ value: string; state: boolean }[]>(selectedTabs)
 	const [initialSelectedOptions] = useState<TOption[]>(selectedValues)
@@ -89,6 +92,26 @@ export const FilterWithSave = ({
 	useEffect(() => {
 		if (isModalOpen) {
 			setLocalSelectedTabs(selectedTabs)
+		}
+	}, [isModalOpen])
+
+	useEffect(() => {
+		const handleDocumentClick = (event: MouseEvent) => {
+			if (!isModalOpen || isMobile) return
+
+			const target = event.target as Node
+
+			if (containerRef.current && !containerRef.current.contains(target)) {
+				setIsModalOpen(false)
+			}
+		}
+
+		setTimeout(() => {
+			document.addEventListener('click', handleDocumentClick)
+		}, 0) // ⏳ Даем время `ref` обновиться
+
+		return () => {
+			document.removeEventListener('click', handleDocumentClick)
 		}
 	}, [isModalOpen])
 
@@ -172,14 +195,20 @@ export const FilterWithSave = ({
 				className={s.root}
 				onClick={() => {
 					onCLickSelect && onCLickSelect()
-					setIsModalOpen((prev) => !prev)
+					if (isMobile) {
+						setIsModalOpen((prev) => !prev)
+					} else {
+						setIsModalOpen(true)
+					}
 				}}>
 				<div className={s.btnName}>{btnName}</div>
 				<NewIcon
 					name={'filter'}
 					size='16'
 				/>
-				<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
+				<div
+					ref={containerRef}
+					className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
 					<ModalBody />
 				</div>
 			</div>
