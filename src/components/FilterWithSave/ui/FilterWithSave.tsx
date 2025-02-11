@@ -50,13 +50,13 @@ export const FilterWithSave = ({
 		setSelectedOptions([])
 		if (onChange) {
 			onChange([])
-			setSelectedTabs?.(initialSelectedTabs)
+			setSelectedTabs?.(tabs)
 		}
 	}
 
 const handleResetClick = () => {
 		setSelectedOptions(selectedValues)
-		setLocalSelectedTabs(selectedTabs) // Вместо initialSelectedTabs используем актуальные selectedTabs
+		setLocalSelectedTabs(selectedTabs)
 	}
 
 	const handleCloseModal = () => {
@@ -71,10 +71,10 @@ const handleResetClick = () => {
 		}
 		setIsModalOpen(false)
 	}
-	
+
 	useEffect(() => {
 		if (!isModalOpen) {
-			setLocalSelectedTabs(selectedTabs) // При каждом открытии модалки обновляем локальное состояние
+			setLocalSelectedTabs(selectedTabs)
 		}
 	}, [isModalOpen, selectedTabs])
 	return (
