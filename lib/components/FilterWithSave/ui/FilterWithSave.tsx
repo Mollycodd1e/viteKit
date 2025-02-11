@@ -101,11 +101,7 @@ export const FilterWithSave = ({
 		const target = event.target as Node
 
 		// Проверяем, что клик был ВНЕ containerRef
-		if (
-			containerRef.current &&
-			!containerRef.current.contains(target) &&
-			event.target !== containerRef.current
-		) {
+		if (containerRef.current && !containerRef.current.contains(target)) {
 			handleCloseModal()
 		}
 	}
