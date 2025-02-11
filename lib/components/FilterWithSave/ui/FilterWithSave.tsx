@@ -100,37 +100,27 @@ export const FilterWithSave = ({
 		setLocalSelectedTabs(selectedTabs)
 	}, [selectedTabs])
 
-	// const handleDocumentClick = (event: MouseEvent) => {
-	// 	if (!isModalOpen || isMobile) return
-
-	// 	const target = event.target as HTMLElement
-
-	// 	// Логируем сам target и его closest
-	// 	console.log('Target:', target)
-	// 	console.log('родитель ', target.parentElement)
-	// 	console.log('Closest to modal-container:', target.closest('#modal-container'))
-
-	// 	if (!target.closest('#modal-container')) {
-	// 		console.log('Закрываем модалку')
-	// 		handleCloseModal()
-	// 	}
-	// }
-
 	useEffect(() => {
-		//отслеживает клик и если он вне селекта то закрывает его
 		const handleDocumentClick = (event: MouseEvent) => {
-			//@ts-ignore
-			console.log(event.target.closest('div'))
-			//@ts-ignore
-			console.log(event?.target?.closest('#id'))
-			if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-				handleCloseModal()
+			// Если клик внутри модалки — не закрываем
+			if (containerRef.current && containerRef.current.contains(event.target as Node)) {
+				return
 			}
+
+			// Закрываем модалку, если клик был вне
+			handleCloseModal()
 		}
 
-		document.addEventListener('click', handleDocumentClick)
-		return () => {
+		if (isModalOpen) {
+			// Добавляем обработчик, только если модалка открыта
+			document.addEventListener('click', handleDocumentClick)
+		} else {
+			// Убираем обработчик, если модалка закрыта
 			document.removeEventListener('click', handleDocumentClick)
+		}
+
+		return () => {
+			document.removeEventListener('click', handleDocumentClick) // Очистка после выхода
 		}
 	}, [isModalOpen])
 
