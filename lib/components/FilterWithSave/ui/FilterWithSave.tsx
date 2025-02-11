@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NewIcon } from '../../NewIcon'
 import s from './s.module.scss'
 import { Modal } from '../../Modal'
@@ -54,9 +54,9 @@ export const FilterWithSave = ({
 		}
 	}
 
-	const handleResetClick = () => {
-		setSelectedOptions(initialSelectedOptions)
-		setLocalSelectedTabs(initialSelectedTabs)
+const handleResetClick = () => {
+		setSelectedOptions(selectedValues)
+		setLocalSelectedTabs(selectedTabs) // Вместо initialSelectedTabs используем актуальные selectedTabs
 	}
 
 	const handleCloseModal = () => {
@@ -71,7 +71,12 @@ export const FilterWithSave = ({
 		}
 		setIsModalOpen(false)
 	}
-
+	
+	useEffect(() => {
+		if (!isModalOpen) {
+			setLocalSelectedTabs(selectedTabs) // При каждом открытии модалки обновляем локальное состояние
+		}
+	}, [isModalOpen, selectedTabs])
 	return (
 		<>
 			<div
