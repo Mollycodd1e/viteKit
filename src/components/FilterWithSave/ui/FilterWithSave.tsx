@@ -205,17 +205,12 @@ export const FilterWithSave = ({
 			<div style={{ position: 'relative' }}>
 				<div
 					className={s.root}
-					onClick={(e) => {
+					onClick={() => {
 						onCLickSelect && onCLickSelect()
 						if (isMobile) {
 							setIsModalOpen((prev) => !prev)
 						} else if (!isModalOpen) {
 							setIsModalOpen(true)
-						} else {
-							console.log('я тут 2')
-							e.stopPropagation()
-
-							handleCloseModal()
 						}
 					}}>
 					<div className={s.btnName}>{btnName}</div>
@@ -228,7 +223,77 @@ export const FilterWithSave = ({
 					<div
 						ref={containerRef}
 						className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
-						<ModalBody />
+						<div
+							className={s.closeBtn}
+							onClick={() => {
+								handleCloseModal()
+							}}>
+							<NewIcon
+								name={'close'}
+								size='24'
+							/>
+						</div>
+
+						<div className={s.modalTitle}>Фильтры</div>
+						<div className={s.tabSWitcherWrapper}>
+							<div className={s.switcherTitle}>Готовность</div>
+							<div className={s.switcherScroll}>
+								<TabSwitcher
+									variant={'grayRow'}
+									addClassName={s.tabs}
+									isApart={true}>
+									{tabs?.map((m, i) => {
+										const value = m.value
+										return (
+											<TabSwitcher.Item
+												itemsLength={tabs?.length}
+												key={i}
+												mini
+												value={value}
+												onClick={() => {}}
+												checked={localSelectedTabs?.find((e) => e.value === value)?.state ?? false}
+												onChange={() => {
+													setLocalSelectedTabs?.((prev: { value: string; state: boolean }[]) =>
+														prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
+													)
+												}}
+												index={i}
+												addItemClassName={s.tabSwitcher}>
+												{value}
+											</TabSwitcher.Item>
+										)
+									})}
+								</TabSwitcher>
+							</div>
+						</div>
+						<div className={s.selectWrapper}>
+							{selectOptions?.map((option, i) => (
+								<Option
+									key={i}
+									addClassName={s.filterOption}
+									disabledOptions={[]}
+									clickableOptions={[]}
+									selectedOptions={selectedOptions}
+									option={option}
+									handleOptionClick={handleOptionClick}
+								/>
+							))}
+						</div>
+						<div className={s.btnWrapper}>
+							<Button
+								as='button'
+								variant='gray'
+								additionalClass={s.resetBtn}
+								onClick={handleClearClick}>
+								Сбросить
+							</Button>
+							<Button
+								as='button'
+								additionalClass={s.saveBtn}
+								onClick={handleSaveClick}>
+								Сохранить
+							</Button>
+						</div>
 					</div>
 				)}
 			</div>
