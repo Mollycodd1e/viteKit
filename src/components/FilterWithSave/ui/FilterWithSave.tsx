@@ -205,7 +205,8 @@ export const FilterWithSave = ({
 			<div style={{ position: 'relative' }}>
 				<div
 					className={s.root}
-					onClick={() => {
+					onClick={(e) => {
+						e.stopPropagation()
 						onCLickSelect && onCLickSelect()
 						if (isMobile) {
 							setIsModalOpen((prev) => !prev)
