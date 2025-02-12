@@ -38,7 +38,10 @@ export const Option = ({
 				},
 				addClassName
 			)}
-			onClick={() => handleOptionClick(option)}>
+			onClick={(e) => {
+				e.stopPropagation()
+				handleOptionClick(option)
+			}}>
 			{isOptionCategory && (
 				<NewIcon
 					size={sizeIcon ?? '20'}
