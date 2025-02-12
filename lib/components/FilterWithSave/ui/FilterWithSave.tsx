@@ -123,7 +123,7 @@ export const FilterWithSave = ({
 		return () => {
 			document.removeEventListener('click', handleDocumentClick, { capture: true })
 		}
-	}, [isModalOpen])
+	}, [isModalDOpen])
 
 	const ModalBody = () => (
 		<>
