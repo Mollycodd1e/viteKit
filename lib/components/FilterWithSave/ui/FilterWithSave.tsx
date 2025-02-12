@@ -38,7 +38,6 @@ export const FilterWithSave = ({
 }: IFilterWithSave) => {
 	const { isMobile } = useClientWidth()
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-	const [isModalDOpen, setIsModalDOpen] = useState<boolean>(false)
 
 	const containerRef = useRef<HTMLDivElement | null>(null)
 
@@ -110,11 +109,11 @@ export const FilterWithSave = ({
 			if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
 				return
 			}
-			setIsModalDOpen(false)
-			// handleCloseModal()
+
+			handleCloseModal()
 		}
 
-		if (isModalDOpen) {
+		if (isModalOpen) {
 			document.addEventListener('click', handleDocumentClick, { capture: true })
 		} else {
 			document.removeEventListener('click', handleDocumentClick, { capture: true })
@@ -123,7 +122,7 @@ export const FilterWithSave = ({
 		return () => {
 			document.removeEventListener('click', handleDocumentClick, { capture: true })
 		}
-	}, [isModalDOpen])
+	}, [isModalOpen])
 
 	const ModalBody = () => (
 		<>
@@ -203,28 +202,24 @@ export const FilterWithSave = ({
 
 	return (
 		<>
-			<div style={{ position: !isMobile ? 'relative' : 'unset' }}>
-				<div
-					ref={containerRef}
-					className={s.root}
-					onClick={() => {
-						onCLickSelect && onCLickSelect()
-						if (isMobile) {
-							setIsModalOpen((prev) => !prev)
-						} else {
-							setIsModalDOpen((prev) => !prev)
-						}
-					}}>
-					<div className={s.btnName}>{btnName}</div>
-					<NewIcon
-						name={'filter'}
-						size='16'
-					/>
-				</div>
+			<div
+				ref={containerRef}
+				className={s.root}
+				onClick={() => {
+					onCLickSelect && onCLickSelect()
+					if (isMobile) {
+						setIsModalOpen((prev) => !prev)
+					} else {
+						setIsModalOpen(true)
+					}
+				}}>
+				<div className={s.btnName}>{btnName}</div>
+				<NewIcon
+					name={'filter'}
+					size='16'
+				/>
 				{!isMobile && (
-					<div
-						ref={containerRef}
-						className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalDOpen })}>
+					<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
 						<ModalBody />
 					</div>
 				)}
