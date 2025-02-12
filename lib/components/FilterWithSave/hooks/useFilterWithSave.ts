@@ -92,11 +92,8 @@ export const useFilterWithSave = ({
 		const handleDocumentClick = (event: MouseEvent) => {
 			if (!containerRef.current) return
 			const target = event.target as HTMLElement
-			console.log(target)
-			if (containerRef.current.contains(target as Node)) {
-				if (target.closest('svg')) {
-					return
-				}
+
+			if (containerRef.current.contains(target as Node) || target.closest('svg')) {
 				return
 			}
 
