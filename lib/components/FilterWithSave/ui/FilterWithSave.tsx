@@ -105,8 +105,7 @@ export const FilterWithSave = ({
 	useEffect(() => {
 		const handleDocumentClick = (event: MouseEvent) => {
 			if (!containerRef.current) return
-			console.log(event.target)
-			console.log(containerRef)
+
 			if (containerRef.current.contains(event.target as Node)) {
 				if (event.target === containerRef.current) {
 					setIsModalOpen(false)
@@ -207,7 +206,6 @@ export const FilterWithSave = ({
 	return (
 		<>
 			<div
-				ref={containerRef}
 				className={s.root}
 				onClick={() => {
 					onCLickSelect && onCLickSelect()
@@ -223,7 +221,9 @@ export const FilterWithSave = ({
 					size='16'
 				/>
 				{!isMobile && (
-					<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
+					<div
+						ref={containerRef}
+						className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
 						<ModalBody />
 					</div>
 				)}
