@@ -108,7 +108,6 @@ export const FilterWithSave = ({
 
 			if (containerRef.current.contains(event.target as Node)) {
 				if (event.target === containerRef.current) {
-					event.preventDefault()
 					setIsModalOpen(false)
 				}
 				return
@@ -208,13 +207,15 @@ export const FilterWithSave = ({
 		<>
 			<div
 				className={s.root}
-				onClick={() => {
+				onClick={(e) => {
+					e.stopPropagation()
 					onCLickSelect && onCLickSelect()
-					if (isMobile) {
-						setIsModalOpen((prev) => !prev)
-					} else {
-						setIsModalOpen(true)
-					}
+					setIsModalOpen((prev) => !prev)
+					// if (isMobile) {
+					// 	setIsModalOpen((prev) => !prev)
+					// } else {
+					// 	setIsModalOpen(true)
+					// }
 				}}>
 				<div className={s.btnName}>{btnName}</div>
 				<NewIcon
