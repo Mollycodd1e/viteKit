@@ -213,11 +213,10 @@ export const FilterWithSave = ({
 						onCLickSelect && onCLickSelect()
 						if (isMobile) {
 							setIsModalOpen((prev) => !prev)
-						} else {
-							!isModalOpen
-						}
-						{
+						} else if (!isModalOpen) {
 							setIsModalOpen(true)
+						} else {
+							handleCloseModal()
 						}
 					}}>
 					<div className={s.btnName}>{btnName}</div>
