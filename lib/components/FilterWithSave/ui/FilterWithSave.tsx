@@ -206,6 +206,7 @@ export const FilterWithSave = ({
 				<div
 					className={s.root}
 					onClick={(e) => {
+						console.log('я тут 2')
 						e.stopPropagation()
 						onCLickSelect && onCLickSelect()
 						if (isMobile) {
@@ -213,7 +214,6 @@ export const FilterWithSave = ({
 						} else if (!isModalOpen) {
 							setIsModalOpen(true)
 						} else {
-							console.log('я тут 1111')
 							handleCloseModal()
 						}
 					}}>
