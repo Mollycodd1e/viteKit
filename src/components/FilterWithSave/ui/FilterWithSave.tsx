@@ -208,26 +208,28 @@ export const FilterWithSave = ({
 		<>
 			<div
 				ref={containerRef}
-				className={s.root}
-				onClick={() => {
-					onCLickSelect && onCLickSelect()
-					if (isMobile) {
-						setIsModalOpen((prev) => !prev)
-					} else {
-						setIsModalOpen(true)
-					}
-				}}>
-				<div className={s.btnName}>{btnName}</div>
-				<NewIcon
-					name={'filter'}
-					size='16'
-				/>
+				style={{ position: 'relative' }}>
+				<div
+					className={s.root}
+					onClick={() => {
+						onCLickSelect && onCLickSelect()
+						if (isMobile) {
+							setIsModalOpen((prev) => !prev)
+						}
+					}}>
+					<div className={s.btnName}>{btnName}</div>
+					<NewIcon
+						name={'filter'}
+						size='16'
+					/>
+				</div>
 				{!isMobile && (
 					<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
 						<ModalBody />
 					</div>
 				)}
 			</div>
+
 			{isMobile && (
 				<Modal
 					isOpen={isModalOpen}
