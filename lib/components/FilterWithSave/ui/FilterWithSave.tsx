@@ -213,7 +213,7 @@ export const FilterWithSave = ({
 						} else if (!isModalOpen) {
 							setIsModalOpen(true)
 						} else {
-							console.log('я тут')
+							console.log('я тут 1111')
 							handleCloseModal()
 						}
 					}}>
