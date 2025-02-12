@@ -206,15 +206,18 @@ export const FilterWithSave = ({
 
 	return (
 		<>
-			<div
-				ref={containerRef}
-				style={{ position: 'relative' }}>
+			<div style={{ position: 'relative' }}>
 				<div
 					className={s.root}
 					onClick={() => {
 						onCLickSelect && onCLickSelect()
 						if (isMobile) {
 							setIsModalOpen((prev) => !prev)
+						} else {
+							!isModalOpen
+						}
+						{
+							setIsModalOpen(true)
 						}
 					}}>
 					<div className={s.btnName}>{btnName}</div>
@@ -224,7 +227,9 @@ export const FilterWithSave = ({
 					/>
 				</div>
 				{!isMobile && (
-					<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
+					<div
+						ref={containerRef}
+						className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
 						<ModalBody />
 					</div>
 				)}
