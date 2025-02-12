@@ -114,13 +114,13 @@ export const FilterWithSave = ({
 		}
 
 		if (isModalOpen) {
-			document.addEventListener('click', handleDocumentClick, { capture: true })
+			document.addEventListener('click', handleDocumentClick)
 		} else {
-			document.removeEventListener('click', handleDocumentClick, { capture: true })
+			document.removeEventListener('click', handleDocumentClick)
 		}
 
 		return () => {
-			document.removeEventListener('click', handleDocumentClick, { capture: true })
+			document.removeEventListener('click', handleDocumentClick)
 		}
 	}, [isModalOpen])
 
