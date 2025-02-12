@@ -110,8 +110,8 @@ export const FilterWithSave = ({
 			if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
 				return
 			}
-
-			handleCloseModal()
+			setIsModalDOpen(false)
+			// handleCloseModal()
 		}
 
 		if (isModalOpen) {
