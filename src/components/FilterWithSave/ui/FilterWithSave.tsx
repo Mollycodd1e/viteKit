@@ -205,21 +205,23 @@ export const FilterWithSave = ({
 
 	return (
 		<>
-			<div
-				className={s.root}
-				onClick={() => {
-					onCLickSelect && onCLickSelect()
-					if (isMobile) {
-						setIsModalOpen((prev) => !prev)
-					} else {
-						setIsModalOpen((prev) => !prev)
-					}
-				}}>
-				<div className={s.btnName}>{btnName}</div>
-				<NewIcon
-					name={'filter'}
-					size='16'
-				/>
+			<div style={{ position: 'relative' }}>
+				<div
+					className={s.root}
+					onClick={() => {
+						onCLickSelect && onCLickSelect()
+						if (isMobile) {
+							setIsModalOpen((prev) => !prev)
+						} else {
+							setIsModalOpen(true)
+						}
+					}}>
+					<div className={s.btnName}>{btnName}</div>
+					<NewIcon
+						name={'filter'}
+						size='16'
+					/>
+				</div>
 				{!isMobile && (
 					<div
 						ref={containerRef}
