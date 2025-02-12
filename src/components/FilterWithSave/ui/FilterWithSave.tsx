@@ -219,7 +219,7 @@ export const FilterWithSave = ({
 					size='16'
 				/>
 				{!isMobile && (
-					<div className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
+					<div ref={containerRef} className={cx(s.desktopWrapper, { [s.desktopWrapperOpen]: isModalOpen })}>
 						<ModalBody />
 					</div>
 				)}
