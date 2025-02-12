@@ -38,8 +38,7 @@ export const Option = ({
 				},
 				addClassName
 			)}
-			onClick={(e) => {
-				e.stopPropagation()
+			onClick={() => {
 				handleOptionClick(option)
 			}}>
 			{isOptionCategory && (
