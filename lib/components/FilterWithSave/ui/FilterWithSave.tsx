@@ -114,7 +114,7 @@ export const FilterWithSave = ({
 			// handleCloseModal()
 		}
 
-		if (isModalOpen) {
+		if (isModalDOpen) {
 			document.addEventListener('click', handleDocumentClick, { capture: true })
 		} else {
 			document.removeEventListener('click', handleDocumentClick, { capture: true })
