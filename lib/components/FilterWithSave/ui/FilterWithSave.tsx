@@ -85,6 +85,7 @@ export const FilterWithSave = ({
 									<TabSwitcher.Item
 										itemsLength={tabs?.length}
 										key={i}
+										mini
 										size_s='small'
 										value={value}
 										onClick={() => {}}
