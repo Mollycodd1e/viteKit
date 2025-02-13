@@ -148,8 +148,7 @@
 
 .iconBtn {
   right: 50%;
-  top: -1px;
-  transform: translate(50%, 0) !important;
+  transform: translate(50%, 0%) !important;
 
   & svg {
     position: relative;
