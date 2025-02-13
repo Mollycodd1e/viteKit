@@ -63,30 +63,6 @@ $roundRadius: 24px;
   font-family: inherit;
 }
 
-.small-size {
-  @include tab-small;
-}
-
-.medium-size {
-  @include tab-medium;
-}
-
-.large-size {
-  @include tab-large;
-}
-
-.text-small-size {
-  @include text-small;
-}
-
-.text-medium-size {
-  @include text-medium;
-}
-
-.text-large-size {
-  @include text-large;
-}
-
 .textMini {
   font-size: 12px;
   line-height: 16px;
@@ -298,6 +274,30 @@ $roundRadius: 24px;
       }
     }
   }
+}
+
+.small-size {
+  @include tab-small;
+}
+
+.medium-size {
+  @include tab-medium;
+}
+
+.large-size {
+  @include tab-large;
+}
+
+.text-small-size {
+  @include text-small;
+}
+
+.text-medium-size {
+  @include text-medium;
+}
+
+.text-large-size {
+  @include text-large;
 }
 
 @media (min-width: 1024px) {

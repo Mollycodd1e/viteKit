@@ -94,8 +94,7 @@ export const FilterWithSave = ({
 												prev.map((d) => (d.value === value ? { ...d, state: !d.state } : d))
 											)
 										}}
-										index={i}
-										addItemClassName={s.tabSwitcher}>
+										index={i}>
 										{value}
 									</TabSwitcher.Item>
 								)
