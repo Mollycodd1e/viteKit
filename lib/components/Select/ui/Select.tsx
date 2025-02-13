@@ -185,7 +185,7 @@ export const Select = ({
 							name={'filter'}
 							deg={isOpen ? '180' : '0'}
 							size={sizeIcon ?? '24'}
-							additionalClass={s.icon}
+							additionalClass={cx(s.icon,{[s.iconBtn]: !btnName})}
 						/>
 					</>
 				)}
