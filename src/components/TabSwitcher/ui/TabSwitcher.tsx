@@ -29,6 +29,9 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 		children,
 		addItemClassName,
 		addTextClass,
+		size_s = 'large',
+		size_m = 'large',
+		size_l = 'large',
 		disabled = false,
 		itemsLength = 0,
 		isLongOn = true,
@@ -36,6 +39,7 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 		width_m,
 		width_l,
 		mini = false,
+
 		...rest
 	} = props
 	const isLong = (children?.toString().length ? children?.toString().length > 2 : false) && isLongOn
@@ -65,11 +69,24 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 						{ [s.lastItem]: index === itemsLength - 1 },
 						{ [s.isDisabled]: disabled },
 						{ [s.autoWidth]: isAutoWidth },
+						s[`${size_s}-size`],
+						s[`${size_m}-size_m`],
+						s[`${size_l}-size_l`],
 						{ [s.mini]: mini }
 					),
 					addItemClassName
 				)}>
-				<Text className={cx(s.text, {[s.textMini]: mini}, addTextClass)}>{children}</Text>
+				<Text
+					className={cx(
+						s.text,
+						s[`text-${size_s}-size`],
+						s[`text-${size_m}-size_m`],
+						s[`text-${size_l}-size_l`],
+						{ [s.textMini]: mini },
+						addTextClass
+					)}>
+					{children}
+				</Text>
 			</div>
 		</label>
 	)

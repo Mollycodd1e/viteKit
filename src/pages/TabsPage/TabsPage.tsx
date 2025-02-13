@@ -15,6 +15,7 @@ const TabsPage = () => {
 					return (
 						<TabSwitcher.Item
 							itemsLength={tabs.length}
+							size_s='medium'
 							key={i}
 							index={i}
 							value={m} disabled={i === 2 || i === 1}>

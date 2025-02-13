@@ -3,6 +3,36 @@ $darkBorder: 1px solid gray;
 $radius: 12px;
 $roundRadius: 24px;
 
+@mixin tab-small {
+  min-height: 32px;
+  padding: 7px 11px;
+}
+
+@mixin tab-medium {
+  min-height: 40px;
+  padding: 9px 15px;
+}
+
+@mixin tab-large {
+  min-height: 48px;
+  padding: 11px 23px;
+}
+
+@mixin text-small {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin text-medium {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin text-large {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .root {
   display: flex;
   width: 100%;
@@ -31,6 +61,30 @@ $roundRadius: 24px;
   line-height: 24px;
   font-weight: 500;
   font-family: inherit;
+}
+
+.small-size {
+  @include tab-small;
+}
+
+.medium-size {
+  @include tab-medium;
+}
+
+.large-size {
+  @include tab-large;
+}
+
+.text-small-size {
+  @include text-small;
+}
+
+.text-medium-size {
+  @include text-medium;
+}
+
+.text-large-size {
+  @include text-large;
 }
 
 .textMini {
@@ -79,8 +133,6 @@ $roundRadius: 24px;
 
     cursor: pointer;
     user-select: none;
-
-    padding: 11px 15px;
 
     border: 1px solid #E6E8EC;
     border-left: none;
@@ -249,10 +301,60 @@ $roundRadius: 24px;
 }
 
 @media (min-width: 1024px) {
+  .small-size {
+    @include tab-small;
+  }
+
+  .medium-size {
+    @include tab-medium;
+  }
+
+  .large-size {
+    @include tab-large;
+  }
+
+  .text-small-size {
+    @include text-small;
+  }
+
+  .text-medium-size {
+    @include text-medium;
+  }
+
+  .text-large-size {
+    @include text-large;
+  }
+
   .item {
     &.autoWidth {
       padding-left: 24px;
       padding-right: 24px;
     }
+  }
+}
+
+@media (min-width: 1440px) {
+  .small-size {
+    @include tab-small;
+  }
+
+  .medium-size {
+    @include tab-medium;
+  }
+
+  .large-size {
+    @include tab-large;
+  }
+
+  .text-small-size {
+    @include text-small;
+  }
+
+  .text-medium-size {
+    @include text-medium;
+  }
+
+  .text-large-size {
+    @include text-large;
   }
 }
