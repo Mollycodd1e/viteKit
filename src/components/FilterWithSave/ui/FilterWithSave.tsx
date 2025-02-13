@@ -85,7 +85,6 @@ export const FilterWithSave = ({
 									<TabSwitcher.Item
 										itemsLength={tabs?.length}
 										key={i}
-										mini
 										size_s='small'
 										value={value}
 										onClick={() => {}}
@@ -184,7 +183,7 @@ export const FilterWithSave = ({
 											<TabSwitcher.Item
 												itemsLength={tabs?.length}
 												key={i}
-												mini
+												size_s={'small'}
 												value={value}
 												onClick={() => {}}
 												checked={localSelectedTabs?.find((e) => e.value === value)?.state ?? false}
