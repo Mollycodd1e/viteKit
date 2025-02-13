@@ -5,7 +5,7 @@ const TAB_SWITCHER_VARIANTS = {
 	grayRow: 'grayRow',
 }
 
-type TabSizes = 'medium' | 'small | large'
+type TabSizes = 'medium' | 'small' | 'large'
 
 export interface ITabSwitcherItem extends React.InputHTMLAttributes<HTMLInputElement> {
 	addItemClassName?: string

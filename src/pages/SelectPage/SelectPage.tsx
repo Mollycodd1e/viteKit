@@ -80,7 +80,7 @@ export const SelectPage = () => {
 				<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
 					<Select
 						isBtn={true}
-						btnName={'Фильтр'}
+						size_s='small'
 						isListRight={true}
 						selectedValues={select}
 						options={options2}
