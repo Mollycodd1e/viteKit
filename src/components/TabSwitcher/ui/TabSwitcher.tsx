@@ -70,8 +70,8 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 						{ [s.isDisabled]: disabled },
 						{ [s.autoWidth]: isAutoWidth },
 						s[`${size_s}-size`],
-						s[`${size_m}-size`],
-						s[`${size_l}-size`],
+						s[`${size_m}-size_m`],
+						s[`${size_l}-size_l`],
 						{ [s.mini]: mini }
 					),
 					addItemClassName
@@ -80,8 +80,8 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 					className={cx(
 						s.text,
 						s[`text-${size_s}-size`],
-						s[`text-${size_m}-size`],
-						s[`text-${size_l}-size`],
+						s[`text-${size_m}-size_m`],
+						s[`text-${size_l}-size_l`],
 						{ [s.textMini]: mini },
 						addTextClass
 					)}>

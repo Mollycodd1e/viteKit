@@ -301,27 +301,27 @@ $roundRadius: 24px;
 }
 
 @media (min-width: 1024px) {
-  .small-size {
+  .small-size_m {
     @include tab-small;
   }
 
-  .medium-size {
+  .medium-size_m {
     @include tab-medium;
   }
 
-  .large-size {
+  .large-size_m {
     @include tab-large;
   }
 
-  .text-small-size {
+  .text-small-size_m {
     @include text-small;
   }
 
-  .text-medium-size {
+  .text-medium-size_m {
     @include text-medium;
   }
 
-  .text-large-size {
+  .text-large-size_m {
     @include text-large;
   }
 
@@ -334,27 +334,27 @@ $roundRadius: 24px;
 }
 
 @media (min-width: 1440px) {
-  .small-size {
+  .small-size_l {
     @include tab-small;
   }
 
-  .medium-size {
+  .medium-size_l {
     @include tab-medium;
   }
 
-  .large-size {
+  .large-size_l {
     @include tab-large;
   }
 
-  .text-small-size {
+  .text-small-size_l {
     @include text-small;
   }
 
-  .text-medium-size {
+  .text-medium-size_l {
     @include text-medium;
   }
 
-  .text-large-size {
+  .text-large-size_l {
     @include text-large;
   }
 }

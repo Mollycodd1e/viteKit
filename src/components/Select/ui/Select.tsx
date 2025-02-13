@@ -147,7 +147,7 @@ export const Select = ({
 								s.selectedOptions,
 								s[`${size_s}-size`],
 								s[`${size_m}-size_m`],
-								s[`${size_l}-size_l`],
+								s[`${size_l}-size)_l`],
 								{ [s.selectedOptionsNotEmpty]: selectedOptions.length > 0 },
 								{ [s.selectOptionsDisabled]: disabled }
 							)}
@@ -185,7 +185,7 @@ export const Select = ({
 							name={'filter'}
 							deg={isOpen ? '180' : '0'}
 							size={sizeIcon ?? '24'}
-							additionalClass={cx(s.icon,{[s.iconBtn]: !btnName})}
+							additionalClass={cx(s.icon, { [s.iconBtn]: !btnName })}
 						/>
 					</>
 				)}

@@ -163,15 +163,15 @@
     }
   }
 
-  .small-size {
+  .small-size_m {
     @include select-small;
   }
 
-  .medium-size {
+  .medium-size_m {
     @include select-medium;
   }
 
-  .large-size {
+  .large-size_m {
     @include select-large;
   }
 
@@ -190,15 +190,15 @@
 }
 
 @media(min-width: 1440px) {
-  .small-size {
+  .small-size_l {
     @include select-small;
   }
 
-  .medium-size {
+  .medium-size_l {
     @include select-medium;
   }
 
-  .large-size {
+  .large-size_l {
     @include select-large;
   }
 }

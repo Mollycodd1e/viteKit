@@ -81,6 +81,7 @@ export const SelectPage = () => {
 					<Select
 						isBtn={true}
 						size_s='small'
+						size_l='medium'
 						isListRight={true}
 						selectedValues={select}
 						options={options2}
