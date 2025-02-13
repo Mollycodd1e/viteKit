@@ -184,6 +184,7 @@ export const FilterWithSave = ({
 												itemsLength={tabs?.length}
 												key={i}
 												size_s={'small'}
+												mini
 												value={value}
 												onClick={() => {}}
 												checked={localSelectedTabs?.find((e) => e.value === value)?.state ?? false}
