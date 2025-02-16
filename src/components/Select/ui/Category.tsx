@@ -1,7 +1,7 @@
 import s from "./Select.module.scss";
 import {NewIcon} from "../../NewIcon";
 import classNames from "classnames";
-import {TCategory, TOption} from "./Select.types.ts";
+import {TCategory, TModeSelect, TOption} from "./Select.types.ts";
 import {Option} from "./Option.tsx";
 
 const cx = classNames.bind(s)
@@ -14,6 +14,7 @@ export interface IOption {
     clickableOptions?: (string | undefined)[]
     handleOptionClick: (option: TOption | TOption[]) => void
     sizeIcon?: string
+    mode: TModeSelect
 }
 
 
@@ -23,11 +24,28 @@ export const Category = ({
                              disabledOptions,
                              clickableOptions,
                              handleOptionClick,
-                             sizeIcon
+                             sizeIcon,
+                             mode
                          }: IOption) => {
     const selectedOptionsJSON = selectedOptions.map((e) => JSON.stringify(e))
 
-    const isFull = category.options.every(element => selectedOptionsJSON.includes(JSON.stringify(element)));
+    const isCategory = mode === 'category'
+    const isDouble = mode === 'double'
+    const isFull = isCategory && category.options.every(element => selectedOptionsJSON.includes(JSON.stringify(element)));
+
+    const getCategoryImage = () => {
+        if (isCategory) {
+            if (isFull) return 'minusCheck'
+            else return 'selectUnchecked'
+        }
+        if (isDouble) {
+            if (selectedOptions.some((selected) => selected.value === category.value)) {
+                return 'selectChecked'
+            } else return 'selectUnchecked'
+        } else return 'selectUnchecked'
+    }
+
+    const categoryImage = getCategoryImage()
 
     return <>
         <div
@@ -38,14 +56,10 @@ export const Category = ({
                         (disabled) => disabled.value === category.value
                     ),
                 })}
-            onClick={() => handleOptionClick(category.options)}>
+            onClick={() => handleOptionClick(isCategory ? category.options : category)}>
             <div className={s.leftSide}><NewIcon
                 size={sizeIcon ?? '20'}
-                name={
-                    isFull
-                        ? 'minusCheck'
-                        : 'selectUnchecked'
-                }
+                name={categoryImage}
             />
                 <div>{category.label}</div>
             </div>
@@ -62,7 +76,8 @@ export const Category = ({
 
         {category.options.map((e, k) => {
             return <Option key={k} option={e} disabledOptions={disabledOptions} selectedOptions={selectedOptions}
-                           handleOptionClick={() => handleOptionClick(e)} sizeIcon={sizeIcon} clickableOptions={clickableOptions}
+                           handleOptionClick={() => handleOptionClick(e)} sizeIcon={sizeIcon}
+                           clickableOptions={clickableOptions}
                            isOptionCategory={true}/>
         })}
     </>

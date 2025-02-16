@@ -10,12 +10,12 @@ export type TCategory = {
 	options: TOption[]
 }
 
-export type TModeSelect = 'options' | 'category'
+export type TModeSelect = 'options' | 'category' | 'double'
 
 type SelectSizes = 'medium' | 'small' | 'large'
 
 export interface MultiSelectProps {
-	options?: TOption[]
+	options?: TOption[] | TCategory[]
 	category?: TCategory[]
 	placeholder?: string
 	error?: boolean
@@ -25,20 +25,14 @@ export interface MultiSelectProps {
 	size_l?: SelectSizes
 	/**
 	 * Доп стили для родителя-контейнера
-	 *
-	 * @default false
 	 */
 	additionalClass?: string
 	/**
 	 * Доп стили для каждой опции
-	 *
-	 * @default false
 	 */
 	additionalClassOption?: string
 	/**
 	 * Доп стили для кнопки-контейнера
-	 *
-	 * @default false
 	 */
 	additionalClassBtn?: string
 	onChange?: (selectedOptions: TOption[]) => unknown
@@ -51,14 +45,10 @@ export interface MultiSelectProps {
 	isListRight?: boolean
 	/**
 	 * Список опций которые будут задизейблены по умолчанию
-	 *
-	 * @default false
 	 */
 	disabledOptions?: TOption[]
 	/**
 	 * Список опций которые доступны для клика
-	 *
-	 * @default false
 	 */
 	clickableOptions?: (string | undefined)[]
 	sizeIcon?: string

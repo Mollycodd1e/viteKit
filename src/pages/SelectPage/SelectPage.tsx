@@ -1,26 +1,15 @@
 import { useState } from 'react'
-import { Select, SortSelect } from '../../main'
+import {Select, SortSelect, Switcher} from '../../main'
 import s from './SelectPage.module.scss'
 import { SummarySelect } from '../../components/SummarySelect'
-import { TOption } from '../../components/Select/ui/Select.types.ts'
+import {TModeSelect, TOption} from '../../components/Select/ui/Select.types.ts'
 import { FilterWithSave } from '../../components/FilterWithSave/ui/FilterWithSave.tsx'
+import {defaultCategory, defaultOption} from "./const.ts";
 
 export const SelectPage = () => {
-	const options: TOption[] = [
-		{ value: 'option1', label: 'Option 1' },
-		{ value: 'option2', label: 'Option 2' },
-		{ value: 'option3', label: 'Option 3' },
-	]
-
-	const options2: TOption[] = [
-		{ value: 'option1', label: 'Option 1' },
-		{ value: 'option2', label: 'Option 2' },
-		{ value: 'option3', label: 'Option 3' },
-		{ value: 'option4', label: 'Option 4' },
-	]
-
-	const [sort, setSort] = useState<TOption | null>(options[0])
+	const [sort, setSort] = useState<TOption | null>(defaultOption[0])
 	const [select, setSelect] = useState<TOption[] | undefined>([])
+	const [modeSelect, setModeSelect] = useState<TModeSelect>('options');
 
 	const handleChangeSort = (e: TOption | null) => {
 		//@ts-expect-error todo types
@@ -31,7 +20,6 @@ export const SelectPage = () => {
 
 	const handleChangeSelect = (selectedOptions: TOption[]) => {
 		if (!selectedOptions) return
-
 		setSelect(selectedOptions)
 	}
 
@@ -41,7 +29,7 @@ export const SelectPage = () => {
 				<div>
 					<h2> Фильтрация с сохранением</h2>
 					<div className={s.filterWithSave}>
-						<FilterWithSave />
+						<FilterWithSave/>
 					</div>
 				</div>
 				<h2>Сорт селект</h2>
@@ -49,42 +37,71 @@ export const SelectPage = () => {
 					<SortSelect
 						mini
 						selectedOption={sort}
-						options={options}
+						options={defaultOption}
 						onChange={(e) => handleChangeSort(e as TOption)}
 					/>
 				</div>
 			</div>
 			<div className={s.summarySelect}>
-				<h2>Селект с опциями</h2>
+				<div style={{display: 'flex', gap: '20px'}}>
+					<h2>SummarySelect</h2>
+					<Switcher
+						isActive={modeSelect === 'category'}
+						onClick={() => setModeSelect(modeSelect === 'options' ? 'category' : 'options')}>
+						mode category
+					</Switcher>
+				</div>
+
 				<SummarySelect
-					mode={'category'}
+					mode={modeSelect}
 					label='Проект'
 					isShowReset
 					selectedValues={select}
-					options={options2}
+					options={modeSelect === 'category' ? defaultCategory : defaultOption}
 					onChange={(e) => handleChangeSelect(e)}
 					clickableOptions={['option1', 'option2']}
 				/>
 			</div>
+
 			<div>
-				<h2>Селект чекбокс</h2>
+				<h2>Селект mode option</h2>
 				<Select
 					selectedValues={select}
-					options={options2}
+					options={defaultCategory}
+					onChange={(e) => handleChangeSelect(e)}
+				/>
+			</div>
+
+			<div>
+				<h2>Селект mode category</h2>
+				<Select
+					mode={'category'}
+					selectedValues={select}
+					options={defaultCategory}
+					onChange={(e) => handleChangeSelect(e)}
+				/>
+			</div>
+
+			<div>
+				<h2>Селект mode double</h2>
+				<Select
+					selectedValues={select}
+					options={defaultCategory}
+					mode={'double'}
 					onChange={(e) => handleChangeSelect(e)}
 				/>
 			</div>
 
 			<div>
 				<h2>Селект кнопка</h2>
-				<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+				<div style={{display: 'flex', justifyContent: 'flex-end'}}>
 					<Select
 						isBtn={true}
 						size_s='small'
 						size_l='medium'
 						isListRight={true}
 						selectedValues={select}
-						options={options2}
+						options={defaultOption}
 						onChange={(e) => handleChangeSelect(e)}
 						onClickItem={(option) => {
 							console.log(option)
