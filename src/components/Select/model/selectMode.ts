@@ -36,7 +36,7 @@ const handleClickModeOption = ({
             //доп логика для категории
             if ('options' in option) {
                 //проверяем выбрана ли категория и если да, то при нажатии на нее снова отжимаются все ее опции
-                const isSelected = selectedOptions.includes(option)
+                const isSelected = selectedOptions.map((e) => JSON.stringify(e)).includes(JSON.stringify(option))
                 if (isSelected) newSelectedOptions = newSelectedOptions.filter(item => !(option.options as TOption[]).map((e) => JSON.stringify(e)).includes(JSON.stringify(item)))
             }
             //доп логика для опции
