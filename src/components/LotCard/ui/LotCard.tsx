@@ -179,6 +179,7 @@ export const LotCard = ({
 						additionalClass={s.fullscreenBtn}
 						onClick={(e) => {
 							e.preventDefault()
+							e.stopPropagation()
 							handleFullScreenBtn && handleFullScreenBtn()
 						}}>
 						<NewIcon
