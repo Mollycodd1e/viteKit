@@ -7,7 +7,8 @@
 	border-radius: 24px;
 	box-sizing: border-box;
 	background: #ffffff;
-	.lotBtn{
+
+	.lotBtn {
 		opacity: 1;
 		font-weight: 500;
 	}
@@ -18,11 +19,14 @@
 	padding: 24px;
 }
 
-.rootDisable{
-	.lotImageWrapper, .lotInfoWrapper{
+.rootDisable {
+
+	.lotImageWrapper,
+	.lotInfoWrapper {
 		opacity: 0.5;
 	}
-	.btnWrapper{
+
+	.lotBtn {
 		pointer-events: none;
 	}
 }
