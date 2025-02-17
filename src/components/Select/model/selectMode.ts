@@ -51,9 +51,9 @@ const handleClickModeOption = ({
                 newSelectedOptions.push(categoryFromParent)
             }
         }
-
         //подставляем новый список
         setSelectedOptions(newSelectedOptions)
+        console.log(newSelectedOptions)
         onChange && onChange(newSelectedOptions)
     }
 }
@@ -91,6 +91,7 @@ const handleClickModeCategory = ({
 
             const newSelectedOptions = [...selectedOptions, ...optionsAfterSelected]
             setSelectedOptions(newSelectedOptions)
+            console.log(newSelectedOptions)
             onChange && onChange(newSelectedOptions)
         }
     }
