@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from 'react'
 import classNames from 'classnames'
-import {MultiSelectProps, TOption} from './Select.types'
+import {MultiSelectProps, TCategory, TOption} from './Select.types'
 import s from './Select.module.scss'
 import {Option} from './Option'
 import {NewIcon} from '../../NewIcon'
@@ -33,11 +33,13 @@ export const Select = ({
                            size_m,
                            size_l,
                        }: MultiSelectProps) => {
+    options = [... new Set([...options])] as  TOption[] | TCategory[]
+
     const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
     const [isOpen, setIsOpen] = useState(false)
     const containerRef = useRef<HTMLDivElement>(null)
 
-    const handleOptionClick = (option: TOption | TOption[]) => {
+    const handleOptionClick = (option: TOption | TOption[] | TCategory) => {
         onClickItem && onClickItem(option)
         const dataClick: TClickOptionProps = {
             option,

@@ -53,7 +53,6 @@ const handleClickModeOption = ({
         }
         //подставляем новый список
         setSelectedOptions(newSelectedOptions)
-        console.log(newSelectedOptions)
         onChange && onChange(newSelectedOptions)
     }
 }
@@ -65,7 +64,6 @@ const handleClickModeCategory = ({
                                      disabledOptions,
                                      onChange
                                  }: TClickOptionProps) => {
-    //TODO чтобы убрать JSON.stringify нужно ввести new Set([... в будущем (но не уверен про уникальность
 
     //логика кликов для мода категории
     if (Array.isArray(option)) {
@@ -74,24 +72,23 @@ const handleClickModeCategory = ({
         //если все опции есть в selected
         if (
             optionsAfterDisable.every((e) => {
-                return selectedOptions.map((e) => JSON.stringify(e)).includes(JSON.stringify(e))
+                return selectedOptions.map((e) => e).includes(e)
             })
         ) {
             //то фильтруем так чтобы в selected не осталось ни одной опции категории
             const newSelectedOptions = selectedOptions.filter(
-                (e) => !option.map((e) => JSON.stringify(e)).includes(JSON.stringify(e))
+                (e) => !option.includes(e)
             )
             setSelectedOptions(newSelectedOptions)
             onChange && onChange(newSelectedOptions)
         } else {
             //а если их нет, то добавляем все в selected
             const optionsAfterSelected = optionsAfterDisable.filter(
-                (e) => !selectedOptions.map((e) => JSON.stringify(e)).includes(JSON.stringify(e))
+                (e) => !selectedOptions.includes(e)
             )
 
             const newSelectedOptions = [...selectedOptions, ...optionsAfterSelected]
             setSelectedOptions(newSelectedOptions)
-            console.log(newSelectedOptions)
             onChange && onChange(newSelectedOptions)
         }
     }

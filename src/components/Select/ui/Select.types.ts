@@ -15,7 +15,7 @@ export type TModeSelect = 'options' | 'category' | 'double'
 type SelectSizes = 'medium' | 'small' | 'large'
 
 export interface MultiSelectProps {
-	options?: TOption[] | TCategory[]
+	options: TOption[] | TCategory[]
 	category?: TCategory[]
 	placeholder?: string
 	error?: boolean
