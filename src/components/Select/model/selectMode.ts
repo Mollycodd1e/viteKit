@@ -37,7 +37,7 @@ const handleClickModeOption = ({
             if ('options' in option) {
                 //проверяем выбрана ли категория и если да, то при нажатии на нее снова отжимаются все ее опции
                 const isSelected = selectedOptions.includes(option)
-                if (isSelected) newSelectedOptions = newSelectedOptions.filter(item => !(option.options as TOption[]).includes(item))
+                if (isSelected) newSelectedOptions = newSelectedOptions.filter(item => !(option.options as TOption[]).map((e) => JSON.stringify(e)).includes(JSON.stringify(item)))
             }
             //доп логика для опции
 
@@ -45,7 +45,7 @@ const handleClickModeOption = ({
             const categoryFromParent = optionsParentArr?.filter((el) => {
                 return ('options' in el && el.options.includes(option))
             })[0]
-            const isSelected = categoryFromParent && selectedOptions.includes(categoryFromParent)
+            const isSelected = categoryFromParent && selectedOptions.map((e) => JSON.stringify(e)).includes(JSON.stringify(categoryFromParent))
             if (!isSelected && categoryFromParent) {
                 //если нет в списке выбранных то пушим туда
                 newSelectedOptions.push(categoryFromParent)
