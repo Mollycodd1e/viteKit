@@ -5,12 +5,7 @@ import s from './Select.module.scss'
 import {Option} from './Option'
 import {NewIcon} from '../../NewIcon'
 import {Category} from './Category.tsx'
-import {
-    handleClickModeCategory,
-    handleClickModeDouble,
-    handleClickModeOption,
-    TClickOptionProps
-} from "../model/selectMode.ts";
+import {handleClickModeCategory, handleClickModeOption, TClickOptionProps} from "../model/selectMode.ts";
 
 const cx = classNames.bind(s)
 
@@ -44,9 +39,17 @@ export const Select = ({
 
     const handleOptionClick = (option: TOption | TOption[]) => {
         onClickItem && onClickItem(option)
-        const dataClick: TClickOptionProps = {option, selectedOptions, disabledOptions, setSelectedOptions, onChange, mode, optionsParentArr: options}
+        const dataClick: TClickOptionProps = {
+            option,
+            selectedOptions,
+            disabledOptions,
+            setSelectedOptions,
+            onChange,
+            mode,
+            optionsParentArr: options
+        }
+
         if (!Array.isArray(option)) handleClickModeOption(dataClick)
-        else if (mode === 'double') handleClickModeDouble(dataClick)
         else handleClickModeCategory(dataClick)
     }
 

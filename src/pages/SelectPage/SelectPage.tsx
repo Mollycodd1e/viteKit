@@ -19,6 +19,7 @@ export const SelectPage = () => {
 	}
 
 	const handleChangeSelect = (selectedOptions: TOption[]) => {
+		console.log(selectedOptions)
 		if (!selectedOptions) return
 		setSelect(selectedOptions)
 	}
