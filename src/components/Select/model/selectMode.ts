@@ -38,6 +38,7 @@ const handleClickModeOption = ({
             : [...selectedOptions, option]
 
         if (mode === 'double') {
+            //TODO сделать логику если отжимаем проект то убираются все башни
             //проверяем есть ли категория в списке
             const categoryFromParent = optionsParentArr?.filter((el) => {
                 return ('options' in el && el.options.includes(option))
