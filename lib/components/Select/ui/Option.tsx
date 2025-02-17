@@ -34,7 +34,7 @@ export const Option = ({
 					[s.selected]: selectedOptions.some((selected) => selected.value === option.value),
 					[s.optionDisabled]: disabledOptions.some((disabled) => disabled.value === option.value),
 					[s.optionCategory]: isOptionCategory,
-					[s.optionClickable]: clickableOptions && clickableOptions.includes(`${option.value}`),
+					[s.optionClickable]: clickableOptions ? clickableOptions.includes(`${option.value}`) : true,
 				},
 				addClassName
 			)}
