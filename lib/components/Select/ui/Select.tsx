@@ -33,8 +33,7 @@ export const Select = ({
                            size_m,
                            size_l,
                        }: MultiSelectProps) => {
-
-    options = Array.isArray(options) ?  [... new Set([...options])] as  TOption[] | TCategory[] : []
+    options = Array.isArray(options) ? [...new Set([...options])] as TOption[] | TCategory[] : []
 
     const [selectedOptions, setSelectedOptions] = useState<TOption[]>(selectedValues)
     const [isOpen, setIsOpen] = useState(false)

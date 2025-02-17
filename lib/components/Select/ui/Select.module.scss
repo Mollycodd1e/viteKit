@@ -111,6 +111,7 @@
   align-items: center;
   padding: 12px 0;
   cursor: pointer;
+  position: relative;
 
   &:not(:last-child) {
     border-bottom: 1px solid #F4F5F6;
@@ -144,6 +145,12 @@
   position: absolute;
   right: 12px;
   pointer-events: none;
+}
+
+.iconArrow {
+  position: absolute;
+  right: 0;
+  padding: 4px 10px;
 }
 
 .iconBtn {

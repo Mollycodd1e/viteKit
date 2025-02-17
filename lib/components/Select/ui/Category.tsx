@@ -3,6 +3,7 @@ import {NewIcon} from "../../NewIcon";
 import classNames from "classnames";
 import {TCategory, TModeSelect, TOption} from "./Select.types.ts";
 import {Option} from "./Option.tsx";
+import {useState} from "react";
 
 const cx = classNames.bind(s)
 
@@ -27,6 +28,8 @@ export const Category = ({
                              sizeIcon,
                              mode
                          }: IOption) => {
+    const [isShowOption, setIsShowOption] = useState(true);
+    
     const selectedOptionsJSON = selectedOptions.map((e) => JSON.stringify(e))
 
     const isCategory = mode === 'category'
@@ -56,7 +59,10 @@ export const Category = ({
                         (disabled) => disabled.value === category.value
                     ),
                 })}
-            onClick={() => handleOptionClick(isCategory ? category.options : category)}>
+            onClick={() => {
+                if (isDouble && !isShowOption) setIsShowOption(true)
+                handleOptionClick(isCategory ? category.options : category)
+            }}>
             <div className={s.leftSide}><NewIcon
                 size={sizeIcon ?? '20'}
                 name={categoryImage}
@@ -64,17 +70,19 @@ export const Category = ({
                 <div>{category.label}</div>
             </div>
 
-            <NewIcon
-                name={'arrowShort'}
-                deg={isFull ? '180' : '0'}
-                size={sizeIcon ?? '24'}
-                additionalClass={s.icon}
-            />
-
-
+            <div className={s.iconArrow} onClick={(e) => {
+                e.stopPropagation()
+                setIsShowOption((prev) => !prev)
+            }}>
+                <NewIcon
+                    name={'arrowShort'}
+                    deg={isShowOption ? '180' : '0'}
+                    size={sizeIcon ?? '24'}
+                />
+            </div>
         </div>
 
-        {category.options.map((e, k) => {
+        {isShowOption && category.options.map((e, k) => {
             return <Option key={k} option={e} disabledOptions={disabledOptions} selectedOptions={selectedOptions}
                            handleOptionClick={() => handleOptionClick(e)} sizeIcon={sizeIcon}
                            clickableOptions={clickableOptions}
