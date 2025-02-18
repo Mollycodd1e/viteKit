@@ -2,6 +2,7 @@ export type TOption = {
 	value: string | number
 	label: string
 	parent?: string
+	id?: number
 }
 
 export type TCategory = {
