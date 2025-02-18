@@ -110,7 +110,7 @@ export const FilterWithSave = ({
 							sizeIcon='24'
 							addClassName={s.filterOption}
 							disabledOptions={[]}
-							clickableOptions={[]}
+							clickableOptions={selectOptions?.map((e) => e.value.toString())}
 							selectedOptions={selectedOptions}
 							option={option}
 							handleOptionClick={handleOptionClick}
@@ -210,7 +210,7 @@ export const FilterWithSave = ({
 									sizeIcon='24'
 									addClassName={s.filterOption}
 									disabledOptions={[]}
-									clickableOptions={[]}
+									clickableOptions={selectOptions?.map((e) => e.value.toString())}
 									selectedOptions={selectedOptions}
 									option={option}
 									handleOptionClick={handleOptionClick}
