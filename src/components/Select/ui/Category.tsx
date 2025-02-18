@@ -43,7 +43,7 @@ export const Category = ({
         }
         if (isDouble) {
             if (selectedOptions.some((selected) => selected.value === category.value)) {
-                return 'selectChecked'
+                return 'minusCheck'
             } else return 'selectUnchecked'
         } else return 'selectUnchecked'
     }

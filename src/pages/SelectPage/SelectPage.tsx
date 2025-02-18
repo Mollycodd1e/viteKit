@@ -19,7 +19,6 @@ export const SelectPage = () => {
 	}
 
 	const handleChangeSelect = (selectedOptions: TOption[]) => {
-		console.log(selectedOptions)
 		if (!selectedOptions) return
 		setSelect(selectedOptions)
 	}
@@ -104,12 +103,6 @@ export const SelectPage = () => {
 						selectedValues={select}
 						options={defaultOption}
 						onChange={(e) => handleChangeSelect(e)}
-						onClickItem={(option) => {
-							console.log(option)
-						}}
-						onCLickSelect={() => {
-							console.log('select')
-						}}
 					/>
 				</div>
 			</div>
