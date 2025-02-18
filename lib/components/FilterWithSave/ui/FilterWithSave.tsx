@@ -206,6 +206,7 @@ export const FilterWithSave = ({
 							{selectOptions?.map((option, i) => (
 								<Option
 									key={i}
+									sizeIcon='24'
 									addClassName={s.filterOption}
 									disabledOptions={[]}
 									clickableOptions={[]}
