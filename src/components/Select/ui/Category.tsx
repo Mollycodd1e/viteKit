@@ -58,6 +58,7 @@ export const Category = ({
                     [s.optionDisabled]: disabledOptions.some(
                         (disabled) => disabled.value === category.value
                     ),
+                    [s.optionClickable]: clickableOptions ? clickableOptions.includes(`${category.value}`) : true,
                 })}
             onClick={() => {
                 if (isDouble && !isShowOption) setIsShowOption(true)
