@@ -49,16 +49,15 @@ export const Category = ({
     }
 
     const categoryImage = getCategoryImage()
-
     return <>
         <div
-            className={cx(s.option, s.category, s.optionClickable,
+            className={cx(s.option, s.category,
                 {
                     [s.selected]: selectedOptions.some((selected) => selected.value === category.value),
                     [s.optionDisabled]: disabledOptions.some(
                         (disabled) => disabled.value === category.value
                     ),
-                    [s.optionClickable]: clickableOptions ? clickableOptions.includes(`${category.value}`) : true,
+                    [s.optionClickable]: clickableOptions ? clickableOptions.includes(category.value.toString()) : true,
                 })}
             onClick={() => {
                 if (isDouble && !isShowOption) setIsShowOption(true)

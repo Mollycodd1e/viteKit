@@ -81,14 +81,13 @@ export const SelectPage = () => {
 					onChange={(e) => handleChangeSelect(e)}
 				/>
 			</div>
-
 			<div>
 				<h2>Селект mode double</h2>
 				<Select
 					selectedValues={select}
 					options={defaultCategory}
 					mode={'double'}
-					clickableOptions={['option1', 'option2', 'options1']}
+					clickableOptions={['Category1', 'options1', 'options3']}
 					onChange={(e) => handleChangeSelect(e)}
 				/>
 			</div>
