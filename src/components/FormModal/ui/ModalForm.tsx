@@ -32,6 +32,7 @@ interface IModalFormProps {
 	isRequiredPhoneOrEmail?: boolean
 	isAdvCheckBox?: boolean
 	addTitleClassName?: string
+	createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
 }
 
 type IFormPageInputs = {
@@ -68,7 +69,8 @@ export const ModalForm = ({
 	rowsTextArea = 2,
 	advCheckBox = { text: defaultTextCheckBox, isRequired: true },
 	isAdvCheckBox,
-	addTitleClassName
+	addTitleClassName,
+	createPortalObj
 }: IModalFormProps) => {
 	const {
 		register,
@@ -101,12 +103,13 @@ export const ModalForm = ({
 
 	return (
 		<Modal
-			isOpen={isFormOpen}
-			emitIsOpen={() => setIsFormOpen(false)}
 			additionalClass={s.modal}
-			opacity={0.7}
+			additionalClassModalBody={s.modalBody}
+			createPortalObj={createPortalObj}
+			isOpen={isFormOpen}
 			isTransparentBack={true}
-			additionalClassModalBody={s.modalBody}>
+			emitIsOpen={() => setIsFormOpen(false)}
+			opacity={0.7}>
 			<div
 				className={s.root}
 				style={{ width: isMobile ? '100%' : modalWidth }}>
