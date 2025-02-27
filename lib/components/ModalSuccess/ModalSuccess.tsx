@@ -4,12 +4,13 @@ import s from "./styles.module.scss";
 import {Button} from "../Button";
 import {NewIcon} from "../NewIcon";
 
-
-export const ModalSuccess = ({isSuccessOpen, setIsSuccess}: IModalSuccess) => {
-    return <Modal emitIsOpen={setIsSuccess} isOpen={isSuccessOpen} additionalClassModalBody={s.modalBody}
-                  additionalClass={s.modal}
-                  opacity={0.7}
-                  isTransparentBack={true}>
+export const ModalSuccess = ({isSuccessOpen, setIsSuccess, createPortalObj}: IModalSuccess) => {
+    return <Modal
+                createPortalObj={createPortalObj}
+                emitIsOpen={setIsSuccess} isOpen={isSuccessOpen} additionalClassModalBody={s.modalBody}
+                additionalClass={s.modal}
+                opacity={0.7}
+                isTransparentBack={true}>
         <div className={s.root}>
             <div className={s.check}>
                 <NewIcon name={'circle'} size={'80'} additionalClass={s.iconCircle} color='#57C27D'/>
