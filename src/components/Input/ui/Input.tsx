@@ -37,11 +37,11 @@ export const Input = forwardRef<HTMLInputElement, React.PropsWithChildren<Compon
                         {[s.inputWrapperError]: error},
                         additionalClass
                     )}>
-                    {pre && <span>{pre}</span>}
+                    {pre && <div>{pre}</div>}
                     <input
                         ref={ref} type={type}
                         {...props}></input>
-                    {post && <span>{post}</span>}
+                    {post && <div>{post}</div>}
                 </div>}
 
                 {type === 'checkbox' && <input className={cx(s.checkBox)} ref={ref} type={type} {...props}/>}

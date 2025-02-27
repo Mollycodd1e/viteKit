@@ -43,9 +43,9 @@ export const Button = ({
 					/>
 				)}
 				<>
-					{pre && <span className={cx({ [s.isHidden]: isLoading })}>{pre}</span>}
-					<span className={cx({[s.isHidden]: isLoading })}>{children}</span>
-					{post && <span className={cx({ [s.isHidden]: isLoading })}>{post}</span>}
+					{pre && <div className={cx({ [s.isHidden]: isLoading })}>{pre}</div>}
+					<div className={cx({[s.isHidden]: isLoading })}>{children}</div>
+					{post && <div className={cx({ [s.isHidden]: isLoading })}>{post}</div>}
 				</>
 			</>
 		)

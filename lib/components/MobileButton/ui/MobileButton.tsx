@@ -30,9 +30,9 @@ export const MobileButton = ({
 					additionalClass
 				)}
 				{...rest}>
-				{pre && <span>{pre}</span>}
+				{pre && <div>{pre}</div>}
 				{children}
-				{post && <span>{post}</span>}
+				{post && <div>{post}</div>}
 			</a>
 		)
 	}
@@ -50,9 +50,9 @@ export const MobileButton = ({
 				additionalClass
 			)}
 			{...rest}>
-			{pre && <span>{pre}</span>}
+			{pre && <div>{pre}</div>}
 			{children}
-			{post && <span>{post}</span>}
+			{post && <div>{post}</div>}
 		</button>
 	)
 }
