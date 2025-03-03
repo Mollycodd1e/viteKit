@@ -23,6 +23,11 @@
 	height: 16px;
 }
 
+.logoNewOffice {
+	width: 137px;
+	height: 13.25px;
+}
+
 .wrapperBetween {
 	width: 100%;
 	justify-content: space-between;
@@ -47,6 +52,11 @@
 @media(min-width: 1024px) {
 	.logoValue {
 		width: 157px;
+	}
+
+	.logoNewOffice {
+		width: 165px;
+		height: 16px;
 	}
 
 	.uk {
