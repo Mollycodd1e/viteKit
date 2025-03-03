@@ -26,7 +26,8 @@ export const Logo = ({
 					{ [s.logoValue]: variant === 'value' },
 					{ [s.logoDom]: variant === 'dom' },
 					{ [s.logoOffice]: variant === 'office' },
-					{ [s.logoNewOffice]: variant === 'newOffice' }
+					{ [s.logoNewOffice]: variant === 'newOffice' },
+					{ [s.logoNewDom]: variant === 'newDom' }
 				)}
 			/>
 			{uk && (
