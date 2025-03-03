@@ -235,36 +235,52 @@
 
 @media(min-width: 1024px) {
   .tiny-size_m {
-    @include input-tiny;
+    & input {
+      @include input-tiny;
+    }
   }
 
   .small-size_m {
-    @include input-small;
+    & input {
+      @include input-small;
+    }
   }
 
   .medium-size_m {
-    @include input-medium;
+    & input {
+      @include input-medium;
+    }
   }
 
   .large-size_m {
-    @include input-large;
+    & input {
+      @include input-large;
+    }
   }
 }
 
 @media(min-width: 1440px) {
   .tiny-size_l {
-    @include input-tiny;
+    & input {
+      @include input-tiny;
+    }
   }
 
   .small-size_l {
-    @include input-small;
+    & input {
+      @include input-small;
+    }
   }
 
   .medium-size_l {
-    @include input-medium;
+    & input {
+      @include input-medium;
+    }
   }
 
   .large-size_l {
-    @include input-large;
+    & input {
+      @include input-large;
+    }
   }
 }
