@@ -54,11 +54,6 @@
 		width: 157px;
 	}
 
-	.logoNewOffice {
-		width: 165px;
-		height: 16px;
-	}
-
 	.uk {
 		width: 101px;
 		height: 20px;
@@ -70,5 +65,10 @@
 @media(min-width: 1440px) {
 	.logoValue {
 		width: 196px;
+	}
+
+	.logoNewOffice {
+		width: 165px;
+		height: 16px;
 	}
 }
