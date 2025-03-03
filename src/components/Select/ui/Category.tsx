@@ -28,7 +28,7 @@ export const Category = ({
                              sizeIcon,
                              mode
                          }: IOption) => {
-    const [isShowOption, setIsShowOption] = useState(true);
+    const [isShowOption, setIsShowOption] = useState(false);
     
     const selectedOptionsJSON = selectedOptions.map((e) => JSON.stringify(e))
 
@@ -49,6 +49,8 @@ export const Category = ({
     }
 
     const categoryImage = getCategoryImage()
+    const isFewOptions = category.options.length > 1
+
     return <>
         <div
             className={cx(s.option, s.category,
@@ -70,7 +72,7 @@ export const Category = ({
                 <div>{category.label}</div>
             </div>
 
-            <div className={s.iconArrow} onClick={(e) => {
+            {isFewOptions && <div className={s.iconArrow} onClick={(e) => {
                 e.stopPropagation()
                 setIsShowOption((prev) => !prev)
             }}>
@@ -79,10 +81,10 @@ export const Category = ({
                     deg={isShowOption ? '180' : '0'}
                     size={sizeIcon ?? '24'}
                 />
-            </div>
+            </div>}
         </div>
 
-        {isShowOption && category.options.map((e, k) => {
+        {isShowOption && isFewOptions && category.options.map((e, k) => {
             return <Option key={k} option={e} disabledOptions={disabledOptions} selectedOptions={selectedOptions}
                            handleOptionClick={() => handleOptionClick(e)} sizeIcon={sizeIcon}
                            clickableOptions={clickableOptions}

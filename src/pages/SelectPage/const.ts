@@ -22,6 +22,13 @@ const defaultCategory  = [
             {value: 'options5', label: 'label5'},
             {value: 'options6', label: 'label6'}
         ]
+    },
+    {
+        value: 'Category3',
+        label: 'category3',
+        options: [
+            {value: 'options7', label: 'label7'},
+        ]
     }
 ]
 
