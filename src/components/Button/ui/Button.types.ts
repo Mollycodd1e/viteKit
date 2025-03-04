@@ -11,6 +11,7 @@ export const BUTTON_VARIANTS = {
 	whiteFilled: 'whiteFilled',
 	shade: 'shade',
 	volodiyaLight: 'volodiyaLight',
+	lightBlue: 'lightBlue',
 	transparent: 'transparent',
 }
 

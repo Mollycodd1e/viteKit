@@ -99,6 +99,23 @@
 	}
 }
 
+.lightBlue {
+	background: #E7F0FF;
+	border: 1px solid #E7F0FF;
+	color: #015FF9;
+
+	&:hover {
+		background: #D4E4FF;
+		border: 1px solid #D4E4FF;
+	}
+
+	&:active {
+		background: #015FF9;
+		border: 1px solid #015FF9;
+		color: #FFFFFF;
+	}
+}
+
 .sokolniki {
 	background: #60663e;
 	border: 1px solid #60663e;
