@@ -191,6 +191,22 @@
   background: #FFEBEB;
   border: 1px solid #ec5353;
 
+  &:hover {
+    border: 1px solid #ec5353;
+  }
+
+  &:has(input:focus) {
+    border: 1px solid #ec5353;
+  }
+
+  input {
+    color: #ec5353;
+  }
+}
+
+.inputWrapperErrorDark {
+  background: #322525;
+  border: 1px solid #ec5353;
 
   &:hover {
     border: 1px solid #ec5353;

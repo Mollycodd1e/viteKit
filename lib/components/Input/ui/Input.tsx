@@ -35,7 +35,8 @@ export const Input = forwardRef<HTMLInputElement, React.PropsWithChildren<Compon
 							{ [s.inputWrapperPre]: pre },
 							{ [s.inputWrapperPost]: post },
 							s[`${width}-width`],
-							{ [s.inputWrapperError]: error },
+							{ [s.inputWrapperError]: error && variant === 'light' },
+							{ [s.inputWrapperErrorDark]: error && variant === 'dark' },
 							additionalClass
 						)}>
 						{pre && <div>{pre}</div>}
