@@ -10,7 +10,7 @@ import { emailReg, nameReg, phoneReg } from '../utils/reg.ts'
 import { CheckBox } from '../../CheckBox/CheckBox.tsx'
 import { TextArea } from '../../TextArea/TextArea.tsx'
 import { useClientWidth } from '../../../../lib/shared/useClientWidth.ts'
-import classNames from "classnames";
+import classNames from 'classnames'
 
 interface IModalFormProps {
 	isFormOpen: boolean
@@ -44,7 +44,6 @@ type IFormPageInputs = {
 	textarea?: string
 }
 
-
 const cx = classNames.bind(s)
 
 const defaultTextCheckBox =
@@ -70,7 +69,7 @@ export const ModalForm = ({
 	advCheckBox = { text: defaultTextCheckBox, isRequired: true },
 	isAdvCheckBox,
 	addTitleClassName,
-	createPortalObj
+	createPortalObj,
 }: IModalFormProps) => {
 	const {
 		register,
@@ -112,7 +111,8 @@ export const ModalForm = ({
 			opacity={0.7}>
 			<div
 				className={s.root}
-				style={{ width: isMobile ? '100%' : modalWidth }}>
+				style={{ width: isMobile ? '100%' : modalWidth }}
+				data-testid='modal_window'>
 				<div
 					className={cx(s.title, addTitleClassName)}
 					dangerouslySetInnerHTML={{ __html: title ?? 'Оставить обращение' }}
@@ -146,7 +146,7 @@ export const ModalForm = ({
 					<Flex className={s.inputWrapper}>
 						<Input
 							width='full'
-							size_s='small'
+							size_s='large'
 							variant='light'
 							placeholder='Введите имя'
 							data-testid='modal_name'
@@ -166,7 +166,7 @@ export const ModalForm = ({
 									width='full'
 									data-testid='phone_modal'
 									type='tel'
-									size_s={'small'}
+									size_s={'large'}
 									variant='light'
 									{...rest}
 									{...register('phone')}
