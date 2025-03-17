@@ -38,12 +38,12 @@ export const Category = ({
 
     const getCategoryImage = () => {
         if (isCategory) {
-            if (isFull) return 'minusCheck'
+            if (isFull) return 'selectChecked'
             else return 'selectUnchecked'
         }
         if (isDouble) {
             if (selectedOptions.some((selected) => selected.value === category.value)) {
-                return 'minusCheck'
+                return 'selectChecked'
             } else return 'selectUnchecked'
         } else return 'selectUnchecked'
     }
