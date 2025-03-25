@@ -29,7 +29,7 @@ export default defineConfig({
 		},
 		minify: true,
 		rollupOptions: {
-			external: ['react', 'react/jsx-runtime'],
+			external: ['react', 'react/jsx-runtime', 'scheduler', 'react-dom'],
 			input: Object.fromEntries(
 				glob
 					.sync('lib/**/*.{ts,tsx}', {

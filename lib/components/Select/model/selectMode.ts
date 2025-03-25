@@ -1,7 +1,6 @@
 import {TCategory, TModeSelect, TOption} from "../ui/Select.types.ts";
 import {SetStateAction} from "react";
 
-
 export type TClickOptionProps = {
     option: TOption | TOption[],
     disabledOptions: TOption[],
