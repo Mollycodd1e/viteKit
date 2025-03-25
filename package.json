@@ -2,7 +2,7 @@
   "name": "stone-kit",
   "description": "uikit for redesign",
   "private": false,
-  "version": "0.0.697",
+  "version": "0.0.698",
   "author": "Mollycodd1e",
   "license": "ISC",
   "type": "module",
@@ -27,6 +27,8 @@
     "react-hook-form": "^7.52.2"
   },
   "devDependencies": {
+    "classnames": "^2.5.1",
+    "react-hook-form": "^7.52.2",
     "@types/node": "^20.12.12",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
