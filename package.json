@@ -2,7 +2,7 @@
   "name": "stone-kit",
   "description": "uikit for redesign",
   "private": false,
-  "version": "0.0.695",
+  "version": "0.0.694",
   "author": "Mollycodd1e",
   "license": "ISC",
   "type": "module",
@@ -20,9 +20,11 @@
   },
   "dependencies": {
     "@react-input/mask": "^1.2.5",
-    "classnames": "^2.5.1",
-    "react-hook-form": "^7.52.2",
     "react-input-mask": "^3.0.0-alpha.2"
+  },
+  "peerDependencies": {
+    "classnames": "^2.5.1",
+    "react-hook-form": "^7.52.2"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
