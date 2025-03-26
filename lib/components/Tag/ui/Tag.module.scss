@@ -1,3 +1,11 @@
+@mixin tag-mini {
+	font-size: 10px;
+	line-height: 12px;
+	min-height: 20px;
+	padding: 6px 4px;
+	gap: 4px;
+}
+
 @mixin tag-tiny {
 	font-size: 10px;
 	line-height: 12px;
@@ -69,6 +77,10 @@
 
 .medium-size {
 	@include tag-medium;
+}
+
+.mini-size {
+	@include tag-mini;
 }
 
 .tiny-size {
@@ -148,6 +160,10 @@
 }
 
 @media(min-width: 1024px) {
+	.mini-size_m {
+		@include tag-mini;
+	}
+
 	.tiny-size_m {
 		@include tag-tiny;
 	}
@@ -170,6 +186,10 @@
 }
 
 @media(min-width: 1440px) {
+	.mini-size_l {
+		@include tag-mini;
+	}
+
 	.tiny-size_l {
 		@include tag-tiny;
 	}
