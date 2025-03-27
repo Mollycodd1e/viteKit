@@ -47,10 +47,23 @@
 	border: 1px solid #E6E8EC;
 	color: #141416;
 	cursor: pointer;
+
+	@media(min-width: 1024px)and (pointer: fine) {
+		&:hover {
+			border: 1px solid #B1B5C3;
+		}
+	}
 }
 
 .checkboxItemActive {
 	border: 1px solid #141416;
 	color: #FFFFFF;
 	background: #141416;
+
+	@media(min-width: 1024px)and (pointer: fine) {
+		&:hover {
+			border: 1px solid #23262F;
+			background: #23262F;
+		}
+	}
 }
