@@ -39,6 +39,8 @@ export const Category = ({
     const isFull = isCategory && category.options.every(element => selectedOptionsJSON.includes(JSON.stringify(element)));
 
     const isClickable = clickableOptions ? clickableOptions.includes(category.value.toString()) : true
+    const isChecked = selectedOptions.some((selected) => selected.value === category.value)
+
 
     const getDisabled = () => {
         if (isDisabledNotClickable && clickableOptions) {
@@ -56,7 +58,7 @@ export const Category = ({
             else return 'selectUnchecked'
         }
         if (isDouble) {
-            if (selectedOptions.some((selected) => selected.value === category.value)) {
+            if (isChecked) {
                 return 'selectChecked'
             } else return 'selectUnchecked'
         } else return 'selectUnchecked'
@@ -73,7 +75,7 @@ export const Category = ({
                     [s.optionClickable]: isClickable,
                 })}
             onClick={() => {
-                if (getDisabled()) return
+                if (getDisabled() && !isChecked) return
 
                 if (isDouble && !isShowOption) setIsShowOption(true)
                 handleOptionClick(isCategory ? category.options : category)
