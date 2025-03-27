@@ -1,16 +1,23 @@
 import { useState } from 'react'
-import {Select, SortSelect, Switcher} from '../../main'
+import { Select, SortSelect, Switcher } from '../../main'
 import s from './SelectPage.module.scss'
 import { SummarySelect } from '../../components/SummarySelect'
-import {TModeSelect, TOption} from '../../components/Select/ui/Select.types.ts'
+import { TModeSelect, TOption } from '../../components/Select/ui/Select.types.ts'
 import { FilterWithSave } from '../../components/FilterWithSave/ui/FilterWithSave.tsx'
-import {defaultCategory, defaultOption} from "./const.ts";
+import { defaultCategory, defaultOption } from './const.ts'
+import { CheckboxSelect } from '../../components/CheckboxSelect/index.ts'
 
 export const SelectPage = () => {
 	const [sort, setSort] = useState<TOption | null>(defaultOption[0])
 	const [select, setSelect] = useState<TOption[] | undefined>([])
-	const [modeSelect, setModeSelect] = useState<TModeSelect>('options');
-
+	const [modeSelect, setModeSelect] = useState<TModeSelect>('options')
+	const fake = [
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: false },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: false },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true },
+	]
 	const handleChangeSort = (e: TOption | null) => {
 		//@ts-expect-error todo types
 		if (!e || !e.target) return
@@ -27,9 +34,13 @@ export const SelectPage = () => {
 		<div className={s.root}>
 			<div>
 				<div>
+					<h2> Селектор с чекбоксами</h2>
+					<CheckboxSelect checkboxes={fake} />
+				</div>
+				<div>
 					<h2> Фильтрация с сохранением</h2>
 					<div className={s.filterWithSave}>
-						<FilterWithSave/>
+						<FilterWithSave />
 					</div>
 				</div>
 				<h2>Сорт селект</h2>
@@ -43,7 +54,7 @@ export const SelectPage = () => {
 				</div>
 			</div>
 			<div className={s.summarySelect}>
-				<div style={{display: 'flex', gap: '20px'}}>
+				<div style={{ display: 'flex', gap: '20px' }}>
 					<h2>SummarySelect</h2>
 					<Switcher
 						isActive={modeSelect === 'category'}
@@ -94,7 +105,7 @@ export const SelectPage = () => {
 
 			<div>
 				<h2>Селект кнопка</h2>
-				<div style={{display: 'flex', justifyContent: 'flex-end'}}>
+				<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
 					<Select
 						isBtn={true}
 						size_s='small'
