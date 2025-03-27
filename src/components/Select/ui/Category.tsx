@@ -16,6 +16,7 @@ export interface IOption {
     handleOptionClick: (option: TOption | TOption[]) => void
     sizeIcon?: string
     mode: TModeSelect
+    isDisabledEqualNotClickable?: boolean
 }
 
 
@@ -26,15 +27,28 @@ export const Category = ({
                              clickableOptions,
                              handleOptionClick,
                              sizeIcon,
+                             isDisabledEqualNotClickable,
                              mode
                          }: IOption) => {
     const [isShowOption, setIsShowOption] = useState(false);
-    
+
     const selectedOptionsJSON = selectedOptions.map((e) => JSON.stringify(e))
 
     const isCategory = mode === 'category'
     const isDouble = mode === 'double'
     const isFull = isCategory && category.options.every(element => selectedOptionsJSON.includes(JSON.stringify(element)));
+
+    const isClickable = clickableOptions ? clickableOptions.includes(category.value.toString()) : true
+
+    const getDisabled = () => {
+        if (isDisabledEqualNotClickable && clickableOptions) {
+            return !clickableOptions.includes(category.value.toString())
+        }
+
+        return disabledOptions.some(
+            (disabled) => disabled.value === category.value
+        )
+    }
 
     const getCategoryImage = () => {
         if (isCategory) {
@@ -56,10 +70,8 @@ export const Category = ({
             className={cx(s.option, s.category,
                 {
                     [s.selected]: selectedOptions.some((selected) => selected.value === category.value),
-                    [s.optionDisabled]: disabledOptions.some(
-                        (disabled) => disabled.value === category.value
-                    ),
-                    [s.optionClickable]: clickableOptions ? clickableOptions.includes(category.value.toString()) : true,
+                    [s.optionDisabled]: getDisabled(),
+                    [s.optionClickable]: isClickable,
                 })}
             onClick={() => {
                 if (isDouble && !isShowOption) setIsShowOption(true)

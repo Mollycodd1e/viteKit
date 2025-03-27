@@ -14,6 +14,7 @@ export interface IOption {
 	handleOptionClick: (option: TOption) => void
 	sizeIcon?: string
 	addClassName?: string
+	isDisabledEqualNotClickable?: boolean
 }
 
 export const Option = ({
@@ -24,20 +25,32 @@ export const Option = ({
 	handleOptionClick,
 	isOptionCategory,
 	sizeIcon,
+	isDisabledEqualNotClickable,
 	addClassName = '',
 }: IOption) => {
+	const isClickable = clickableOptions ? clickableOptions.includes(`${option.value}`) : true
+
+	const getDisabled = () => {
+		if (isDisabledEqualNotClickable && clickableOptions) {
+			return !clickableOptions.includes(`${option.value}`)
+		}
+
+		return disabledOptions.some((disabled) => disabled.value === option.value)
+	}
+
 	return (
 		<div
 			className={cx(
 				s.option,
 				{
 					[s.selected]: selectedOptions.some((selected) => selected.value === option.value),
-					[s.optionDisabled]: disabledOptions.some((disabled) => disabled.value === option.value),
+					[s.optionDisabled]: getDisabled(),
 					[s.optionCategory]: isOptionCategory,
-					[s.optionClickable]: clickableOptions ? clickableOptions.includes(`${option.value}`) : true,
+					[s.optionClickable]: isClickable,
 				},
 				addClassName
 			)}
+
 			onClick={() => {
 				handleOptionClick(option)
 			}}>
