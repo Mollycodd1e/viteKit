@@ -32,6 +32,7 @@ export const Select = ({
                            size_s = 'large',
                            size_m,
                            size_l,
+                           isDisabledNotClickable
                        }: MultiSelectProps) => {
     options = Array.isArray(options) ? [...new Set([...options])] as TOption[] | TCategory[] : []
 
@@ -157,6 +158,7 @@ export const Select = ({
                                 sizeIcon={sizeIcon}
                                 option={option}
                                 handleOptionClick={handleOptionClick}
+                                isDisabledNotClickable={isDisabledNotClickable}
                             />
                         ))}
                     {(mode === 'category' || mode === 'double') &&
@@ -172,6 +174,7 @@ export const Select = ({
                                         mode={mode}
                                         selectedValues={selectedValues}
                                         handleOptionClick={handleOptionClick}
+                                        isDisabledNotClickable={isDisabledNotClickable}
                                     />
                                 } else return null
                             }

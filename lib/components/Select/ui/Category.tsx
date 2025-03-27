@@ -16,7 +16,7 @@ export interface IOption {
     handleOptionClick: (option: TOption | TOption[]) => void
     sizeIcon?: string
     mode: TModeSelect
-    isDisabledEqualNotClickable?: boolean
+    isDisabledNotClickable?: boolean
 }
 
 
@@ -27,7 +27,7 @@ export const Category = ({
                              clickableOptions,
                              handleOptionClick,
                              sizeIcon,
-                             isDisabledEqualNotClickable,
+                             isDisabledNotClickable,
                              mode
                          }: IOption) => {
     const [isShowOption, setIsShowOption] = useState(false);
@@ -41,7 +41,7 @@ export const Category = ({
     const isClickable = clickableOptions ? clickableOptions.includes(category.value.toString()) : true
 
     const getDisabled = () => {
-        if (isDisabledEqualNotClickable && clickableOptions) {
+        if (isDisabledNotClickable && clickableOptions) {
             return !clickableOptions.includes(category.value.toString())
         }
 
@@ -100,7 +100,7 @@ export const Category = ({
             return <Option key={k} option={e} disabledOptions={disabledOptions} selectedOptions={selectedOptions}
                            handleOptionClick={() => handleOptionClick(e)} sizeIcon={sizeIcon}
                            clickableOptions={clickableOptions}
-                           isOptionCategory={true}/>
+                           isOptionCategory={true} isDisabledNotClickable={isDisabledNotClickable}/>
         })}
     </>
 }

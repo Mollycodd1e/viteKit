@@ -14,7 +14,7 @@ export interface IOption {
 	handleOptionClick: (option: TOption) => void
 	sizeIcon?: string
 	addClassName?: string
-	isDisabledEqualNotClickable?: boolean
+	isDisabledNotClickable?: boolean
 }
 
 export const Option = ({
@@ -25,13 +25,13 @@ export const Option = ({
 	handleOptionClick,
 	isOptionCategory,
 	sizeIcon,
-	isDisabledEqualNotClickable,
+	isDisabledNotClickable,
 	addClassName = '',
 }: IOption) => {
 	const isClickable = clickableOptions ? clickableOptions.includes(`${option.value}`) : true
 
 	const getDisabled = () => {
-		if (isDisabledEqualNotClickable && clickableOptions) {
+		if (isDisabledNotClickable && clickableOptions) {
 			return !clickableOptions.includes(`${option.value}`)
 		}
 

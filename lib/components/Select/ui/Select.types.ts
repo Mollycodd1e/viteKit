@@ -56,4 +56,5 @@ export interface MultiSelectProps {
 	mode?: TModeSelect
 	onClickItem?: (option: TOption | TOption[]) => void
 	onCLickSelect?: () => void
+	isDisabledNotClickable?: boolean
 }
