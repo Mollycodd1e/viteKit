@@ -69,11 +69,12 @@ export const Category = ({
         <div
             className={cx(s.option, s.category,
                 {
-                    [s.selected]: selectedOptions.some((selected) => selected.value === category.value),
                     [s.optionDisabled]: getDisabled(),
                     [s.optionClickable]: isClickable,
                 })}
             onClick={() => {
+                if (getDisabled()) return
+
                 if (isDouble && !isShowOption) setIsShowOption(true)
                 handleOptionClick(isCategory ? category.options : category)
             }}>

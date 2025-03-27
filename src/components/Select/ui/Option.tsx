@@ -43,7 +43,6 @@ export const Option = ({
 			className={cx(
 				s.option,
 				{
-					[s.selected]: selectedOptions.some((selected) => selected.value === option.value),
 					[s.optionDisabled]: getDisabled(),
 					[s.optionCategory]: isOptionCategory,
 					[s.optionClickable]: isClickable,
@@ -52,6 +51,8 @@ export const Option = ({
 			)}
 
 			onClick={() => {
+				if (getDisabled()) return
+
 				handleOptionClick(option)
 			}}>
 			{isOptionCategory && (
