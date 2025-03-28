@@ -9,8 +9,8 @@ import { NewIcon } from '../../NewIcon'
 import { emailReg, nameReg, phoneReg } from '../utils/reg.ts'
 import { CheckBox } from '../../CheckBox/CheckBox.tsx'
 import { TextArea } from '../../TextArea/TextArea.tsx'
-import { useClientWidth } from '../../../../lib/shared/useClientWidth.ts'
 import classNames from 'classnames'
+import { useClientWidth } from '../../../main.ts'
 
 interface IModalFormProps {
 	isFormOpen: boolean
