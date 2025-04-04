@@ -46,9 +46,9 @@ export const LotCard = ({
 	} = lot
 
 	const isReserved = status === 2
-	const isRetail = type !== 3
+	const isRetail = type === 3
 	const isOffice = direction === 1
-	const isShowWorkplace = isRetail && isOffice && workPlacesCount !== 0 && workPlacesCount
+	const isShowWorkplace = !isRetail && isOffice && workPlacesCount !== 0 && workPlacesCount
 	const areaStr = area + ' ' + 'м²'
 	const floorStr =
 		(endFloor && endFloor !== floor ? floor + '-' + endFloor : floor) +
