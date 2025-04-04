@@ -44,6 +44,7 @@ export interface MultiSelectProps {
 	widthBtn?: string
 	widthOptionList?: string
 	isListRight?: boolean
+	isLast?: boolean
 	/**
 	 * Список опций которые будут задизейблены по умолчанию
 	 */
