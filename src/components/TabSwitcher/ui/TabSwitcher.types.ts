@@ -3,9 +3,10 @@ import { ReactNode } from 'react'
 const TAB_SWITCHER_VARIANTS = {
 	whiteRow: 'whiteRow',
 	grayRow: 'grayRow',
+	whiteRowGrayLabel: 'whiteRowGrayLabel'
 }
 
-type TabSizes = 'medium' | 'small' | 'large'
+type TabSizes = 'medium' | 'small' | 'large' | 'tiny'
 
 export interface ITabSwitcherItem extends React.InputHTMLAttributes<HTMLInputElement> {
 	addItemClassName?: string
