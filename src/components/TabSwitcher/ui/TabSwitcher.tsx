@@ -16,7 +16,7 @@ const TabSwitcher = ({
 	col = false,
 }: TabSwitcherProps) => {
 	return (
-		<div className={cx(s.root, s[variant], { [s.rootCol]: col, [s.apart]: isApart, addClassName })}>
+		<div className={cx(s.root, s[variant], { [s.rootCol]: col, [s.apart]: isApart }, addClassName)}>
 			{children}
 		</div>
 	)
