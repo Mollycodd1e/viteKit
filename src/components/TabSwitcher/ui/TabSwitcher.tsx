@@ -28,6 +28,7 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 		index,
 		children,
 		addItemClassName,
+		addLabelClassname,
 		addTextClass,
 		size_s = 'large',
 		size_m,
@@ -53,7 +54,7 @@ const TabSwitcherItem = forwardRef<HTMLInputElement, ITabSwitcherItem>((props, r
 	const isAutoWidth = !width && !width_m && !width_l && isLong
 
 	return (
-		<label className={cx({ [s.isLong]: isLong })}>
+		<label className={cx(addLabelClassname, { [s.isLong]: isLong })}>
 			<input
 				ref={ref}
 				type='checkbox'

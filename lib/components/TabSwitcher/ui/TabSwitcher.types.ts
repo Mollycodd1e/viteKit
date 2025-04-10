@@ -11,6 +11,7 @@ type TabSizes = 'medium' | 'small' | 'large' | 'tiny'
 export interface ITabSwitcherItem extends React.InputHTMLAttributes<HTMLInputElement> {
 	addItemClassName?: string
 	addTextClass?: string
+	addLabelClassname?: string
 	index: number
 	isDisabled?: boolean
 	itemsLength: number
