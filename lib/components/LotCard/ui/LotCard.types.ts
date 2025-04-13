@@ -69,11 +69,16 @@ export interface ILot {
 	buildingQuarter?: number | null
 	/** uuid Лота из 1с */
 	lotUuid: string
-	/** UUID проекта */
 	projectUuid: string | null
+	/** Скидка */
+	discount: string | null
+	/** Стоимость объекта недвижимости до скидки */
+	sellingPriceBeforeDiscount: string | null
 	/** Стоимость объекта недвижимости */
 	sellingPrice: string | null
-	/** Показывать скоро в продаже или нет */
+	/**id проекта */
+	projectId: number | null
+	/** Показывать цену или "цена по запросу" */
 	showPriceFlg: boolean | null
 	/** Цена за квм */
 	sellingPricePerMeter: string | null
@@ -99,8 +104,12 @@ export interface ILot {
 	address: string | null
 	/** Тип помещения => Квартиры/Пентхаусы/Келлеры/Паркинг Офисы/Ритейл/Офисные Блоки/Паркинг */
 	type: number | null
+	/** Название помещения => Квартиры/Пентхаусы/Келлеры/Паркинг Офисы/Ритейл/Офисные Блоки/Паркинг */
+	typeName: number | null
 	/** направления, по которым продвигается этот лот */
 	direction: number | null
+	/** Размерность спален S/M/L  */
+	typeSizeCode: string | null
 	/** номер подъезда/секции */
 	entrance: string | null
 	/** Номер квартиры / офиса */
@@ -118,11 +127,16 @@ export interface ILot {
 	/** Высота потолков */
 	ceiling: string | null
 	/** Последний этаж лота */
-	endFloor: number | null
 	/** Этаж, с которого начинаются продаваемые лоты */
 	saleFloorMin: number | null
 	/** Этаж, на котором заканчиваются продаваемые лоты */
 	saleFloorMax: number | null
+	/** Первый этаж большого лота/здания */
+	beginFloor: number | null
+	/** Последний этаж большого лота/здания */
+	endFloor: number | null
+	/** Ежемясячный платеж */
+	mortgageMonthlyPayment?: string
 	/** Количество комнат */
 	roomsCount: number | null
 	/** Количество спален */
@@ -135,8 +149,12 @@ export interface ILot {
 	buildStage: number | null
 	/** угловое? */
 	isCorner: boolean | null
+	/** Квартира с террасой */
+	terrace: boolean | null
 	/** общепит? */
 	isCatering: boolean | null
+	//** pdf презентация*/
+	pdfPresentation: string | null
 	/** является ли лот отдельно стоящим зданием */
 	isDetachedBuilding: boolean | null
 	/** Наличие телефона */
@@ -155,8 +173,6 @@ export interface ILot {
 	isRamp: boolean | null
 	/** Близко ли вход к лифтовой группе */
 	isCloseToLift: boolean | null
-	/** Ежемясячный платеж */
-	mortgageMonthlyPayment?: string
 	/** Занят ли лот */
 	isOccupied: boolean | null
 	/** Является ли лот ГАБ */
@@ -183,6 +199,8 @@ export interface ILot {
 	layout: string | null
 	/** Тип ремонта */
 	repairType: string | null
+	//**Слаг айди лота*/
+	slug: string
 	/** количество стояков с водой */
 	waterPipesCount: number[] | null
 	/** количество рабочих мест */
@@ -216,27 +234,15 @@ export interface ILot {
 		id: number
 		floor: number
 		floorPlanImg: string
+		interiorPlanImg: string
 	}[]
-	//** Цена до скидки */
-	sellingPriceBeforeDiscount: string | null
-	//** Скидка */
-	discount: string | null
-	/** Угол азимута */
-	azimuthAngle?: number | null
-	/** Тип недвижимости */
-	businessType?: string | null
-	/** С отделкой или без */
-	isDecoration?: boolean | null
-	/** С мокрой точкой */
-	isWaterPipes?: boolean | null
-	/** id проекта */
-	projectId?: number | null
-	/** Данные всего проекта */
+	recommended?: ILot[] | null
+	parking?: ILot[] | null
 	project?: IProject | null
-	/** Забронировано или нет????? */
-	reservations?: string[] | null
-	/** Подтип помещения */
-	subTypeName?: string
+	isWaterPipes?: boolean | null
+	azimuthAngle?: number | null
+	isDecoration?: boolean | null
+	subTypeName: string
 }
 
 export interface ILotCard {

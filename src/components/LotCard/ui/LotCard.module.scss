@@ -1,333 +1,377 @@
 .root {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	padding: 32px 24px 24px;
-	border: 1px solid #e6e8ec;
-	border-radius: 24px;
-	box-sizing: border-box;
-	background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid #e6e8ec;
+  border-radius: 24px;
+  box-sizing: border-box;
+  background: #ffffff;
 
-	.lotBtn {
-		opacity: 1;
-		font-weight: 500;
-	}
+  .lotBtn {
+    opacity: 1;
+    font-weight: 500;
+  }
 }
 
 .rootProject {
-	width: 283px;
-	padding: 24px;
+  width: 283px;
+  padding: 24px;
 }
 
 .rootDisable {
 
-	.lotImageWrapper,
-	.lotInfoWrapper {
-		opacity: 0.5;
-	}
+  .lotImageWrapper,
+  .lotInfoWrapper {
+    opacity: 0.5;
+  }
 
-	.lotBtn {
-		pointer-events: none;
-	}
+  .lotBtn {
+    pointer-events: none;
+  }
 }
 
 
 .lotImageWrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .projectLotImageWrapper {
-	max-height: 141px;
+  max-height: 141px;
 }
 
 .projectLotImg {
-	height: 141px;
+  height: 141px;
 }
 
 .lotInfoWrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	margin: 15px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 15px 0 0 0;
 }
 
 .projectLotInfoWrapper {
-	margin: 24px 0 0 0;
+  margin: 24px 0 0 0;
 }
 
 .infoHeader {
-	font-family: inherit;
-	font-size: 24px;
-	line-height: 32px;
-	font-weight: 500;
-	letter-spacing: -0.01em;
-	color: #141416;
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #141416;
 }
 
 .projectLotInfoHeader {
-	font-size: 18px;
-	line-height: 24px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .monthlyWrapper {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
 }
 
 .monthlyPayment {
-	font-size: 14px;
-	line-height: 16px;
-	color: #777e90;
+  font-size: 14px;
+  line-height: 16px;
+  color: #777e90;
 }
 
 .decor {
-	display: none;
+  display: none;
 
-	& span {
-		display: block;
-	}
+  & span {
+    display: block;
+  }
 }
 
 .lotPropertyListMobile {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .lotPropertyItem {
-	display: flex;
-	justify-content: space-between;
-	font-family: inherit;
-	font-size: 14px;
-	line-height: 20px;
-	padding: 8px 0;
-	border-bottom: 1px solid #F4F5F6;
+  display: flex;
+  justify-content: space-between;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 0;
+  border-bottom: 1px solid #F4F5F6;
 
-	& div:first-child {
-		font-weight: 400;
-		color: #353945;
-	}
+  & div:first-child {
+    font-weight: 400;
+    color: #353945;
+  }
 
-	&:not(:first-child) {
-		padding: 7px 0;
-	}
+  &:not(:first-child) {
+    padding: 7px 0;
+  }
 
-	& div:last-child {
-		font-weight: 500;
-		color: #141416;
-	}
+  & div:last-child {
+    font-weight: 500;
+    color: #141416;
+  }
 }
 
 .projectLotPropertyItem {
-	padding: 7px 0;
+  padding: 7px 0;
 
-	&:not(:first-child) {
-		padding: 8px 0;
-	}
+  &:not(:first-child) {
+    padding: 8px 0;
+  }
 }
 
 .lotPropertyListDesktop {
-	display: none;
+  display: none;
 }
 
 .lotPriceWrapper {
-	font-family: inherit;
-	font-size: 18px;
-	line-height: 24px;
-	margin: 18px 0 0 0;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 18px 0 0 0;
 }
 
 .projectLotPriceWrapper {
-	font-size: 16px;
-	margin: 13px 0 0 0;
+  font-size: 16px;
+  margin: 13px 0 0 0;
 }
 
 .discountWrapper {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	&>div:last-child {
-		font-weight: 500;
-		margin-left: auto;
-		color: #141416;
-	}
+  & > div:last-child {
+    font-weight: 500;
+    margin-left: auto;
+    color: #141416;
+  }
 }
 
 .discountPrice {
-	display: flex;
-	align-items: center;
-	font-weight: 400;
-	gap: 8px;
-	color: #B1B5C3;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  gap: 8px;
+  color: #B1B5C3;
 
-	& span {
-		text-decoration: line-through;
-		text-decoration-color: #EC5353;
-	}
+  & span {
+    text-decoration: line-through;
+    text-decoration-color: #EC5353;
+  }
+}
+
+.snippet {
+  position: relative;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.snippet::after {
+  position: absolute;
+  right: calc(-5px - 2px);
+  top: calc(50% - 1.5px);
+  content: '';
+  width: 2px;
+  height: 2px;
+  background: #141416;
 }
 
 .projectDiscountPrice {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .discountTag {
-	padding: 5px 6px;
+  padding: 5px 6px;
 }
 
 .projectDiscountTag {
-	min-height: 20px;
-	padding: 3px 5px;
+  min-height: 20px;
+  padding: 3px 5px;
 }
 
 .lotPricePerMetr {
-	width: max-content;
-	display: none;
+  width: max-content;
+  display: none;
 }
 
 .btnWrapper {
-	display: flex;
-	flex-direction: row-reverse;
-	gap: 16px;
-	margin: 22px 0 0 0;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 16px;
+  margin: 22px 0 0 0;
 }
 
 .projectBtnWrapper {
-	display: none;
+  display: none;
+}
+
+.displayNotMobile {
+  display: none;
+}
+
+.title {
+  padding-bottom: 24px;
+}
+
+.snippets {
+  display: flex;
+  gap: 11px;
 }
 
 @media(min-width: 1024px) {
-	.root {
-		flex-direction: row;
-		gap: 32px;
-		padding: 31px 30px 31px 32px;
-	}
+  .snippet {
 
-	.rootProject {
-		flex-direction: column;
-		padding: 24px;
-		gap: unset;
-	}
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .root {
+    flex-direction: row;
+    gap: 32px;
+    padding: 31px 30px 31px 32px;
+  }
 
-	.lotImageWrapper {
-		& img {
-			width: 148px;
-			height: 106px;
-		}
-	}
+  .rootProject {
+    flex-direction: column;
+    padding: 24px;
+    gap: unset;
+  }
 
-	.projectLotImageWrapper {
-		& img {
-			width: 100%;
-			height: 141px;
-		}
-	}
+  .lotImageWrapper {
+    & img {
+      width: 148px;
+      height: 106px;
+    }
+  }
 
-	.lotInfoWrapper {
-		justify-content: space-between;
-		gap: 0;
-		margin: 0;
-	}
+  .projectLotImageWrapper {
+    & img {
+      width: 100%;
+      height: 141px;
+    }
+  }
 
-	.projectLotInfoWrapper {
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-		margin: 24px 0 0 0;
-	}
+  .lotInfoWrapper {
+    justify-content: space-between;
+    gap: 0;
+    margin: 0;
+  }
 
-	.monthlyWrapper {
-		justify-content: flex-start;
-	}
+  .projectLotInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0 0 0;
+  }
 
-	.decor {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		margin: 4px 0 0 0;
-		font-family: inherit;
-		font-size: 16px;
-		line-height: 24px;
-		font-weight: 500;
-		min-height: 24px;
-		color: #777e90;
-	}
+  .monthlyWrapper {
+    justify-content: flex-start;
+  }
 
-	.lotPropertyListMobile {
-		display: none;
-	}
+  .decor {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 0 0;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    min-height: 24px;
+    color: #777e90;
+  }
 
-	.projectLotPropertyListMobile {
-		display: flex;
-	}
+  .lotPropertyListMobile {
+    display: none;
+  }
 
-	.lotPropertyListDesktop {
-		display: flex;
-		gap: 8px;
-		margin: 16px 0 0 0;
-	}
+  .projectLotPropertyListMobile {
+    display: flex;
+  }
 
-	.projectLotPropertyListDesktop {
-		display: none;
-	}
+  .lotPropertyListDesktop {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0 0 0;
+  }
 
-	.lotPriceWrapper {
-		display: flex;
-		flex-direction: column;
-		font-size: 24px;
-		line-height: 32px;
-		margin: 0 0 0 auto;
-	}
+  .projectLotPropertyListDesktop {
+    display: none;
+  }
 
-	.projectLotPriceWrapper {
-		font-family: inherit;
-		font-size: 16px;
-		margin: 13px 0 0 0;
-		line-height: 24px;
-	}
+  .lotPriceWrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0 0 0 auto;
+  }
 
-	.discountWrapper {
-		gap: 12px;
-	}
+  .projectLotPriceWrapper {
+    font-family: inherit;
+    font-size: 16px;
+    margin: 13px 0 0 0;
+    line-height: 24px;
+  }
 
-	.discountPrice {
-		font-size: 14px;
-		line-height: 20px;
-		gap: 12px;
-	}
+  .discountWrapper {
+    gap: 12px;
+  }
 
-	.lotPricePerMetr {
-		display: block;
-		margin: 0 0 0 auto;
-		font-size: 14px;
-		line-height: 20px;
-		font-weight: 400;
-		color: #353945;
-	}
+  .discountPrice {
+    font-size: 14px;
+    line-height: 20px;
+    gap: 12px;
+  }
 
-	.projectLotPricePerMetr {
-		display: none;
-	}
+  .lotPricePerMetr {
+    display: block;
+    margin: 0 0 0 auto;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #353945;
+  }
 
-	.btnWrapper {
-		flex-direction: row;
-		justify-content: flex-end;
-		gap: 8px;
-		margin: auto 0 0 0;
+  .projectLotPricePerMetr {
+    display: none;
+  }
 
-		&>button:last-child {
-			width: max-content;
-		}
-	}
+  .btnWrapper {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+    margin: auto 0 0 0;
 
-	.fullscreenBtn {
-		display: block;
-	}
+    & > button:last-child {
+      width: max-content;
+    }
+  }
+
+  .fullscreenBtn {
+    display: block;
+  }
+
+  .displayNotDesktop {
+    display: none;
+  }
+  .displayNotMobile {
+    display: block;
+  }
 }
