@@ -135,6 +135,47 @@
   }
 }
 
+.gray {
+  background: #E6E8EC;
+  border: none;
+
+  & input {
+    color: #141416;
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0 1000px white inset;
+      -webkit-text-fill-color: #777E90;
+      background-color: #E6E8EC;
+    }
+
+    &::placeholder {
+      color: #777E90;
+    }
+  }
+
+  & span {
+    color: #777E90;
+  }
+
+  &:has(input:disabled) {
+    background: #f4f5f6;
+    border: 1px solid #e6e8ec;
+
+    & input {
+      color: #b1b5c3;
+
+      &::placeholder {
+        color: #b1b5c3;
+      }
+    }
+
+    & span {
+      color: #b1b5c3;
+    }
+  }
+}
+
+
 .dark {
   background: #23262f;
   border: 1px solid #353945;
@@ -143,7 +184,7 @@
     color: #ffffff;
 
     &:-webkit-autofill {
-      box-shadow: 0 0 0px 1000px #23262f inset;
+      box-shadow: 0 0 0 1000px #23262f inset;
       -webkit-text-fill-color: white;
       background-color: transparent;
     }

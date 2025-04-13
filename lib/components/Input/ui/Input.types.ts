@@ -5,6 +5,7 @@ type inputWidth = 'auto' | 'full'
 export const INPUT_VARIANTS = {
 	light: 'light',
 	dark: 'dark',
+	gray: 'gray',
 }
 
 export type inputVariant = keyof typeof INPUT_VARIANTS

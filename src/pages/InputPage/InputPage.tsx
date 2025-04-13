@@ -8,6 +8,7 @@ export const InputPage = () => {
 				<form>
 					<Input></Input>
 					<Input variant='dark' error></Input>
+					<Input variant='gray' error></Input>
 					<Input size_s={'medium'} size_m='large'></Input>
 				</form>
 			</div>
