@@ -130,6 +130,13 @@ export const LotCard = ({
                         <div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
                     )}
                 </div>
+                <div className={s.snippets}>
+                    {tagFeatures.map((e, i) => {
+                        const isLast = i === tagFeatures.length - 1
+                        return <div key={i} className={!isLast ? s.snippet : s.snippetLast}>{e.text}</div>
+                    })}
+                </div>
+
                 <div
                     className={cx(s.lotPropertyListDesktop, {
                         [s.projectLotPropertyListDesktop]: isProjectCard,
@@ -156,11 +163,6 @@ export const LotCard = ({
                 </ul>
             </div>
             <div className={cx(s.lotPriceWrapper, {[s.projectLotPriceWrapper]: isProjectCard})}>
-                <div className={s.tagsMobile}>
-                    <Tag variant='gray'>{areaStr}</Tag>
-                    <Tag variant='gray'>{housing}</Tag>
-                    <Tag variant='gray'>{getFloorStr()}</Tag>
-                </div>
                 {!isReserved && (
                     <div className={s.discountWrapper}>
                         {discount && sellingPrice && sellingPriceBeforeDiscount && (

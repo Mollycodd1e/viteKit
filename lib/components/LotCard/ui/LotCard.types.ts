@@ -236,6 +236,7 @@ export interface ILot {
 		floorPlanImg: string
 		interiorPlanImg: string
 	}[]
+	cornerKitchenLiving?:  boolean | null
 	recommended?: ILot[] | null
 	parking?: ILot[] | null
 	project?: IProject | null
