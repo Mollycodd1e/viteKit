@@ -30,7 +30,7 @@ export const LotCard = ({
         housing,
         bedroomsCount,
         number,
-        sellingPrice,
+
         sellingPricePerMeter,
         interiorPlanImg,
         mortgageMonthlyPayment,
@@ -43,7 +43,7 @@ export const LotCard = ({
         endFloor,
         status,
     } = lot
-
+    const sellingPrice = ''
     const tagFeatures = getTagsFeatures({...lot})
     const isReserved = status === 2
     const isOffice = direction === 1
@@ -100,7 +100,7 @@ export const LotCard = ({
                     <div className={s.snippets}>
                         {tagFeatures.map((e, i) => {
                             const isLast = i === tagFeatures.length - 1
-                            return <div key={i} className={!isLast ? s.snippet : ''}>{e.text}</div>
+                            return <div key={i} className={!isLast ? s.snippet : s.snippetLast}>{e.text}</div>
                         })}
                     </div>
                 </div>}
@@ -156,6 +156,11 @@ export const LotCard = ({
                 </ul>
             </div>
             <div className={cx(s.lotPriceWrapper, {[s.projectLotPriceWrapper]: isProjectCard})}>
+                <div className={s.tagsMobile}>
+                    <Tag variant='gray'>{areaStr}</Tag>
+                    <Tag variant='gray'>{housing}</Tag>
+                    <Tag variant='gray'>{getFloorStr()}</Tag>
+                </div>
                 {!isReserved && (
                     <div className={s.discountWrapper}>
                         {discount && sellingPrice && sellingPriceBeforeDiscount && (
@@ -180,6 +185,7 @@ export const LotCard = ({
                         {formatPrice(sellingPricePerMeter, true, direction)}
                     </div>
                 )}
+
                 <div className={cx(s.btnWrapper, {[s.projectBtnWrapper]: isProjectCard})}>
                     <Button
                         as='button'
