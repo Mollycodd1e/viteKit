@@ -95,7 +95,7 @@
     color: #141416;
 
     &:-webkit-autofill {
-      box-shadow: 0 0 0px 1000px white inset;
+      box-shadow: 0 0 0 1000px white inset;
       -webkit-text-fill-color: #141416;
       background-color: transparent;
     }
@@ -143,7 +143,7 @@
     color: #141416;
 
     &:-webkit-autofill {
-      box-shadow: 0 0 0 1000px white inset;
+      box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.3) inset;
       -webkit-text-fill-color: #141416;
       background-color: #777E90;
     }
@@ -245,11 +245,16 @@
   }
 }
 
-.inputWrapperErrorWithoutBorder{
+.inputWrapperErrorWithoutBorder {
   background: #FFEBEB;
 
   input {
     color: #ec5353;
+  }
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: #141416;
+    background-color: #9c4a4a;
   }
 }
 
