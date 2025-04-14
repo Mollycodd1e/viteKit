@@ -194,7 +194,7 @@
   gap: 4px;
 }
 
-.snippet::after {
+.snippetLast::after {
   position: absolute;
   right: calc(-5px - 2px);
   top: calc(50% - 1.5px);
@@ -257,12 +257,11 @@
     line-height: 20px;
   }
 
-  .snippetLast{
+  .snippetLast {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
   }
-
 
   .root {
     flex-direction: row;
@@ -399,8 +398,8 @@
   }
 }
 
-@media(min-width: 1440px){
-  .snippets{
+@media(min-width: 1440px) {
+  .snippets {
     padding-top: 4px;
   }
 }
