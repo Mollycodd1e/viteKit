@@ -176,12 +176,13 @@
 
 .snippetLast {
   position: relative;
-
+  font-weight: 500;
   font-size: 14px;
   line-height: 20px;
 }
 
 .snippet {
+  color: #141416;
   position: relative;
   font-weight: 500;
   font-size: 14px;
@@ -251,6 +252,12 @@
   }
 
   .snippet {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .snippetLast{
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
