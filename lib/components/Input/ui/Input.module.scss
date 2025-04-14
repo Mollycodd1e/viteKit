@@ -245,6 +245,14 @@
   }
 }
 
+.inputWrapperErrorWithoutBorder{
+  background: #FFEBEB;
+
+  input {
+    color: #ec5353;
+  }
+}
+
 .inputWrapperErrorDark {
   background: #322525;
   border: 1px solid #ec5353;
