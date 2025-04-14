@@ -398,3 +398,9 @@
     display: block;
   }
 }
+
+@media(min-width: 1440px){
+  .snippets{
+    padding-top: 4px;
+  }
+}

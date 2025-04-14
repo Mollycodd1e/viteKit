@@ -133,7 +133,7 @@ export const LotCard = ({
                 <div className={s.snippets}>
                     {tagFeatures.map((e, i) => {
                         const isLast = i === tagFeatures.length - 1
-                        return <div key={i} className={!isLast ? s.snippet : s.snippetLast}>{e.text}</div>
+                        return <div key={i} className={cx(s.snippet, !isLast ? '' : s.snippetLast)}>{e.text}</div>
                     })}
                 </div>
 
