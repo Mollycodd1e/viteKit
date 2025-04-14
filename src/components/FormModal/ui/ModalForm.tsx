@@ -31,6 +31,7 @@ interface IModalFormProps {
 	isRequiredEmail?: boolean
 	isRequiredPhoneOrEmail?: boolean
 	isAdvCheckBox?: boolean
+	telegramClickHandler?: () => void
 	addTitleClassName?: string
 	createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
 }
@@ -70,6 +71,7 @@ export const ModalForm = ({
 	isAdvCheckBox,
 	addTitleClassName,
 	createPortalObj,
+	telegramClickHandler = () => null,
 }: IModalFormProps) => {
 	const {
 		register,
@@ -123,7 +125,9 @@ export const ModalForm = ({
 							className={s.telegramLink}
 							href={telegramLink}
 							target='_blank'>
-							<div className={s.telegram}>
+							<div
+								className={s.telegram}
+								onClick={telegramClickHandler}>
 								<div>Подписаться в Telegram</div>
 								<NewIcon name='telegram'></NewIcon>
 							</div>
