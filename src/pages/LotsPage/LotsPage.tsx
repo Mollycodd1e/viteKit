@@ -473,6 +473,7 @@ export const LotsPage = () => {
                 {!isFetching && (
                     <LotCard
                         lot={testLot}
+                        rowConditions={false}
                         handleBtnForm={() => {
                         }}
                     />
@@ -480,6 +481,7 @@ export const LotsPage = () => {
                 {!isFetching && (
                     <LotCard
                         lot={testLot2}
+                        rowConditions={false}
                         handleBtnForm={() => {
                         }}
                     />
@@ -487,6 +489,7 @@ export const LotsPage = () => {
                 {!isFetching && (
                     <LotCard
                         lot={testBigLot}
+                        rowConditions={false}
                         handleBtnForm={() => {
                         }}
                     />
@@ -494,6 +497,7 @@ export const LotsPage = () => {
                 {!isFetching && (
                     <LotCard
                         lot={testLotId}
+                        rowConditions={false}
                         handleBtnForm={() => {
                         }}
                     />
@@ -502,6 +506,7 @@ export const LotsPage = () => {
                     {!isFetching && (
                         <LotCard
                             lot={testLot}
+                            rowConditions={false}
                             handleBtnForm={() => {
                             }}
                         />
