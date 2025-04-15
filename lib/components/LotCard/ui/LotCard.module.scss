@@ -14,11 +14,6 @@
   }
 }
 
-.rootProject {
-  width: 283px;
-  padding: 24px;
-}
-
 .rootDisable {
 
   .lotImageWrapper,
@@ -38,14 +33,6 @@
   align-items: center;
 }
 
-.projectLotImageWrapper {
-  max-height: 141px;
-}
-
-.projectLotImg {
-  height: 141px;
-}
-
 .lotInfoWrapper {
   display: flex;
   flex-direction: column;
@@ -53,9 +40,6 @@
   margin: 15px 0 0 0;
 }
 
-.projectLotInfoWrapper {
-  margin: 24px 0 0 0;
-}
 
 .infoHeader {
   font-family: inherit;
@@ -64,11 +48,6 @@
   font-weight: 500;
   letter-spacing: -0.01em;
   color: #141416;
-}
-
-.projectLotInfoHeader {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .monthlyWrapper {
@@ -125,14 +104,6 @@
   }
 }
 
-.projectLotPropertyItem {
-  padding: 7px 0;
-
-  &:not(:first-child) {
-    padding: 8px 0;
-  }
-}
-
 .lotPropertyListDesktop {
   display: none;
 }
@@ -142,11 +113,6 @@
   font-size: 18px;
   line-height: 24px;
   margin: 18px 0 0 0;
-}
-
-.projectLotPriceWrapper {
-  font-size: 16px;
-  margin: 13px 0 0 0;
 }
 
 .discountWrapper {
@@ -204,17 +170,8 @@
   background: #141416;
 }
 
-.projectDiscountPrice {
-  font-size: 14px;
-}
-
 .discountTag {
   padding: 5px 6px;
-}
-
-.projectDiscountTag {
-  min-height: 20px;
-  padding: 3px 5px;
 }
 
 .lotPricePerMetr {
@@ -227,10 +184,6 @@
   flex-direction: row-reverse;
   gap: 16px;
   margin: 22px 0 0 0;
-}
-
-.projectBtnWrapper {
-  display: none;
 }
 
 .displayNotMobile {
@@ -269,12 +222,6 @@
     padding: 31px 30px 31px 32px;
   }
 
-  .rootProject {
-    flex-direction: column;
-    padding: 24px;
-    gap: unset;
-  }
-
   .lotImageWrapper {
     & img {
       width: 148px;
@@ -282,24 +229,10 @@
     }
   }
 
-  .projectLotImageWrapper {
-    & img {
-      width: 100%;
-      height: 141px;
-    }
-  }
-
   .lotInfoWrapper {
     justify-content: space-between;
     gap: 0;
     margin: 0;
-  }
-
-  .projectLotInfoWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 24px 0 0 0;
   }
 
   .monthlyWrapper {
@@ -323,18 +256,10 @@
     display: none;
   }
 
-  .projectLotPropertyListMobile {
-    display: flex;
-  }
-
   .lotPropertyListDesktop {
     display: flex;
     gap: 8px;
     margin: 16px 0 0 0;
-  }
-
-  .projectLotPropertyListDesktop {
-    display: none;
   }
 
   .lotPriceWrapper {
@@ -343,13 +268,6 @@
     font-size: 24px;
     line-height: 32px;
     margin: 0 0 0 auto;
-  }
-
-  .projectLotPriceWrapper {
-    font-family: inherit;
-    font-size: 16px;
-    margin: 13px 0 0 0;
-    line-height: 24px;
   }
 
   .discountWrapper {

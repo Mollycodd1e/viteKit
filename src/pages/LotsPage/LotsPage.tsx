@@ -501,7 +501,6 @@ export const LotsPage = () => {
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     {!isFetching && (
                         <LotCard
-                            isProjectCard
                             lot={testLot}
                             handleBtnForm={() => {
                             }}

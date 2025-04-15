@@ -21,7 +21,6 @@ export const LotCard = ({
                             addClassname,
                             btnName = 'Уточнить детали',
                             imgNode,
-                            isProjectCard,
                         }: ILotCard) => {
     const {
         area,
@@ -79,15 +78,12 @@ export const LotCard = ({
 
     return (
         <div
-            className={cx(s.root, addClassname, {
-                [s.rootProject]: isProjectCard,
-                [s.rootDisable]: isReserved,
-            })}>
+            className={cx(s.root, addClassname, {[s.rootDisable]: isReserved})}>
             {
                 <div className={cx(s.displayNotDesktop, s.title)}>
                     <div className={s.monthlyWrapper}>
                         <Text
-                            className={cx(s.infoHeader, {[s.projectLotInfoHeader]: isProjectCard})}
+                            className={cx(s.infoHeader)}
                             html={`${
                                 isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
                             }, ${number}`}
@@ -104,24 +100,23 @@ export const LotCard = ({
                         })}
                     </div>
                 </div>}
-            <div className={cx(s.lotImageWrapper, {[s.projectLotImageWrapper]: isProjectCard})}>
+            <div className={cx(s.lotImageWrapper)}>
                 {imgNode ? (
                     imgNode
                 ) : (
                     <img
                         loading='lazy'
                         src={interiorPlanImg ?? floorPlanImg ?? LotImage}
-                        className={cx({[s.projectLotImg]: isProjectCard})}
                         width={280}
                         height={200}
                         alt={''}
                     />
                 )}
             </div>
-            <div className={cx(s.lotInfoWrapper, {[s.projectLotInfoWrapper]: isProjectCard})}>
+            <div className={cx(s.lotInfoWrapper)}>
                 <div className={cx(s.monthlyWrapper, s.displayNotMobile)}>
                     <Text
-                        className={cx(s.infoHeader, {[s.projectLotInfoHeader]: isProjectCard})}
+                        className={cx(s.infoHeader)}
                         html={`${
                             isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
                         }, ${number}`}
@@ -138,40 +133,36 @@ export const LotCard = ({
                 </div>
 
                 <div
-                    className={cx(s.lotPropertyListDesktop, {
-                        [s.projectLotPropertyListDesktop]: isProjectCard,
-                    })}>
+                    className={cx(s.lotPropertyListDesktop)}>
                     <Tag variant='gray'>{areaStr}</Tag>
                     <Tag variant='gray'>{housing}</Tag>
                     <Tag variant='gray'>{getFloorStr()}</Tag>
                 </div>
                 <ul
-                    className={cx(s.lotPropertyListMobile, {
-                        [s.projectLotPropertyListMobile]: isProjectCard,
-                    })}>
-                    <li className={cx(s.lotPropertyItem, {[s.projectLotPropertyItem]: isProjectCard})}>
+                    className={cx(s.lotPropertyListMobile)}>
+                    <li className={cx(s.lotPropertyItem)}>
                         <div>Площадь</div>
                         <div>{areaStr}</div>
                     </li>
-                    <li className={cx(s.lotPropertyItem, {[s.projectLotPropertyItem]: isProjectCard})}>
+                    <li className={cx(s.lotPropertyItem)}>
                         <div>{housing?.split(' ')[0]}</div>
                         <div>{housing?.split(' ')[1]}</div>
                     </li>
-                    <li className={cx(s.lotPropertyItem, {[s.projectLotPropertyItem]: isProjectCard})}>
+                    <li className={cx(s.lotPropertyItem)}>
                         <FloorByType/>
                     </li>
                 </ul>
             </div>
-            <div className={cx(s.lotPriceWrapper, {[s.projectLotPriceWrapper]: isProjectCard})}>
+            <div className={cx(s.lotPriceWrapper)}>
                 {!isReserved && (
                     <div className={s.discountWrapper}>
                         {discount && sellingPrice && sellingPriceBeforeDiscount && (
-                            <div className={cx(s.discountPrice, {[s.projectDiscountPrice]: isProjectCard})}>
+                            <div className={cx(s.discountPrice)}>
 								<span>
 									{formatPrice(sellingPriceBeforeDiscount ?? sellingPrice, false, direction)}
 								</span>
                                 <Tag
-                                    additionalClass={cx(s.discountTag, {[s.projectDiscountTag]: isProjectCard})}
+                                    additionalClass={cx(s.discountTag)}
                                     variant='red'
                                     size={'tiny'}>
                                     {'-' + Number(discount) + '%'}
@@ -188,7 +179,7 @@ export const LotCard = ({
                     </div>
                 )}
 
-                <div className={cx(s.btnWrapper, {[s.projectBtnWrapper]: isProjectCard})}>
+                <div className={cx(s.btnWrapper)}>
                     <Button
                         as='button'
                         data-testid={'lot_fullscreen'}
