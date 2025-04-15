@@ -10,6 +10,7 @@ import {formatPrice} from '../utils/formatPrice'
 import {formatPayment} from '../utils/monthlyPayment'
 import classNames from 'classnames'
 import {getTagsFeatures} from "../utils/getTagsFeatures.ts";
+import {useClientWidth} from "../../../main.ts";
 
 const cx = classNames.bind(s)
 
@@ -21,6 +22,8 @@ export const LotCard = ({
                             addClassname,
                             btnName = 'Уточнить детали',
                             imgNode,
+                            rowConditions,
+                            addClassnameLotImage
                         }: ILotCard) => {
     const {
         area,
@@ -29,7 +32,6 @@ export const LotCard = ({
         housing,
         bedroomsCount,
         number,
-
         sellingPricePerMeter,
         interiorPlanImg,
         mortgageMonthlyPayment,
@@ -37,12 +39,12 @@ export const LotCard = ({
         direction,
         floorPlanImg,
         discount,
+        sellingPrice,
         sellingPriceBeforeDiscount,
         subTypeName,
         endFloor,
         status,
     } = lot
-    const sellingPrice = ''
     const tagFeatures = getTagsFeatures({...lot})
     const isReserved = status === 2
     const isOffice = direction === 1
@@ -54,6 +56,10 @@ export const LotCard = ({
         'из' +
         ' ' +
         floorsNumber
+
+    const {isTablet, isDesktop} = useClientWidth()
+    //если нет rowConditions то будет на tablet и desktop
+    const rowConditionsVar = typeof rowConditions !== 'undefined' ? rowConditions : (isDesktop || isTablet)
 
     const getFloorStr = () => {
         if (type === 11) return 'Кол-во этажей: ' + floorsNumber
@@ -78,29 +84,30 @@ export const LotCard = ({
 
     return (
         <div
-            className={cx(s.root, addClassname, {[s.rootDisable]: isReserved})}>
-            {
-                <div className={cx(s.displayNotDesktop, s.title)}>
-                    <div className={s.monthlyWrapper}>
-                        <Text
-                            className={cx(s.infoHeader)}
-                            html={`${
-                                isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
-                            }, ${number}`}
-                        />
-                        {mortgageMonthlyPayment && (
-                            <div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
-                        )}
-                    </div>
+            className={cx(s.root, addClassname, {[s.rootDisable]: isReserved, [s.rootRow]: rowConditionsVar})}>
+            {!rowConditionsVar && <div className={cx(s.title)}>
+                <div className={s.monthlyWrapper}>
+                    <Text
+                        className={cx(s.infoHeader)}
+                        html={`${
+                            isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
+                        }, ${number}`}
+                    />
+                    {mortgageMonthlyPayment && (
+                        <div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
+                    )}
+                </div>
 
-                    <div className={s.snippets}>
-                        {tagFeatures.map((e, i) => {
-                            const isLast = i === tagFeatures.length - 1
-                            return <div key={i} className={cx(s.snippet, isLast ? '' : s.snippetLast)}>{e.text}</div>
-                        })}
-                    </div>
-                </div>}
-            <div className={cx(s.lotImageWrapper)}>
+                <div className={s.snippets}>
+                    {tagFeatures.map((e, i) => {
+                        const isLast = i === tagFeatures.length - 1
+                        return <div key={i} className={cx(s.snippet, isLast ? '' : s.snippetLast)}>{e.text}</div>
+                    })}
+                </div>
+            </div>
+
+            }
+            <div className={cx(s.lotImageWrapper, addClassnameLotImage)}>
                 {imgNode ? (
                     imgNode
                 ) : (
@@ -114,23 +121,25 @@ export const LotCard = ({
                 )}
             </div>
             <div className={cx(s.lotInfoWrapper)}>
-                <div className={cx(s.monthlyWrapper, s.displayNotMobile)}>
-                    <Text
-                        className={cx(s.infoHeader)}
-                        html={`${
-                            isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
-                        }, ${number}`}
-                    />
-                    {mortgageMonthlyPayment && (
-                        <div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
-                    )}
-                </div>
-                <div className={s.snippets}>
-                    {tagFeatures.map((e, i) => {
-                        const isLast = i === tagFeatures.length - 1
-                        return <div key={i} className={cx(s.snippet, isLast ? '' : s.snippetLast)}>{e.text}</div>
-                    })}
-                </div>
+                {rowConditionsVar && <>
+                    <div className={cx(s.monthlyWrapper)}>
+                        <Text
+                            className={cx(s.infoHeader)}
+                            html={`${
+                                isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
+                            }, ${number}`}
+                        />
+                        {mortgageMonthlyPayment && (
+                            <div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
+                        )}
+                    </div>
+                    <div className={s.snippets}>
+                        {tagFeatures.map((e, i) => {
+                            const isLast = i === tagFeatures.length - 1
+                            return <div key={i} className={cx(s.snippet, isLast ? '' : s.snippetLast)}>{e.text}</div>
+                        })}
+                    </div>
+                </>}
 
                 <div
                     className={cx(s.lotPropertyListDesktop)}>
@@ -153,7 +162,7 @@ export const LotCard = ({
                     </li>
                 </ul>
             </div>
-            <div className={cx(s.lotPriceWrapper)}>
+            <div className={cx(s.lotPriceWrapper, {[s.lotPriceWrapperRow]: !rowConditionsVar})}>
                 {!isReserved && (
                     <div className={s.discountWrapper}>
                         {discount && sellingPrice && sellingPriceBeforeDiscount && (

@@ -253,6 +253,7 @@ export interface ILotCard {
 	handleBtnForm: () => void
 	handleFullScreenBtn?: () => void
 	addClassname?: string
-	isProjectCard?: boolean
+	addClassnameLotImage?: string
 	imgNode?: React.ReactNode
+	rowConditions?: boolean
 }

@@ -186,10 +186,6 @@
   margin: 22px 0 0 0;
 }
 
-.displayNotMobile {
-  display: none;
-}
-
 .title {
   padding-bottom: 24px;
 }
@@ -197,6 +193,10 @@
 .snippets {
   display: flex;
   gap: 11px;
+}
+
+.rootRow {
+  flex-direction: row;
 }
 
 @media(min-width: 1024px) {
@@ -217,7 +217,6 @@
   }
 
   .root {
-    flex-direction: row;
     gap: 32px;
     padding: 31px 30px 31px 32px;
   }
@@ -264,10 +263,27 @@
 
   .lotPriceWrapper {
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     font-size: 24px;
     line-height: 32px;
     margin: 0 0 0 auto;
+  }
+
+  .lotPriceWrapperRow {
+    width: unset;
+margin: unset;
+    .btnWrapper {
+      order: 1;
+
+      & > button:last-child {
+        width: 100%;
+      }
+    }
+
+    .fullscreenBtn {
+      order: 2;
+    }
   }
 
   .discountWrapper {
@@ -297,7 +313,6 @@
     flex-direction: row;
     justify-content: flex-end;
     gap: 8px;
-    margin: auto 0 0 0;
 
     & > button:last-child {
       width: max-content;
@@ -308,12 +323,6 @@
     display: block;
   }
 
-  .displayNotDesktop {
-    display: none;
-  }
-  .displayNotMobile {
-    display: block;
-  }
 }
 
 @media(min-width: 1440px) {
