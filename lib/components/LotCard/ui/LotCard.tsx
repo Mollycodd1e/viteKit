@@ -224,7 +224,7 @@ export const LotCard = ({
                         }
                         onClick={(e) => {
                             e.preventDefault()
-                            handleBtnForm()
+                            handleBtnForm(e)
                         }}>
                         {btnName}
                     </Button>

@@ -250,7 +250,7 @@ export interface ILotCard {
 	lot: ILot
 	btnName?: string
 	btnDisabled?: boolean
-	handleBtnForm: () => void
+	handleBtnForm: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 	handleFullScreenBtn?: () => void
 	addClassname?: string
 	addClassnameLotImage?: string
