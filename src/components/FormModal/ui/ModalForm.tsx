@@ -124,12 +124,13 @@ export const ModalForm = ({
 						<a
 							className={s.telegramLink}
 							href={telegramLink}
-							target='_blank'>
+							target='_blank'
+							data-testid='modal_telegram_link'>
 							<div
 								className={s.telegram}
 								onClick={telegramClickHandler}>
 								<div>Подписаться в Telegram</div>
-								<NewIcon name='telegram'></NewIcon>
+								<NewIcon name='telegram' />
 							</div>
 						</a>
 						<div className={s.orText}>или</div>
