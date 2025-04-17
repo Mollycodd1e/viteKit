@@ -61,6 +61,12 @@ export const SelectPage = () => {
 						onClick={() => setModeSelect(modeSelect === 'options' ? 'category' : 'options')}>
 						mode category
 					</Switcher>
+
+					<Switcher
+						isActive={modeSelect === 'double'}
+						onClick={() => setModeSelect(modeSelect === 'options' ? 'double' : 'options')}>
+						mode double
+					</Switcher>
 				</div>
 
 				<SummarySelect
@@ -70,7 +76,7 @@ export const SelectPage = () => {
 					selectedValues={select}
 					options={modeSelect === 'category' ? defaultCategory : defaultOption}
 					onChange={(e) => handleChangeSelect(e)}
-					clickableOptions={['option1', 'option2']}
+					// clickableOptions={['option1', 'option2']}
 				/>
 			</div>
 
