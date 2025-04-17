@@ -29,6 +29,11 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
         handleChangeSelect([])
     }
 
+    const handleClearCategory = (category: TCategory) => {
+        handleChangeSelect(props.selectedValues?.filter((e) => e.value !== category.value)
+            .filter((optionSelected) => !category.options.some((option) => option.value === optionSelected.value)) ?? [])
+    }
+
     const categoryList = props.selectedValues?.filter((e) => 'options' in e)
 
     return (
@@ -73,7 +78,7 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
                     <div className={s.headerCategory}>
                         <div className={s.categoryTitle}>{category.label}</div>
 
-                        <div onClick={handleClearAll} className={s.clearBtn}>
+                        <div onClick={() => handleClearCategory(e as TCategory)} className={s.clearBtn}>
                             <NewIcon
                                 name='close'
                                 size='16'
@@ -83,18 +88,18 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
 
 
                     <div className={s.categoryOptions}>
-						{category.options.filter((el) => props.selectedValues?.some((e) => el.value === e.value)).map((option, i) => {
-							return <div key={i}
-										onClick={() => handleRemoveOption(option.value.toString())}
-										className={`${s.summaryOption} ${s.categoryOption}`}>
-								{option.label}
-								<NewIcon
-									name='close'
-									size='16'
-								/>
-							</div>
-						})}
-					</div>
+                        {category.options.filter((el) => props.selectedValues?.some((e) => el.value === e.value)).map((option, i) => {
+                            return <div key={i}
+                                        onClick={() => handleRemoveOption(option.value.toString())}
+                                        className={`${s.summaryOption} ${s.categoryOption}`}>
+                                {option.label}
+                                <NewIcon
+                                    name='close'
+                                    size='16'
+                                />
+                            </div>
+                        })}
+                    </div>
                 </div>
             })}
         </div>
