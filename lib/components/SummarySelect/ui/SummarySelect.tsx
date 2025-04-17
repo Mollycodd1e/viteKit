@@ -47,7 +47,7 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
                 {...props}
                 onChange={handleChangeSelect}
             />
-            {props.selectedValues && props.selectedValues.length > 0 && (
+            {props.mode === 'options' && props.selectedValues && props.selectedValues.length > 0 && (
                 <div className={s.summaryList}>
 
                     {props.selectedValues.map((m) => (

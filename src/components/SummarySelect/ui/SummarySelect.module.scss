@@ -63,10 +63,14 @@
   }
 }
 
-.categoryOption{
+.categoryOption {
   background: #E6E8EC;
   color: #777E90;
   padding: 6px 12px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .summaryCategory {
@@ -93,7 +97,8 @@
   vertical-align: middle;
 }
 
-.categoryOptions{
+.categoryOptions {
+  flex-wrap: wrap;
   display: flex;
   gap: 4px;
 }
