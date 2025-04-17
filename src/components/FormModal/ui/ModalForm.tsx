@@ -183,7 +183,7 @@ export const ModalForm = ({
 						{isEmail && (
 							<Input
 								width='full'
-								size_s='small'
+								size_s='large'
 								variant='light'
 								placeholder='Введите email'
 								data-testid='modal_email'
