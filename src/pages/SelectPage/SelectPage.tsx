@@ -34,6 +34,18 @@ export const SelectPage = () => {
 		<div className={s.root}>
 			<div>
 				<div>
+					<FilterWithSave
+						onClick={() => console.log('filter')}
+						onSaveClick={() => console.log('save')}
+						onClearClick={() => console.log('clear')}
+						onTabClick={() => console.log('year')}
+						tabs={[
+							{ value: 'dfsdf', state: false },
+							{ value: 'dddddddd', state: false },
+						]}
+					/>
+				</div>
+				<div>
 					<h2> Селектор с чекбоксами</h2>
 					<CheckboxSelect checkboxes={fake} />
 				</div>

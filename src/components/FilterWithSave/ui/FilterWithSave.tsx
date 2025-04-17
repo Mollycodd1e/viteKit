@@ -14,12 +14,16 @@ interface IFilterWithSave {
 	selectOptions?: TOption[]
 	disabledOptions?: TOption[]
 	selectedValues?: TOption[]
+	onSaveClick?: () => void
+	onClearClick?: () => void
+	onTabClick?: () => void
 	tabs?: { value: string; state: boolean }[]
 	selectedTabs?: { value: string; state: boolean }[]
 	setSelectedTabs?: React.Dispatch<React.SetStateAction<{ value: string; state: boolean }[]>>
 	onChange?: (selectedOptions: TOption[]) => unknown
 	onClickItem?: (option: TOption | TOption[]) => void
 	onCLickSelect?: () => void
+	onClick?: () => void
 	btnName?: string
 }
 
@@ -28,11 +32,15 @@ export const FilterWithSave = ({
 	tabs = [],
 	selectOptions = [],
 	onChange,
+	onClick = () => null,
 	selectedValues,
 	setSelectedTabs,
 	selectedTabs,
 	onClickItem,
 	onCLickSelect,
+	onSaveClick = () => null,
+	onClearClick = () => null,
+	onTabClick = () => null,
 	btnName = 'Фильтр',
 }: IFilterWithSave) => {
 	const {
@@ -55,6 +63,8 @@ export const FilterWithSave = ({
 		onChange,
 		disabledOptions,
 		selectedValues,
+		onSaveClick,
+		onClearClick,
 	})
 
 	const ModalBody = () => {
@@ -143,6 +153,7 @@ export const FilterWithSave = ({
 					className={s.root}
 					onClick={() => {
 						onCLickSelect && onCLickSelect()
+						onClick && onClick()
 						if (isMobile) {
 							setIsModalOpen((prev) => !prev)
 						} else if (!isModalOpen) {
@@ -187,7 +198,7 @@ export const FilterWithSave = ({
 												size_s={'small'}
 												mini
 												value={value}
-												onClick={() => {}}
+												onClick={() => onTabClick()}
 												checked={localSelectedTabs?.find((e) => e.value === value)?.state ?? false}
 												onChange={() => {
 													setLocalSelectedTabs?.((prev: { value: string; state: boolean }[]) =>

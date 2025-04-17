@@ -11,6 +11,8 @@ interface IuseFilterWithSave {
 	setSelectedTabs?: React.Dispatch<React.SetStateAction<{ value: string; state: boolean }[]>>
 	onChange?: (selectedOptions: TOption[]) => unknown
 	onClickItem?: (option: TOption | TOption[]) => void
+	onSaveClick: () => void
+	onClearClick: () => void
 }
 
 export const useFilterWithSave = ({
@@ -21,6 +23,8 @@ export const useFilterWithSave = ({
 	tabs = [],
 	onChange,
 	setSelectedTabs,
+	onSaveClick,
+	onClearClick,
 }: IuseFilterWithSave) => {
 	const { isMobile } = useClientWidth()
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
@@ -52,6 +56,7 @@ export const useFilterWithSave = ({
 		setInitialSelectedTabs(tabs)
 		setLocalSelectedTabs(tabs)
 		setSelectedOptions([])
+		onClearClick()
 		if (onChange) {
 			onChange([])
 			setSelectedTabs?.(tabs)
@@ -70,6 +75,7 @@ export const useFilterWithSave = ({
 
 	const handleSaveClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
 		event.stopPropagation()
+		onSaveClick()
 		if (onChange) {
 			setSelectedTabs?.(localSelectedTabs)
 			onChange(selectedOptions)
@@ -126,4 +132,3 @@ export const useFilterWithSave = ({
 		containerRef,
 	}
 }
-
