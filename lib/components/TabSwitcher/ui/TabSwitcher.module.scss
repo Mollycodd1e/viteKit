@@ -191,13 +191,7 @@ $roundRadius: 24px;
 
   }
 
-  & input:not(:checked) ~ .item:hover {
-    background: #353945;
-    color: #FFFFFF;
-  }
-  & input:not(:checked) ~ .item:hover:active {
-    background: #000000;
-  }
+
 
   & input:checked ~ .item {
     color: #FFFFFF;
@@ -211,6 +205,13 @@ $roundRadius: 24px;
   }
 
   @media (min-width: 1024px) {
+    & input:not(:checked) ~ .item:hover {
+      background: #353945;
+      color: #FFFFFF;
+    }
+    & input:not(:checked) ~ .item:hover:active {
+      background: #000000;
+    }
     .item {
       padding-left: 12px;
       padding-right: 12px;
