@@ -188,7 +188,7 @@ $roundRadius: 24px;
   }
 
   .labelItem {
-    max-width: 54px;
+    max-width: 15%;
   }
 
   .labelItem:nth-of-type(1) {
@@ -222,10 +222,6 @@ $roundRadius: 24px;
     .item {
       padding-left: 12px;
       padding-right: 12px;
-    }
-
-    .labelItem {
-      min-width: 42px;
     }
   }
 }
