@@ -33,7 +33,6 @@ const TabsPage = () => {
                             return (
                                 <TabSwitcher.Item
                                     itemsLength={tabs.length}
-                                    key={i}
                                     index={i}
                                     value={m}
                                     addItemClassName={i === 0 ? s.gg : ''}>
@@ -66,6 +65,26 @@ const TabsPage = () => {
                     </TabSwitcher>
                 </FieldInput>
             </div>
+
+            <FieldInput label='Количество спален'>
+                <TabSwitcher variant={'whiteRowGrayLabel'}>
+                    {tabs.map((m, i) => {
+                        return (
+                            <TabSwitcher.Item
+                                size_s={'tiny'}
+                                size_m={'tiny'}
+                                size_l={'tiny'}
+                                itemsLength={tabs.length}
+                                key={i}
+                                index={i}
+                                value={m}
+                                addItemClassName={i === 0 ? s.gg : ''}>
+                                {m}
+                            </TabSwitcher.Item>
+                        )
+                    })}
+                </TabSwitcher>
+            </FieldInput>
 
             <div>
                 <TabSwitcher col>
