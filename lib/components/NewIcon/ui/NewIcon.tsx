@@ -48,7 +48,9 @@ import Search from './../assets/Search.svg'
 import MinusCheck from './../assets/MinusCheck.svg'
 import ArrowRight from './../assets/arrowRight.svg'
 import Redo from './../assets/Redo.svg'
-import {ReactSVGComponent} from './NewIcon.types'
+import Pin from './../assets/Pin.svg'
+import Timer from './../assets/Timer.svg'
+import { ReactSVGComponent } from './NewIcon.types'
 import classNames from "classnames";
 import s from './NewIcon.module.scss'
 
@@ -64,86 +66,88 @@ type IconComponentProps = {
 type IconTypes = { [name: string]: ReactSVGComponent }
 
 export const iconTypes: IconTypes = {
-    arrowRight: () => <ArrowRight/>,
-    loader: () => <Loader/>,
-    filter: () => <Filter/>,
-    lock: () => <Lock/>,
-    fullscreen: () => <FullScreen/>,
-    twoArrows: () => <TwoArrows/>,
-    heart: () => <Heart/>,
-    download: () => <Download/>,
-    user: () => <User/>,
-    squareMeter: () => <SquareMeter/>,
-    check: () => <Check/>,
-    minusCheck: () => <MinusCheck/>,
-    close: () => <Close/>,
-    layers: () => <Layers/>,
-    layersFilled: () => <LayersFilled/>,
-    minus: () => <Minus/>,
-    moon: () => <Moon/>,
-    play: () => <Play/>,
-    plus: () => <Plus/>,
-    ruble: () => <Ruble/>,
-    share: () => <Share/>,
-    sun: () => <Sun/>,
-    star: () => <Star/>,
-    starFilled: () => <StarFilled/>,
-    burger: () => <Burger/>,
-    phone: () => <Phone/>,
-    phoneFilled: () => <PhoneFilled/>,
-    call: () => <Call/>,
-    callback: () => <Callback/>,
-    telegram: () => <Telegram/>,
-    whatsapp: () => <WhatsApp/>,
-    directionDown: () => <DirectionDown/>,
-    burgerClose: () => <BurgerClose/>,
-    arrowLong: () => <ArrowLong/>,
-    auto: () => <Auto/>,
-    pedestrian: () => <Pedestrian/>,
-    park: () => <Park/>,
-    metro: () => <Metro/>,
-    food: () => <Food/>,
-    building: () => <Building/>,
-    case: () => <Case/>,
-    sport: () => <Sport/>,
-    withoutDecor: () => <WithoutDecor/>,
-    play2: () => <Play2/>,
-    selectChecked: () => <SelectChecked/>,
-    selectUnchecked: () => <SelectUnchecked/>,
-    arrowShort: () => <ArrowShort/>,
-    search: () => <Search/>,
-    circle: () => <Circle/>,
-    redo: () => <Redo/>,
+    arrowRight: () => <ArrowRight />,
+    loader: () => <Loader />,
+    filter: () => <Filter />,
+    lock: () => <Lock />,
+    fullscreen: () => <FullScreen />,
+    twoArrows: () => <TwoArrows />,
+    heart: () => <Heart />,
+    download: () => <Download />,
+    user: () => <User />,
+    squareMeter: () => <SquareMeter />,
+    check: () => <Check />,
+    minusCheck: () => <MinusCheck />,
+    close: () => <Close />,
+    layers: () => <Layers />,
+    layersFilled: () => <LayersFilled />,
+    minus: () => <Minus />,
+    moon: () => <Moon />,
+    play: () => <Play />,
+    plus: () => <Plus />,
+    ruble: () => <Ruble />,
+    share: () => <Share />,
+    sun: () => <Sun />,
+    star: () => <Star />,
+    starFilled: () => <StarFilled />,
+    burger: () => <Burger />,
+    phone: () => <Phone />,
+    phoneFilled: () => <PhoneFilled />,
+    call: () => <Call />,
+    callback: () => <Callback />,
+    telegram: () => <Telegram />,
+    whatsapp: () => <WhatsApp />,
+    directionDown: () => <DirectionDown />,
+    burgerClose: () => <BurgerClose />,
+    arrowLong: () => <ArrowLong />,
+    auto: () => <Auto />,
+    pedestrian: () => <Pedestrian />,
+    park: () => <Park />,
+    metro: () => <Metro />,
+    food: () => <Food />,
+    building: () => <Building />,
+    case: () => <Case />,
+    sport: () => <Sport />,
+    withoutDecor: () => <WithoutDecor />,
+    play2: () => <Play2 />,
+    selectChecked: () => <SelectChecked />,
+    selectUnchecked: () => <SelectUnchecked />,
+    arrowShort: () => <ArrowShort />,
+    search: () => <Search />,
+    circle: () => <Circle />,
+    redo: () => <Redo />,
+    pin: () => <Pin />,
+    timer: () => <Timer />,
 }
 const cx = classNames.bind(s)
 
 export const NewIcon = ({
-                            name,
-                            size = '24',
-                            color,
-                            strokeWidth,
-                            additionalClass,
-                            deg,
-                        }: IconComponentProps) => {
+    name,
+    size = '24',
+    color,
+    strokeWidth,
+    additionalClass,
+    deg,
+}: IconComponentProps) => {
     const IconComponent = iconTypes[name]
 
-	return (
-		<div
-			style={{
-				width: size + 'px',
-				height: size + 'px',
-				transform: `rotate(${deg}deg)`,
-				color: color,
-				strokeWidth: strokeWidth,
-			}}
-			className={cx(s.root, additionalClass)}>
-			<IconComponent
-				width={size}
-				height={size}
-				fill={color}
-				stroke={color}
-				strokeWidth={strokeWidth}
-			/>
-		</div>
-	)
+    return (
+        <div
+            style={{
+                width: size + 'px',
+                height: size + 'px',
+                transform: `rotate(${deg}deg)`,
+                color: color,
+                strokeWidth: strokeWidth,
+            }}
+            className={cx(s.root, additionalClass)}>
+            <IconComponent
+                width={size}
+                height={size}
+                fill={color}
+                stroke={color}
+                strokeWidth={strokeWidth}
+            />
+        </div>
+    )
 }
