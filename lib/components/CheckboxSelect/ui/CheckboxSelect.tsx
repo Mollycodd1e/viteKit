@@ -38,6 +38,7 @@ export const CheckboxSelect: React.FC<ICheckboxSelectProps> = ({
 				{checkboxes?.map((m) => {
 					return (
 						<div
+							key={m?.label}
 							className={cx(s.checkboxItem, { [s.checkboxItemActive]: m?.isSelected })}
 							onClick={() => m?.setValue()}>
 							{m?.label}
@@ -48,4 +49,3 @@ export const CheckboxSelect: React.FC<ICheckboxSelectProps> = ({
 		</div>
 	)
 }
-
