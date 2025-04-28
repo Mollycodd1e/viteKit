@@ -10,9 +10,9 @@ export const InputPage = () => {
 					<Input variant='dark' error></Input>
 					<Input size_s={'medium'} size_m='large'></Input>
 					<Input variant='gray' name="email"></Input>
+					<Input variant='transparent' name="email"></Input>
 				</form>
 			</div>
 		</div>
 	)
 }
-

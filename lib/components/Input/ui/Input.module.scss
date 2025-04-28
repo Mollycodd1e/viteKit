@@ -228,6 +228,85 @@
   }
 }
 
+
+.transparent {
+  background: transparent;
+  border-radius: 0;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+  border-bottom: 1px solid #E6E8EC;
+
+  & input {
+    color: #ffffff;
+    padding: 0;
+    background: transparent;
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0 1000px transparent inset;
+      -webkit-text-fill-color: #141416;
+      background-color: transparent;
+    }
+
+
+    &::placeholder {
+      color: #E6E8EC;
+    }
+  }
+
+  & span {
+    color: #E6E8EC;
+  }
+
+  &:hover {
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    border-bottom: 1px solid #E6E8EC;
+  }
+
+  &:has(input:valid) {
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    border-bottom: 1px solid #E6E8EC;
+    background-color: transparent;
+
+    & input {
+      background-color: transparent;
+   }
+  }
+
+  &:has(input:focus) {
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+    border-bottom: 1px solid #E6E8EC;
+    background-color: transparent;
+  }
+
+  &:has(input:disabled) {
+    border-bottom: 1px solid #E6E8EC;
+    background-color: transparent;
+
+    & input {
+      color: #E6E8EC;
+
+      &::placeholder {
+        color: #E6E8EC;
+      }
+    }
+
+    & span {
+      color: #E6E8EC;
+    }
+  }
+
+  &:has(input:invalid) {
+    border: 1px solid #ec5353;
+  }
+}
+
 .inputWrapperError {
   background: #FFEBEB;
   border: 1px solid #ec5353;
@@ -274,6 +353,8 @@
     color: #ec5353;
   }
 }
+
+
 
 .checkBox {
   display: none;

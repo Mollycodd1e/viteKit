@@ -6,6 +6,7 @@ export const INPUT_VARIANTS = {
 	light: 'light',
 	dark: 'dark',
 	gray: 'gray',
+	transparent: 'transparent',
 }
 
 export type inputVariant = keyof typeof INPUT_VARIANTS
