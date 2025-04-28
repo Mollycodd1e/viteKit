@@ -237,58 +237,46 @@
   border-right: unset;
   border-bottom: 1px solid #E6E8EC;
 
-  & input {
-    color: #ffffff;
+  input {
+    color: rgba(255, 255, 255, 0.7) !important;
     padding: 0;
     background-color: transparent;
     transition: background-color 5000s ease-in-out 0s;
 
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
       box-shadow: 0 0 0 1000px transparent inset !important;
-      -webkit-text-fill-color: #141416 !important;
-      background-color: transparent;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.7) !important;
+      background-color: transparent !important;
+      color: rgba(255, 255, 255, 0.7) !important;
       transition: background-color 5000s ease-in-out 0s;
     }
 
-    input:-webkit-autofill {
-      background-color: transparent !important;
-  }
-
     &::placeholder {
-      color: #E6E8EC;
+      color: rgba(255, 255, 255, 0.7);
     }
   }
 
-  & span {
+  span {
     color: #E6E8EC;
   }
 
   &:hover {
-    border-top: unset;
-    border-left: unset;
-    border-right: unset;
     border-bottom: 1px solid #E6E8EC;
   }
 
   &:has(input:valid) {
-    border-top: unset;
-    border-left: unset;
-    border-right: unset;
     border-bottom: 1px solid #E6E8EC;
     background-color: transparent;
 
-    & input {
+    input {
       background-color: transparent;
-   }
+    }
   }
 
   &:has(input:focus) {
-    border-top: unset;
-    border-left: unset;
-    border-right: unset;
     border-bottom: 1px solid #E6E8EC;
     background-color: transparent;
   }
@@ -297,7 +285,7 @@
     border-bottom: 1px solid #E6E8EC;
     background-color: transparent;
 
-    & input {
+    input {
       color: #E6E8EC;
 
       &::placeholder {
@@ -305,7 +293,7 @@
       }
     }
 
-    & span {
+    span {
       color: #E6E8EC;
     }
   }
