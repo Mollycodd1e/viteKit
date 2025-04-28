@@ -240,14 +240,22 @@
   & input {
     color: #ffffff;
     padding: 0;
-    background: transparent;
+    background-color: transparent;
+    transition: background-color 5000s ease-in-out 0s;
 
-    &:-webkit-autofill {
-      box-shadow: 0 0 0 1000px transparent inset;
-      -webkit-text-fill-color: #141416;
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      box-shadow: 0 0 0 1000px transparent inset !important;
+      -webkit-text-fill-color: #141416 !important;
       background-color: transparent;
+      transition: background-color 5000s ease-in-out 0s;
     }
 
+    input:-webkit-autofill {
+      background-color: transparent !important;
+  }
 
     &::placeholder {
       color: #E6E8EC;
