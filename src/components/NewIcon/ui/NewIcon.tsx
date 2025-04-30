@@ -136,7 +136,9 @@ export const NewIcon = ({
             style={{
                 width: size + 'px',
                 height: size + 'px',
-                transform: `rotate(${deg}deg)`,
+                minWidth: size + 'px',
+                minHeight: size + 'px',
+                transform: deg ? `rotate(${deg}deg)` : undefined,
                 color: color,
                 strokeWidth: strokeWidth,
             }}
