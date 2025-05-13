@@ -52,9 +52,9 @@ export const Button = ({
 	}
 	
 	if (props.as === 'link') {
+		delete props.as
 		return (
 			<a
-
 				className={btnClassName}
 				onClick={onCLick}
 				{...props}>
@@ -63,12 +63,16 @@ export const Button = ({
 		)
 	}
 
-	return (
-		<button
-			className={btnClassName}
-			onClick={onCLick}
-			{...props}>
-			{btnBody()}
-		</button>
-	)
+	else {
+		delete props.as
+		return (
+			<button
+				className={btnClassName}
+				// @ts-ignore
+				onClick={onCLick}
+				{...props}>
+				{btnBody()}
+			</button>
+		)
+	}
 }

@@ -30,16 +30,16 @@ interface ButtonProps {
 	width?: btnWidth
 	additionalClass?: string
 	isLoading?: boolean
-	as: 'button' | 'link'
-	onCLick?: () => {}
+	as?: 'button' | 'link'
+	onCLick?: () => any
 }
 
 export type ComponentProps = ButtonProps &
 	(
 		| (React.ButtonHTMLAttributes<HTMLButtonElement> & {
-				as: 'button'
+				as?: 'button'
 		})
 		| (React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-				as: 'link'
+				as?: 'link'
 		} & Required<Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>>)
 	)
