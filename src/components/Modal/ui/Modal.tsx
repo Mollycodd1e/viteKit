@@ -61,7 +61,7 @@ export const Modal: FC<IModalProps> = ({
 	)
 
 	if (isOpen) {
-		if (createPortalObj?.domNode) {
+		if (createPortalObj?.domNode && createPortalObj.domNode.isConnected) {
 			return createPortal(modalContent, createPortalObj.domNode, createPortalObj.key)
 		}
 		return modalContent
