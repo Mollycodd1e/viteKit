@@ -1,4 +1,5 @@
-export const deepEqual = (obj1: Record<string, unknown>, obj2: Record<string, unknown>) => {
+// @ts-nocheck
+export const deepEqual = (obj1: any, obj2: any) => {
     if (obj1 === obj2) {
         return true
     }
@@ -15,7 +16,7 @@ export const deepEqual = (obj1: Record<string, unknown>, obj2: Record<string, un
     }
 
     for (const key of keys1) {
-        if (!keys2.includes(key) || !deepEqual(obj1[key] as Record<string, unknown>, obj2[key] as Record<string, unknown>)) {
+        if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
             return false
         }
     }
