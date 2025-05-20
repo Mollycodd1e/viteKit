@@ -159,7 +159,7 @@ export const Select = ({
 						{ [s.lastList]: isLast },
 						additionalClassOption
 					)}>
-					{mode === 'options' &&
+					{(mode === 'options' || mode === 'single') &&
 						options?.map((option, i) => (
 							<Option
 								key={i}

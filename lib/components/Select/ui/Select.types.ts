@@ -11,7 +11,7 @@ export type TCategory = {
 	options: TOption[]
 }
 
-export type TModeSelect = 'options' | 'category' | 'double'
+export type TModeSelect = 'options' | 'category' | 'double' | 'single'
 
 type SelectSizes = 'medium' | 'small' | 'large'
 

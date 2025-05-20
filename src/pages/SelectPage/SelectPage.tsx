@@ -90,6 +90,14 @@ export const SelectPage = () => {
 					onChange={(e) => handleChangeSelect(e)}
 					// clickableOptions={['option1', 'option2']}
 				/>
+				<SummarySelect
+					mode={'single'}
+					label='Проект'
+					isShowReset
+					selectedValues={select}
+					options={defaultOption}
+					onChange={(e) => handleChangeSelect(e)}
+				/>
 			</div>
 
 			<div>
