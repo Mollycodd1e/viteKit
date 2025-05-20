@@ -58,24 +58,22 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
 				{...props}
 				onChange={handleChangeSelect}
 			/>
-			{(props.mode === 'options' || props.mode === 'single') &&
-				props.selectedValues &&
-				props.selectedValues.length > 0 && (
-					<div className={s.summaryList}>
-						{props.selectedValues.map((m) => (
-							<div
-								key={m.value}
-								onClick={() => handleRemoveOption(m.value.toString())}
-								className={s.summaryOption}>
-								{m.label}
-								<NewIcon
-									name='close'
-									size='16'
-								/>
-							</div>
-						))}
-					</div>
-				)}
+			{props.mode === 'options' && props.selectedValues && props.selectedValues.length > 0 && (
+				<div className={s.summaryList}>
+					{props.selectedValues.map((m) => (
+						<div
+							key={m.value}
+							onClick={() => handleRemoveOption(m.value.toString())}
+							className={s.summaryOption}>
+							{m.label}
+							<NewIcon
+								name='close'
+								size='16'
+							/>
+						</div>
+					))}
+				</div>
+			)}
 
 			{props.mode === 'double' &&
 				categoryList?.map((e, i) => {
