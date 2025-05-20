@@ -50,106 +50,113 @@ import ArrowRight from './../assets/arrowRight.svg'
 import Redo from './../assets/Redo.svg'
 import Pin from './../assets/Pin.svg'
 import Timer from './../assets/Timer.svg'
+import Mail from './../assets/mail.svg'
 import { ReactSVGComponent } from './NewIcon.types'
-import classNames from "classnames";
+import classNames from 'classnames'
 import s from './NewIcon.module.scss'
 
 type IconComponentProps = {
-    name: keyof typeof iconTypes
-    size?: string
-    color?: string
-    additionalClass?: string
-    deg?: string
-    strokeWidth?: string
+	name: keyof typeof iconTypes
+	size?: string
+	color?: string
+	additionalClass?: string
+	deg?: string
+	strokeWidth?: string
 }
 
 type IconTypes = { [name: string]: ReactSVGComponent }
 
 export const iconTypes: IconTypes = {
-    arrowRight: () => <ArrowRight />,
-    loader: () => <Loader />,
-    filter: () => <Filter />,
-    lock: () => <Lock />,
-    fullscreen: () => <FullScreen />,
-    twoArrows: () => <TwoArrows />,
-    heart: () => <Heart />,
-    download: () => <Download />,
-    user: () => <User />,
-    squareMeter: () => <SquareMeter />,
-    check: () => <Check />,
-    minusCheck: () => <MinusCheck />,
-    close: () => <Close />,
-    layers: () => <Layers />,
-    layersFilled: () => <LayersFilled />,
-    minus: () => <Minus />,
-    moon: () => <Moon />,
-    play: () => <Play />,
-    plus: () => <Plus />,
-    ruble: () => <Ruble />,
-    share: () => <Share />,
-    sun: () => <Sun />,
-    star: () => <Star />,
-    starFilled: () => <StarFilled />,
-    burger: () => <Burger />,
-    phone: () => <Phone />,
-    phoneFilled: () => <PhoneFilled />,
-    call: () => <Call />,
-    callback: () => <Callback />,
-    telegram: () => <Telegram />,
-    whatsapp: () => <WhatsApp />,
-    directionDown: () => <DirectionDown />,
-    burgerClose: () => <BurgerClose />,
-    arrowLong: () => <ArrowLong />,
-    auto: () => <Auto />,
-    pedestrian: () => <Pedestrian />,
-    park: () => <Park />,
-    metro: () => <Metro />,
-    food: () => <Food />,
-    building: () => <Building />,
-    case: () => <Case />,
-    sport: () => <Sport />,
-    withoutDecor: () => <WithoutDecor />,
-    play2: () => <Play2 />,
-    selectChecked: () => <SelectChecked />,
-    selectUnchecked: () => <SelectUnchecked />,
-    arrowShort: () => <ArrowShort />,
-    search: () => <Search />,
-    circle: () => <Circle />,
-    redo: () => <Redo />,
-    pin: () => <Pin />,
-    timer: () => <Timer />,
+	arrowRight: () => <ArrowRight />,
+	loader: () => <Loader />,
+	filter: () => <Filter />,
+	lock: () => <Lock />,
+	fullscreen: () => <FullScreen />,
+	twoArrows: () => <TwoArrows />,
+	heart: () => <Heart />,
+	download: () => <Download />,
+	user: () => <User />,
+	squareMeter: () => <SquareMeter />,
+	check: () => <Check />,
+	minusCheck: () => <MinusCheck />,
+	close: () => <Close />,
+	layers: () => <Layers />,
+	layersFilled: () => <LayersFilled />,
+	minus: () => <Minus />,
+	moon: () => <Moon />,
+	play: () => <Play />,
+	plus: () => <Plus />,
+	ruble: () => <Ruble />,
+	share: () => <Share />,
+	sun: () => <Sun />,
+	star: () => <Star />,
+	starFilled: () => <StarFilled />,
+	burger: () => <Burger />,
+	phone: () => <Phone />,
+	phoneFilled: () => <PhoneFilled />,
+	call: () => <Call />,
+	callback: () => <Callback />,
+	telegram: () => <Telegram />,
+	whatsapp: () => <WhatsApp />,
+	directionDown: () => <DirectionDown />,
+	burgerClose: () => <BurgerClose />,
+	arrowLong: () => <ArrowLong />,
+	auto: () => <Auto />,
+	pedestrian: () => <Pedestrian />,
+	park: () => <Park />,
+	metro: () => <Metro />,
+	food: () => <Food />,
+	mail: () => <Mail />,
+	building: () => <Building />,
+	case: () => <Case />,
+	sport: () => <Sport />,
+	withoutDecor: () => <WithoutDecor />,
+	play2: () => <Play2 />,
+	selectChecked: () => <SelectChecked />,
+	selectUnchecked: () => <SelectUnchecked />,
+	arrowShort: () => <ArrowShort />,
+	search: () => <Search />,
+	circle: () => <Circle />,
+	redo: () => <Redo />,
+	pin: () => <Pin />,
+	timer: () => <Timer />,
 }
 const cx = classNames.bind(s)
 
 export const NewIcon = ({
-    name,
-    size = '24',
-    color,
-    strokeWidth,
-    additionalClass,
-    deg,
+	name,
+	size = '24',
+	color,
+	strokeWidth,
+	additionalClass,
+	deg,
 }: IconComponentProps) => {
-    const IconComponent = iconTypes[name]
+	const IconComponent = iconTypes[name]
 
-    return (
-        <div
-            style={{
-                width: size + 'px',
-                height: size + 'px',
-                minWidth: size + 'px',
-                minHeight: size + 'px',
-                transform: deg ? `rotate(${deg}deg)` : undefined,
-                color: color,
-                strokeWidth: strokeWidth,
-            }}
-            className={cx(s.root, additionalClass)}>
-            <IconComponent
-                width={size}
-                height={size}
-                fill={color}
-                stroke={color}
-                strokeWidth={strokeWidth}
-            />
-        </div>
-    )
+	if (!IconComponent) {
+		console.error(`Icon "${name}" not found in iconTypes`)
+		return null
+	}
+
+	return (
+		<div
+			style={{
+				width: size + 'px',
+				height: size + 'px',
+				minWidth: size + 'px',
+				minHeight: size + 'px',
+				transform: deg ? `rotate(${deg}deg)` : undefined,
+				color: color,
+				strokeWidth: strokeWidth,
+			}}
+			className={cx(s.root, additionalClass)}>
+			<IconComponent
+				width={size}
+				height={size}
+				fill={color}
+				stroke={color}
+				strokeWidth={strokeWidth}
+			/>
+		</div>
+	)
 }
