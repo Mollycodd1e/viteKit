@@ -18,8 +18,9 @@ export const useClientWidth = () => {
 
 	const isMobile = currentClientWidth < 1024
 	const isMobileBorder = typeof window !== 'undefined' ? window.innerWidth < 768 : false
+	const isFullTablet = currentClientWidth >= 768 && currentClientWidth < 1440
 	const isTablet = currentClientWidth > 1023 && currentClientWidth < 1440
 	const isDesktop = currentClientWidth >= 1440
 
-	return { currentClientWidth, isMobile, isTablet, isDesktop, isMobileBorder }
+	return { currentClientWidth, isMobile, isTablet, isDesktop, isMobileBorder, isFullTablet }
 }
