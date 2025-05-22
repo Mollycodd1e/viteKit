@@ -39,7 +39,7 @@ export const Modal: FC<IModalProps> = ({
 
 	const modalContent = (
 		<div
-			className={`${s.root} ${additionalClass}`}
+			className={`${s.root} ${additionalClass} ${isOpen ? s.modalVisible : ''}`}
 			onClick={(e) => e.stopPropagation()}>
 			<div
 				onClick={closeModal}
