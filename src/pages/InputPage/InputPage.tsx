@@ -1,7 +1,8 @@
-import { Input } from '../../main'
+import {Input} from '../../main'
 import s from './InputPage.module.scss'
 
 export const InputPage = () => {
+
 	return (
 		<div className={s.root}>
 			<div>
@@ -11,7 +12,9 @@ export const InputPage = () => {
 					<Input size_s={'medium'} size_m='large'></Input>
 					<Input variant='gray' name="email"></Input>
 					<Input variant='transparent' name="email"></Input>
+					<Input isPhoneIMask={true} variant='transparent' name="imask"></Input>
 				</form>
+
 			</div>
 		</div>
 	)

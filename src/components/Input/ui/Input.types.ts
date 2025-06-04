@@ -24,6 +24,7 @@ interface InputProps {
 	variant?: inputVariant
 	width?: inputWidth
 	additionalClass?: string
+	isPhoneIMask?: boolean
 }
 
 export type ComponentProps = InputProps & React.InputHTMLAttributes<HTMLInputElement>

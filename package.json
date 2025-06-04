@@ -2,7 +2,7 @@
   "name": "stone-kit",
   "description": "uikit for redesign",
   "private": false,
-  "version": "0.0.792",
+  "version": "0.0.793",
   "author": "Mollycodd1e",
   "license": "ISC",
   "type": "module",
@@ -20,18 +20,17 @@
   },
   "dependencies": {
     "@react-input/mask": "^1.2.5",
+    "react-imask": "^7.6.1",
     "react-input-mask": "^3.0.0-alpha.2"
   },
   "peerDependencies": {
     "classnames": "^2.5.1",
-    "react-hook-form": "^7.52.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.2",
     "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
-    "classnames": "^2.5.1",
-    "react-hook-form": "^7.52.2",
     "@types/node": "^20.12.12",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
@@ -40,6 +39,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "c8": "^9.1.0",
+    "classnames": "^2.5.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -47,6 +47,7 @@
     "glob": "^10.3.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.2",
     "react-router-dom": "^6.26.0",
     "sass": "^1.77.2",
     "typescript": "^5.2.2",
