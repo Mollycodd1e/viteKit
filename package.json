@@ -2,7 +2,7 @@
   "name": "stone-kit",
   "description": "uikit for redesign",
   "private": false,
-  "version": "0.0.796",
+  "version": "0.0.797",
   "author": "Mollycodd1e",
   "license": "ISC",
   "type": "module",
@@ -20,8 +20,7 @@
   },
   "dependencies": {
     "@react-input/mask": "^1.2.5",
-    "react-imask": "^7.6.1",
-    "react-input-mask": "^3.0.0-alpha.2"
+    "react-imask": "^7.6.1"
   },
   "peerDependencies": {
     "classnames": "^2.5.1",
