@@ -48,7 +48,7 @@ export const Input = forwardRef<HTMLInputElement, React.PropsWithChildren<Compon
                     {[s.inputWrapperErrorDark]: error && variant === 'dark'},
                     additionalClass
                 )}>
-                <IMaskInput inputRef={ref}
+                <IMaskInput inputRef={ref} className={s.inputIMask}
                     mask="+7 (000) 000-00-00"
                     definitions={{'0': /[0-9]/}}
                     placeholder="+7 (---) --- -- --"

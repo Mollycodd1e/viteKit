@@ -67,7 +67,10 @@
       outline: none;
     }
   }
+}
 
+.inputIMask::placeholder {
+  letter-spacing: 2px;
 }
 
 .inputWrapperPost,
