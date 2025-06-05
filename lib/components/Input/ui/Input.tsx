@@ -51,7 +51,7 @@ export const Input = forwardRef<HTMLInputElement, React.PropsWithChildren<Compon
                 <IMaskInput inputRef={ref}
                     mask="+7 (000) 000-00-00"
                     definitions={{'0': /[0-9]/}}
-                    placeholder="+7 (___) ___-__-__"
+                    placeholder="+7 (---) --- -- --"
                     {...props}
                 />
             </div>
