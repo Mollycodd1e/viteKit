@@ -58,4 +58,5 @@ export interface MultiSelectProps {
 	onClickItem?: (option: TOption | TOption[]) => void
 	onCLickSelect?: () => void
 	isDisabledNotClickable?: boolean
+	customPlaceholder?: string
 }

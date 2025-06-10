@@ -15,6 +15,7 @@ const cx = classNames.bind(s)
 
 export const Select = ({
 	options,
+	customPlaceholder,
 	placeholder = 'Выберите опции',
 	error,
 	disabled,
@@ -113,7 +114,11 @@ export const Select = ({
 								{ [s.selectOptionsDisabled]: disabled }
 							)}
 							onClick={() => setIsOpen(!isOpen)}>
-							{selectedOptions.length === 0 ? placeholder : 'Выбрано ' + selectedOptions.length}
+							{customPlaceholder
+								? customPlaceholder
+								: selectedOptions.length === 0
+								? placeholder
+								: 'Выбрано ' + selectedOptions.length}
 						</div>
 						<NewIcon
 							name={'arrowShort'}
