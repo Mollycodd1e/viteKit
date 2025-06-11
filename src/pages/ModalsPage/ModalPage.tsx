@@ -32,6 +32,42 @@ const ModalsPage = () => {
 					onClick={() => setmodal2((prev) => !prev)}>
 					выйди
 				</Button>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				<Button
+					as='button'
+					onClick={() => setmodal2((prev) => !prev)}>
+					выйди
+				</Button>
+				
 			</Modal>
 		</div>
 	)

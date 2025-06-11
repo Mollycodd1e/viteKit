@@ -21,27 +21,12 @@
   height: 100%;
   z-index: 105;
   box-sizing: border-box;
-  // opacity: 0;
-  // pointer-events: none;
   transition: opacity 0.3s ease;
-
-  // &.visible {
-  //   opacity: 1;
-  //   pointer-events: auto;
-  // }
 }
 
 .modalBody {
   position: absolute;
-  overflow: auto;
-  // transform: translateY(30px);
-  // opacity: 0;
-  // transition: all 0.3s ease;
 }
-
-// .root.visible .modalBody {
-//   animation: fadeInUp 0.3s forwards;
-// }
 
 .modalOverlay {
   position: absolute;
