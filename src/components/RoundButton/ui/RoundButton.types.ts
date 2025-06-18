@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 export const ROUND_BUTTON_VARIANTS = {
 	whiteStroke: 'whiteStroke',
 	blackFill: 'blackFill',
+	fullGray: 'fullGray',
 }
 
 export type roundBtnVariant = keyof typeof ROUND_BUTTON_VARIANTS

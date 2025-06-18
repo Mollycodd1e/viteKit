@@ -67,6 +67,15 @@
 	background-color: #141416;
 }
 
+.fullGray {
+	border: 1px solid #F4F5F6;
+	background-color: #F4F5F6;
+
+	& div {
+		color: #141416;
+	}
+}
+
 @media(min-width: 1024px) {
 	.tiny-size_m {
 		@include button-tiny;
