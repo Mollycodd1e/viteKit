@@ -15,6 +15,7 @@ interface IModalFormProps {
     isFormOpen: boolean
     setIsFormOpen: (isOpen: boolean) => void
     submitHandler: (data: IFormPageInputs) => void
+    blurHandler: (params: unknown) => void
     modalWidth?: string
     isPhone?: boolean
     title: string
@@ -32,6 +33,7 @@ interface IModalFormProps {
     isAdvCheckBox?: boolean
     telegramClickHandler?: () => void
     addTitleClassName?: string
+    block_name?: string
     createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
 }
 
@@ -71,6 +73,8 @@ export const ModalForm = ({
                               addTitleClassName,
                               createPortalObj,
                               telegramClickHandler = () => null,
+                              blurHandler,
+                              block_name
                           }: IModalFormProps) => {
     const {
         register,
@@ -92,6 +96,13 @@ export const ModalForm = ({
     const onSubmit = (data: IFormPageInputs) => {
         submitHandler(data)
         reset()
+    }
+
+    const onBlurHandler = ({action_element_status, action_element}: {
+        action_element_status: string,
+        action_element: string
+    }) => {
+        blurHandler && blurHandler({action_element: '', action_element_status: '', block_name: block_name})
     }
 
     if (!currentClientWidth) return null
@@ -150,6 +161,7 @@ export const ModalForm = ({
                             placeholder='Введите имя'
                             data-testid='modal_name'
                             {...register('name', {required: true, pattern: nameReg})}
+                            onBlur={onBlurHandler}
                             error={Boolean(errors.name)}
                         />
 
@@ -157,10 +169,10 @@ export const ModalForm = ({
                             <Controller
                                 name="phone"
                                 control={control}
-								rules={{
-									required: isRequiredEmail || isRequiredPhone || (isRequiredPhoneOrEmail && !isEmailFill),
-									pattern: { value: phoneReg, message: '' },
-								}}
+                                rules={{
+                                    required: isRequiredEmail || isRequiredPhone || (isRequiredPhoneOrEmail && !isEmailFill),
+                                    pattern: {value: phoneReg, message: ''},
+                                }}
                                 defaultValue=""
                                 render={({field}) => (
                                     <Input inputMode='numeric'
@@ -172,6 +184,7 @@ export const ModalForm = ({
                                            error={Boolean(errors.phone)}
                                            size_s={'large'}
                                            variant='light'
+                                           onBlur={onBlurHandler}
                                     />
                                 )}
                             />
@@ -189,6 +202,7 @@ export const ModalForm = ({
                                     pattern: emailReg,
                                 })}
                                 error={Boolean(errors.email)}
+                                onBlur={onBlurHandler}
                             />
                         )}
 
@@ -199,6 +213,7 @@ export const ModalForm = ({
                                 rows={rowsTextArea}
                                 width={'full'}
                                 {...register('textarea')}
+                                onBlur={onBlurHandler}
                             />
                         )}
 
@@ -216,7 +231,7 @@ export const ModalForm = ({
                             data-testid='modal_personalCheckBox'
                             isChecked={isCheckedPersonal}
                             error={Boolean(errors.personalCheckBox)}
-                            {...register('personalCheckBox', {required: isNews ? false : true})}
+                            {...register('personalCheckBox', {required: !isNews})}
                             //можно указывать либо text либо children
                         >
                             {isNews && (
