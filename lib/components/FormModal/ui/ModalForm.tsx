@@ -15,7 +15,13 @@ interface IModalFormProps {
     isFormOpen: boolean
     setIsFormOpen: (isOpen: boolean) => void
     submitHandler: (data: IFormPageInputs) => void
-    blurHandler?: ({e, analyticParams} : {e: unknown, analyticParams: unknown}) => void
+    blurHandler?: ({e, analyticParams}: {
+        e: unknown, analyticParams: {
+            action_element: string
+            action_element_status: 'error' | 'success'
+            block_name?: string
+        }
+    }) => void
     modalWidth?: string
     isPhone?: boolean
     title: string
@@ -101,6 +107,7 @@ export const ModalForm = ({
     const onBlurHandler = (e: unknown, {action_element_status, action_element}: {
         action_element_status: 'success' | 'error',
         action_element: string
+        block_name?: string
     }) => {
 
         blurHandler && blurHandler({
