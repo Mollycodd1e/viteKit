@@ -15,7 +15,7 @@ interface IModalFormProps {
     isFormOpen: boolean
     setIsFormOpen: (isOpen: boolean) => void
     submitHandler: (data: IFormPageInputs) => void
-    blurHandler: (params: unknown) => void
+    blurHandler?: ({e, analyticParams} : {e: unknown, analyticParams: unknown}) => void
     modalWidth?: string
     isPhone?: boolean
     title: string
@@ -98,15 +98,18 @@ export const ModalForm = ({
         reset()
     }
 
-    const onBlurHandler = ({action_element_status, action_element}: {
-        action_element_status: string,
+    const onBlurHandler = (e: unknown, {action_element_status, action_element}: {
+        action_element_status: 'success' | 'error',
         action_element: string
     }) => {
-        blurHandler && blurHandler({action_element: '', action_element_status: '', block_name: block_name})
+
+        blurHandler && blurHandler({
+            e, analyticParams: {action_element, action_element_status, block_name}
+        })
     }
 
-    if (!currentClientWidth) return null
 
+    if (!currentClientWidth) return null
     return (
         <Modal
             additionalClass={s.modal}
@@ -161,7 +164,10 @@ export const ModalForm = ({
                             placeholder='Введите имя'
                             data-testid='modal_name'
                             {...register('name', {required: true, pattern: nameReg})}
-                            onBlur={onBlurHandler}
+                            onBlur={(e) => onBlurHandler(e, {
+                                action_element_status: errors.name ? 'error' : 'success',
+                                action_element: `input_${block_name}_name`
+                            })}
                             error={Boolean(errors.name)}
                         />
 
@@ -184,7 +190,10 @@ export const ModalForm = ({
                                            error={Boolean(errors.phone)}
                                            size_s={'large'}
                                            variant='light'
-                                           onBlur={onBlurHandler}
+                                           onBlur={(e) => onBlurHandler(e, {
+                                               action_element_status: errors.phone ? 'error' : 'success',
+                                               action_element: `input_${block_name}_phone`
+                                           })}
                                     />
                                 )}
                             />
@@ -202,7 +211,10 @@ export const ModalForm = ({
                                     pattern: emailReg,
                                 })}
                                 error={Boolean(errors.email)}
-                                onBlur={onBlurHandler}
+                                onBlur={(e) => onBlurHandler(e, {
+                                    action_element_status: errors.email ? 'error' : 'success',
+                                    action_element: `input_${block_name}_email`
+                                })}
                             />
                         )}
 
@@ -213,7 +225,6 @@ export const ModalForm = ({
                                 rows={rowsTextArea}
                                 width={'full'}
                                 {...register('textarea')}
-                                onBlur={onBlurHandler}
                             />
                         )}
 
