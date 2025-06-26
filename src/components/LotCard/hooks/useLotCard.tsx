@@ -107,7 +107,7 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 					</ul>
 					{remainingItems?.length > 0 && (
 						<div
-							className={s.addSnippets}
+							className={cx(s.addSnippets, { [s.addSnippetsActive]: isShowSnippet })}
 							onClick={(e) => {
 								if (!isDesktop) {
 									e.stopPropagation()
