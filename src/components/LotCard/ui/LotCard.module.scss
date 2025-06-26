@@ -321,6 +321,7 @@
 
   .root {
     padding: 31px 30px 31px 32px;
+    transition: box-shadow 0.3s ease-in-out;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
