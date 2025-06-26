@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import s from '../ui/LotCard.module.scss'
 import { ILot } from '../ui/LotCard.types'
-import { NewIcon, useClientWidth } from '../../../main'
+import { NewIcon, Text, useClientWidth } from '../../../main'
 import { getTagsFeatures } from '../utils/getTagsFeatures'
 import classNames from 'classnames'
+import { checkBedroomsCount } from '../utils/checkBedroomsCount'
+import { formatPayment } from '../utils/monthlyPayment'
 
 const cx = classNames.bind(s)
 
@@ -12,8 +14,21 @@ interface IUseLotCard {
 	rowConditions?: boolean
 }
 export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
-	const { status, direction, area, floor, endFloor, floorsNumber, type, isCorner, windowViews } =
-		lot
+	const {
+		status,
+		direction,
+		area,
+		floor,
+		endFloor,
+		floorsNumber,
+		type,
+		isCorner,
+		windowViews,
+		subTypeName,
+		number,
+		bedroomsCount,
+		mortgageMonthlyPayment,
+	} = lot
 
 	const [isShowSnippet, setIsShowSnippet] = useState(false)
 
@@ -145,17 +160,36 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 			</div>
 		)
 	}
+
+	const LotCardInfo = () => {
+		return (
+			<>
+				<div className={cx(s.monthlyWrapper)}>
+					<Text
+						className={cx(s.infoHeader)}
+						html={`${isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)}${
+							isBuilding ? '' : `, ${number}`
+						}`}
+					/>
+					{mortgageMonthlyPayment && (
+						<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
+					)}
+				</div>
+				<RenderTags />
+			</>
+		)
+	}
+
 	return {
 		currentClientWidth,
 		isBuilding,
-		RenderTags,
+		LotCardInfo,
 		tagFeatures,
 		getFloorStr,
 		FloorByType,
 		isTablet,
 		isDesktop,
 		isReserved,
-		isOffice,
 		areaStr,
 		floorStr,
 		isShowSnippet,

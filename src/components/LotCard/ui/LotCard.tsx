@@ -1,13 +1,10 @@
 import s from './LotCard.module.scss'
 import { ILotCard } from './LotCard.types'
 import LotImage from './../assets/testLot.webp'
-import { Text } from '../../Text'
-import { checkBedroomsCount } from '../utils/checkBedroomsCount'
 import { NewIcon } from '../../NewIcon'
 import { Tag } from '../../Tag'
 import { Button } from '../../Button'
 import { formatPrice } from '../utils/formatPrice'
-import { formatPayment } from '../utils/monthlyPayment'
 import classNames from 'classnames'
 import { useLotCard } from '../hooks/useLotCard.tsx'
 
@@ -26,30 +23,24 @@ export const LotCard = ({
 }: ILotCard) => {
 	const {
 		housing,
-		bedroomsCount,
-		number,
 		sellingPricePerMeter,
 		interiorPlanImg,
-		mortgageMonthlyPayment,
-		type,
 		direction,
 		floorPlanImg,
 		discount,
 		sellingPrice,
 		sellingPriceBeforeDiscount,
-		subTypeName,
 	} = lot
 
 	const {
 		getFloorStr,
 		FloorByType,
 		areaStr,
-		isOffice,
 		isReserved,
 		rowConditionsVar,
 		currentClientWidth,
-		RenderTags,
 		isBuilding,
+		LotCardInfo,
 	} = useLotCard({ lot, rowConditions })
 
 	if (!currentClientWidth) return null
@@ -63,18 +54,7 @@ export const LotCard = ({
 			data-testid={'lot_card'}>
 			{!rowConditionsVar && (
 				<div className={cx(s.title)}>
-					<div className={s.monthlyWrapper}>
-						<Text
-							className={cx(s.infoHeader)}
-							html={`${isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)}${
-								isBuilding ? '' : `, ${number}`
-							}`}
-						/>
-						{mortgageMonthlyPayment && (
-							<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
-						)}
-					</div>
-					<RenderTags />
+					<LotCardInfo />
 				</div>
 			)}
 			<div className={cx(s.lotImageWrapper, addClassnameLotImage)}>
@@ -91,23 +71,7 @@ export const LotCard = ({
 				)}
 			</div>
 			<div className={cx(s.lotInfoWrapper)}>
-				{rowConditionsVar && (
-					<>
-						<div className={cx(s.monthlyWrapper)}>
-							<Text
-								className={cx(s.infoHeader)}
-								html={`${
-									isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
-								}, ${number}`}
-							/>
-							{mortgageMonthlyPayment && (
-								<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
-							)}
-						</div>
-						<RenderTags />
-					</>
-				)}
-
+				{rowConditionsVar && <LotCardInfo />}
 				<div className={cx(s.lotPropertyListDesktop)}>
 					<Tag variant='gray'>{areaStr}</Tag>
 					{!isBuilding && <Tag variant='gray'>{housing}</Tag>}
