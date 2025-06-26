@@ -213,6 +213,8 @@ export interface ILot {
 	showcaseWindows: string | null
 	/** Вид из окна */
 	windowView: string | null
+	/** Виды/выходы для типа ритейл */
+	windowViews: string[]
 	/** Promo метки */
 	promo: ILotPromo[] | null
 	/** Promo текст */
@@ -236,7 +238,7 @@ export interface ILot {
 		floorPlanImg: string
 		interiorPlanImg: string
 	}[]
-	cornerKitchenLiving?:  boolean | null
+	cornerKitchenLiving?: boolean | null
 	recommended?: ILot[] | null
 	parking?: ILot[] | null
 	project?: IProject | null
