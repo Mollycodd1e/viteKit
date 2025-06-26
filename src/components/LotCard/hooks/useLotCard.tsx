@@ -19,6 +19,7 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 
 	const isReserved = status === 2
 	const isOffice = direction === 1
+	const isBuilding = type === 11
 
 	const areaStr = area + ' ' + 'м²'
 	const floorStr =
@@ -35,12 +36,12 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 		typeof rowConditions !== 'undefined' ? rowConditions : isDesktop || isTablet
 
 	const getFloorStr = () => {
-		if (type === 11) return 'Кол-во этажей: ' + floorsNumber
+		if (isBuilding) return 'Кол-во этажей: ' + floorsNumber
 		return 'Этаж: ' + floorStr
 	}
 
 	const FloorByType = () => {
-		if (type === 11)
+		if (isBuilding)
 			return (
 				<>
 					<div>Количество этажей</div>
@@ -146,6 +147,7 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 	}
 	return {
 		currentClientWidth,
+		isBuilding,
 		RenderTags,
 		tagFeatures,
 		getFloorStr,

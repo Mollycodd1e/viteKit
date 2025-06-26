@@ -49,6 +49,7 @@ export const LotCard = ({
 		rowConditionsVar,
 		currentClientWidth,
 		RenderTags,
+		isBuilding,
 	} = useLotCard({ lot, rowConditions })
 
 	if (!currentClientWidth) return null
@@ -65,9 +66,9 @@ export const LotCard = ({
 					<div className={s.monthlyWrapper}>
 						<Text
 							className={cx(s.infoHeader)}
-							html={`${
-								isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)
-							}, ${number}`}
+							html={`${isOffice && type ? subTypeName : checkBedroomsCount(bedroomsCount)}${
+								isBuilding ? '' : `, ${number}`
+							}`}
 						/>
 						{mortgageMonthlyPayment && (
 							<div className={s.monthlyPayment}>{formatPayment(mortgageMonthlyPayment)}</div>
@@ -109,7 +110,7 @@ export const LotCard = ({
 
 				<div className={cx(s.lotPropertyListDesktop)}>
 					<Tag variant='gray'>{areaStr}</Tag>
-					<Tag variant='gray'>{housing}</Tag>
+					{!isBuilding && <Tag variant='gray'>{housing}</Tag>}
 					<Tag variant='gray'>{getFloorStr()}</Tag>
 				</div>
 				<ul className={cx(s.lotPropertyListMobile)}>
@@ -117,10 +118,12 @@ export const LotCard = ({
 						<div>Площадь</div>
 						<div>{areaStr}</div>
 					</li>
-					<li className={cx(s.lotPropertyItem)}>
-						<div>{housing?.split(' ')[0]}</div>
-						<div>{housing?.split(' ')[1]}</div>
-					</li>
+					{!isBuilding && (
+						<li className={cx(s.lotPropertyItem)}>
+							<div>{housing?.split(' ')[0]}</div>
+							<div>{housing?.split(' ')[1]}</div>
+						</li>
+					)}
 					<li className={cx(s.lotPropertyItem)}>
 						<FloorByType />
 					</li>
