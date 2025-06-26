@@ -89,27 +89,42 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 							return <li key={i}>{r}</li>
 						})}
 					</ul>
-					<div
-						className={s.addSnippets}
-						onClick={() => {
-							setIsShowSnippet((prev) => !prev)
-						}}>
-						{'+' + remainingItems?.length}
-						{isShowSnippet && (
-							<ul className={s.addSnippetsList}>
-								{remainingItems.map((r, i) => {
-									return <li key={i}>{r}</li>
-								})}
-								<div className={s.closeSnippetBtn}>
-									<NewIcon
-										name={'close'}
-										size='16'
-										color='#ffffff'
-									/>
-								</div>
-							</ul>
-						)}
-					</div>
+					{remainingItems?.length > 0 && (
+						<div
+							className={s.addSnippets}
+							onClick={(e) => {
+								if (!isDesktop) {
+									e.stopPropagation()
+									setIsShowSnippet((prev) => !prev)
+								}
+							}}
+							onMouseEnter={() => {
+								if (isDesktop) {
+									setIsShowSnippet(true)
+								}
+							}}
+							onMouseLeave={() => {
+								if (isDesktop) {
+									setIsShowSnippet(false)
+								}
+							}}>
+							{'+' + remainingItems?.length}
+							{isShowSnippet && (
+								<ul className={s.addSnippetsList}>
+									{remainingItems.map((r, i) => {
+										return <li key={i}>{r}</li>
+									})}
+									<div className={s.closeSnippetBtn}>
+										<NewIcon
+											name={'close'}
+											size='16'
+											color='#ffffff'
+										/>
+									</div>
+								</ul>
+							)}
+						</div>
+					)}
 				</div>
 			)
 		}
