@@ -95,6 +95,7 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 							onClick={(e) => {
 								if (!isDesktop) {
 									e.stopPropagation()
+									e.preventDefault()
 									setIsShowSnippet((prev) => !prev)
 								}
 							}}

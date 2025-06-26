@@ -252,7 +252,7 @@
   gap: 12px;
   min-width: 250px;
   bottom: 40px;
-  left: -50%;
+  left: 50%;
   transform: translate(-50%, 0);
   margin: 0;
   padding: 24px 24px 24px 31px;
@@ -275,8 +275,22 @@
       left: -5.5px;
       top: 50%;
       transform: translate(0, -50%);
-      background: #FFFFFF;
+      backdrop-filter: blur(12px);
+      background: #141416CC;
     }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(180deg);
+    width: 32px;
+    height: 16px;
+    backdrop-filter: blur(12px);
+    background: #141416CC;
+    clip-path: polygon(50% 0%, 61% 38%, 68% 57%, 81% 79%, 100% 100%, 52% 100%, 0 100%, 21% 75%, 32% 57%, 39% 37%);
   }
 }
 
