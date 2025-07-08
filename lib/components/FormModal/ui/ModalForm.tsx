@@ -10,6 +10,7 @@ import {CheckBox} from '../../CheckBox/CheckBox.tsx'
 import {TextArea} from '../../TextArea/TextArea.tsx'
 import classNames from 'classnames'
 import {useClientWidth} from '../../../main.ts'
+import {useEffect} from "react";
 
 interface IModalFormProps {
     isFormOpen: boolean
@@ -41,6 +42,8 @@ interface IModalFormProps {
     addTitleClassName?: string
     block_name?: string
     createPortalObj?: { domNode: HTMLElement | null; key?: string | null | undefined }
+    emitCheckBox?: () => void
+    emitAdvCheckBox?: () => void
 }
 
 type IFormPageInputs = {
@@ -80,7 +83,9 @@ export const ModalForm = ({
                               createPortalObj,
                               telegramClickHandler = () => null,
                               blurHandler,
-                              block_name
+                              block_name,
+                              emitCheckBox,
+                              emitAdvCheckBox,
                           }: IModalFormProps) => {
     const {
         register,
@@ -93,6 +98,20 @@ export const ModalForm = ({
 
     const isEmailFill = Boolean(watch('email'))
 
+    const isCheckBoxCheck = watch('personalCheckBox')
+    const isAdvCheckBoxCheck = watch('advCheckBox')
+
+    useEffect(() => {
+        if (typeof isCheckBoxCheck !== 'undefined') {
+            emitCheckBox && emitCheckBox()
+        }
+    }, [emitCheckBox, isCheckBoxCheck])
+
+    useEffect(() => {
+        if (typeof isAdvCheckBoxCheck !== 'undefined') {
+            emitAdvCheckBox && emitAdvCheckBox()
+        }
+    }, [emitAdvCheckBox, isAdvCheckBoxCheck])
 
     const {isMobile, currentClientWidth} = useClientWidth()
 
