@@ -1,62 +1,9 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import classNames from 'classnames';
 import s from './NewIcon.module.scss';
+import iconTypes from './iconTypes';
 
-const iconTypes: Record<string, React.LazyExoticComponent<React.FC<React.SVGProps<SVGSVGElement>>>> = {
-	arrowRight: React.lazy(() => import('../icons/arrowRight')),
-	loader: React.lazy(() => import('../icons/Loader')),
-	filter: React.lazy(() => import('../icons/Filter')),
-	lock: React.lazy(() => import('../icons/Lock')),
-	fullscreen: React.lazy(() => import('../icons/Fullscreen')),
-	twoArrows: React.lazy(() => import('../icons/TwoArrows')),
-	heart: React.lazy(() => import('../icons/Heart')),
-	download: React.lazy(() => import('../icons/Download')),
-	user: React.lazy(() => import('../icons/User')),
-	squareMeter: React.lazy(() => import('../icons/SquareMeter')),
-	check: React.lazy(() => import('../icons/Check')),
-	minusCheck: React.lazy(() => import('../icons/MinusCheck')),
-	close: React.lazy(() => import('../icons/Close')),
-	layers: React.lazy(() => import('../icons/Layers')),
-	layersFilled: React.lazy(() => import('../icons/LayersFilled')),
-	minus: React.lazy(() => import('../icons/Minus')),
-	moon: React.lazy(() => import('../icons/Moon')),
-	play: React.lazy(() => import('../icons/Play')),
-	plus: React.lazy(() => import('../icons/Plus')),
-	ruble: React.lazy(() => import('../icons/Ruble')),
-	share: React.lazy(() => import('../icons/Share')),
-	sun: React.lazy(() => import('../icons/Sun')),
-	star: React.lazy(() => import('../icons/Star')),
-	starFilled: React.lazy(() => import('../icons/StarFilled')),
-	burger: React.lazy(() => import('../icons/Burger')),
-	phone: React.lazy(() => import('../icons/Phone')),
-	phoneFilled: React.lazy(() => import('../icons/PhoneFilled')),
-	call: React.lazy(() => import('../icons/Call')),
-	callback: React.lazy(() => import('../icons/Callback')),
-	telegram: React.lazy(() => import('../icons/Telegram')),
-	whatsapp: React.lazy(() => import('../icons/WhatsApp')),
-	directionDown: React.lazy(() => import('../icons/DirectionDown')),
-	burgerClose: React.lazy(() => import('../icons/BurgerClose')),
-	arrowLong: React.lazy(() => import('../icons/ArrowLong')), // Removed because module not found
-	auto: React.lazy(() => import('../icons/Auto')),
-	pedestrian: React.lazy(() => import('../icons/Pedestrian')),
-	park: React.lazy(() => import('../icons/Park')),
-	metro: React.lazy(() => import('../icons/Metro')),
-	food: React.lazy(() => import('../icons/Food')),
-	mail: React.lazy(() => import('../icons/mail')),
-	building: React.lazy(() => import('../icons/Building')),
-	case: React.lazy(() => import('../icons/Case')),
-	sport: React.lazy(() => import('../icons/Sport')),
-	withoutDecor: React.lazy(() => import('../icons/WithoutDecor')),
-	play2: React.lazy(() => import('../icons/Play2')),
-	selectChecked: React.lazy(() => import('../icons/SelectChecked')),
-	selectUnchecked: React.lazy(() => import('../icons/SelectUnchecked')),
-	arrowShort: React.lazy(() => import('../icons/ArrowShort')),
-	search: React.lazy(() => import('../icons/Search')),
-	circle: React.lazy(() => import('../icons/Circle')),
-	redo: React.lazy(() => import('../icons/Redo')),
-	pin: React.lazy(() => import('../icons/Pin')),
-	timer: React.lazy(() => import('../icons/Timer')),
-};
+
 
 type IconProps = {
 	name: keyof typeof iconTypes;
@@ -67,14 +14,6 @@ type IconProps = {
 	strokeWidth?: string;
 };
 
-class ErrorBoundary extends React.Component {
-	state = { hasError: false };
-	static getDerivedStateFromError() { return { hasError: true }; }
-	render() {
-	  if (this.state.hasError) return <div>Ошибка загрузки иконки</div>;
-	  return this.props.children;
-	}
-  }
 
 const cx = classNames.bind(s);
 
@@ -106,11 +45,9 @@ export const NewIcon = ({
 			}}
 			className={cx(s.root, additionalClass)}
 		>
-			<ErrorBoundary>
 				<Suspense fallback={<div>Загрузка...</div>}>
 					<IconComponent width={size} height={size} fill={color} stroke={color} strokeWidth={strokeWidth} />
 				</Suspense>
-			</ErrorBoundary>
 		</div>
 	);
 };

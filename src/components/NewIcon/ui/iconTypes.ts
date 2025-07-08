@@ -1,8 +1,6 @@
-import React, { Suspense } from 'react';
-import classNames from 'classnames';
-import s from './NewIcon.module.scss';
+import React from 'react';
 
-export const iconTypes: Record<string, React.LazyExoticComponent<React.FC<React.SVGProps<SVGSVGElement>>>> = {
+const iconTypes: Record<string, React.LazyExoticComponent<React.FC<React.SVGProps<SVGSVGElement>>>> = {
 	arrowRight: React.lazy(() => import('../icons/arrowRight')),
 	loader: React.lazy(() => import('../icons/Loader')),
 	filter: React.lazy(() => import('../icons/Filter')),
@@ -58,59 +56,4 @@ export const iconTypes: Record<string, React.LazyExoticComponent<React.FC<React.
 	timer: React.lazy(() => import('../icons/Timer')),
 };
 
-type IconProps = {
-	name: keyof typeof iconTypes;
-	size?: string;
-	color?: string;
-	additionalClass?: string;
-	deg?: string;
-	strokeWidth?: string;
-};
-
-// class ErrorBoundary extends React.Component {
-// 	state = { hasError: false };
-// 	static getDerivedStateFromError() { return { hasError: true }; }
-// 	render() {
-// 	  if (this.state.hasError) return <div>Ошибка загрузки иконки</div>;
-// 	  return this.props.children;
-// 	}
-//   }
-
-const cx = classNames.bind(s);
-
-export const NewIcon = ({
-	name,
-	size = '24',
-	color,
-	strokeWidth,
-	additionalClass,
-	deg,
-}: IconProps) => {
-	const IconComponent = iconTypes[name];
-
-	if (!IconComponent) {
-		console.error(`Icon "${name}" not found`);
-		return null;
-	}
-
-	return (
-		<div
-			style={{
-				width: size + 'px',
-				height: size + 'px',
-				minWidth: size + 'px',
-				minHeight: size + 'px',
-				transform: deg ? `rotate(${deg}deg)` : undefined,
-				color: color,
-				strokeWidth: strokeWidth,
-			}}
-			className={cx(s.root, additionalClass)}
-		>
-			{/* <ErrorBoundary> */}
-				<Suspense fallback={<div>Загрузка...</div>}>
-					<IconComponent width={size} height={size} fill={color} stroke={color} strokeWidth={strokeWidth} />
-				</Suspense>
-			{/* </ErrorBoundary> */}
-		</div>
-	);
-};
+export default iconTypes;
