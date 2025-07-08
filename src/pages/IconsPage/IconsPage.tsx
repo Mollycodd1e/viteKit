@@ -1,4 +1,4 @@
-import { iconTypes } from '../../components/NewIcon/ui/NewIcon.tsx'
+import iconTypes from '../../components/NewIcon/ui/iconTypes.ts'
 import { NewIcon } from '../../main.ts'
 import s from './IconsPage.module.scss'
 
@@ -7,16 +7,16 @@ export const IconsPage = () => {
 		<div className={s.root}>
 			{Array.isArray(Object.keys(iconTypes))
 				? Object.keys(iconTypes).map((e, i) => {
-						return (
-							<div className={s.iconWrapper}>
-								<NewIcon
-									key={i}
-									name={e}
-									size='16'
-								/>
-								{e ?? ''}
-							</div>
-						)
+					return (
+						<div className={s.iconWrapper}>
+							<NewIcon
+								key={i}
+								name={e}
+								size='16'
+							/>
+							{e ?? ''}
+						</div>
+					)
 				})
 				: null}
 		</div>
