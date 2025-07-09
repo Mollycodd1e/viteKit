@@ -1,4 +1,3 @@
-import { NewIcon } from '../../NewIcon'
 import s from './s.module.scss'
 import { Modal } from '../../Modal'
 import { TabSwitcher } from '../../TabSwitcher'
@@ -7,6 +6,10 @@ import { TOption } from '../../Select/ui/Select.types'
 import { Button } from '../../Button'
 import classNames from 'classnames/bind'
 import { useFilterWithSave } from '../hooks/useFilterWithSave'
+import React, { Suspense } from 'react'
+
+const FilterIcon = React.lazy(() => import('../../NewIcon/assets/Filter.svg?react'));
+const CloseIcon = React.lazy(() => import('../../NewIcon/assets/Close.svg?react'));
 
 const cx = classNames.bind(s)
 
@@ -75,10 +78,9 @@ export const FilterWithSave = ({
 					onClick={() => {
 						handleCloseModal()
 					}}>
-					<NewIcon
-						name={'close'}
-						size='24'
-					/>
+					<Suspense fallback={null}>
+						<CloseIcon width={24} height={24} />
+					</Suspense>
 				</div>
 
 				<div className={s.modalTitle}>Фильтры</div>
@@ -161,10 +163,9 @@ export const FilterWithSave = ({
 						}
 					}}>
 					<div className={s.btnName}>{btnName}</div>
-					<NewIcon
-						name={'filter'}
-						size='16'
-					/>
+					<Suspense fallback={null}>
+						<FilterIcon width={16} height={16} />
+					</Suspense>
 				</div>
 				{!isMobile && (
 					<div
@@ -175,10 +176,9 @@ export const FilterWithSave = ({
 							onClick={() => {
 								handleCloseModal()
 							}}>
-							<NewIcon
-								name={'close'}
-								size='24'
-							/>
+							<Suspense fallback={null}>
+								<CloseIcon width={24} height={24} />
+							</Suspense>
 						</div>
 
 						<div className={s.modalTitle}>Фильтры</div>

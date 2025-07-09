@@ -1,18 +1,1 @@
-<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_116_47)">
-<rect x="10.5078" y="3.5" width="5" height="5" rx="2.5" transform="rotate(90 10.5078 3.5)" stroke="currentColor"/>
-<path d="M3.00015 6H5.00015" stroke="currentColor" stroke-linecap="square"/>
-<path d="M10.5335 6L21 6" stroke="currentColor" stroke-linecap="square"/>
-<rect x="13.4922" y="14.5" width="5" height="5" rx="2.5" transform="rotate(-90 13.4922 14.5)" stroke="currentColor"/>
-<path d="M21.0001 12L19.0001 12" stroke="currentColor" stroke-linecap="square"/>
-<path d="M13.4665 12L3 12" stroke="currentColor" stroke-linecap="square"/>
-<rect x="10.5078" y="15.5001" width="5" height="5" rx="2.5" transform="rotate(90 10.5078 15.5001)" stroke="currentColor"/>
-<path d="M3.00013 18H5.00013" stroke="currentColor" stroke-linecap="square"/>
-<path d="M10.5335 18.0001L21 18.0001" stroke="currentColor" stroke-linecap="square"/>
-</g>
-<defs>
-<clipPath id="clip0_116_47">
-<rect width="24" height="24" fill="none"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g stroke="currentColor" clip-path="url(#a)"><rect width="5" height="5" x="10.508" y="3.5" rx="2.5" transform="rotate(90 10.508 3.5)"/><path stroke-linecap="square" d="M3 6h2M10.534 6H21"/><rect width="5" height="5" x="13.492" y="14.5" rx="2.5" transform="rotate(-90 13.492 14.5)"/><path stroke-linecap="square" d="M21 12h-2M13.467 12H3"/><rect width="5" height="5" x="10.508" y="15.5" rx="2.5" transform="rotate(90 10.508 15.5)"/><path stroke-linecap="square" d="M3 18h2M10.534 18H21"/></g><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs></svg>

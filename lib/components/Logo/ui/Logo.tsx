@@ -1,7 +1,9 @@
 import { Text } from '../../Text'
 import s from './Logo.module.scss'
 import classNames from 'classnames'
-import { ILogoProps, logoVariant } from './Logo.types'
+import { ILogoProps } from './Logo.types'
+import logoTypes from './logoTypes'
+import { Suspense } from 'react'
 
 export const Logo = ({
 	uk = false,
@@ -11,6 +13,7 @@ export const Logo = ({
 	onClick,
 }: ILogoProps) => {
 	const cx = classNames.bind(s)
+	const LogoComponent = logoTypes[variant]
 
 	return (
 		<div
@@ -18,18 +21,18 @@ export const Logo = ({
 			onClick={() => {
 				onClick && onClick()
 			}}>
-			<img
-				src={logoVariant[variant]}
-				alt='Лого'
-				className={cx(
-					s.logo,
-					{ [s.logoValue]: variant === 'value' },
-					{ [s.logoDom]: variant === 'dom' },
-					{ [s.logoOffice]: variant === 'office' },
-					{ [s.logoNewOffice]: variant === 'newOffice' },
-					{ [s.logoNewDom]: variant === 'newDom' }
-				)}
-			/>
+			<Suspense fallback={<div>Загрузка...</div>}>
+				{LogoComponent ? (
+					<LogoComponent className={cx(
+						s.logo,
+						{ [s.logoValue]: variant === 'value' },
+						{ [s.logoDom]: variant === 'dom' },
+						{ [s.logoOffice]: variant === 'office' },
+						{ [s.logoNewOffice]: variant === 'newOffice' },
+						{ [s.logoNewDom]: variant === 'newDom' }
+					)} />
+				) : null}
+			</Suspense>
 			{uk && (
 				<Text
 					className={cx(s.uk, s[`uk_${variant}`])}
