@@ -1,19 +1,16 @@
 import { Suspense } from 'react';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import s from './NewIcon.module.scss';
 import iconTypes from './iconTypes';
 
-
-
 type IconProps = {
-	name: keyof typeof iconTypes;
+	name: string;
 	size?: string;
 	color?: string;
 	additionalClass?: string;
 	deg?: string;
 	strokeWidth?: string;
 };
-
 
 const cx = classNames.bind(s);
 
@@ -25,7 +22,8 @@ export const NewIcon = ({
 	additionalClass,
 	deg,
 }: IconProps) => {
-	const IconComponent = iconTypes[name];
+	const key = name.charAt(0).toLowerCase() + name.slice(1);
+	const IconComponent = iconTypes[key];
 
 	if (!IconComponent) {
 		console.error(`Icon "${name}" not found`);

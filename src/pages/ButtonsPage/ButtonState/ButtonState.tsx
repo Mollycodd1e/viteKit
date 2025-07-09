@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import s from './ButtonState.module.scss'
 import { BUTTON_VARIANTS } from '../../../components/Button/ui/Button.types'
-import {  NewIcon } from '../../../components/NewIcon/ui/NewIcon'
-import iconTypes from '../../../components/NewIcon/ui/iconTypes'
+import { NewIcon } from '../../../components/NewIcon/ui/NewIcon'
+import iconTypes from '../../../components/NewIcon/ui/iconTypes';
 
 interface IButtonState {
-	children: React.ReactElement
+  children: React.ReactElement
 }
 
 export const ButtonState = ({ children }: IButtonState) => {
