@@ -16,7 +16,9 @@ export default defineConfig({
 			include: '**/*.svg',
 		}),
 		dts({ include: ['lib'] }),
+		svgr(),
 		visualizer({ open: true }),
+	
 	],
 	ssr: {
 		noExternal: true,

@@ -1,0 +1,70 @@
+@mixin visuallyHiddenMix {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+
+  & input {
+    @include visuallyHiddenMix;
+  }
+
+  &:has(input:not(:checked))::before,
+  &:has(input:checked)::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #e6e8ec;
+    border: 1px solid #b1b5c3;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  &:has(input:checked)::after {
+    background: #141416;
+    border: 1px solid #141416;
+  }
+
+}
+
+.labelText {
+  user-select: none;
+  font-size: 14px;
+  line-height: 20px;
+
+  padding-left: 32px;
+  color: #777e90;
+}
+
+.error {
+  &:has(input:not(:checked))::before {
+    border: 1px solid #f44336;
+    z-index: 1;
+  }
+
+  color: #f44336;
+}
+
+
+.checkIcon {
+  z-index: 5;
+  position: absolute;
+  left: 2px;
+  top: 1px;
+}

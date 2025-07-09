@@ -1,0 +1,127 @@
+@keyframes swiperForward {
+	0% {
+		background: #b1b5c3;
+		border: 1px solid #b1b5c3;
+	}
+
+	50% {
+		background: #777e90;
+		border: 1px solid #777e90;
+	}
+
+	100% {
+		background: #015ff9;
+		border: 1px solid #015ff9;
+	}
+}
+
+@keyframes swiperBackward {
+	0% {
+		background: #015ff9;
+		border: 1px solid #015ff9;
+	}
+
+	50% {
+		background: #024AC0;
+		border: 1px solid #024AC0;
+	}
+
+	100% {
+		background: #b1b5c3;
+		border: 1px solid #b1b5c3;
+	}
+}
+
+.switcherWrapper {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 500;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.swiper {
+	position: relative;
+	width: 36px;
+	height: 20px;
+	padding: 1px;
+	border-radius: 50px;
+	border: 1px solid #b1b5c3;
+	background: #b1b5c3;
+	box-sizing: border-box;
+	cursor: pointer;
+	outline: none;
+	color: green;
+	animation: swiperBackward 0s ease;
+}
+
+.swiperActive {
+	animation: swiperForward 0.3s ease;
+	animation-fill-mode: forwards;
+}
+
+.swiperInactive {
+	animation: swiperBackward 0.3s ease;
+	animation-fill-mode: forwards;
+}
+
+.swiperPoint {
+	position: relative;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #ffffff;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 4px 0 #1414163d;
+}
+
+.swiperPointActive {
+	left: 16px;
+}
+
+.swiper::before {
+	display: none;
+	position: absolute;
+	content: '';
+	width: 8px;
+	height: 8px;
+	left: 4px;
+	top: 50%;
+	transform: translate(0, -50%);
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	opacity: 0.5;
+}
+
+@media(min-width: 1024px) and (pointer: fine) {
+	.swiperActive:hover::before {
+		display: block;
+		left: 4px;
+	}
+
+	.swiperInactive:hover::before,
+	.swiperInitialize:hover::before {
+		display: block;
+		left: unset;
+		right: 4px;
+	}
+
+	.swiperInitialize.swiperActive:hover::before {
+		left: 4px;
+		right: unset;
+	}
+}
+
+@media(min-width: 1440px) {
+	.switcherWrapper {
+		font-size: 16px;
+		line-height: 24px;
+		gap: 12px;
+	}
+}

@@ -1,0 +1,84 @@
+$gaps: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16;
+$factor: 4;
+$directions: row, row-reverse, column, column-reverse;
+$wraps: nowrap, wrap, wrap-reverse;
+$justifyContent: flex-start, flex-end, center, space-between, space-around, space-evenly;
+$alignItems: stretch, flex-start, flex-end, center, baseline;
+$growAndShrink: 0, 1, 2, 3, 4;
+$s: '>=375px';
+$m: '>=1024px';
+$l: '>=1440px';
+
+$dimensions: 's'$s, 'm'$m, 'l'$l;
+
+.root {
+	display: flex;
+}
+
+@each $g in $gaps {
+	.gap-#{$g} {
+		gap: #{$g * $factor}px;
+	}
+}
+
+@each $fd in $directions {
+	.fd-#{$fd} {
+		flex-direction: $fd;
+	}
+}
+
+@each $w in $wraps {
+	.w-#{$w} {
+		flex-wrap: $w;
+	}
+}
+
+@each $jc in $justifyContent {
+	.jc-#{$jc} {
+		justify-content: $jc;
+	}
+}
+
+@each $ai in $alignItems {
+	.ai-#{$ai} {
+		align-items: $ai;
+	}
+}
+
+// ==================================
+// Media properties
+// ==================================
+
+// @each $dim in $dimensions {
+// 	@media(min-width: #{$dim}) {
+// 		@each $g in $gaps {
+// 			.gap-#{$g} {
+// 				gap: #{$g * $factor}px;
+// 			}
+// 		}
+
+// 		@each $fd in $directions {
+// 			.fd-#{$fd} {
+// 				flex-direction: $fd;
+// 			}
+// 		}
+
+// 		@each $w in $wraps {
+// 			.w-#{$w} {
+// 				flex-wrap: $w;
+// 			}
+// 		}
+
+// 		@each $jc in $justifyContent {
+// 			.jc-#{$jc} {
+// 				justify-content: $jc;
+// 			}
+// 		}
+
+// 		@each $ai in $alignItems {
+// 			.ai-#{$ai} {
+// 				align-items: $ai;
+// 			}
+// 		}
+// 	}
+// }
