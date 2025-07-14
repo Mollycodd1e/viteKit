@@ -1,9 +1,7 @@
-import React, { Suspense } from 'react'
+import { NewIcon } from '../../NewIcon'
 import { Select } from '../../Select'
 import { MultiSelectProps, TCategory, TOption } from '../../Select/ui/Select.types'
 import s from './SummarySelect.module.scss'
-
-const ResetIcon = React.lazy(() => import('../../NewIcon/assets/Close.svg?react'));
 
 interface ISummarySelectProps extends MultiSelectProps {
 	label?: string
@@ -68,9 +66,10 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
 							onClick={() => handleRemoveOption(m.value.toString())}
 							className={s.summaryOption}>
 							{m.label}
-							<Suspense fallback={null}>
-								<ResetIcon width={16} height={16} />
-							</Suspense>
+							<NewIcon
+								name='close'
+								size='16'
+							/>
 						</div>
 					))}
 				</div>
@@ -90,9 +89,10 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
 								<div
 									onClick={() => handleClearCategory(e as TCategory)}
 									className={s.clearBtn}>
-									<Suspense fallback={null}>
-										<ResetIcon width={16} height={16} />
-									</Suspense>
+									<NewIcon
+										name='close'
+										size='16'
+									/>
 								</div>
 							</div>
 
@@ -106,9 +106,10 @@ export const SummarySelect: React.FC<ISummarySelectProps> = ({
 												onClick={() => handleRemoveOption(option.value.toString())}
 												className={`${s.summaryOption} ${s.categoryOption}`}>
 												{option.label}
-												<Suspense fallback={null}>
-													<ResetIcon width={16} height={16} />
-												</Suspense>
+												<NewIcon
+													name='close'
+													size='16'
+												/>
 											</div>
 										)
 									})}
