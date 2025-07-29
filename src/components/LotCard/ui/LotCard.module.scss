@@ -220,7 +220,7 @@
       content: '';
       width: 2px;
       height: 2px;
-      top: 12px;
+      top: 50%;
       left: -5.5px;
       transform: translate(0, -50%);
       background: #141416;
@@ -278,7 +278,7 @@
       width: 2px;
       height: 2px;
       left: -5.5px;
-      top: 50%;
+      top: 12px;
       transform: translate(0, -50%);
       backdrop-filter: blur(12px);
       background: #FFFFFF;
