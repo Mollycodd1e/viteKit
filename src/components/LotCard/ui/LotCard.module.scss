@@ -278,7 +278,7 @@
       width: 2px;
       height: 2px;
       left: -5.5px;
-      top: 50%;
+      top: 12px;
       transform: translate(0, -50%);
       backdrop-filter: blur(12px);
       background: #FFFFFF;
@@ -288,7 +288,7 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: -16px;
+    bottom: -15px;
     left: 50%;
     transform: translate(-50%, 0) rotate(180deg);
     width: 32px;
