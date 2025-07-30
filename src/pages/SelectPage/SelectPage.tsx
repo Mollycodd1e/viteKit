@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {CheckBoxOld, Select, SortSelect, Switcher} from '../../main'
+import { CheckBoxOld, Select, SortSelect, Switcher } from '../../main'
 import s from './SelectPage.module.scss'
 import { SummarySelect } from '../../components/SummarySelect'
 import { TModeSelect, TOption } from '../../components/Select/ui/Select.types.ts'
@@ -12,11 +12,11 @@ export const SelectPage = () => {
 	const [select, setSelect] = useState<TOption[] | undefined>([])
 	const [modeSelect, setModeSelect] = useState<TModeSelect>('options')
 	const fake = [
-		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: false },
-		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true },
-		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: false },
-		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true },
-		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: false, disabled: true },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true, disabled: false },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: false, disabled: false },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true, disabled: false },
+		{ label: 'sdfsdfsdf', setValue: () => {}, isSelected: true, disabled: false },
 	]
 	const handleChangeSort = (e: TOption | null) => {
 		//@ts-expect-error todo types
@@ -51,9 +51,12 @@ export const SelectPage = () => {
 				</div>
 				<div>
 					<h2>старый чекбокс</h2>
-					<CheckBoxOld isChecked={false} emitIsChecked={() => {
-						console.log('check')
-					}} />
+					<CheckBoxOld
+						isChecked={false}
+						emitIsChecked={() => {
+							console.log('check')
+						}}
+					/>
 				</div>
 				<div>
 					<h2> Фильтрация с сохранением</h2>

@@ -6,6 +6,7 @@ interface ICheckboxSelectProps {
 	checkboxes: {
 		label: string
 		isSelected: boolean
+		disabled: boolean
 		setValue: () => void
 	}[]
 	addClassname?: string
@@ -16,7 +17,7 @@ const cx = classNames.bind(s)
 export const CheckboxSelect: React.FC<ICheckboxSelectProps> = ({
 	label = 'Тип квартиры',
 	checkboxes,
-	addClassname
+	addClassname,
 }) => {
 	const handleClearAll = () => {
 		checkboxes?.forEach((checkbox) => {
@@ -39,12 +40,17 @@ export const CheckboxSelect: React.FC<ICheckboxSelectProps> = ({
 			<div className={s.checkboxWrapper}>
 				{checkboxes?.map((m) => {
 					return (
-						<div
+						<button
 							key={m?.label}
-							className={cx(s.checkboxItem, { [s.checkboxItemActive]: m?.isSelected })}
-							onClick={() => m?.setValue()}>
+							className={cx(
+								s.checkboxItem,
+								{ [s.checkboxItemActive]: m?.isSelected },
+								{ [s.checkboxItemDisabled]: m?.disabled }
+							)}
+							onClick={() => m?.setValue()}
+							disabled={m?.disabled}>
 							{m?.label}
-						</div>
+						</button>
 					)
 				})}
 			</div>
