@@ -76,6 +76,11 @@
 	}
 }
 
+.blue {
+	border: 1px solid #015FF9;
+	background-color: #015FF9;
+}
+
 @media(min-width: 1024px) {
 	.tiny-size_m {
 		@include button-tiny;
