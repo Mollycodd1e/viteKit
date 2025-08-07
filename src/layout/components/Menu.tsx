@@ -62,6 +62,10 @@ export const Menu = () => {
 				to={'/input'}
 				title={'ИНПУТЫ'}
 			/>
+			<LinkComponent
+				to={'/checkbox'}
+				title={'ЧЕКБОКСЫ'}
+			/>
 		</div>
 	)
 }

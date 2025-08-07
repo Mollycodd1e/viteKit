@@ -45,6 +45,8 @@
 	padding: 7px 11px;
 	border-radius: 48px;
 	border: 1px solid #E6E8EC;
+	background: #ffffff;
+	user-select: none;
 	color: #141416;
 	cursor: pointer;
 
@@ -66,4 +68,9 @@
 			background: #23262F;
 		}
 	}
+}
+
+.checkboxItemDisabled {
+	pointer-events: none;
+	opacity: 0.5;
 }
