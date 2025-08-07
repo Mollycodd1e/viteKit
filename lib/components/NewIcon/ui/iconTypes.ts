@@ -1,6 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-const iconTypes: Record<string, React.LazyExoticComponent<React.FC<React.SVGProps<SVGSVGElement>>>> = {
+const iconTypes: Record<
+	string,
+	React.LazyExoticComponent<React.FC<React.SVGProps<SVGSVGElement>>>
+> = {
 	arrowRight: React.lazy(() => import('../icons/arrowRight')),
 	loader: React.lazy(() => import('../icons/Loader')),
 	filter: React.lazy(() => import('../icons/Filter')),
@@ -53,7 +56,9 @@ const iconTypes: Record<string, React.LazyExoticComponent<React.FC<React.SVGProp
 	circle: React.lazy(() => import('../icons/Circle')),
 	redo: React.lazy(() => import('../icons/Redo')),
 	pin: React.lazy(() => import('../icons/Pin')),
+	pinTrans: React.lazy(() => import('../icons/PinTrans')),
+	SmallFilter: React.lazy(() => import('../icons/SmallFilter')),
 	timer: React.lazy(() => import('../icons/Timer')),
-};
+}
 
-export default iconTypes;
+export default iconTypes
