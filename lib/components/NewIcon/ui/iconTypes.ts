@@ -57,7 +57,7 @@ const iconTypes: Record<
 	redo: React.lazy(() => import('../icons/Redo')),
 	pin: React.lazy(() => import('../icons/Pin')),
 	pinTrans: React.lazy(() => import('../icons/PinTrans')),
-	SmallFilter: React.lazy(() => import('../icons/SmallFilter')),
+	smallFilter: React.lazy(() => import('../icons/SmallFilter')),
 	timer: React.lazy(() => import('../icons/Timer')),
 }
 
