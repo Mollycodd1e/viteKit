@@ -2,8 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useState } from 'react';
 import s from './ButtonState.module.scss';
 import { BUTTON_VARIANTS } from '../../../components/Button/ui/Button.types';
-import { NewIcon } from '../../../components/NewIcon/ui/NewIcon';
-import iconTypes from '../../../components/NewIcon/ui/iconTypes';
+import { iconTypes, NewIcon } from '../../../components/NewIcon/ui/NewIcon';
 export const ButtonState = ({ children }) => {
     const [width, setWidth] = useState('auto');
     const [variants, setVariants] = useState('blue');

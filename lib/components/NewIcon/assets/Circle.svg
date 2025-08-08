@@ -1,1 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 80 80"><rect width="79" height="79" x=".5" y=".5" stroke="currentColor" rx="39.5"/></svg>
+<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="79" height="79" rx="39.5" stroke="currentColor"/>
+</svg>

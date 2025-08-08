@@ -1,15 +1,12 @@
 import s from './LotCard.module.scss'
 import { ILotCard } from './LotCard.types'
 import LotImage from './../assets/testLot.webp'
+import { NewIcon } from '../../NewIcon'
 import { Tag } from '../../Tag'
 import { Button } from '../../Button'
 import { formatPrice } from '../utils/formatPrice'
 import classNames from 'classnames'
 import { useLotCard } from '../hooks/useLotCard.tsx'
-import React, { Suspense } from 'react'
-
-const FullscreenIcon = React.lazy(() => import('../../NewIcon/assets/Fullscreen.svg?react'));
-const LockIcon = React.lazy(() => import('../../NewIcon/assets/Lock.svg?react'));
 
 const cx = classNames.bind(s)
 
@@ -133,9 +130,11 @@ export const LotCard = ({
 							e.preventDefault()
 							handleFullScreenBtn && handleFullScreenBtn()
 						}}>
-						<Suspense fallback={null}>
-							<FullscreenIcon color='#141416' width={20} height={20} />
-						</Suspense>
+						<NewIcon
+							name='fullscreen'
+							color='#141416'
+							size='20'
+						/>
 					</Button>
 					<Button
 						as='button'
@@ -147,9 +146,11 @@ export const LotCard = ({
 						data-testid={'lot_form'}
 						post={
 							isReserved ? (
-								<Suspense fallback={null}>
-									<LockIcon width={24} height={24} color={'#777E90'} />
-								</Suspense>
+								<NewIcon
+									name={'lock'}
+									size={'24'}
+									color={'#777E90'}
+								/>
 							) : undefined
 						}
 						onClick={(e) => {
