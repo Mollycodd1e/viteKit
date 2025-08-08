@@ -159,6 +159,14 @@
 	font-weight: 500;
 }
 
+.transWhite {
+	background-color: #ffffff4d;
+	border: 1px solid transparent;
+	backdrop-filter: blur(8px);
+	color: #ffffff;
+	font-weight: 500;
+}
+
 @media(min-width: 1024px) {
 	.mini-size_m {
 		@include tag-mini;
