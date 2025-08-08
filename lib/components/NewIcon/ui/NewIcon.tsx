@@ -51,6 +51,8 @@ import Redo from './../assets/Redo.svg'
 import Pin from './../assets/Pin.svg'
 import Timer from './../assets/Timer.svg'
 import Mail from './../assets/mail.svg'
+import PinTrans from './../assets/PinTrans.svg'
+import SmallFilter from './../assets/SmallFilter.svg'
 import { ReactSVGComponent } from './NewIcon.types'
 import classNames from 'classnames'
 import s from './NewIcon.module.scss'
@@ -120,6 +122,8 @@ export const iconTypes: IconTypes = {
 	redo: () => <Redo />,
 	pin: () => <Pin />,
 	timer: () => <Timer />,
+	pinTrans: () => <PinTrans />,
+	smallFilter: () => <SmallFilter />,
 }
 const cx = classNames.bind(s)
 
