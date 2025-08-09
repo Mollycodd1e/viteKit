@@ -13,6 +13,8 @@ export const TAG_VARIANTS = {
 	transparent: 'transparent',
 	shadeWhite: 'shadeWhite',
 	transWhite: 'transWhite',
+	whiteGrayStroke: 'whiteGrayStroke',
+	blackStroke: 'blackStroke',
 }
 
 export type tagVariant = keyof typeof TAG_VARIANTS

@@ -167,6 +167,20 @@
 	font-weight: 500;
 }
 
+.whiteGrayStroke {
+	background-color: #ffffff;
+	border: 1px solid #e6e8ec;
+	color: #777E90;
+	font-weight: 500;
+}
+
+.blackStroke {
+	background-color: #ffffff;
+	border: 1px solid #141416;
+	color: #141416;
+	font-weight: 500;
+}
+
 @media(min-width: 1024px) {
 	.mini-size_m {
 		@include tag-mini;
