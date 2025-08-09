@@ -18,7 +18,7 @@ export const Logo = ({
 			onClick={() => {
 				onClick && onClick()
 			}}>
-				<img
+			<img
 				src={logoVariant[variant]}
 				alt='Лого'
 				className={cx(
@@ -27,7 +27,8 @@ export const Logo = ({
 					{ [s.logoDom]: variant === 'dom' },
 					{ [s.logoOffice]: variant === 'office' },
 					{ [s.logoNewOffice]: variant === 'newOffice' },
-					{ [s.logoNewDom]: variant === 'newDom' }
+					{ [s.logoNewDom]: variant === 'newDom' },
+					{ [s.logoNewDom]: variant === 'realty' }
 				)}
 			/>
 			{uk && (

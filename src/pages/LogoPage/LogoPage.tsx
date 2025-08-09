@@ -10,6 +10,7 @@ export const LogoPage = () => {
 			<Logo variant='office' />
 			<Logo variant='dom' />
 			<Logo variant='newOffice' />
+			<Logo variant='realty' />
 		</div>
 	)
 }

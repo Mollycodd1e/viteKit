@@ -5,10 +5,11 @@ import LogoDom from '../assets/LogoDom.svg?url'
 import LogoOffice from '../assets/LogoOffice.svg?url'
 import LogoNewOffice from '../assets/LogoNewOffice.svg?url'
 import LogoNewDom from '../assets/LogoNewDom.svg?url'
+import LogoRealty from '../assets/LogoRealty.svg?url'
 
 export interface ILogoProps {
 	uk?: boolean
-	variant?: 'black' | 'white' | 'value' | 'dom' | 'office' | 'newOffice' | 'newDom'
+	variant?: 'black' | 'white' | 'value' | 'dom' | 'office' | 'newOffice' | 'newDom' | 'realty'
 	between?: boolean
 	addClassName?: string
 	onClick?: () => void
@@ -22,4 +23,5 @@ export const logoVariant = {
 	office: LogoOffice,
 	newOffice: LogoNewOffice,
 	newDom: LogoNewDom,
+	realty: LogoRealty,
 }
