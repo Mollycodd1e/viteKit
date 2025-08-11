@@ -131,19 +131,19 @@
 	@include tag-large;
 }
 
-.tiny-size-7px {
+.tiny-7px-size {
 	@include tag-tiny-7px;
 }
 
-.tiny-size-10px {
+.tiny-10px-size {
 	@include tag-tiny-10px;
 }
 
-.small-size-10px {
+.small-10px-size {
 	@include tag-small-10px;
 }
 
-.small-size-13px {
+.small-13px-size {
 	@include tag-small-13px;
 }
 
@@ -254,19 +254,19 @@
 		@include tag-large;
 	}
 
-	.tiny-size-7px_m {
+	.tiny-7px-size_m {
 		@include tag-tiny-7px;
 	}
 
-	.tiny-size-10px_m {
+	.tiny-10px-size_m {
 		@include tag-tiny-10px;
 	}
 
-	.small-size-10px_m {
+	.small-10px-size_m {
 		@include tag-small-10px;
 	}
 
-	.small-size-13px_m {
+	.small-13px-size_m {
 		@include tag-small-13px;
 	}
 }
@@ -296,19 +296,19 @@
 		@include tag-large;
 	}
 
-	.tiny-size-7px_l {
+	.tiny-7px-size_l {
 		@include tag-tiny-7px;
 	}
 
-	.tiny-size-10px_l {
+	.tiny-10px-size_l {
 		@include tag-tiny-10px;
 	}
 
-	.small-size-10px_l {
+	.small-10px-size_l {
 		@include tag-small-10px;
 	}
 
-	.small-size-13px_l {
+	.small-13px-size_l {
 		@include tag-small-13px;
 	}
 }
