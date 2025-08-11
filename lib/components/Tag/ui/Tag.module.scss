@@ -131,6 +131,22 @@
 	@include tag-large;
 }
 
+.tiny-size-7px {
+	@include tag-tiny-7px;
+}
+
+.tiny-size-10px {
+	@include tag-tiny-10px;
+}
+
+.small-size-10px {
+	@include tag-small-10px;
+}
+
+.small-size-13px {
+	@include tag-small-13px;
+}
+
 .red {
 	background: #ec5353;
 	border: 1px solid #ec5353;
@@ -237,6 +253,22 @@
 	.large-size_m {
 		@include tag-large;
 	}
+
+	.tiny-size-7px_m {
+		@include tag-tiny-7px;
+	}
+
+	.tiny-size-10px_m {
+		@include tag-tiny-10px;
+	}
+
+	.small-size-10px_m {
+		@include tag-small-10px;
+	}
+
+	.small-size-13px_m {
+		@include tag-small-13px;
+	}
 }
 
 @media(min-width: 1440px) {
@@ -262,5 +294,21 @@
 
 	.large-size_l {
 		@include tag-large;
+	}
+
+	.tiny-size-7px_l {
+		@include tag-tiny-7px;
+	}
+
+	.tiny-size-10px_l {
+		@include tag-tiny-10px;
+	}
+
+	.small-size-10px_l {
+		@include tag-small-10px;
+	}
+
+	.small-size-13px_l {
+		@include tag-small-13px;
 	}
 }

@@ -131,6 +131,22 @@
 	@include tag-large;
 }
 
+.tiny-size-7px {
+	@include tag-tiny-7px;
+}
+
+.tiny-size-10px {
+	@include tag-tiny-10px;
+}
+
+.small-size-10px {
+	@include tag-small-10px;
+}
+
+.small-size-13px {
+	@include tag-small-13px;
+}
+
 .red {
 	background: #ec5353;
 	border: 1px solid #ec5353;
@@ -238,20 +254,20 @@
 		@include tag-large;
 	}
 
-	@mixin tag-small-10px {
-		font-size: 12px;
-		line-height: 16px;
-		min-height: 32px;
-		padding: 7px 10px;
-		gap: 4px;
+	.tiny-size-7px_m {
+		@include tag-tiny-7px;
 	}
 
-	@mixin tag-small-13px {
-		font-size: 12px;
-		line-height: 16px;
-		min-height: 32px;
-		padding: 7px 13px;
-		gap: 7px;
+	.tiny-size-10px_m {
+		@include tag-tiny-10px;
+	}
+
+	.small-size-10px_m {
+		@include tag-small-10px;
+	}
+
+	.small-size-13px_m {
+		@include tag-small-13px;
 	}
 }
 
@@ -278,5 +294,21 @@
 
 	.large-size_l {
 		@include tag-large;
+	}
+
+	.tiny-size-7px_l {
+		@include tag-tiny-7px;
+	}
+
+	.tiny-size-10px_l {
+		@include tag-tiny-10px;
+	}
+
+	.small-size-10px_l {
+		@include tag-small-10px;
+	}
+
+	.small-size-13px_l {
+		@include tag-small-13px;
 	}
 }
