@@ -19,7 +19,17 @@ export const TAG_VARIANTS = {
 
 export type tagVariant = keyof typeof TAG_VARIANTS
 
-type tagSizes = 'medium' | 'tiny' | 'large' | 'small' | 'preLarge' | 'mini'
+type tagSizes =
+	| 'medium'
+	| 'tiny'
+	| 'large'
+	| 'small'
+	| 'preLarge'
+	| 'mini'
+	| 'tiny-7px'
+	| 'tiny-10px'
+	| 'small-10px'
+	| 'small-13px'
 
 interface TagProps {
 	size?: tagSizes
