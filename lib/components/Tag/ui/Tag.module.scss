@@ -14,12 +14,44 @@
 	gap: 4px;
 }
 
+@mixin tag-tiny-7px {
+	font-size: 10px;
+	line-height: 12px;
+	min-height: 24px;
+	padding: 6px 7px;
+	gap: 2px;
+}
+
+@mixin tag-tiny-10px {
+	font-size: 10px;
+	line-height: 12px;
+	min-height: 24px;
+	padding: 6px 10px;
+	gap: 6px;
+}
+
 @mixin tag-small {
 	font-size: 12px;
 	line-height: 16px;
 	min-height: 32px;
 	padding: 7px 15px;
 	gap: 4px;
+}
+
+@mixin tag-small-10px {
+	font-size: 12px;
+	line-height: 16px;
+	min-height: 32px;
+	padding: 7px 10px;
+	gap: 4px;
+}
+
+@mixin tag-small-13px {
+	font-size: 12px;
+	line-height: 16px;
+	min-height: 32px;
+	padding: 7px 13px;
+	gap: 7px;
 }
 
 @mixin tag-medium {
