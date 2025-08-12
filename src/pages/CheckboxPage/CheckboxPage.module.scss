@@ -1,0 +1,18 @@
+.root{
+    text-align: center;
+
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.lighContainer, .darkContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}

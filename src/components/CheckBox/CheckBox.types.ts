@@ -1,20 +1,23 @@
-import React from 'react'
+import { ReactNode, ForwardRefExoticComponent, RefAttributes } from 'react';
 
-export const CHECKBOX_VARIANTS = {
-	light: 'light',
+export type CheckBoxVariant = 'light' | 'dark';
+
+export type CheckBoxSize = 'small' | 'medium' | 'large';
+
+export interface CheckBoxProps {
+  children?: ReactNode;
+  isChecked: boolean | undefined;
+  error?: boolean;
+  modifierClassesStyle?: string[];
+  emitIsChecked?: (isChecked: boolean) => void;
+  onClick?: () => void;
+  variant?: CheckBoxVariant;
+  size_s?: boolean;
+  size_l?: boolean;
+  size_m?: boolean;
+  [key: string]: unknown;
 }
 
-export type checkBoxVariant = keyof typeof CHECKBOX_VARIANTS
-
-type checkBoxSizes = 'medium'
-
-interface InputProps {
-	size_s?: checkBoxSizes
-	size_m?: checkBoxSizes
-	size_l?: checkBoxSizes
-	error?: boolean
-	variant?: checkBoxVariant
-	additionalClass?: string
-}
-
-export type ComponentProps = InputProps & React.InputHTMLAttributes<HTMLInputElement>
+export type CheckBoxComponent = ForwardRefExoticComponent<
+  CheckBoxProps & RefAttributes<HTMLInputElement>
+>;

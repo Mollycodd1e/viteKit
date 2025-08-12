@@ -1,47 +1,84 @@
-import { Input } from '../Input'
-import classNames from 'classnames'
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
+import s from './s.module.scss';
+import { NewIcon } from '../NewIcon';
+import { CheckBoxProps, CheckBoxComponent } from './CheckBox.types';
 
-import s from './s.module.scss'
-import { NewIcon } from '../NewIcon'
+export const CheckBox: CheckBoxComponent = forwardRef<HTMLInputElement, CheckBoxProps>(
+  (
+    {
+      children,
+      isChecked = false,
+      error = false,
+      modifierClassesStyle = [''],
+      emitIsChecked,
+      onClick,
+      variant = 'light',
+      size_s,
+      size_m,
+      size_l,
+      ...rest
+    },
+    ref
+  ) => {
+    const modifierClasses = modifierClassesStyle
+      .map((key) => s[key])
+      .filter(Boolean)
+      .join(' ');
 
-const cx = classNames.bind(s)
+    let sizeClass = '';
+    let iconSize = '20';
+    if (size_l) {
+      sizeClass = s['large-size'] || '';
+      iconSize = '20';
+    } else if (size_s) {
+      sizeClass = s['small-size'] || '';
+      iconSize = '12';
+    } else if (size_m) {
+      sizeClass = s['medium-size'] || '';
+      iconSize = '16';
+    } else {
+      sizeClass = s['medium-size'] || '';
+      iconSize = '16';
+    }
 
-interface Props {
-	text?: string
-	error: boolean
-	isChecked?: boolean
-	children?: React.ReactNode
-}
-
-export type Ref = HTMLInputElement
-
-export const CheckBox = forwardRef<Ref, Props>(
-	({ text, isChecked, error, children, ...props }, ref) => {
-		return (
-			<label className={cx(s.checkboxLabel, { [s.error]: error })}>
-				<Input
-					type='checkbox'
-					{...props}
-					ref={ref}
-				/>
-
-				{isChecked && (
-					<NewIcon
-						additionalClass={s.checkIcon}
-						color={'#B1B5C3'}
-						strokeWidth={'1.5'}
-						name={'check'}
-						size='20'
-					/>
-				)}
-
-				<div
-					className={cx(s.labelText, { [s.error]: error })}
-					dangerouslySetInnerHTML={text ? { __html: text } : undefined}>
-					{children}
-				</div>
-			</label>
-		)
-	}
-)
+    return (
+      <label
+        className={`
+          ${s.checkbox}
+          ${modifierClasses}
+          ${isChecked ? s.isChecked : ''}
+          ${error ? s.error : ''}
+          ${s[variant] || ''}
+          ${sizeClass}
+        `}
+        onClick={() => {
+          onClick && onClick();
+        }}
+      >
+        <input
+          type="checkbox"
+          ref={ref}
+          checked={!!isChecked}
+          onChange={() => emitIsChecked && emitIsChecked(!isChecked)}
+          {...rest}
+        />
+        <span className={s.checkbox__elem}>
+          {isChecked && (
+            <NewIcon
+              name={'check'}
+              size={iconSize}
+            />
+          )}
+          {!isChecked && (
+            <NewIcon
+              name={'check'}
+              size={iconSize}
+              additionalClass={s.checkbox__hoverIcon}
+            />
+          )}
+        </span>
+        {children}
+      </label>
+    );
+  }
+);
