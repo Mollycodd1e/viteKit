@@ -10,6 +10,7 @@ const cx = classNames.bind(s)
 interface Props {
 	text?: string
 	error: boolean
+	emitIsChecked?: (isChecked: boolean) => void
 	isChecked?: boolean
 	children?: React.ReactNode
 }
@@ -17,12 +18,13 @@ interface Props {
 export type Ref = HTMLInputElement
 
 export const CheckBoxNew = forwardRef<Ref, Props>(
-	({ text, isChecked, error, children, ...props }, ref) => {
+	({ text, isChecked, error, children, emitIsChecked, ...props }, ref) => {
 		return (
 			<label className={cx(s.checkboxLabel, { [s.error]: error })}>
 				<Input
 					type='checkbox'
 					{...props}
+					onChange={() => emitIsChecked && emitIsChecked(!isChecked)}
 					ref={ref}
 				/>
 
