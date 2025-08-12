@@ -266,7 +266,7 @@ export const ModalForm = ({
 
                         <CheckBox
                             data-testid='modal_personalCheckBox'
-                            isChecked={isCheckedPersonal}
+                            isChecked={isCheckedPersonal }
                             error={Boolean(errors.personalCheckBox)}
                             {...register('personalCheckBox', {required: !isNews})}
                             //можно указывать либо text либо children

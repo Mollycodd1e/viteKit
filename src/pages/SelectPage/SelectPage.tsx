@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CheckBoxOld, Select, SortSelect, Switcher } from '../../main'
+import { CheckBox, Select, SortSelect, Switcher } from '../../main'
 import s from './SelectPage.module.scss'
 import { SummarySelect } from '../../components/SummarySelect'
 import { TModeSelect, TOption } from '../../components/Select/ui/Select.types.ts'
@@ -51,7 +51,7 @@ export const SelectPage = () => {
 				</div>
 				<div>
 					<h2>старый чекбокс</h2>
-					<CheckBoxOld
+					<CheckBox
 						isChecked={false}
 						emitIsChecked={() => {
 							console.log('check')
