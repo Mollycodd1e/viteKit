@@ -1,0 +1,89 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.logo {
+	width: 81px;
+	height: 16px;
+}
+
+.logoValue {
+	width: 157px;
+}
+
+.logoDom {
+	width: 171px;
+	height: 63px;
+}
+
+.logoOffice {
+	width: 165px;
+	height: 16px;
+}
+
+.logoNewOffice {
+	width: 137px;
+	height: 13.25px;
+}
+
+.logoNewDom {
+	width: 143px;
+	height: 52px;
+}
+
+.logoRealty {
+	width: 154px;
+	height: 16px;
+}
+
+.wrapperBetween {
+	width: 100%;
+	justify-content: space-between;
+}
+
+.uk {
+	font-size: 8px;
+	line-height: 8px;
+	font-weight: 600;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+
+	&_black {
+		color: #141416;
+	}
+
+	&_white {
+		color: #ffffff;
+	}
+}
+
+@media(min-width: 1024px) {
+	.logoValue {
+		width: 157px;
+	}
+
+	.uk {
+		width: 101px;
+		height: 20px;
+		font-size: 9px;
+		line-height: 10px;
+	}
+}
+
+@media(min-width: 1440px) {
+	.logoValue {
+		width: 196px;
+	}
+
+	.logoNewOffice {
+		width: 165px;
+		height: 16px;
+	}
+
+	.logoNewDom {
+		width: 175px;
+		height: 64px;
+	}
+}

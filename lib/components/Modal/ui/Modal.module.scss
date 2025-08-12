@@ -1,0 +1,51 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 105;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+}
+
+.modalBody {
+  position: absolute;
+  overflow: auto;
+}
+
+.modalOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  @supports (height: 100dvh) {
+    height: 100dvh;
+  }
+}
+
+.isTransparentBack {
+  background: black;
+}
+
+@media(min-wdith: 1024px) {
+  .modalBody {
+    position: absolute;
+    overflow: unset;
+  }
+}
