@@ -44,9 +44,8 @@
 
 .labelText {
   user-select: none;
-  font-size: 14px;
-  line-height: 20px;
-
+  font-size: 12px;
+  line-height: 16px;
   padding-left: 32px;
   color: #777e90;
 }
@@ -68,4 +67,16 @@
   align-items: center;
   z-index: 5;
   position: absolute;
+}
+
+@media(min-width: 1024px) {
+  .labelText {
+    line-height: 20px;
+  }
+}
+
+@media(min-width: 1440px) {
+  .labelText {
+    line-height: 16px;
+  }
 }
