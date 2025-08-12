@@ -10,7 +10,7 @@ import { SelectPage } from './pages/SelectPage/SelectPage.tsx'
 import FormsPage from './pages/FormsPage/FormsPage.tsx'
 import { LogoPage } from './pages/LogoPage/LogoPage.tsx'
 import { InputPage } from './pages/InputPage/InputPage.tsx'
-import { CheckboxPage } from './pages/CheckboxPage/CheckboxPage.tsx'
+import { CheckBoxPage } from './pages/CheckBoxPage/CheckBoxPage.tsx'
 
 const AppRouter = () => {
 	return (
@@ -61,7 +61,7 @@ const AppRouter = () => {
 			/>
 			<Route
 				path='/checkbox'
-				element={<CheckboxPage />}
+				element={<CheckBoxPage />}
 			/>
 		</Routes>
 	)
