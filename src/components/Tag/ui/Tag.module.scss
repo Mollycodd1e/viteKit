@@ -222,11 +222,23 @@
 	font-weight: 500;
 }
 
+.gray {
+	background: #f4f5f6;
+	border: none;
+	color: #353945;
+}
+
 .blackStroke {
 	background-color: #ffffff;
 	border: 1px solid #141416;
 	color: #141416;
 	font-weight: 500;
+}
+
+.lightBlue {
+	background: #E7F0FF;
+	border: 1px solid #E7F0FF;
+	color: #015FF9;
 }
 
 @media(min-width: 1024px) {

@@ -15,6 +15,7 @@ export const TAG_VARIANTS = {
 	transWhite: 'transWhite',
 	whiteGrayStroke: 'whiteGrayStroke',
 	blackStroke: 'blackStroke',
+	lightBlue: 'lightBlue',
 }
 
 export type tagVariant = keyof typeof TAG_VARIANTS
