@@ -67,6 +67,15 @@
 	background-color: #141416;
 }
 
+.blackStroke {
+	border: 1px solid #141416;
+	background-color: #ffffff;
+
+	& div {
+		color: #141416;
+	}
+}
+
 .fullGray {
 	border: 1px solid #F4F5F6;
 	background-color: #F4F5F6;
