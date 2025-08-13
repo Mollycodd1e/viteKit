@@ -5,6 +5,7 @@ export const ROUND_BUTTON_VARIANTS = {
 	blackFill: 'blackFill',
 	fullGray: 'fullGray',
 	blue: 'blue',
+	blackStroke: 'blackStroke',
 }
 
 export type roundBtnVariant = keyof typeof ROUND_BUTTON_VARIANTS
