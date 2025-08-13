@@ -33,7 +33,6 @@ export const LotCard = ({
 	} = lot
 
 	const {
-		getFloorStr,
 		FloorByType,
 		areaStr,
 		isReserved,
@@ -75,12 +74,15 @@ export const LotCard = ({
 				<div className={cx(s.lotPropertyListDesktop)}>
 					<Tag variant='gray'>{areaStr}</Tag>
 					{!isBuilding && <Tag variant='gray'>{housing}</Tag>}
-					<Tag variant='gray'>{getFloorStr()}</Tag>
+					{lot.features?.map((feature) => {
+						return <Tag variant='gray'>{feature.val}</Tag>
+					})}
 				</div>
 				<ul className={cx(s.lotPropertyListMobile)}>
 					<li className={cx(s.lotPropertyItem)}>
 						<div>Площадь</div>
 						<div>{areaStr}</div>
+
 					</li>
 					{!isBuilding && (
 						<li className={cx(s.lotPropertyItem)}>

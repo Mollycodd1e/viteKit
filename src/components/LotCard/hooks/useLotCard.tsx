@@ -50,10 +50,6 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 	const rowConditionsVar =
 		typeof rowConditions !== 'undefined' ? rowConditions : isDesktop || isTablet
 
-	const getFloorStr = () => {
-		if (isBuilding) return 'Кол-во этажей: ' + floorsNumber
-		return 'Этаж: ' + floorStr
-	}
 
 	const FloorByType = () => {
 		if (isBuilding)
@@ -185,7 +181,6 @@ export const useLotCard = ({ lot, rowConditions }: IUseLotCard) => {
 		isBuilding,
 		LotCardInfo,
 		tagFeatures,
-		getFloorStr,
 		FloorByType,
 		isTablet,
 		isDesktop,
