@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { CheckBox } from '../../components/CheckBox'
-import s from './CheckBoxPage.module.scss'
+import s from './CheckboxPage.module.scss'
 
 export const CheckBoxPage = () => {
 	// Состояния для light варианта
