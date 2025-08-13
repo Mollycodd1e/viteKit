@@ -151,6 +151,7 @@ export const NewIcon = ({
 				minHeight: size + 'px',
 				transform: deg ? `rotate(${deg}deg)` : undefined,
 				color: color,
+				display: 'flex',
 				strokeWidth: strokeWidth,
 			}}
 			className={cx(s.root, additionalClass)}>
